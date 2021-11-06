@@ -1,0 +1,21 @@
+.pagination{
+display: flex;
+align-items: center;
+@include mq() {
+    margin-top: $space_m;
+}
+}
+.page-item.active{
+    background-color: $base-color;
+    color: $white;
+}
+.page-item.disabled{
+    color: $gray;
+}
+.page-item{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.page-link{
+    padding: 3px;
+}

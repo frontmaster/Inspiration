@@ -1,19 +1,48 @@
-// Body
-$body-bg: #f8fafc;
-
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+//フォント
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-family-noto-sans-jp: "Noto Sans JP", sans-serif;
+$line-height-base: 1.5;
+$font-size_s: 12px;
+$font-size_m: 14px;
+$font-size_base: 16px;
+$font-size_l: 18px;
+$font-size_xl: 24px;
+$font-size_xxl: 30px;
+$font-size_3l: 38px;
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$base-color: #f6f5f5;
+$main-color: #5654A2;
+$sub-color: #8E8BC2;
+$font-color_default: #444;
+$font-color_title: #4E4449;
+$alart-color: #d7003a;
+$white: #fff;
+$shadow: #b8b8b8;
+$gray: #333;
+$gray-sub: #767676;
+
+//width
+$site-width: 980px;
+$site-width-sp: 360px;
+
+//スペース
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_xl: 20px;
+$space_xxl: 30px;
+$space_3l: 40px;
+
+//レスポンシブデザイン用変数
+$breakpoints: (
+    "sm": "screen and (max-width: 639px)",
+    "md": "screen and (max-width: 979px)",
+) !default;
+
+//mixin
+@mixin mq($breakpoint: sm) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}

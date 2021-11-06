@@ -1,0 +1,8 @@
+.c-sidebar{
+    &__menu{
+        margin-bottom: $space_m;
+        &--link{
+            color: $base-color;
+        }
+    }
+}

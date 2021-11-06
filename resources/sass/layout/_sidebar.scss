@@ -1,0 +1,20 @@
+.l-sidebar{
+    width: 200px;
+    height: 500px;
+    background-color: $base-color;
+    margin-left: $space_xl;
+    padding: $space_m;
+    box-sizing: border-box;
+    @include mq() {
+        width: 300px;
+        height: 100px;
+        margin-left: 0;
+    }
+    & ul{
+        @include mq() {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+}
