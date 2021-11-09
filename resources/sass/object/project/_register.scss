@@ -15,6 +15,9 @@
             padding: 0 10px;
             box-sizing: border-box;
         }
+        @include mq("sm") {
+            width: 100%;
+        }
     }
     &__form {
         margin-top: $space_xxl;
@@ -42,6 +45,9 @@
         @include mq() {
             width: 140px;
             font-size: 10px;
+        }
+        @include mq("sm"){
+            width: 170px;
         }
     }
     &__require {

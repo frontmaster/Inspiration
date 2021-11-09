@@ -12,10 +12,10 @@ $font-size_3l: 38px;
 
 // Colors
 $base-color: #f6f5f5;
-$main-color: #5654A2;
-$sub-color: #8E8BC2;
+$main-color: #5654a2;
+$sub-color: #8e8bc2;
 $font-color_default: #444;
-$font-color_title: #4E4449;
+$font-color_title: #4e4449;
 $alart-color: #d7003a;
 $white: #fff;
 $shadow: #b8b8b8;
@@ -36,13 +36,16 @@ $space_3l: 40px;
 
 //レスポンシブデザイン用変数
 $breakpoints: (
-    "sm": "screen and (max-width: 639px)",
-    "md": "screen and (max-width: 979px)",
+    "ss": "screen and (max-width: 280px)",
+    "sm": "screen and (max-width: 320px)",
+    "md": "screen and (max-width: 599px)",
+    "lg": "screen and (max-width: 1024px)",
 ) !default;
 
 //mixin
-@mixin mq($breakpoint: sm) {
+@mixin mq($breakpoint: md) {
     @media #{map-get($breakpoints, $breakpoint)} {
         @content;
     }
 }
+

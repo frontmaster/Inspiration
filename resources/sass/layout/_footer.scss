@@ -9,6 +9,8 @@
     color: $white;
     @include mq() {
         height: 60px;
-
+    }
+    @include mq("sm") {
+        font-size: 12px;
     }
 }
