@@ -22,7 +22,7 @@
             </div>
 
             <div class="p-mypage__content">
-                <h2 class="p-mypage__title--part">登録済み案件一覧</h2>
+                <h2 class="p-mypage__title--part">登録済み</h2>
                 <div class="p-mypage__wrapper">
                     <div class="p-mypage__registProjectListWrap">
                         @foreach($projects as $project)
