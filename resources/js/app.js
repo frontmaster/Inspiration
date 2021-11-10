@@ -30,3 +30,14 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+//フラッシュメッセージ
+$(function () {
+    $('.js-flashMsg').fadeOut(7000);
+});
+
+//SPメニュー
+$('.js-toggle-sp-menu').on('click', function () {
+    $(this).toggleClass('active');
+    $('.js-toggle-sp-menu-target').toggleClass('active');
+});

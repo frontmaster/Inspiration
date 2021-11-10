@@ -15,6 +15,12 @@
             padding: 0 10px;
             box-sizing: border-box;
         }
+        @include mq("sm") {
+            width: 320px;
+        }
+        @include mq("ss") {
+            width: 280px;
+        }
     }
     &__form {
         margin-top: $space_xxl;
@@ -34,11 +40,20 @@
         justify-content: center;
         align-items: center;
         margin-bottom: $space_xl;
+        @include mq("ss") {
+            width: 100%;
+        }
     }
     &__label {
         width: 200px;
         display: flex;
         align-items: center;
+        @include mq("sm") {
+            font-size: $font-size_m;
+        }
+        @include mq("ss") {
+            font-size: $font-size_s;
+        }
     }
     &__require {
         width: 60px;
@@ -51,7 +66,7 @@
         background-color: $alart-color;
         color: $white;
     }
-    &__errMsg{
+    &__errMsg {
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
@@ -60,6 +75,12 @@
     &__input {
         width: 100%;
         height: 30px;
+        @include mq("sm") {
+            height: 20px;
+        }
+        @include mq("ss") {
+            height: 20px;
+        }
     }
     &__button {
         float: right;
@@ -71,13 +92,19 @@
     &__btn:hover {
         cursor: pointer;
     }
-    &__link{
+    &__link {
         display: flex;
         justify-content: flex-end;
         margin-top: $space_l;
         text-decoration: underline;
+        @include mq("sm") {
+            font-size: $font-size_m;
+        }
+        @include mq("ss") {
+            font-size: $font-size_s;
+        }
     }
-    &__link:hover{
+    &__link:hover {
         color: $main-color;
     }
 }

@@ -240,6 +240,7 @@ img {
     transform: translateX(-100%);
     z-index: 2;
     opacity: 0.9;
+    background-color: #8e8bc2;
   }
 }
 
@@ -305,7 +306,7 @@ img {
   left: 0;
   width: 100%;
   height: 4px;
-  background-color: #444;
+  background-color: #fff;
   border-radius: 4px;
 }
 
@@ -634,6 +635,18 @@ img {
   }
 }
 
+@media screen and (max-width: 320px) {
+  .p-login__content {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-login__content {
+    width: 280px;
+  }
+}
+
 .p-login__form {
   margin-top: 30px;
   width: 100%;
@@ -659,10 +672,28 @@ img {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 280px) {
+  .p-login__part {
+    width: 100%;
+  }
+}
+
 .p-login__label {
   width: 200px;
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 320px) {
+  .p-login__label {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-login__label {
+    font-size: 12px;
+  }
 }
 
 .p-login__require {
@@ -689,6 +720,18 @@ img {
   height: 30px;
 }
 
+@media screen and (max-width: 320px) {
+  .p-login__input {
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-login__input {
+    height: 20px;
+  }
+}
+
 .p-login__button {
   float: right;
 }
@@ -707,6 +750,18 @@ img {
   justify-content: flex-end;
   margin-top: 15px;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 320px) {
+  .p-login__link {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-login__link {
+    font-size: 12px;
+  }
 }
 
 .p-login__link:hover {
