@@ -60,7 +60,7 @@
                 <li class="l-header__menu"><a href="{{ route('mypage', auth()->user()->id) }}" class="l-header__menu--link">マイページ</a></li>
                 <li class="l-header__menu"><a href="{{ route('logout') }}" class="l-header__menu--link" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">ログアウト</a></li>
-                <li class="l-header__menu"><a href="{{ route('users.delete_confirm', auth()->user()->id) }}" class="l-header__menu--link">退会する</a></li>
+                <li class="l-header__menu"><a href="" class="l-header__menu--link">退会する</a></li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
                 </form>
