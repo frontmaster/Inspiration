@@ -1,0 +1,40 @@
+.p-deleteconfirm {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    &__content{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        &--sentence{
+            font-size: $font-size_l;
+        }
+    }
+    &__form {
+        margin-top: $space_xxl;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    &__title {
+        text-align: center;
+        font-size: $font-size_xxl;
+        color: $font-color_title;
+        margin-bottom: $space_3l;
+        @include mq() {
+            margin-top: 80px;
+        }
+    }
+    &__button {
+        float: right;
+    }
+    &__btn {
+        background-color: $main-color;
+        color: $white;
+    }
+    &__btn:hover {
+        cursor: pointer;
+    }
+}
