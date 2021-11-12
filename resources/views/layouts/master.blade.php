@@ -41,7 +41,7 @@
             <ul>
                 <li class="l-header__menu"><a href="{{ url('/') }}" class="l-header__menu--link">TOP</a></li>
                 <li class="l-header__menu"><a href="{{ route('login') }}" class="l-header__menu--link">ログイン</a></li>
-                <li class="l-header__menu"><a href="{{ route('register') }}" class="l-header__menu--link">ユーザー登録</a></li>
+                <li class="l-header__menu"><a href="{{ route('register') }}" class="l-header__menu--link">ユーザー登録 (無料)</a></li>
             </ul>
         </nav>
     </header>

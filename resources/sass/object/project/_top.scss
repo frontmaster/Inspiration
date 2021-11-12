@@ -1,0 +1,25 @@
+.p-top {
+    background-color: $white;
+    
+    &__sentence {
+        width: 50%;
+        text-align: left;
+        font-size: $font-size_xxl;
+        color: $sub-color;
+        line-height: 2;
+        font-weight: bold;
+
+    }
+    &__imgContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: $space_3l;
+        padding: $space_3l;
+        &--img {
+            width: 50%;
+            
+
+        }
+    }
+}

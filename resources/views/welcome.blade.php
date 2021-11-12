@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'トップページ')
+@section('title', 'WEBサービスのアイディアマッチングサイト | Inspiration')
 
 @section('header')
 @parent
@@ -9,10 +9,12 @@
 @section('content')
 <main class="l-main">
     <div class="p-top">
-        <div class="p-top__imgContainer"><img src=" {{ asset('img/business.jpeg') }}" alt="" class="p-top__imgContainer--img">
-            <p class="p-top__sentence">もっとシンプルに簡単に。</br>
-                matchは簡単な手順でエンジニアと企業をつなぎます
+        <div class="p-top__imgContainer">
+            <p class="p-top__sentence">簡単にアイディアを販売・購入できる</br>
+                WEBサービスのアイディアマッチングサービス
             </p>
+            <img src=" {{ asset('img/business-1.jpg') }}" alt="" class="p-top__imgContainer--img">
+
         </div>
 
         <div class="p-top__content">
