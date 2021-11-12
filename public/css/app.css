@@ -449,7 +449,7 @@ img {
 
 .c-flashMsgContainer {
   width: 100%;
-  height: 64pxpx;
+  height: 64px;
   background-color: #f6f5f5;
   display: flex;
   justify-content: center;
@@ -766,5 +766,56 @@ img {
 
 .p-login__link:hover {
   color: #5654a2;
+}
+
+.p-deleteconfirm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.p-deleteconfirm__content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.p-deleteconfirm__content--sentence {
+  font-size: 18px;
+}
+
+.p-deleteconfirm__form {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.p-deleteconfirm__title {
+  text-align: center;
+  font-size: 30px;
+  color: #4e4449;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-deleteconfirm__title {
+    margin-top: 80px;
+  }
+}
+
+.p-deleteconfirm__button {
+  float: right;
+}
+
+.p-deleteconfirm__btn {
+  background-color: #5654a2;
+  color: #fff;
+}
+
+.p-deleteconfirm__btn:hover {
+  cursor: pointer;
 }
 
