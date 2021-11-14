@@ -14,35 +14,32 @@
                 WEBサービスのアイディアマッチングサービス
             </p>
             <img src=" {{ asset('img/business-1.jpg') }}" alt="" class="p-top__imgContainer--img">
-
         </div>
 
         <div class="p-top__content">
-            <h1 class="p-top__title">matchの特徴</h1>
+            <h1 class="p-top__title">Inspirationの特徴</h1>
             <div class="p-top__panelContent">
                 <section class="p-top__panel">
-                    <h2 class="p-top__panel--title">簡単に案件投稿ができる！</h2>
+                    <h2 class="p-top__panel--title">簡単にユーザー登録ができる！</h2>
                     <p class="p-top__panel--sentence">
-                        案件を投稿するのに色々な項目を入力する必要はありません。<br>
-                        matchでは案件名、種別、金額、内容を入力するだけで、簡単に投稿できます。
+                        ユーザー登録に時間はかかりません。メールアドレス、パスワードだけで簡単にユーザー登録ができます。
                     </p>
                 </section>
 
                 <section class="p-top__panel">
-                    <h2 class="p-top__panel--title">簡単に応募ができる！</h2>
+                    <h2 class="p-top__panel--title">アイディアに評価・口コミができる！</h2>
                     <p class="p-top__panel--sentence">
-                        案件の応募にも複雑な手順は必要ありません。<br>
-                        matchではメールアドレスとパスワードで簡単にユーザー登録ができます。登録後は、
-                        気になった案件に応募するだけです。
+                        購入者はアイディアに対して5段階評価・口コミを投稿することができます。<br>
+                        購入前の参考に5段階評価・口コミをご覧ください。
                     </p>
                 </section>
 
                 <section class="p-top__panel">
-                    <h2 class="p-top__panel--title">簡単にやり取りができる！</h2>
+                    <h2 class="p-top__panel--title">メールでお知らせ！</h2>
                     <p class="p-top__panel--sentence">
-                        案件応募後のやりとりも簡単です。<br>
-                        案件に応募すると案件登録者に通知され、通知を受けて登録者とDM
-                        で詳細なやり取りができます。
+                        アイディアを購入するとアイディア販売者と購入者にメールが送信され、自分のアイディアが購入された事、
+                        きちんと購入できたことがわかるようになっています。<br>
+                        また、5段階評価・口コミが投稿されると、アイディア販売者にメールでお知らせします。
                     </p>
                 </section>
             </div>

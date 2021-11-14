@@ -521,6 +521,20 @@ img {
   width: 50%;
 }
 
+.p-top__content {
+  width: 100%;
+  background-color: #BBBCDE;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-top__title {
+  font-size: 30px;
+  color: #2F2725;
+  text-align: center;
+  margin-top: 15px;
+}
+
 .p-register {
   width: 100%;
   height: 100%;
