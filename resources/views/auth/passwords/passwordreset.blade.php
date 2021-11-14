@@ -12,7 +12,7 @@
 <main class="l-main">
     <div class="p-passReset">
         <div class="p-passReset__content">
-            <h1 class="p-passReset__title">パスワードリセット</h1>
+            <h1 class="p-passReset__title">パスワードリセッ</h1>
             <p>以下のボタンを押し、パスワードリセットの手続きを行ってください。</p>
             <div class="p-passReset__button">
                 <a href="{{ $reset_url }}" class="c-btn p-passReset__btn">パスワードリセット</a>
