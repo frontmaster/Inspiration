@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'パスワード再発行メール送信画面')
+@section('title', 'パスワード再発行手続き')
 
 @section('header')
 @parent
@@ -10,7 +10,8 @@
 <main class="l-main">
     <div class="p-passReset">
         <div class="p-passReset__content">
-            <p>下記のメールアドレス入力欄に、登録したメールアドレスを入力してください。入力された
+            <h1 class="p-passReset__title">パスワード再発行手続き</h1>
+            <p class="p-passReset__sentence">下記のメールアドレス入力欄に、登録したメールアドレスを入力してください。入力された
                 メールアドレス宛にパスワード再発行用のURLと認証キーをお送り致します。
             </p>
             <form method="POST" action="{{ route('password.email') }}" class="p-passReset__form">

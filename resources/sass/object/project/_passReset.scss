@@ -1,0 +1,54 @@
+.p-passReset {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &__content {
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        background-color: $white;
+        padding: $space_3l;
+        border-radius: 10px;
+    }
+    &__title {
+        font-size: $font-size_xxl;
+        text-align: center;
+        color: $black;
+    }
+    &__sentence {
+        margin-top: $space_3l;
+    }
+    &__form {
+        margin-top: $space_xl;
+    }
+    &__label {
+        font-size: $font-size_l;
+        color: $black;
+    }
+    &__input {
+        width: 100%;
+        height: 30px;
+        margin-top: $space_s;
+    }
+    &__button {
+        text-align: right;
+    }
+    &__btn {
+        margin-top: $space_xl;
+        color: $white;
+        background-color: $main-color;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__returnMsg {
+        display: block;
+        margin-top: $space_xl;
+        text-align: right;
+        color: $sub-color;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

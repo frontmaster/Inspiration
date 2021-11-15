@@ -420,6 +420,7 @@ img {
   border-radius: 3px;
   border: none;
   box-shadow: 3px 3px 3px #b8b8b8;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 320px) {
@@ -533,6 +534,33 @@ img {
   color: #2F2725;
   text-align: center;
   margin-top: 15px;
+}
+
+.p-top__panelContent {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.p-top__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  width: 300px;
+  height: 300px;
+  padding: 15px;
+}
+
+.p-top__panel--title {
+  text-align: center;
+  font-size: 18px;
+  color: #2F2725;
+}
+
+.p-top__panel--img {
+  width: 150px;
+  height: 100px;
 }
 
 .p-register {
@@ -805,6 +833,72 @@ img {
 
 .p-login__link:hover {
   color: #5654a2;
+}
+
+.p-passReset {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-passReset__content {
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.p-passReset__title {
+  font-size: 30px;
+  text-align: center;
+  color: #2F2725;
+}
+
+.p-passReset__sentence {
+  margin-top: 40px;
+}
+
+.p-passReset__form {
+  margin-top: 20px;
+}
+
+.p-passReset__label {
+  font-size: 18px;
+  color: #2F2725;
+}
+
+.p-passReset__input {
+  width: 100%;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.p-passReset__button {
+  text-align: right;
+}
+
+.p-passReset__btn {
+  margin-top: 20px;
+  color: #fff;
+  background-color: #5654a2;
+}
+
+.p-passReset__btn:hover {
+  opacity: 0.8;
+}
+
+.p-passReset__returnMsg {
+  display: block;
+  margin-top: 20px;
+  text-align: right;
+  color: #4052A2;
+}
+
+.p-passReset__returnMsg:hover {
+  text-decoration: underline;
 }
 
 .p-deleteconfirm {
