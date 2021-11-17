@@ -5,13 +5,4 @@
     flex-direction: column;
     min-height: 100vh;
     position: relative;
-    @include mq() {
-        width: 360px;
-    }
-    @include mq("sm"){
-        width: 320px;
-    }
-    @include mq("ss") {
-        width: 280px;
-    }
 }

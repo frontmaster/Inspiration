@@ -16,23 +16,23 @@
             </p>
             <form method="POST" action="{{ route('password.email') }}" class="p-passReset__form">
                 @csrf
-                @error('email')
-                <span class="c-errMsg p-passReset__errMsg">
-                    <p>{{ $message }}</p>
-                </span>
-                @enderror
                 <div class="p-passReset__part">
                     <label for="email" class="p-passReset__label">メールアドレス</label>
+                    @error('email')
+                    <span class="c-errMsg p-passReset__errMsg">
+                        <p>{{ $message }}</p>
+                    </span>
+                    @enderror
                     <input type="email" class="p-passReset__input @error('email') is-error @enderror" name="email" value="{{ old('email') }}" placeholder="半角英数">
                 </div>
 
                 <div class="p-passReset__button">
                     <button type="submit" class="c-btn p-passReset__btn">
-                        送信する
+                        送信
                     </button>
                 </div>
             </form>
-        <a href="{{ route('login')}}" class="p-passReset__returnMsg">ログイン画面へ戻る</a>
+            <a href="{{ route('login')}}" class="p-passReset__returnMsg">ログイン画面へ戻る</a>
         </div>
     </div>
     </div>

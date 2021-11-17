@@ -13,7 +13,8 @@ $font-size_3l: 38px;
 // Colors
 $base-color: #f6f5f5;
 $main-color: #5654a2;
-$sub-color: #4052A2;
+$sub-color1: #4052A2;
+$sub-color2: #51318F;
 $accent-color:#BBBCDE;
 $font-color_default: #444;
 $font-color_title: #4e4449;
@@ -41,7 +42,9 @@ $breakpoints: (
     "ss": "screen and (max-width: 280px)",
     "sm": "screen and (max-width: 320px)",
     "md": "screen and (max-width: 599px)",
-    "lg": "screen and (max-width: 1024px)",
+    "lg": "screen and (max-width: 768px)",
+    "xl": "screen and (max-width: 1024px)",
+    "xxl": "screen and (max-width: 1280px)",
 ) !default;
 
 //mixin

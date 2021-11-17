@@ -5,6 +5,7 @@
     border: none;
     box-shadow: 3px 3px 3px $shadow;
     cursor: pointer;
+    font-weight: bold;
     @include mq("sm") {
         width: 70px;
         height: 30px;

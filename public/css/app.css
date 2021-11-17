@@ -343,24 +343,6 @@ img {
   position: relative;
 }
 
-@media screen and (max-width: 599px) {
-  .l-main {
-    width: 360px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .l-main {
-    width: 320px;
-  }
-}
-
-@media screen and (max-width: 280px) {
-  .l-main {
-    width: 280px;
-  }
-}
-
 .l-footer {
   height: 64px;
   width: 100%;
@@ -421,6 +403,7 @@ img {
   border: none;
   box-shadow: 3px 3px 3px #b8b8b8;
   cursor: pointer;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 320px) {
@@ -523,23 +506,22 @@ img {
 }
 
 .p-top__content {
-  width: 100%;
   background-color: #BBBCDE;
   display: flex;
   flex-direction: column;
+  padding: 60px;
 }
 
 .p-top__title {
   font-size: 30px;
-  color: #2F2725;
+  color: #51318F;
   text-align: center;
-  margin-top: 15px;
 }
 
 .p-top__panelContent {
   display: flex;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .p-top__panel {
@@ -547,69 +529,105 @@ img {
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  width: 300px;
-  height: 300px;
+  width: 370px;
+  height: 350px;
   padding: 15px;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .p-top__panel--title {
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
   color: #2F2725;
 }
 
 .p-top__panel--img {
-  width: 150px;
-  height: 100px;
+  width: 40%;
+  height: 35%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .p-register {
   width: 100%;
-  height: 100%;
+  height: 800px;
   display: flex;
-  flex-direction: column;
-  margin-bottom: 100px;
+  justify-content: center;
+  align-items: center;
 }
 
 .p-register__content {
-  width: 600px;
-  margin: 0 auto;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  margin-top: 100px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1280px) {
+  .p-register__content {
+    width: 60%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .p-register__content {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-register__content {
+    width: 90%;
+    padding: 30px;
+  }
 }
 
 @media screen and (max-width: 599px) {
   .p-register__content {
-    width: 360px;
-    padding: 0 10px;
-    box-sizing: border-box;
+    width: 90%;
+    height: 80%;
+    padding: 30px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .p-register__content {
-    width: 100%;
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-register__content {
+    width: 90%;
+    padding: 30px;
   }
 }
 
 .p-register__form {
-  margin-top: 30px;
   width: 100%;
 }
 
 .p-register__title {
   text-align: center;
   font-size: 30px;
-  color: #4e4449;
+  font-weight: bold;
+  color: #2F2725;
   margin-bottom: 40px;
 }
 
 .p-register__part {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  margin-bottom: 40px;
 }
 
 .p-register__part--name {
@@ -617,47 +635,65 @@ img {
 }
 
 .p-register__label {
-  width: 200px;
+  width: 100%;
   display: flex;
   align-items: center;
-}
-
-@media screen and (max-width: 599px) {
-  .p-register__label {
-    width: 140px;
-    font-size: 10px;
-  }
+  margin-bottom: 10px;
+  color: #2F2725;
 }
 
 @media screen and (max-width: 320px) {
   .p-register__label {
     width: 170px;
+    font-size: 12px;
   }
 }
 
 .p-register__require {
-  width: 60px;
+  width: 40px;
   height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 10px;
   margin-right: 10px;
   padding: 3px;
   background-color: #d7003a;
   color: #fff;
+  font-size: 14px;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 320px) {
   .p-register__require {
+    width: 30px;
+    height: 15px;
     font-size: 12px;
   }
 }
 
 .p-register__errMsg {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 5px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-register__errMsg {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-register__errMsg {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-register__errMsg {
+    font-size: 10px;
+  }
 }
 
 .p-register__input {
@@ -676,41 +712,68 @@ img {
 
 .p-register__btn:hover {
   cursor: pointer;
+  opacity: 0.9;
 }
 
 .p-login {
   width: 100%;
-  height: 100%;
+  height: 800px;
   display: flex;
-  flex-direction: column;
-  margin-bottom: 100px;
+  justify-content: center;
+  align-items: center;
 }
 
 .p-login__content {
-  width: 500px;
-  margin: 0 auto;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1280px) {
+  .p-login__content {
+    width: 60%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .p-login__content {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-login__content {
+    width: 90%;
+    padding: 30px;
+  }
 }
 
 @media screen and (max-width: 599px) {
   .p-login__content {
-    width: 360px;
-    padding: 0 10px;
-    box-sizing: border-box;
+    width: 90%;
+    height: 70%;
+    padding: 30px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .p-login__content {
-    width: 320px;
+    width: 90%;
+    padding: 30px;
   }
 }
 
 @media screen and (max-width: 280px) {
   .p-login__content {
-    width: 280px;
+    width: 90%;
+    padding: 30px;
   }
 }
 
@@ -722,21 +785,15 @@ img {
 .p-login__title {
   text-align: center;
   font-size: 30px;
-  color: #4e4449;
+  font-weight: bold;
+  color: #2F2725;
   margin-bottom: 40px;
-}
-
-@media screen and (max-width: 599px) {
-  .p-login__title {
-    margin-top: 80px;
-  }
 }
 
 .p-login__part {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 280px) {
@@ -746,9 +803,11 @@ img {
 }
 
 .p-login__label {
-  width: 200px;
+  width: 100%;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
+  color: #2F2725;
 }
 
 @media screen and (max-width: 320px) {
@@ -763,23 +822,29 @@ img {
   }
 }
 
-.p-login__require {
-  width: 60px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  padding: 3px;
-  background-color: #d7003a;
-  color: #fff;
-}
-
 .p-login__errMsg {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 5px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-login__errMsg {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-login__errMsg {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-login__errMsg {
+    font-size: 10px;
+  }
 }
 
 .p-login__input {
@@ -810,13 +875,14 @@ img {
 
 .p-login__btn:hover {
   cursor: pointer;
+  opacity: 0.9;
 }
 
 .p-login__link {
   display: flex;
   justify-content: flex-end;
   margin-top: 15px;
-  text-decoration: underline;
+  color: #5654a2;
 }
 
 @media screen and (max-width: 320px) {
@@ -832,23 +898,71 @@ img {
 }
 
 .p-login__link:hover {
-  color: #5654a2;
+  text-decoration: underline;
 }
 
 .p-passReset {
   width: 100%;
-  height: 100%;
+  height: 700px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .p-passReset__content {
   width: 500px;
-  height: 300px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #fff;
   padding: 40px;
+  box-sizing: border-box;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+  .p-passReset__content {
+    width: 60%;
+    height: 60%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .p-passReset__content {
+    width: 80%;
+    height: 70%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-passReset__content {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .p-passReset__content {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-passReset__content {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-passReset__content {
+    width: 90%;
+    padding: 30px;
+  }
 }
 
 .p-passReset__title {
@@ -857,8 +971,44 @@ img {
   color: #2F2725;
 }
 
+@media screen and (max-width: 599px) {
+  .p-passReset__title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-passReset__title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-passReset__title {
+    font-size: 14px;
+  }
+}
+
 .p-passReset__sentence {
   margin-top: 40px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-passReset__sentence {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-passReset__sentence {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-passReset__sentence {
+    font-size: 12px;
+  }
 }
 
 .p-passReset__form {
@@ -868,6 +1018,43 @@ img {
 .p-passReset__label {
   font-size: 18px;
   color: #2F2725;
+}
+
+@media screen and (max-width: 599px) {
+  .p-passReset__label {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-passReset__label {
+    font-size: 14px;
+  }
+}
+
+.p-passReset__errMsg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-passReset__errMsg {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-passReset__errMsg {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-passReset__errMsg {
+    font-size: 10px;
+  }
 }
 
 .p-passReset__input {
@@ -884,6 +1071,13 @@ img {
   margin-top: 20px;
   color: #fff;
   background-color: #5654a2;
+}
+
+@media screen and (max-width: 599px) {
+  .p-passReset__btn {
+    width: 80px;
+    height: 30px;
+  }
 }
 
 .p-passReset__btn:hover {
