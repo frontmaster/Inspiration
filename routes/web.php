@@ -26,4 +26,6 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/mypage/{id}', 'HomeController@show')->name('mypage');
 Route::post('users_delete/{id}', 'UsersController@destroy')->name('deleteUsers');
 Route::get('users_delete_confirm/{id}', 'UsersController@delete_confirm')->name('users.delete_confirm');
+Route::get('/profile/{id}', 'ProfilesController@edit')->name('profile');
+Route::post('/profile/{id}', 'ProfilesController@store')->name('store');
 });

@@ -16,7 +16,7 @@
 
                 <div class="p-register__part--name">
                     <label for="name" class="p-register__label">ニックネーム</label>
-                    <input type="text" class="p-register__input @error('name') is-error @enderror" name="name" value="{{ Str::random() }}" readonly>
+                    <input type="text" class="p-register__input @error('name') is-error @enderror" name="name" value="{{ Str::random(10) }}" readonly>
                 </div>
 
 

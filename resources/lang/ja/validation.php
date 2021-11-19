@@ -143,7 +143,8 @@ return [
     |
     */
 
-    'attributes' => ['email' => 'メールアドレス', 'password' => 'パスワード', 'title' => 'タイトル', 'body' => 'メッセージ'],
+    'attributes' => ['email' => 'メールアドレス', 'password' => 'パスワード', 'title' => 'タイトル', 'body' => 'メッセージ', 
+    'name' => 'ニックネーム', 'comment' => '自己紹介'],
 
 
 ];

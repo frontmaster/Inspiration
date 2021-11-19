@@ -33,8 +33,53 @@ const app = new Vue({
 
 //フラッシュメッセージ
 $(function () {
-    $('.js-flashMsg').fadeOut(7000);
+    $('.js-flashMsg').fadeOut(5000);
 });
+
+
+
+
+//文字カウント(ニックネーム)
+var countname = document.getElementById("count-name");
+var count = countname.value.length;
+var showcount = document.querySelector('.js-show-count');
+showcount.innerHTML = count;
+
+countname.addEventListener('keyup', function () {
+    var count = countname.value.length;
+    var showcount = document.querySelector('.js-show-count');
+    showcount.innerHTML = count;
+
+    //20文字以上入力でspanタグの色を変更
+    if (count > 20) {
+        let element = document.getElementsByClassName('p-profile__countarea');
+        element[0].classList.add("p-profile__countarea--changecolor");
+    } else if (count <= 20) {
+        let element = document.getElementsByClassName('p-profile__countarea');
+        element[0].classList.remove("p-profile__countarea--changecolor");
+    }
+
+});
+
+//文字カウント(自己紹介)
+var comment = document.getElementById("count-comment");
+comment.addEventListener('keyup', function () {
+
+    var count = comment.value.length;
+    var showcount = document.querySelector('.js-show-count-comment');
+    showcount.innerHTML = count;
+
+    //10000文字以上入力でspanタグの色を変更
+    if (count > 100000) {
+        let element = document.getElementsByClassName('p-profile__countarea--comment');
+        element[0].classList.add("p-profile__countarea--changecolor");
+    } else if (count <= 100000) {
+        let element = document.getElementsByClassName('p-profile__countarea--comment');
+        element[0].classList.remove("p-profile__countarea--changecolor");
+    }
+
+});
+
 
 //SPメニュー
 $('.js-toggle-sp-menu').on('click', function () {

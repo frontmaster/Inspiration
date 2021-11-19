@@ -1,0 +1,144 @@
+.p-profile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq() {
+        flex-direction: column;
+        align-items: center;
+    }
+    &__sidebar {
+        margin-bottom: 500px;
+        margin-right: 80px;
+    }
+    &__title {
+        text-align: center;
+        font-size: $font-size_xxl;
+        color: $black;
+        margin-bottom: $space_3l;
+    }
+    &__content {
+        width: 700px;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        border-radius: 10px;
+        margin-top: 200px;
+        margin-bottom: 100px;
+        padding: 30px;
+        box-sizing: border-box;
+        @include mq() {
+            width: $site-width-sp;
+        }
+    }
+    &__form {
+        margin-top: $space_xxl;
+        width: 100%;
+        @include mq() {
+            padding: 0 $space_l;
+            box-sizing: border-box;
+        }
+    }
+    &__part {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: $space_3l;
+        @include mq() {
+            font-size: 12px;
+        }
+        &--pass {
+            display: flex;
+            justify-content: center;
+            margin-bottom: $space_3l;
+            flex-direction: column;
+        }
+        &--name {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+    &__label {
+        width: 240px;
+        margin-bottom: $space_m;
+        color: $black;
+        font-weight: bold;
+    }
+    &__img {
+        margin-right: $space_xl;
+        height: 200px;
+        @include mq() {
+            margin-right: 0px;
+            margin-left: 25px;
+        }
+    }
+    &__imgContainer {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        @include mq() {
+            flex-direction: column;
+        }
+    }
+
+    &__errMsg {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-bottom: $space_s;
+    }
+    &__input {
+        width: 100%;
+        height: 30px;
+        &--img {
+            display: none;
+            @include mq() {
+                font-size: 12px;
+                margin-top: $space_l;
+            }
+        }
+    }
+    &__inputarea{
+        background-color: $main-color;
+        color: $white;
+        padding: $space_m;
+        border-radius: 5px;
+        &:hover{
+            cursor: pointer;
+            opacity: 0.9;
+        }
+    }
+    &__countarea {
+        text-align: right;
+        margin-top: $space_m;
+        &--comment {
+            text-align: right;
+            margin-top: $space_m;
+        }
+        &--changecolor {
+            color: $alart-color;
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 200px;
+    }
+    &__button {
+        float: right;
+        @include mq() {
+            margin-bottom: $space_xl;
+        }
+    }
+    &__btn {
+        background-color: $main-color;
+        color: $white;
+    }
+    &__btn:hover {
+        cursor: pointer;
+        opacity: 0.9;
+    }
+}
