@@ -1299,6 +1299,21 @@ img {
   text-decoration: underline;
 }
 
+.p-mypage__btn {
+  background-color: #5654a2;
+  width: 200px;
+  margin-left: 30px;
+  border-radius: 20px;
+}
+
+.p-mypage__btn:hover {
+  opacity: 0.9;
+}
+
+.p-mypage__btn--link {
+  color: #fff;
+}
+
 .p-profile {
   width: 100%;
   height: 100%;

@@ -2,9 +2,9 @@
 
 @section('title', 'WEBサービスのアイディアマッチングサイト | Inspiration')
 
-@section('header')
-@parent
-@endsection
+@include('layouts.head')
+
+@include('layouts.header')
 
 @section('content')
 <main class="l-main">
@@ -53,6 +53,4 @@
 </main>
 @endsection
 
-@section('footer')
-@parent
-@endsection
+@include('layouts.footer')
