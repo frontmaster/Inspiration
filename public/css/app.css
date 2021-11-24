@@ -376,7 +376,10 @@ img {
 
 @media screen and (max-width: 1024px) {
   .l-sidebar {
-    width: 95%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
     margin-right: 0;
   }
 }
@@ -1358,31 +1361,31 @@ img {
 
 .p-profile {
   width: 100%;
-  height: 1500px;
+  height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 @media screen and (max-width: 1024px) {
   .p-profile {
     flex-direction: column-reverse;
-    height: 1800px;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-items: center;
   }
 }
 
 @media screen and (max-width: 599px) {
   .p-profile {
     flex-direction: column-reverse;
-    height: 2100px;
     padding: 20px;
     box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 10px;
   }
-}
-
-.p-profile__sidebar {
-  margin-bottom: 500px;
-  margin-right: 80px;
 }
 
 .p-profile__title {
@@ -1406,7 +1409,6 @@ img {
 
 .p-profile__content {
   width: 700px;
-  height: 75%;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -1426,7 +1428,6 @@ img {
 @media screen and (max-width: 599px) {
   .p-profile__content {
     width: 100%;
-    height: 85%;
     margin-top: 120px;
   }
 }
@@ -1673,10 +1674,30 @@ img {
 
 .p-passEdit {
   width: 100%;
-  height: 700px;
+  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-passEdit {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .p-passEdit {
+    flex-direction: column-reverse;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
 }
 
 .p-passEdit__content {
@@ -1692,16 +1713,13 @@ img {
 
 @media screen and (max-width: 1280px) {
   .p-passEdit__content {
-    width: 60%;
-    height: 60%;
     padding: 30px;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .p-passEdit__content {
-    width: 80%;
-    height: 70%;
+    width: 95%;
     padding: 30px;
   }
 }
@@ -1715,7 +1733,7 @@ img {
 
 @media screen and (max-width: 599px) {
   .p-passEdit__content {
-    width: 90%;
+    width: 100%;
     padding: 30px;
   }
 }
@@ -1729,7 +1747,7 @@ img {
 
 @media screen and (max-width: 280px) {
   .p-passEdit__content {
-    width: 90%;
+    width: 100%;
     padding: 30px;
   }
 }
@@ -1738,6 +1756,7 @@ img {
   font-size: 30px;
   text-align: center;
   color: #2F2725;
+  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 599px) {
@@ -1754,7 +1773,7 @@ img {
 
 @media screen and (max-width: 280px) {
   .p-passEdit__title {
-    font-size: 14px;
+    font-size: 24px;
   }
 }
 
@@ -1819,7 +1838,7 @@ img {
 }
 
 .p-passEdit__btn {
-  margin-top: 20px;
+  margin-top: 10px;
   color: #fff;
   background-color: #5654a2;
 }
@@ -1832,7 +1851,7 @@ img {
 }
 
 .p-passEdit__btn:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .p-passEdit__returnMsg {
@@ -1840,6 +1859,12 @@ img {
   margin-top: 20px;
   text-align: right;
   color: #4052A2;
+}
+
+@media screen and (max-width: 280px) {
+  .p-passEdit__returnMsg {
+    font-size: 12px;
+  }
 }
 
 .p-passEdit__returnMsg:hover {

@@ -1,9 +1,23 @@
 .p-passEdit {
     width: 100%;
-    height: 700px;
+    height:100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    @include mq("xl") {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-bottom: 0;
+    }
+    @include mq() {
+        flex-direction: column-reverse;
+        padding: $space_xl;
+        box-sizing: border-box;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
     &__content {
         width: 550px;
         display: flex;
@@ -14,36 +28,34 @@
         box-sizing: border-box;
         border-radius: 10px;
         @include mq("xxl") {
-            width: 60%;
-            height: 60%;
-            padding: 30px;
+            padding: $space_xxl;
         }
         @include mq("xl") { 
-            width: 80%;
-            height: 70%;
-            padding: 30px;
+            width: 95%;
+            padding: $space_xxl;
         }
         @include mq("lg") {
             width: 90%;
-            padding: 30px;
+            padding: $space_xxl;
         }   
         @include mq() {
-            width: 90%;
-            padding: 30px;
+            width: 100%;
+            padding: $space_xxl;
         }
         @include mq("sm") {
             width: 90%;
-            padding: 30px;
+            padding: $space_xxl;
         }
         @include mq("ss") {
-            width: 90%;
-            padding: 30px;
+            width: 100%;
+            padding: $space_xxl;
         }
     }
     &__title {
         font-size: $font-size_xxl;
         text-align: center;
         color: $black;
+        margin-bottom: $space_3l;
         @include mq() {
             font-size: $font-size_xl;
         }
@@ -51,7 +63,7 @@
             font-size: $font-size_l;
         }
         @include mq("ss") {
-            font-size: $font-size_m;
+            font-size: $font-size_xl;
         }
     }
     &__form {
@@ -94,7 +106,7 @@
         text-align: right;
     }
     &__btn {
-        margin-top: $space_xl;
+        margin-top: $space_m;
         color: $white;
         background-color: $main-color;
         @include mq() {
@@ -102,7 +114,7 @@
             height: 30px;
         }
         &:hover {
-            opacity: 0.8;
+            opacity: 0.9;
         }
     }
     &__returnMsg {
@@ -110,6 +122,9 @@
         margin-top: $space_xl;
         text-align: right;
         color: $sub-color1;
+        @include mq("ss") {
+            font-size: $font-size_s;
+        }
         &:hover{
             text-decoration: underline;
         }
