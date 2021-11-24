@@ -49799,6 +49799,11 @@ var app = new Vue({
 
 $(function () {
   $('.js-flashMsg').fadeOut(5000);
+}); //SPメニュー
+
+$('.js-toggle-sp-menu').on('click', function () {
+  $(this).toggleClass('active');
+  $('.js-toggle-sp-menu-target').toggleClass('active');
 }); //文字カウント(ニックネーム)
 
 var countname = document.getElementById("count-name");
@@ -49834,11 +49839,6 @@ comment.addEventListener('keyup', function () {
 
     _element2[0].classList.remove("p-profile__countarea--changecolor");
   }
-}); //SPメニュー
-
-$('.js-toggle-sp-menu').on('click', function () {
-  $(this).toggleClass('active');
-  $('.js-toggle-sp-menu-target').toggleClass('active');
 });
 
 /***/ }),

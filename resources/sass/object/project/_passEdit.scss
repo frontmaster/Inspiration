@@ -1,0 +1,117 @@
+.p-passEdit {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__content {
+        width: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $white;
+        padding: $space_3l;
+        box-sizing: border-box;
+        border-radius: 10px;
+        @include mq("xxl") {
+            width: 60%;
+            height: 60%;
+            padding: 30px;
+        }
+        @include mq("xl") { 
+            width: 80%;
+            height: 70%;
+            padding: 30px;
+        }
+        @include mq("lg") {
+            width: 90%;
+            padding: 30px;
+        }   
+        @include mq() {
+            width: 90%;
+            padding: 30px;
+        }
+        @include mq("sm") {
+            width: 90%;
+            padding: 30px;
+        }
+        @include mq("ss") {
+            width: 90%;
+            padding: 30px;
+        }
+    }
+    &__title {
+        font-size: $font-size_xxl;
+        text-align: center;
+        color: $black;
+        @include mq() {
+            font-size: $font-size_xl;
+        }
+        @include mq("sm") {
+            font-size: $font-size_l;
+        }
+        @include mq("ss") {
+            font-size: $font-size_m;
+        }
+    }
+    &__form {
+        margin-top: $space_xl;
+    }
+    &__part{
+        margin-bottom: $space_3l;
+    }
+    &__label {
+        font-size: $font-size_l;
+        color: $black;
+        @include mq() {
+            font-size: $font-size_m;
+        }
+        @include mq("sm") {
+            font-size: $font-size_m;
+        }
+    }
+    &__errMsg {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: $space_s;  
+        @include mq() {
+            font-size: $font-size_s;
+        } 
+        @include mq("sm") {
+            font-size: 10px;
+        }
+        @include mq("ss") {
+            font-size: 10px;
+        }
+    }
+    &__input {
+        width: 100%;
+        height: 30px;
+        margin-top: $space_s;
+    }
+    &__button {
+        text-align: right;
+    }
+    &__btn {
+        margin-top: $space_xl;
+        color: $white;
+        background-color: $main-color;
+        @include mq() {
+            width: 80px;
+            height: 30px;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__returnMsg {
+        display: block;
+        margin-top: $space_xl;
+        text-align: right;
+        color: $sub-color1;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

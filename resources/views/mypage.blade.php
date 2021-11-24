@@ -8,7 +8,7 @@
 
 @section('content')
 <div id="app">
-    <main class="l-main">
+    <main class="l-main" id="app">
         <div class="p-mypage">
             @component('component.sidebar')
             @endcomponent

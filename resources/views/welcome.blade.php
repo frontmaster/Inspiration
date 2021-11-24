@@ -7,7 +7,7 @@
 @include('layouts.header')
 
 @section('content')
-<main class="l-main">
+<main class="l-main" id="app">
     <div class="p-top">
         <div class="p-top__imgContainer">
             <p class="p-top__sentence">簡単にアイディアを販売・購入できる</br>

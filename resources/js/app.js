@@ -36,6 +36,11 @@ $(function () {
     $('.js-flashMsg').fadeOut(5000);
 });
 
+//SPメニュー
+$('.js-toggle-sp-menu').on('click', function () {
+    $(this).toggleClass('active');
+    $('.js-toggle-sp-menu-target').toggleClass('active');
+});
 
 
 
@@ -81,8 +86,3 @@ comment.addEventListener('keyup', function () {
 });
 
 
-//SPメニュー
-$('.js-toggle-sp-menu').on('click', function () {
-    $(this).toggleClass('active');
-    $('.js-toggle-sp-menu-target').toggleClass('active');
-});

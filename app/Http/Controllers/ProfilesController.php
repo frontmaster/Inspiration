@@ -10,6 +10,9 @@ class ProfilesController extends Controller
 {
     public function edit($id)
     {
+        if (!ctype_digit($id)) {
+            return redirect('mypage/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
+        }
         $users = Auth::user($id);
         return view('profile', compact('users'));
     }

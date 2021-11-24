@@ -12,7 +12,7 @@
     <div class="p-profile">
         @component('component.sidebar')
         @endcomponent
-        
+
         <div class="p-profile__content">
             <h1 class="p-profile__title">プロフィール編集</h1>
             <form method="POST" action="{{ route('store',$users->id) }}" enctype="multipart/form-data" class="p-profile__form">
@@ -61,14 +61,8 @@
                     <input type="email" class="p-profile__input @error('email') is-error @enderror" name="email" value="{{ $users->email }}" placeholder="半角英数">
                 </div>
 
-                @error('password')
-                <span class="c-errMsg p-profile__errMsg">
-                    <p>{{ $message }}</p>
-                </span>
-                @enderror
-                <div class="p-profile__part--pass">
-                    <label for="password" class="p-profile__label">パスワード</label>
-                    <input type="password" class="p-profile__input @error('password') is-error @enderror" name="password" value="{{ $users->password }}" placeholder="半角英数">
+                <div class="p-profile__part">
+                    <p><a class="p-profile__link" href="{{ url('password/change', auth()->user()->id) }}">パスワードを変更する方はコチラ</a></p>
                 </div>
 
                 @error('comment')

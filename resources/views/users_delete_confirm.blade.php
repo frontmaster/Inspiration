@@ -7,7 +7,7 @@
 @include('layouts.header')
 
 @section('content')
-<main class="l-main">
+<main class="l-main" id="app">
     <div class="p-deleteconfirm">
     <div class="p-deleteconfirm__content">
         <h3 class="p-deleteconfirm__title">退会手続き</h3>

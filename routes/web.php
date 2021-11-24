@@ -28,4 +28,6 @@ Route::post('users_delete/{id}', 'UsersController@destroy')->name('deleteUsers')
 Route::get('users_delete_confirm/{id}', 'UsersController@delete_confirm')->name('users.delete_confirm');
 Route::get('/profile/{id}', 'ProfilesController@edit')->name('profile');
 Route::post('/profile/{id}', 'ProfilesController@store')->name('store');
+Route::get('/password/change/{id}', 'Auth\ChangePasswordController@edit');
+Route::post('/password/change/{id}','Auth\ChangePasswordController@update')->name('password.change');
 });
