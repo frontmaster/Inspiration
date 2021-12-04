@@ -15,7 +15,7 @@
 
         <div class="p-profile__content">
             <h1 class="p-profile__title">プロフィール編集</h1>
-            <form method="POST" action="{{ route('store',$users->id) }}" enctype="multipart/form-data" class="p-profile__form">
+            <form method="POST" action="{{ route('update',$users->id) }}" enctype="multipart/form-data" class="p-profile__form">
                 @csrf
                 @error('user_img')
                 <span class="c-errMsg p-profile__errMsg">
@@ -44,9 +44,10 @@
                 @enderror
                 <div class="p-profile__part--name">
                     <label for="name" class="p-profile__label">ニックネーム</label>
-                    <input type="text" id="count-name" class="p-profile__input @error('name') is-error @enderror" name="name" value="{{ $users->name }}" placeholder="半角英数字20文字以内で入力してください">
+                    <input type="text" id="js-count-name" class="p-profile__input @error('name') is-error @enderror" name="name" value="{{ old('name', $users->name) }}" 
+                    placeholder="半角英数字20文字以内で入力してください" onkeyup="ShowLength(value, 'count-name');">
                     <div class="p-profile__countarea">
-                        <span class="c-countarea js-show-count" id="count">0</span>/20
+                        <span class="c-countarea--name js-show-count-name" id="count-name">0</span>/20
                     </div>
                 </div>
 
@@ -58,7 +59,7 @@
                 @enderror
                 <div class="p-profile__part">
                     <label for="email" class="p-profile__label">メールアドレス</label>
-                    <input type="email" class="p-profile__input @error('email') is-error @enderror" name="email" value="{{ $users->email }}" placeholder="半角英数">
+                    <input type="email" class="p-profile__input @error('email') is-error @enderror" name="email" value="{{ old('email', $users->email ) }}" placeholder="半角英数">
                 </div>
 
                 <div class="p-profile__part">
@@ -72,9 +73,9 @@
                 @enderror
                 <div class="p-profile__part">
                     <label for="content" class="p-profile__label">自己紹介</label>
-                    <textarea id="count-comment" name="comment" class="p-profile__textarea">{{ $users->comment }}</textarea>
-                    <div class="p-profile__countarea--comment">
-                        <span class="c-countarea js-show-count-comment">0</span>/10000
+                    <textarea name="comment" id="js-count-text" class="p-profile__textarea" onkeyup="ShowLength(value, 'count-comment');">{{ old('comment', $users->comment) }}</textarea>
+                    <div class="p-profile__countarea">
+                        <span class="c-countarea--text js-show-count-text" id="count-comment">0</span>/10000
                     </div>
                 </div>
 

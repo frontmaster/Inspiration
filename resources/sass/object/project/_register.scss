@@ -16,30 +16,29 @@
         box-sizing: border-box;
         @include mq("xxl") {
             width: 60%;
-            padding: 30px;
+            padding: $space_xxl;
         }
         @include mq("xl") {
             width: 90%;
-            padding: 30px;
+            padding: $space_xxl;
         }
         @include mq("lg") {
             width: 90%;
-            padding: 30px;
-        }   
+            padding: $space_xxl;
+        }
         @include mq() {
             width: 90%;
             height: 80%;
-            padding: 30px;
+            padding: $space_xxl;
         }
         @include mq("sm") {
             width: 90%;
-            padding: 30px;
+            padding: $space_xxl;
         }
         @include mq("ss") {
             width: 90%;
-            padding: 30px;
+            padding: $space_xxl;
         }
-        
     }
     &__form {
         width: 100%;
@@ -95,14 +94,13 @@
         margin-bottom: $space_s;
         @include mq() {
             font-size: $font-size_s;
-        } 
+        }
         @include mq("sm") {
             font-size: 10px;
         }
         @include mq("ss") {
             font-size: 10px;
         }
-        
     }
     &__input {
         width: 100%;

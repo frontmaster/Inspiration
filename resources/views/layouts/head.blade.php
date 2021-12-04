@@ -16,9 +16,11 @@
     <!-- Styles & Scrips -->
     @if(app('env') == 'local')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}" defer></script>
     @endif
     @if(app('env') == 'production')
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ secure_asset('js/app.js') }}" defer></script>
     @endif
     </head>
 @endsection

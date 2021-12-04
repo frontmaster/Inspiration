@@ -1,4 +1,4 @@
-.p-profile {
+.p-postIdea {
     width: 100%;
     height: 100%;
     display: flex;
@@ -28,7 +28,7 @@
             font-size: $font-size_xl;
         }
         @include mq("ss") {
-            font-size: $font-size_l;
+            font-size: $font-size_xl;
         }
     }
     &__content {
@@ -65,41 +65,29 @@
         @include mq() {
             font-size: 12px;
         }
-        &--pass {
-            display: flex;
-            justify-content: center;
-            margin-bottom: $space_3l;
-            flex-direction: column;
-        }
-        &--name {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-        }
     }
     &__label {
         width: 240px;
         margin-bottom: $space_m;
+        display: flex;
         color: $black;
         font-weight: bold;
         @include mq() {
             font-size: $font-size_base;
         }
     }
-    &__img {
-        margin-right: $space_xl;
-        height: 200px;
-        @include mq() {
-            margin-right: 0;
-        }
-    }
-    &__imgContainer {
+    &__require {
+        width: 40px;
+        height: 20px;
         display: flex;
         align-items: center;
-        width: 100%;
-        @include mq() {
-            flex-direction: column;
-        }
+        justify-content: center;
+        margin-left: $space_m;
+        margin-right: $space_m;
+        padding: 3px;
+        background-color: $alart-color;
+        color: $white;
+        font-size: $font-size_m;
     }
 
     &__errMsg {
@@ -107,39 +95,32 @@
         justify-content: flex-end;
         align-items: flex-start;
         margin-bottom: $space_s;
+        @include mq() {
+            justify-content: flex-start;
+        }
+        @include mq("sm") {
+            font-size: $font-size_s;
+        }
+        @include mq("ss") {
+            font-size: 10px;
+        }
+    }
+    &__select {
+        width: 100%;
+        height: 36px;
     }
     &__input {
         width: 100%;
         height: 30px;
-        &--img {
-            display: none;
-            @include mq() {
-                font-size: 12px;
-                margin-top: $space_l;
-            }
-        }
     }
-    &__link {
-        display: block;
-        color: $sub-color2;
-        margin-top: $space_m;
-        &:hover {
-            text-decoration: underline;
-        }
+    &__pricecontainer {
+        display: flex;
+        align-items: flex-end;
     }
-    &__inputarea {
-        background-color: $main-color;
-        color: $white;
-        padding: $space_m;
-        border-radius: 5px;
-        @include mq() {
-            margin-top: $space_l;
-        }
-        &:hover {
-            cursor: pointer;
-            opacity: 0.9;
-        }
+    &__pricetag {
+        margin-left: $space_m;
     }
+
     &__countarea {
         text-align: right;
         margin-top: $space_m;
@@ -147,11 +128,23 @@
             font-size: $font-size_s;
             margin-top: $space_s;
         }
+        &--comment {
+            text-align: right;
+            margin-top: $space_m;
+        }
+        &--content{
+            text-align: right;
+            margin-top: $space_m;
+        }
+        &--changecolor {
+            color: $alart-color;
+        }
     }
 
     &__textarea {
         width: 100%;
         height: 200px;
+        
         @include mq() {
             height: 330px;
         }

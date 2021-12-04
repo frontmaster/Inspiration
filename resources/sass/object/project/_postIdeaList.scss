@@ -1,0 +1,83 @@
+.p-postIdeaList {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    &__title {
+        text-align: center;
+        font-size: $font-size_xxl;
+        color: $black;
+        margin-bottom: $space_m;
+    }
+    &__partContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &:after{
+            content: "";
+            display: block;
+            width: 300px;
+        }
+
+    }
+    &__content {
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        border-radius: 10px;
+        padding: $space_xxl;
+        box-sizing: border-box;
+        margin-top: $space_xl;
+        &__pagination {
+            display: flex;
+            justify-content: center;
+            margin-bottom: $space_xl;
+        }
+    }
+    &__part {
+        margin-top: $space_3l;
+        width: 300px;
+        border: 2px solid $sub-color2;
+        color: $black;
+        padding: $space_l;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+    &__item {
+        display: flex;
+        margin-bottom: $space_l;
+        align-items: center;
+        &--part {
+            margin-left: $space_l;
+        }
+        &--link{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__label {
+        color: $sub-color2;
+        font-weight: bold;
+        padding: $space_s;
+        box-sizing: border-box;
+        display: flex;
+    }
+    &__btn{
+        display: block;
+        background-color: $sub-color2;
+        color: $white;
+        border: 2px solid $sub-color2;
+        padding: $space_s;
+        box-sizing: border-box;
+        font-size: $font-size_base;
+        border-radius: 30px;
+        &:hover{
+            background-color: $white;
+            color: $sub-color2;
+        }
+    }
+}

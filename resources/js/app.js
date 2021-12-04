@@ -20,16 +20,25 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('postidealist-component', require('./components/PostIdeaListComponent.vue').default);
+Vue.component('pagination-component', require('./components/PaginationComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+import PostIdeaListComponent from "./components/PostIdeaListComponent.vue"
+import paginationComponent from "./components/PaginationComponent.vue"
+import Vue from "vue";
 const app = new Vue({
     el: '#app',
+    components: {
+        'postidealist-component': PostIdeaListComponent,
+        'pagination-component': paginationComponent
+    },
 });
+
 
 //フラッシュメッセージ
 $(function () {
@@ -42,47 +51,53 @@ $('.js-toggle-sp-menu').on('click', function () {
     $('.js-toggle-sp-menu-target').toggleClass('active');
 });
 
+//文字数表示(ニックネーム)
+const inputName = document.getElementById("js-count-name");
+const showname = document.querySelector('.js-show-count-name');
+showname.innerHTML = inputName.value.length;
 
+//文字数表示(自己紹介)
+const inputText = document.getElementById("js-count-text");
+const showtext = document.querySelector(".js-show-count-text");
+showtext.innerHTML = inputText.value.length;
 
-//文字カウント(ニックネーム)
-var countname = document.getElementById("count-name");
-var count = countname.value.length;
-var showcount = document.querySelector('.js-show-count');
-showcount.innerHTML = count;
-
-countname.addEventListener('keyup', function () {
-    var count = countname.value.length;
-    var showcount = document.querySelector('.js-show-count');
-    showcount.innerHTML = count;
-
-    //20文字以上入力でspanタグの色を変更
-    if (count > 20) {
-        let element = document.getElementsByClassName('p-profile__countarea');
-        element[0].classList.add("p-profile__countarea--changecolor");
-    } else if (count <= 20) {
-        let element = document.getElementsByClassName('p-profile__countarea');
-        element[0].classList.remove("p-profile__countarea--changecolor");
+//文字カウント
+window.ShowLength = function ShowLength(str, field) {
+    document.getElementById(field).innerHTML = str.length;
+    
+    //ニックネーム２０文字以上で文字カウント表示の色変更
+    if (inputName.value.length > 20) {
+        const element = document.querySelector('.c-countarea--name');
+        element.classList.add("c-countarea--changecolor");
+    } else if (inputName.value.length <= 20) {
+        const element = document.querySelector('.c-countarea--name');
+        element.classList.remove("c-countarea--changecolor");
     }
-
-});
-
-//文字カウント(自己紹介)
-var comment = document.getElementById("count-comment");
-comment.addEventListener('keyup', function () {
-
-    var count = comment.value.length;
-    var showcount = document.querySelector('.js-show-count-comment');
-    showcount.innerHTML = count;
-
-    //10000文字以上入力でspanタグの色を変更
-    if (count > 100000) {
-        let element = document.getElementsByClassName('p-profile__countarea--comment');
-        element[0].classList.add("p-profile__countarea--changecolor");
-    } else if (count <= 100000) {
-        let element = document.getElementsByClassName('p-profile__countarea--comment');
-        element[0].classList.remove("p-profile__countarea--changecolor");
+    
+    //自己紹介10000文字以上で文字カウント表示の色変更
+    if (inputText.value.length > 10000) {
+        const element = document.querySelector('.c-countarea--text');
+        element.classList.add("c-countarea--changecolor");
+    } else if (inputText.value.length <= 10000) {
+        const element = document.querySelector('.c-countarea--text');
+        element.classList.remove("c-countarea--changecolor");
     }
+}
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

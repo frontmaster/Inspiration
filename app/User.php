@@ -20,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'user_img', 'comment'
     ];
 
     protected $dates = ['deleted_at'];
@@ -47,4 +47,11 @@ class User extends Authenticatable
     {
         $this->notify(new PasswordResetNotification($token));
     }
+
+    public function PostIdeas()
+    {
+        return $this->hasMany('App\PostIdea', 'post_user_id');   
+    }
+
+    
 }
