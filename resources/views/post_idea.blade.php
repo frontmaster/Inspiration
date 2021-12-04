@@ -15,7 +15,7 @@
 
         <div class="p-postIdea__content">
             <h1 class="p-postIdea__title">アイディア投稿</h1>
-            <form method="POST" action="{{ route('post_idea', auth()->user()->id) }}" class="p-postIdea__form">
+            <form method="POST" action="{{ route('post_idea_create', auth()->user()->id) }}" class="p-postIdea__form">
                 @csrf
 
                 @error('category_id')

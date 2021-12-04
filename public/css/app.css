@@ -1610,22 +1610,21 @@ img {
 
 .p-mypage__btn {
   background-color: #51318F;
-  width: 200px;
-  margin-left: 30px;
-  border-radius: 20px;
+  color: #fff;
+  display: block;
+  color: #fff;
+  width: 220px;
+  margin-left: 10px;
+  border-radius: 30px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 .p-mypage__btn:hover {
   background-color: #fff;
-  border: 2px solid #51318F;
-}
-
-.p-mypage__btn--link {
-  color: #fff;
-}
-
-.p-mypage__btn--link:hover {
   color: #51318F;
+  border: 2px solid #51318F;
 }
 
 .p-profile {

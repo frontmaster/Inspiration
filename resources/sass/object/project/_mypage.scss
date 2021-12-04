@@ -1,18 +1,19 @@
-.p-mypage{
-    &__btn{
+.p-mypage {
+    &__btn {
         background-color: $sub-color2;
-        width: 200px;
-        margin-left: $space_xxl;
-        border-radius: 20px;
-        &:hover{
+        color: $white;
+        display: block;
+        color: $white;
+        width: 220px;
+        margin-left: $space_m;
+        border-radius: 30px;
+        padding: $space_s;
+        box-sizing: border-box;
+        font-size: $font-size_base;
+        &:hover {
             background-color: $white;
+            color: $sub-color2;
             border: 2px solid $sub-color2;
-        }
-        &--link{
-            color: $white;
-            &:hover{
-                color: $sub-color2;
-            }
         }
     }
 }

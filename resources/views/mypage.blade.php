@@ -12,9 +12,9 @@
         <div class="p-mypage">
             @component('component.sidebar')
             @endcomponent
-            <button class="c-btn p-mypage__btn">
-                <a href="{{ route('profile', auth()->user()->id) }}" class="p-mypage__btn--link">プロフィールを編集する</a>
-            </button>
+            
+                <a href="{{ route('profile', auth()->user()->id) }}" class="c-btn p-mypage__btn">プロフィールを編集する</a>
+            
 
             <div class="p-mypage__content">
 

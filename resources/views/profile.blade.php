@@ -15,7 +15,7 @@
 
         <div class="p-profile__content">
             <h1 class="p-profile__title">プロフィール編集</h1>
-            <form method="POST" action="{{ route('update',$users->id) }}" enctype="multipart/form-data" class="p-profile__form">
+            <form method="POST" action="{{ route('profile_update',$users->id) }}" enctype="multipart/form-data" class="p-profile__form">
                 @csrf
                 @error('user_img')
                 <span class="c-errMsg p-profile__errMsg">
