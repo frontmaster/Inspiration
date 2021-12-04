@@ -8,12 +8,5 @@ class PostIdea extends Model
 {
     protected $table =  'postideas';
     
-    protected $fillable = ['category', 'idea_name', 'summary', 'content', 'price'];
-
-    public function category()
-    {
-        return $this->belongsTo('App\Category');
-    }
-
-    
+    protected $fillable = ['category', 'idea_name', 'summary', 'content', 'price']; 
 }

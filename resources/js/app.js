@@ -51,38 +51,77 @@ $('.js-toggle-sp-menu').on('click', function () {
     $('.js-toggle-sp-menu-target').toggleClass('active');
 });
 
-//文字数表示(ニックネーム)
-const inputName = document.getElementById("js-count-name");
-const showname = document.querySelector('.js-show-count-name');
-showname.innerHTML = inputName.value.length;
+//文字数表示(ニックネーム・アイディア名)
+const shortString = document.getElementById("js-count-short");
+const shortCount = document.querySelector('.js-show-count-short');
+shortCount.innerHTML = shortString.value.length;
+
+//文字数表示(概要)
+const midString = document.getElementById("js-count-mid");
+const midCount = document.querySelector('.js-show-count-mid');
+midCount.innerHTML = midString.value.length;
 
 //文字数表示(自己紹介)
-const inputText = document.getElementById("js-count-text");
-const showtext = document.querySelector(".js-show-count-text");
-showtext.innerHTML = inputText.value.length;
+const longString = document.getElementById("js-count-long");
+const longCount = document.querySelector(".js-show-count-long");
+longCount.innerHTML = longString.value.length;
+
+
+
 
 //文字カウント
 window.ShowLength = function ShowLength(str, field) {
     document.getElementById(field).innerHTML = str.length;
-    
-    //ニックネーム２０文字以上で文字カウント表示の色変更
-    if (inputName.value.length > 20) {
-        const element = document.querySelector('.c-countarea--name');
+
+    //文字数表示(ニックネーム・アイディア名)
+    const shortString = document.getElementById("js-count-short");
+    const shortCount = document.querySelector('.js-show-count-short');
+    shortCount.innerHTML = shortString.value.length;
+
+    //文字数表示(概要)
+    const midString = document.getElementById("js-count-mid");
+    const midCount = document.querySelector('.js-show-count-mid');
+    midCount.innerHTML = midString.value.length;
+
+    //文字数表示(自己紹介)
+    const longString = document.getElementById("js-count-long");
+    const longCount = document.querySelector(".js-show-count-long");
+    longCount.innerHTML = longString.value.length;
+
+    //２０文字以上で文字カウント表示の色変更
+    if (shortString.value.length > 20) {
+        const element = document.querySelector('.c-countarea--short');
         element.classList.add("c-countarea--changecolor");
-    } else if (inputName.value.length <= 20) {
-        const element = document.querySelector('.c-countarea--name');
+    } else if (shortString.value.length <= 20) {
+        const element = document.querySelector('.c-countarea--short');
         element.classList.remove("c-countarea--changecolor");
     }
-    
-    //自己紹介10000文字以上で文字カウント表示の色変更
-    if (inputText.value.length > 10000) {
-        const element = document.querySelector('.c-countarea--text');
+
+    //10０文字以上で文字カウント表示の色変更
+    if (midString.value.length > 100) {
+        const element = document.querySelector('.c-countarea--mid');
         element.classList.add("c-countarea--changecolor");
-    } else if (inputText.value.length <= 10000) {
-        const element = document.querySelector('.c-countarea--text');
+    } else if (midString.value.length <= 100) {
+        const element = document.querySelector('.c-countarea--mid');
+        element.classList.remove("c-countarea--changecolor");
+    }
+
+    //10000文字以上で文字カウント表示の色変更
+    if (longString.value.length > 10000) {
+        const element = document.querySelector('.c-countarea--long');
+        element.classList.add("c-countarea--changecolor");
+    } else if (longString.value.length <= 10000) {
+        const element = document.querySelector('.c-countarea--long');
         element.classList.remove("c-countarea--changecolor");
     }
 }
+
+
+
+
+
+
+
 
 
 

@@ -44,10 +44,10 @@
                 @enderror
                 <div class="p-profile__part--name">
                     <label for="name" class="p-profile__label">ニックネーム</label>
-                    <input type="text" id="js-count-name" class="p-profile__input @error('name') is-error @enderror" name="name" value="{{ old('name', $users->name) }}" 
-                    placeholder="半角英数字20文字以内で入力してください" onkeyup="ShowLength(value, 'count-name');">
+                    <input type="text" id="js-count-short" class="p-profile__input @error('name') is-error @enderror" name="name" value="{{ old('name', $users->name) }}" 
+                    placeholder="半角英数字20文字以内で入力してください" onkeyup="ShowLength(value, 'count-short');">
                     <div class="p-profile__countarea">
-                        <span class="c-countarea--name js-show-count-name" id="count-name">0</span>/20
+                        <span id="count-short" class="c-countarea--short js-show-count-short">0</span>/20
                     </div>
                 </div>
 
@@ -73,9 +73,9 @@
                 @enderror
                 <div class="p-profile__part">
                     <label for="content" class="p-profile__label">自己紹介</label>
-                    <textarea name="comment" id="js-count-text" class="p-profile__textarea" onkeyup="ShowLength(value, 'count-comment');">{{ old('comment', $users->comment) }}</textarea>
+                    <textarea name="comment" id="js-count-long" class="p-profile__textarea" onkeyup="ShowLength(value, 'count-long');">{{ old('comment', $users->comment) }}</textarea>
                     <div class="p-profile__countarea">
-                        <span class="c-countarea--text js-show-count-text" id="count-comment">0</span>/10000
+                        <span id="count-long" class="c-countarea--long js-show-count-long">0</span>/10000
                     </div>
                 </div>
 
