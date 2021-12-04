@@ -78,6 +78,5 @@ class PostIdeasController extends Controller
         $postidea->save();
 
         return redirect('post_idea_list/' . auth()->user()->id)->with('flash_message', 'アイディアを編集しました');
-
     }
 }
