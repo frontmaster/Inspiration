@@ -1650,7 +1650,7 @@ img {
 
 @media screen and (max-width: 280px) {
   .p-postIdeaList__part {
-    width: 80%;
+    width: 75%;
   }
 }
 
@@ -1729,6 +1729,7 @@ img {
 @media screen and (max-width: 280px) {
   .p-postIdeaList__btn {
     width: 120px;
+    font-size: 12px;
   }
 }
 

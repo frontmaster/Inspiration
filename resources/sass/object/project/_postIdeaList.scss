@@ -90,7 +90,7 @@
             width: 90%;
         }
         @include mq("ss") {
-            width: 80%;
+            width: 75%;
         }
     }
     &__item {
@@ -148,6 +148,7 @@
         }
         @include mq("ss") {
             width: 120px;
+            font-size: $font-size_s;
         }
     }
 }
