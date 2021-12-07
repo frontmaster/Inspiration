@@ -23,7 +23,7 @@
     <div class="p-ideaDelete">
         <div class="p-ideaDelete__content">
             <h3 class="p-ideaDelete__title">アイディア削除</h3>
-            <p class="p-ideaDelete__content--sentence">アイディアを削除する方は下記のボタンを押してください</p>
+            <p class="p-ideaDelete__content--sentence">アイディアを削除しますか？</p>
             <div class="p-ideaDelete__button">
                 <button type="button" class="c-btn p-ideaDelete__btn--delete js-show-modal">
                     削除する

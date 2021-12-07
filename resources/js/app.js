@@ -58,7 +58,7 @@ $(function(){
         const windowWidth = $(window).width();
         console.log(modalWidth);
         console.log(windowWidth);
-        $('.js-show-modal-target').attr('style', 'margin-left:' + (windowWidth/2 - modalWidth/2) + 'px');
+        $('.js-show-modal-target').attr('style', 'margin-left:' + (windowWidth/2 - modalWidth/2 - 15) + 'px');
         $('.js-show-modal-target').show();
         $('.js-show-modal-cover').show();
     });
