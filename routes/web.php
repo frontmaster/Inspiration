@@ -24,7 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/mypage/{id}', 'HomeController@show')->name('mypage');
-Route::post('users_delete/{id}', 'UsersController@destroy')->name('deleteUsers');
+Route::post('users_delete/{id}', 'UsersController@delete')->name('deleteUsers');
 Route::get('users_delete_confirm/{id}', 'UsersController@delete_confirm')->name('users.delete_confirm');
 Route::get('/profile/{id}', 'ProfilesController@edit')->name('profile');
 Route::post('/profile/{id}', 'ProfilesController@update')->name('profile_update');
@@ -36,5 +36,6 @@ Route::get('/post_idea_list/{id}', 'PostIdeaListsController@index')->name('post_
 Route::get('ajax/post_idea_list/{id}', 'Ajax\PostIdeaListsController@index');
 Route::get('/post_idea_edit/{id}', 'PostIdeasController@edit')->name('post_idea_edit');
 Route::post('/post_idea_edit/{id}', 'PostIdeasController@update')->name('post_idea_update');
-
+Route::get('/post_idea_delete/{id}', 'PostIdeasController@delete_confirm')->name('idea_delete_confirm');
+Route::post('/post_idea_delete/{id}', 'PostIdeasController@delete')->name('idea_delete_post');
 });

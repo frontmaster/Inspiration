@@ -1477,10 +1477,6 @@ img {
   margin-top: 10px;
 }
 
-.p-postIdea__countarea--changecolor {
-  color: #d7003a;
-}
-
 .p-postIdea__textarea {
   width: 100%;
   height: 200px;
@@ -1509,8 +1505,252 @@ img {
 }
 
 .p-postIdea__btn:hover {
-  cursor: pointer;
   opacity: 0.9;
+}
+
+.p-postIdeaEdit {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-postIdeaEdit {
+    flex-direction: column-reverse;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .p-postIdeaEdit {
+    flex-direction: column-reverse;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.p-postIdeaEdit__title {
+  text-align: center;
+  font-size: 30px;
+  color: #2F2725;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 320px) {
+  .p-postIdeaEdit__title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-postIdeaEdit__title {
+    font-size: 24px;
+  }
+}
+
+.p-postIdeaEdit__content {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-postIdeaEdit__content {
+    width: 95%;
+    margin-top: 120px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .p-postIdeaEdit__content {
+    width: 100%;
+    margin-top: 120px;
+  }
+}
+
+.p-postIdeaEdit__form {
+  margin-top: 30px;
+  width: 100%;
+}
+
+@media screen and (max-width: 599px) {
+  .p-postIdeaEdit__form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.p-postIdeaEdit__part {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-postIdeaEdit__part {
+    font-size: 12px;
+  }
+}
+
+.p-postIdeaEdit__label {
+  width: 240px;
+  margin-bottom: 10px;
+  display: flex;
+  color: #2F2725;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 599px) {
+  .p-postIdeaEdit__label {
+    font-size: 16px;
+  }
+}
+
+.p-postIdeaEdit__require {
+  width: 40px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 3px;
+  background-color: #d7003a;
+  color: #fff;
+  font-size: 14px;
+}
+
+.p-postIdeaEdit__errMsg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-postIdeaEdit__errMsg {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-postIdeaEdit__errMsg {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-postIdeaEdit__errMsg {
+    font-size: 10px;
+  }
+}
+
+.p-postIdeaEdit__select {
+  width: 100%;
+  height: 36px;
+}
+
+.p-postIdeaEdit__input {
+  width: 100%;
+  height: 30px;
+}
+
+.p-postIdeaEdit__pricecontainer {
+  display: flex;
+  align-items: flex-end;
+}
+
+.p-postIdeaEdit__pricetag {
+  margin-left: 10px;
+}
+
+.p-postIdeaEdit__countarea {
+  text-align: right;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-postIdeaEdit__countarea {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}
+
+.p-postIdeaEdit__countarea--comment {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.p-postIdeaEdit__countarea--content {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.p-postIdeaEdit__countarea--changecolor {
+  color: #d7003a;
+}
+
+.p-postIdeaEdit__textarea {
+  width: 100%;
+  height: 200px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-postIdeaEdit__textarea {
+    height: 330px;
+  }
+}
+
+.p-postIdeaEdit__button {
+  float: right;
+  display: flex;
+}
+
+@media screen and (max-width: 599px) {
+  .p-postIdeaEdit__button {
+    margin-bottom: 20px;
+    text-align: right;
+  }
+}
+
+.p-postIdeaEdit__button--modal {
+  top: 100px;
+}
+
+.p-postIdeaEdit__btn {
+  background-color: #5654a2;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.p-postIdeaEdit__btn--delete {
+  background-color: #d7003a;
+}
+
+.p-postIdeaEdit__btn--delete:hover {
+  opacity: 0.9;
+}
+
+.p-postIdeaEdit__btn:hover {
+  opacity: 0.9;
+}
+
+.p-postIdeaEdit__link {
+  color: #fff;
 }
 
 .p-postIdeaList {
@@ -2252,6 +2492,115 @@ img {
 }
 
 .p-passEdit__returnMsg:hover {
+  text-decoration: underline;
+}
+
+.p-ideaDelete {
+  width: 600px;
+  height: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.p-ideaDelete__modal {
+  display: none;
+  width: 400px;
+  height: 200px;
+  background-color: #fff;
+  padding: 15px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 20%;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.p-ideaDelete__modal--cover {
+  background-color: #b8b8b8;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.p-ideaDelete__sentence {
+  margin-top: 20px;
+}
+
+.p-ideaDelete__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.p-ideaDelete__content--sentence {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2F2725;
+}
+
+.p-ideaDelete__form {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.p-ideaDelete__title {
+  text-align: center;
+  font-size: 30px;
+  color: #4e4449;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-ideaDelete__title {
+    margin-top: 80px;
+  }
+}
+
+.p-ideaDelete__button {
+  text-align: center;
+}
+
+.p-ideaDelete__button--modal {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.p-ideaDelete__btn {
+  background-color: #5654a2;
+  color: #fff;
+}
+
+.p-ideaDelete__btn--delete {
+  background-color: #d7003a;
+  color: #fff;
+}
+
+.p-ideaDelete__btn--delete:hover {
+  opacity: 0.9;
+}
+
+.p-ideaDelete__link {
+  display: block;
+  text-align: right;
+  margin-top: 30px;
+  color: #51318F;
+}
+
+.p-ideaDelete__link:hover {
   text-decoration: underline;
 }
 

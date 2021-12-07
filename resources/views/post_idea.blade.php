@@ -12,7 +12,6 @@
     <div class="p-postIdea">
         @component('component.sidebar')
         @endcomponent
-
         <div class="p-postIdea__content">
             <h1 class="p-postIdea__title">アイディア投稿</h1>
             <form method="POST" action="{{ route('post_idea_create', auth()->user()->id) }}" class="p-postIdea__form">

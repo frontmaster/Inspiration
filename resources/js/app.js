@@ -51,6 +51,25 @@ $('.js-toggle-sp-menu').on('click', function () {
     $('.js-toggle-sp-menu-target').toggleClass('active');
 });
 
+//モーダル表示
+$(function(){
+    $('.js-show-modal').on('click', function(){
+        const modalWidth = $('.js-show-modal-target').width();
+        const windowWidth = $(window).width();
+        console.log(modalWidth);
+        console.log(windowWidth);
+        $('.js-show-modal-target').attr('style', 'margin-left:' + (windowWidth/2 - modalWidth/2) + 'px');
+        $('.js-show-modal-target').show();
+        $('.js-show-modal-cover').show();
+    });
+
+    $('.js-hide-modal').on('click', function(){
+        $('.js-show-modal-target').hide();
+        $('.js-show-modal-cover').hide();
+
+    });
+});
+
 //文字数表示(ニックネーム・アイディア名)
 const shortString = document.getElementById("js-count-short");
 const shortCount = document.querySelector('.js-show-count-short');
@@ -115,6 +134,8 @@ window.ShowLength = function ShowLength(str, field) {
         element.classList.remove("c-countarea--changecolor");
     }
 }
+
+
 
 
 

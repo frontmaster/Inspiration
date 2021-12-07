@@ -50228,6 +50228,22 @@ $(function () {
 $('.js-toggle-sp-menu').on('click', function () {
   $(this).toggleClass('active');
   $('.js-toggle-sp-menu-target').toggleClass('active');
+}); //モーダル表示
+
+$(function () {
+  $('.js-show-modal').on('click', function () {
+    var modalWidth = $('.js-show-modal-target').width();
+    var windowWidth = $(window).width();
+    console.log(modalWidth);
+    console.log(windowWidth);
+    $('.js-show-modal-target').attr('style', 'margin-left:' + (windowWidth / 2 - modalWidth / 2) + 'px');
+    $('.js-show-modal-target').show();
+    $('.js-show-modal-cover').show();
+  });
+  $('.js-hide-modal').on('click', function () {
+    $('.js-show-modal-target').hide();
+    $('.js-show-modal-cover').hide();
+  });
 }); //文字数表示(ニックネーム・アイディア名)
 
 var shortString = document.getElementById("js-count-short");

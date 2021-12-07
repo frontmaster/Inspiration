@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PostIdeasController extends Controller
 {
+    //投稿したアイディア表示
     public function index($id)
     {
         if (!ctype_digit($id)) {
@@ -19,6 +20,7 @@ class PostIdeasController extends Controller
         return view('post_idea', compact('categories'));
     }
 
+    //新しいアイディアを投稿する
     public function create(Request $request)
     {
         $request->validate([
@@ -42,6 +44,7 @@ class PostIdeasController extends Controller
         return redirect('/post_idea' . '/' . auth()->user()->id)->with('flash_message', 'アイディアを投稿しました');
     }
 
+    //投稿したアイディア編集画面表示
     public function edit($id)
     {
         if (!ctype_digit($id)) {
@@ -54,6 +57,7 @@ class PostIdeasController extends Controller
         return view('post_idea_edit', compact('postidea', 'categories'));
     }
 
+    //編集したアイディアの更新
     public function update(Request $request, $id)
     {
         if (!ctype_digit($id)) {
@@ -78,5 +82,31 @@ class PostIdeasController extends Controller
         $postidea->save();
 
         return redirect('post_idea_list/' . auth()->user()->id)->with('flash_message', 'アイディアを編集しました');
+    }
+
+    //アイディア削除画面表示
+    public function delete_confirm($id)
+    {
+        if (!ctype_digit($id)) {
+            return redirect('post_idea_edit/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
+        }
+
+        $postidea = PostIdea::find($id);
+
+        return view('post_idea_delete', compact('postidea'));
+    }
+    
+    
+    //アイディア削除実行
+    public function delete($id) 
+    {
+        if (!ctype_digit($id)) {
+            return redirect('post_idea_edit/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
+        }
+
+        PostIdea::find($id)->delete();
+        
+        return redirect('post_idea_list/' . auth()->user()->id)->with('flash_message', 'アイディアを削除しました');
+
     }
 }

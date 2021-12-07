@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function destroy($id)
+    public function delete($id)
     {
         $user = User::find($id);
         $user->delete();

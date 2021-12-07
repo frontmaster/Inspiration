@@ -1,4 +1,4 @@
-.p-postIdea {
+.p-postIdeaEdit {
     width: 100%;
     height: 100%;
     display: flex;
@@ -18,7 +18,8 @@
         box-sizing: border-box;
         margin-top: 0;
         margin-bottom: $space_m;
-    } 
+    }
+    
     &__title {
         text-align: center;
         font-size: $font-size_xxl;
@@ -136,6 +137,9 @@
             text-align: right;
             margin-top: $space_m;
         }
+        &--changecolor {
+            color: $alart-color;
+        }
     }
 
     &__textarea {
@@ -148,16 +152,30 @@
     }
     &__button {
         float: right;
+        display: flex;
         @include mq() {
             margin-bottom: $space_xl;
             text-align: right;
+        }
+        &--modal{
+            top: 100px;
         }
     }
     &__btn {
         background-color: $main-color;
         color: $white;
+        margin-right: $space_l;
+        &--delete{
+            background-color: $alart-color;
+            &:hover{
+                opacity: 0.9;
+            }
+        }
     }
     &__btn:hover {
         opacity: 0.9;
+    }
+    &__link{
+        color: $white;
     }
 }
