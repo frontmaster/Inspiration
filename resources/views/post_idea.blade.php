@@ -105,7 +105,7 @@
 
                 <div class="p-postIdea__button">
                     <button type="submit" class="c-btn p-postIdea__btn">
-                        投稿する
+                        投稿
                     </button>
                 </div>
             </form>

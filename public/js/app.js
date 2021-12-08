@@ -2063,8 +2063,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -37867,7 +37865,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "p-postIdeaList__Container" }, [
     _c(
       "div",
       { staticClass: "p-postIdeaList__partContainer" },
@@ -37917,7 +37915,7 @@ var render = function () {
                   staticClass: "c-btn p-postIdeaList__btn",
                   attrs: { href: "" },
                 },
-                [_vm._v("詳細を見る")]
+                [_vm._v("詳細")]
               ),
               _vm._v(" "),
               _c(
@@ -37926,7 +37924,7 @@ var render = function () {
                   staticClass: "c-btn p-postIdeaList__btn",
                   attrs: { href: "/post_idea_edit/" + idea.id },
                 },
-                [_vm._v("編集する")]
+                [_vm._v("編集")]
               ),
             ]),
           ]

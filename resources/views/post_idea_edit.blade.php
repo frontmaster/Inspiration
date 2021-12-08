@@ -9,6 +9,19 @@
 @section('content')
 
 <main class="l-main" id="app">
+<div class="p-postIdeaEdit__modal js-show-modal-target">
+        <p class="p-postIdeaEdit__sentence">アイディアを削除しますか？</p>
+        <form method="POST" action="{{ route('idea_delete_post', $postidea->id) }}" class="p-postIdeaEdit__form--modal">
+            @method('DELETE')
+            @csrf
+            <div class="p-postIdeaEdit__button--modal">
+                <button type="button" class="c-btn p-postIdeaEdit__btn js-hide-modal">キャンセル</button>
+                <button type="submit" class="c-btn p-postIdeaEdit__btn--delete">削除</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="p-postIdeaEdit__modal--cover js-show-modal-cover"></div>
     <div class="p-postIdeaEdit">
         @component('component.sidebar')
         @endcomponent
@@ -58,12 +71,10 @@
                         <span class="p-postIdeaEdit__require">必須</span>
                     </label>
                     <input type="text" id="js-count-short" class="p-postIdeaEdit__input @error('idea_name') is-error @enderror" name="idea_name" value="{{ old('idea_name', $postidea->idea_name) }}" placeholder="20文字以内で入力してください" onkeyup="ShowLength(value, 'count-short');">
-                    <div class="p-profileEdit__countarea">
+                    <div class="p-postIdeaEdit__countarea">
                         <span id="count-short" class="c-countarea--short js-show-count-short">0</span>/20
                     </div>
                 </div>
-
-
 
                 @error('summary')
                 <span class="c-errMsg p-postIdeaEdit__errMsg">
@@ -112,9 +123,9 @@
 
                 <div class="p-postIdeaEdit__button">
                     <button type="submit" class="c-btn p-postIdeaEdit__btn">
-                        編集する
+                        編集
                     </button>
-                    <button type="button" class="c-btn p-postIdeaEdit__btn--delete"><a href="{{ route('idea_delete_confirm', $postidea->id) }}" class="p-postIdeaEdit__link">削除する</a></button>
+                    <button type="button" class="c-btn p-postIdeaEdit__btn--delete js-show-modal">削除</button>
                 </div>
             </form>
         </div>

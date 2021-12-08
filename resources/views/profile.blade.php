@@ -81,7 +81,7 @@
 
                 <div class="p-profile__button">
                     <button type="submit" class="c-btn p-profile__btn">
-                        変更する
+                        変更
                     </button>
                 </div>
             </form>

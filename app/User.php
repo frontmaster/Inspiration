@@ -53,5 +53,15 @@ class User extends Authenticatable
         return $this->hasMany('App\PostIdea', 'post_user_id');   
     }
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleted(function ($user){
+
+            $user->PostIdeas()->delete();
+        });
+    }
+
     
 }

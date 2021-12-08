@@ -20,6 +20,12 @@
         margin-top: 100px;
         margin-bottom: $space_m;
     }
+    &__Container {
+        width: 100%;
+        @include mq("ss") {
+            width: 130%;
+        }
+    }
     &__title {
         text-align: center;
         font-size: $font-size_xxl;
@@ -35,6 +41,10 @@
             width: 200px;
         }
     }
+    &__sentence {
+        text-align: center;
+        margin-top: $space_l;
+    }
     &__partContainer {
         display: flex;
         flex-wrap: wrap;
@@ -43,6 +53,9 @@
             content: "";
             display: block;
             width: 300px;
+            @include mq() {
+                content: none;
+            }
         }
         @include mq() {
             flex-direction: column;
@@ -68,7 +81,7 @@
             width: 90%;
             align-items: center;
         }
-        
+
         &__pagination {
             display: flex;
             justify-content: center;
@@ -84,13 +97,13 @@
         box-sizing: border-box;
         border-radius: 5px;
         @include mq() {
-            width: 100%;
+            width: 95%;
         }
         @include mq("sm") {
             width: 90%;
         }
         @include mq("ss") {
-            width: 75%;
+            width: 95%;
         }
     }
     &__item {

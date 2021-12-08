@@ -70,6 +70,8 @@ $(function(){
     });
 });
 
+
+
 //文字数表示(ニックネーム・アイディア名)
 const shortString = document.getElementById("js-count-short");
 const shortCount = document.querySelector('.js-show-count-short');
@@ -134,6 +136,8 @@ window.ShowLength = function ShowLength(str, field) {
         element.classList.remove("c-countarea--changecolor");
     }
 }
+
+
 
 
 

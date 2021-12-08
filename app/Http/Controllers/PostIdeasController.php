@@ -83,18 +83,6 @@ class PostIdeasController extends Controller
 
         return redirect('post_idea_list/' . auth()->user()->id)->with('flash_message', 'アイディアを編集しました');
     }
-
-    //アイディア削除画面表示
-    public function delete_confirm($id)
-    {
-        if (!ctype_digit($id)) {
-            return redirect('post_idea_edit/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
-        }
-
-        $postidea = PostIdea::find($id);
-
-        return view('post_idea_delete', compact('postidea'));
-    }
     
     
     //アイディア削除実行
