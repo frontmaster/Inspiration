@@ -14,7 +14,7 @@
             @csrf
             <div class="p-deleteconfirm__button--modal">
                 <button type="button" class="c-btn p-deleteconfirm__modalBtn js-hide-modal">キャンセル</button>
-                <button type="submit" class="c-btn p-deleteconfirm__modalBtn--delete">退会する</button>
+                <button type="submit" class="c-btn p-deleteconfirm__modalBtn--delete">退会</button>
             </div>
         </form>
     </div>
@@ -27,7 +27,7 @@
             <p class="p-deleteconfirm__content--sentence">退会すると登録したすべてのデータが失われます。宜しいですか？</p>
             <div class="p-deleteconfirm__button">
                 <button type="button" class="c-btn p-deleteconfirm__btn js-show-modal">
-                    退会する
+                    退会
                 </button>
             </div>
         </div>

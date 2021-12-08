@@ -2,11 +2,15 @@
     width: 600px;
     height: 300px;
     padding: $space_xl;
+    box-sizing: border-box;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     background-color: $white;
     margin: 0 auto;
+    @include mq(){
+        width: 90%;
+    }
     &__modal {
         display: none;
         width: 400px;
@@ -41,9 +45,13 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        
         &--sentence {
             font-size: $font-size_l;
             text-align: center;
+            @include mq(){
+                text-align: left;
+            }
         }
     }
     &__form {
@@ -57,9 +65,7 @@
         font-size: $font-size_xxl;
         color: $font-color_title;
         margin-bottom: $space_3l;
-        @include mq() {
-            margin-top: 80px;
-        }
+        color: $black;
     }
     &__button {
         display: flex;
@@ -90,11 +96,23 @@
         &:hover{
             opacity: 0.9;
         }
+        @include mq("sm"){
+            width: 80px;
+        }
+        @include mq("ss"){
+            width: 80px;
+        }
         &--delete{
             background-color: $alart-color;
             color: $white;
             &:hover{
                 opacity: 0.9;
+            }
+            @include mq("sm"){
+                width: 80px;
+            }
+            @include mq("ss"){
+                width: 80px;
             }
         }
     }

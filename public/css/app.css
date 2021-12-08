@@ -2301,11 +2301,18 @@ img {
   width: 600px;
   height: 300px;
   padding: 20px;
+  box-sizing: border-box;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   background-color: #fff;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 599px) {
+  .p-deleteconfirm {
+    width: 90%;
+  }
 }
 
 .p-deleteconfirm__modal {
@@ -2355,6 +2362,12 @@ img {
   text-align: center;
 }
 
+@media screen and (max-width: 599px) {
+  .p-deleteconfirm__content--sentence {
+    text-align: left;
+  }
+}
+
 .p-deleteconfirm__form {
   margin-top: 40px;
   width: 100%;
@@ -2367,12 +2380,7 @@ img {
   font-size: 30px;
   color: #4e4449;
   margin-bottom: 40px;
-}
-
-@media screen and (max-width: 599px) {
-  .p-deleteconfirm__title {
-    margin-top: 80px;
-  }
+  color: #2F2725;
 }
 
 .p-deleteconfirm__button {
@@ -2411,6 +2419,18 @@ img {
   opacity: 0.9;
 }
 
+@media screen and (max-width: 320px) {
+  .p-deleteconfirm__modalBtn {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-deleteconfirm__modalBtn {
+    width: 80px;
+  }
+}
+
 .p-deleteconfirm__modalBtn--delete {
   background-color: #d7003a;
   color: #fff;
@@ -2418,6 +2438,18 @@ img {
 
 .p-deleteconfirm__modalBtn--delete:hover {
   opacity: 0.9;
+}
+
+@media screen and (max-width: 320px) {
+  .p-deleteconfirm__modalBtn--delete {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-deleteconfirm__modalBtn--delete {
+    width: 80px;
+  }
 }
 
 .p-passEdit {
