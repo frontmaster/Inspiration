@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('postidealist-component', require('./components/PostIdeaListComponent.vue').default);
+Vue.component('ideadetail-component', require('./components/IdeaDetailComponent.vue').default);
 Vue.component('pagination-component', require('./components/PaginationComponent.vue').default);
 
 /**
@@ -35,9 +36,10 @@ const app = new Vue({
     el: '#app',
     components: {
         'postidealist-component': PostIdeaListComponent,
-        'pagination-component': paginationComponent
+        'pagination-component': paginationComponent,
     },
 });
+
 
 
 //フラッシュメッセージ

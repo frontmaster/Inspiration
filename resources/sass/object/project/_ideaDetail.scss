@@ -1,0 +1,186 @@
+.p-ideaDetail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    @include mq("xl") {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    @include mq("lg") {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    @include mq() {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 100px;
+        margin-bottom: $space_m;
+    }
+    &__Container {
+        width: 100%;
+        @include mq("ss") {
+            width: 130%;
+        }
+    }
+    &__title {
+        text-align: center;
+        font-size: $font-size_xxl;
+        color: $black;
+        margin-bottom: $space_m;
+        @include mq() {
+            font-size: $font-size_xl;
+        }
+        @include mq("sm") {
+            font-size: $font-size_l;
+        }
+        @include mq("ss") {
+            width: 200px;
+        }
+    }
+    &__partContainer {
+        
+        @include mq() {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__content {
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        border-radius: 10px;
+        padding: $space_xxl;
+        box-sizing: border-box;
+        margin-top: $space_xl;
+        @include mq("xl") {
+            width: 97%;
+        }
+        @include mq("lg") {
+            width: 95%;
+        }
+        @include mq() {
+            width: 90%;
+            align-items: center;
+        }
+
+        &__pagination {
+            display: flex;
+            justify-content: center;
+            margin-bottom: $space_xl;
+        }
+    }
+    &__part {
+        margin-top: $space_xxl;
+        color: $black;
+        padding: $space_l;
+        box-sizing: border-box;
+        border-radius: 5px;
+        @include mq() {
+            width: 95%;
+        }
+        @include mq("sm") {
+            width: 90%;
+        }
+        @include mq("ss") {
+            width: 95%;
+        }
+    }
+    &__item {
+        display: flex;
+        margin-bottom: $space_l;
+        flex-direction: column;
+        align-items: flex-start;
+        @include mq("xl") {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @include mq("lg") {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @include mq() {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &--part {
+            padding: $space_s;
+            margin-left: 0;
+        }
+        &--link {
+            display: flex;
+        }
+    }
+    &__label {
+        color: $sub-color2;
+        font-weight: bold;
+        font-size: $font-size_l;
+        padding: $space_s;
+        box-sizing: border-box;
+        display: flex;
+    }
+    &__postUser{
+        border: 2px solid $sub-color2;
+        border-radius: 10px;
+        width: 100%;
+        padding: $space_m;
+        box-sizing: border-box;
+        margin-bottom: $space_l;
+        display: flex;
+        flex-direction: column;
+    }
+    &__postUserInfo{
+        display: flex;
+        align-items: center;
+        &--name{
+            font-size: $font-size_l;
+        }
+    }
+    &__img{
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        margin-right: $space_xl;
+    }
+    &__share{
+        background-color: $blue;
+        width: 130px;
+        padding: $space_s;
+        box-sizing: border-box;
+        text-align: center;
+        border-radius: 5px;
+        &--link{
+            color: $white;
+        }
+    }
+    &__btn {
+        display: block;
+        background-color: $sub-color2;
+        color: $white;
+        border: 2px solid $sub-color2;
+        padding: $space_s;
+        box-sizing: border-box;
+        font-size: $font-size_base;
+        border-radius: 30px;
+        margin-right: $space_xl;
+        &:hover {
+            background-color: $white;
+            color: $sub-color2;
+        }
+        @include mq("sm") {
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: $font-size_m;
+        }
+        @include mq("ss") {
+            width: 120px;
+            font-size: $font-size_s;
+        }
+    }
+}

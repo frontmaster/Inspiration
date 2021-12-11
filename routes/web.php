@@ -33,6 +33,7 @@ Route::post('/password/change/{id}','Auth\ChangePasswordController@update')->nam
 Route::get('/post_idea/{id}', 'PostIdeasController@index')->name('post_idea_show');
 Route::post('/post_idea/{id}', 'PostIdeasController@create')->name('post_idea_create');
 Route::get('/post_idea_list/{id}', 'PostIdeaListsController@index')->name('post_idea_list_show');
+Route::get('/idea_detail/{id}', 'PostIdeaListsController@detail')->name('idea_detail');
 Route::get('ajax/post_idea_list/{id}', 'Ajax\PostIdeaListsController@index');
 Route::get('/post_idea_edit/{id}', 'PostIdeasController@edit')->name('post_idea_edit');
 Route::post('/post_idea_edit/{id}', 'PostIdeasController@update')->name('post_idea_update');

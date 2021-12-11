@@ -32,10 +32,12 @@ class ProfilesController extends Controller
 
         $users = User::find($id);
 
+        $img_url = $request->user_img->store('public/image');
+
         if ($request and $request->user_img != null) {
             $users->name = $request->name;
             $users->email = $request->email;
-            $users->user_img = $request->user_img->store('public/image');
+            $users->user_img = str_replace('public/', 'storage/', $img_url);
             $users->comment = $request->comment;
             $users->save();
             return redirect('/profile' . '/' . $users->id)->with('flash_message', 'プロフィールを編集しました');

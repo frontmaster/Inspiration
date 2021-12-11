@@ -15,7 +15,7 @@
         </div>
 
         <div class="p-postIdeaList__item--link">
-          <a href="" class="c-btn p-postIdeaList__btn">詳細</a>
+          <a :href="'/idea_detail/' + idea.id" class="c-btn p-postIdeaList__btn">詳細</a>
           <a :href="'/post_idea_edit/' + idea.id" class="c-btn p-postIdeaList__btn">編集</a>
         </div>
       </div>

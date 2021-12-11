@@ -2651,3 +2651,260 @@ img {
   text-decoration: underline;
 }
 
+.p-ideaDetail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-ideaDetail {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-ideaDetail {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .p-ideaDetail {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 10px;
+  }
+}
+
+.p-ideaDetail__Container {
+  width: 100%;
+}
+
+@media screen and (max-width: 280px) {
+  .p-ideaDetail__Container {
+    width: 130%;
+  }
+}
+
+.p-ideaDetail__title {
+  text-align: center;
+  font-size: 30px;
+  color: #2F2725;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-ideaDetail__title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-ideaDetail__title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-ideaDetail__title {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .p-ideaDetail__partContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.p-ideaDetail__content {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-ideaDetail__content {
+    width: 97%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-ideaDetail__content {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .p-ideaDetail__content {
+    width: 90%;
+    align-items: center;
+  }
+}
+
+.p-ideaDetail__content__pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.p-ideaDetail__part {
+  margin-top: 30px;
+  color: #2F2725;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-ideaDetail__part {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-ideaDetail__part {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-ideaDetail__part {
+    width: 95%;
+  }
+}
+
+.p-ideaDetail__item {
+  display: flex;
+  margin-bottom: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-ideaDetail__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-ideaDetail__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .p-ideaDetail__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.p-ideaDetail__item--part {
+  padding: 5px;
+  margin-left: 0;
+}
+
+.p-ideaDetail__item--link {
+  display: flex;
+}
+
+.p-ideaDetail__label {
+  color: #51318F;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.p-ideaDetail__postUser {
+  border: 2px solid #51318F;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-ideaDetail__postUserInfo {
+  display: flex;
+  align-items: center;
+}
+
+.p-ideaDetail__postUserInfo--name {
+  font-size: 18px;
+}
+
+.p-ideaDetail__img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.p-ideaDetail__share {
+  background-color: #1DA1F2;
+  width: 130px;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.p-ideaDetail__share--link {
+  color: #fff;
+}
+
+.p-ideaDetail__btn {
+  display: block;
+  background-color: #51318F;
+  color: #fff;
+  border: 2px solid #51318F;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-radius: 30px;
+  margin-right: 20px;
+}
+
+.p-ideaDetail__btn:hover {
+  background-color: #fff;
+  color: #51318F;
+}
+
+@media screen and (max-width: 320px) {
+  .p-ideaDetail__btn {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-ideaDetail__btn {
+    width: 120px;
+    font-size: 12px;
+  }
+}
+
