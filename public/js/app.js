@@ -1998,19 +1998,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -38036,26 +38023,6 @@ var render = function () {
               _vm._v("¥" + _vm._s(_vm._f("localeNum")(idea.price))),
             ]),
           ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "p-ideaDetail__share" }, [
-            _c(
-              "a",
-              {
-                staticClass: "p-ideaDetail__share--link",
-                attrs: {
-                  href:
-                    "https://twitter.com/intent/tweet?url=https://front-test.com/idea_detail/" +
-                    idea.id +
-                    "&text=簡単にアイディアを販売・購入できるアイディアマッチングサービス Inspiration",
-                  target: "blank_",
-                },
-              },
-              [
-                _c("i", { staticClass: "fab fa-twitter" }),
-                _vm._v("\n          シェアする\n        "),
-              ]
-            ),
-          ]),
         ])
       }),
       0
@@ -50563,6 +50530,41 @@ $(function () {
   $('.js-hide-modal').on('click', function () {
     $('.js-show-modal-target').hide();
     $('.js-show-modal-cover').hide();
+  });
+}); //「気になる」を追加・削除機能
+
+$(function () {
+  var like = $('.js-click-like');
+  like.on('click', function () {
+    var $this = $(this);
+    var likeIdeaId = $this.data('ideaid');
+    var likeWord = $('.js-like-word');
+    var unlikeWord = $('.js-unlike-word');
+    var heart = $('.js-like-heart');
+
+    if (likeWord.text() === '気になる') {
+      likeWord.text('気になるを解除する');
+    } else if (likeWord.text() === '気になるを解除する') {
+      likeWord.text('気になる');
+    } else if (unlikeWord.text() === '気になる') {
+      unlikeWord.text('気になるを解除する');
+    } else if (unlikeWord.text() === '気になるを解除する') {
+      unlikeWord.text('気になる');
+    }
+
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      url: '/idea/like/' + likeIdeaId,
+      type: 'POST',
+      data: {
+        'ideaid': likeIdeaId
+      }
+    }).done(function (data) {
+      heart.toggleClass('p-ideaDetail__heart--liked');
+      $this.toggleClass('p-ideaDetail__btn--liked');
+    });
   });
 }); //文字数表示(ニックネーム・アイディア名)
 

@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class PostIdea extends Model
 {
     protected $table =  'postideas';
-    
-    protected $fillable = ['category', 'idea_name', 'summary', 'content', 'price']; 
 
-    public function category() 
+    protected $fillable = ['category', 'idea_name', 'summary', 'content', 'price'];
+
+    public function category()
     {
         return $this->belongsTo('App\Category', 'category_id');
     }
@@ -19,6 +19,12 @@ class PostIdea extends Model
     {
         return $this->belongsTo('App\User', 'post_user_id');
     }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like', 'idea_id');
+    }
+
 
     public function reviews()
     {

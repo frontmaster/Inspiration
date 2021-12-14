@@ -49,19 +49,6 @@
           <label for="idea" class="p-ideaDetail__label">価格</label>
           <p class="p-ideaDetail__item--part">¥{{ idea.price | localeNum }}</p>
         </div>
-        <div class="p-ideaDetail__share">
-          <a
-            :href="
-              'https://twitter.com/intent/tweet?url=https://front-test.com/idea_detail/' +
-              idea.id +
-              '&text=簡単にアイディアを販売・購入できるアイディアマッチングサービス Inspiration'
-            "
-            target="blank_"
-            class="p-ideaDetail__share--link"
-            ><i class="fab fa-twitter"></i>
-            シェアする
-          </a>
-        </div>
       </div>
     </div>
   </div>

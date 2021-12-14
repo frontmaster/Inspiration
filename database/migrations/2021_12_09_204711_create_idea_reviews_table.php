@@ -34,6 +34,12 @@ class CreateIdeaReviewsTable extends Migration
      */
     public function down()
     {
+        Schema::table('idea_reviews', function (Blueprint $table) {
+            $table->dropForeign('idea_reviews_post_idea_id_foreign');
+            $table->dropColumn('post_idea_id');
+            $table->dropForeign('idea_reviews_post_user_id_foreign');
+            $table->dropColumn('post_user_id');
+        });
         Schema::dropIfExists('idea_reviews');
     }
 }

@@ -42,7 +42,6 @@
         }
     }
     &__partContainer {
-        
         @include mq() {
             flex-direction: column;
             align-items: center;
@@ -123,7 +122,7 @@
         box-sizing: border-box;
         display: flex;
     }
-    &__postUser{
+    &__postUser {
         border: 2px solid $sub-color2;
         border-radius: 10px;
         width: 100%;
@@ -133,54 +132,55 @@
         display: flex;
         flex-direction: column;
     }
-    &__postUserInfo{
+    &__postUserInfo {
         display: flex;
         align-items: center;
-        &--name{
+        &--name {
             font-size: $font-size_l;
         }
     }
-    &__img{
+    &__img {
         height: 80px;
         width: 80px;
         border-radius: 50%;
         margin-right: $space_xl;
     }
-    &__share{
-        background-color: $blue;
-        width: 130px;
-        padding: $space_s;
-        box-sizing: border-box;
-        text-align: center;
-        border-radius: 5px;
-        &--link{
+    &__button {
+        display: flex;
+        align-items: center;
+        &--share {
+            width: 130px;
+            padding: $space_s;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            background-color: $blue;
+            text-align: center;
+            margin-right: $space_l;
             color: $white;
         }
     }
-    &__btn {
-        display: block;
-        background-color: $sub-color2;
+    &__heart{
+        font-size: 20px;
+        margin-left: $space_l;
+        &--liked{
+            color: pink;
+        }
+        
+    }
+    &__btn{
+        width: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $font-color_default;
         color: $white;
-        border: 2px solid $sub-color2;
-        padding: $space_s;
-        box-sizing: border-box;
-        font-size: $font-size_base;
-        border-radius: 30px;
-        margin-right: $space_xl;
-        &:hover {
-            background-color: $white;
+        &--liked{
+            background-color: $accent-color;
             color: $sub-color2;
-        }
-        @include mq("sm") {
-            width: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: $font-size_m;
-        }
-        @include mq("ss") {
-            width: 120px;
-            font-size: $font-size_s;
-        }
+        }   
     }
 }
+

@@ -54,23 +54,60 @@ $('.js-toggle-sp-menu').on('click', function () {
 });
 
 //モーダル表示
-$(function(){
-    $('.js-show-modal').on('click', function(){
+$(function () {
+    $('.js-show-modal').on('click', function () {
         const modalWidth = $('.js-show-modal-target').width();
         const windowWidth = $(window).width();
         console.log(modalWidth);
         console.log(windowWidth);
-        $('.js-show-modal-target').attr('style', 'margin-left:' + (windowWidth/2 - modalWidth/2 - 15) + 'px');
+        $('.js-show-modal-target').attr('style', 'margin-left:' + (windowWidth / 2 - modalWidth / 2 - 15) + 'px');
         $('.js-show-modal-target').show();
         $('.js-show-modal-cover').show();
     });
 
-    $('.js-hide-modal').on('click', function(){
+    $('.js-hide-modal').on('click', function () {
         $('.js-show-modal-target').hide();
         $('.js-show-modal-cover').hide();
 
     });
 });
+
+//「気になる」を追加・削除機能
+$(function () {
+    const like = $('.js-click-like');
+
+
+    like.on('click', function () {
+        const $this = $(this);
+        const likeIdeaId = $this.data('ideaid');
+        const likeWord = $('.js-like-word');
+        const unlikeWord = $('.js-unlike-word');
+        const heart = $('.js-like-heart');
+        
+
+                if (likeWord.text() === '気になる') {
+                    likeWord.text('気になるを解除する');
+                } else if(likeWord.text() === '気になるを解除する') {
+                    likeWord.text('気になる');
+                }else if(unlikeWord.text() === '気になる'){
+                    unlikeWord.text('気になるを解除する');
+                }else if(unlikeWord.text() === '気になるを解除する'){
+                    unlikeWord.text('気になる');
+                }
+
+        $.ajax({
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+            url: '/idea/like/' + likeIdeaId,
+            type: 'POST',
+            data: { 'ideaid': likeIdeaId },
+        })
+            .done(function (data) {
+                heart.toggleClass('p-ideaDetail__heart--liked');
+                $this.toggleClass('p-ideaDetail__btn--liked');
+            })
+    });
+});
+
 
 
 

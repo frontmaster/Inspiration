@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Like;
 use App\Category;
 use App\PostIdea;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ class PostIdeasController extends Controller
         ]);
 
         $postidea = new PostIdea;
-        
+
         $postidea->idea_name = $request->idea_name;
         $postidea->summary = $request->summary;
         $postidea->content = $request->content;
@@ -50,7 +51,7 @@ class PostIdeasController extends Controller
         if (!ctype_digit($id)) {
             return redirect('post_idea_list/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
-        
+
         $postidea = PostIdea::find($id);
         $categories = Category::get();
 
@@ -83,18 +84,55 @@ class PostIdeasController extends Controller
 
         return redirect('post_idea_list/' . auth()->user()->id)->with('flash_message', 'アイディアを編集しました');
     }
-    
-    
+
+
     //アイディア削除実行
-    public function delete($id) 
+    public function delete($id)
     {
         if (!ctype_digit($id)) {
             return redirect('post_idea_edit/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
 
         PostIdea::find($id)->delete();
-        
+
         return redirect('post_idea_list/' . auth()->user()->id)->with('flash_message', 'アイディアを削除しました');
     }
 
+    //アイディア詳細画面表示
+    public function detail($id)
+    {
+        if (!ctype_digit($id)) {
+            return redirect('post_idea_edit/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
+        }
+
+        $postIdeaLists = Auth::user()->PostIdeas()->get();
+        $userIdea = Auth::user()->PostIdeas($id)->first();
+        $user_id = Auth::user()->id;
+        $idea_id = $userIdea->id;
+        $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
+
+        return view('idea_detail', compact('postIdeaLists', 'already_liked', 'userIdea'));
+    }
+
+    //「気になる」を追加
+    public function like(Request $request, $id)
+    {
+        
+        $userIdea = Auth::user()->PostIdeas($id)->first();
+        $user_id = Auth::user()->id;
+        $idea_id = $userIdea->id;
+        $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
+        //dd($already_liked);
+
+        if(!$already_liked){
+            $like = new Like;
+            $like->idea_id = $idea_id;
+            $like->user_id = $user_id;
+            $like->save();
+        }else{
+            Like::where('idea_id', $idea_id)->where('user_id', $user_id)->delete();
+        }
+        return view('idea_detail', compact('userIdea', 'already_liked'));
+
+    }
 }

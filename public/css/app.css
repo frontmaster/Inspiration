@@ -2861,50 +2861,45 @@ img {
   margin-right: 20px;
 }
 
-.p-ideaDetail__share {
-  background-color: #1DA1F2;
+.p-ideaDetail__button {
+  display: flex;
+  align-items: center;
+}
+
+.p-ideaDetail__button--share {
   width: 130px;
   padding: 5px;
   box-sizing: border-box;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   border-radius: 5px;
+  background-color: #1DA1F2;
+  text-align: center;
+  margin-right: 15px;
+  color: #fff;
 }
 
-.p-ideaDetail__share--link {
-  color: #fff;
+.p-ideaDetail__heart {
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.p-ideaDetail__heart--liked {
+  color: pink;
 }
 
 .p-ideaDetail__btn {
-  display: block;
-  background-color: #51318F;
+  width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
   color: #fff;
-  border: 2px solid #51318F;
-  padding: 5px;
-  box-sizing: border-box;
-  font-size: 16px;
-  border-radius: 30px;
-  margin-right: 20px;
 }
 
-.p-ideaDetail__btn:hover {
-  background-color: #fff;
+.p-ideaDetail__btn--liked {
+  background-color: #BBBCDE;
   color: #51318F;
-}
-
-@media screen and (max-width: 320px) {
-  .p-ideaDetail__btn {
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 280px) {
-  .p-ideaDetail__btn {
-    width: 120px;
-    font-size: 12px;
-  }
 }
 
