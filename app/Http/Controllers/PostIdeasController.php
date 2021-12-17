@@ -105,24 +105,28 @@ class PostIdeasController extends Controller
             return redirect('post_idea_edit/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
 
-        $postIdeaLists = Auth::user()->PostIdeas()->get();
+        $ideaDetail = PostIdea::find($id);
+        $postIdeaUser = $ideaDetail->user()->first();
+        $category = $ideaDetail->category()->first();
         $userIdea = Auth::user()->PostIdeas($id)->first();
         $user_id = Auth::user()->id;
         $idea_id = $userIdea->id;
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
 
-        return view('idea_detail', compact('postIdeaLists', 'already_liked', 'userIdea'));
+        return view('idea_detail', compact('ideaDetail', 'already_liked', 'userIdea', 'postIdeaUser', 'category'));
     }
 
     //「気になる」を追加
     public function like(Request $request, $id)
     {
-        
+        $ideaDetail = PostIdea::find($id);
+        $postIdeaUser = $ideaDetail->user()->first();
+        $category = $ideaDetail->category()->first();
         $userIdea = Auth::user()->PostIdeas($id)->first();
         $user_id = Auth::user()->id;
         $idea_id = $userIdea->id;
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
-        //dd($already_liked);
+        
 
         if(!$already_liked){
             $like = new Like;
@@ -132,7 +136,7 @@ class PostIdeasController extends Controller
         }else{
             Like::where('idea_id', $idea_id)->where('user_id', $user_id)->delete();
         }
-        return view('idea_detail', compact('userIdea', 'already_liked'));
+        return view('idea_detail', compact('ideaDetail', 'already_liked' , 'userIdea', 'postIdeaUser', 'category'));
 
     }
 }

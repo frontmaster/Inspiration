@@ -1,9 +1,9 @@
 <template>
   <div>
-    <ul class="pagination">
-      <li class="page-item" v-if="hasPrev">
+    <ul class="c-pagination">
+      <li class="c-pagination__item" v-if="hasPrev">
         <a
-          class="page-link"
+          class="c-pagination__item-link"
           href="#"
           @click.prevent="move(data.current_page - 1)"
           >前へ</a
@@ -11,15 +11,15 @@
       </li>
       <li :class="getPageClass(page)" v-for="page in pages" :key="page.id">
         <a
-          class="page-link"
+          class="c-pagination__item--link"
           href="#"
           v-text="page"
           @click.prevent="move(page)"
         ></a>
       </li>
-      <li class="page-item" v-if="hasNext">
+      <li class="c-pagination__item" v-if="hasNext">
         <a
-          class="page-link"
+          class="c-pagination__item--link"
           href="#"
           @click.prevent="move(data.current_page + 1)"
           >次へ</a
@@ -47,7 +47,7 @@ export default {
       return this.data.current_page == page;
     },
     getPageClass(page) {
-      let classes = ["page-item"];
+      let classes = ["c-pagination__item"];
 
       if (this.isCurrentPage(page)) {
         classes.push("active");

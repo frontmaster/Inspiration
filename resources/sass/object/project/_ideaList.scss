@@ -1,4 +1,4 @@
-.p-ideaDetail {
+.p-ideaList {
     width: 100%;
     height: 100%;
     display: flex;
@@ -26,6 +26,21 @@
             width: 130%;
         }
     }
+    &__searchBox{
+        display: flex;
+        align-items: center;
+        margin-top: $space_xl;
+    }
+    &__search{
+        width: 230px;
+        height: 30px;
+        border: 2px solid $sub-color2;
+        border-radius: 5px;
+    }
+    &__searchIcon{
+        position: relative;
+        right: 5%;
+    }
     &__title {
         text-align: center;
         font-size: $font-size_xxl;
@@ -41,7 +56,13 @@
             width: 200px;
         }
     }
+    &__sentence {
+        text-align: center;
+        margin-top: $space_l;
+    }
     &__partContainer {
+        display: flex;
+        flex-direction: column;
         @include mq() {
             flex-direction: column;
             align-items: center;
@@ -66,15 +87,10 @@
             width: 90%;
             align-items: center;
         }
-
-        &__pagination {
-            display: flex;
-            justify-content: center;
-            margin-bottom: $space_xl;
-        }
     }
     &__part {
-        margin-top: $space_xxl;
+        margin-top: $space_3l;
+        border: 2px solid $sub-color2;
         color: $black;
         padding: $space_l;
         box-sizing: border-box;
@@ -87,6 +103,14 @@
         }
         @include mq("ss") {
             width: 95%;
+        }
+    }
+    &__itemContainer{
+        display: flex;
+        justify-content: space-between;
+        &--review{
+            display: flex;
+            
         }
     }
     &__item {
@@ -117,79 +141,39 @@
     &__label {
         color: $sub-color2;
         font-weight: bold;
-        font-size: $font-size_l;
         padding: $space_s;
         box-sizing: border-box;
         display: flex;
     }
-    &__postUser {
-        border: 2px solid $sub-color2;
-        border-radius: 10px;
-        width: 100%;
-        padding: $space_m;
-        box-sizing: border-box;
-        margin-bottom: $space_l;
-        display: flex;
-        flex-direction: column;
-    }
-    &__postUserInfo {
-        display: flex;
-        align-items: center;
-        &--name {
-            font-size: $font-size_l;
-        }
-    }
-    &__img {
-        height: 80px;
-        width: 80px;
-        border-radius: 50%;
-        margin-right: $space_xl;
-    }
-    &__button {
-        display: flex;
-        align-items: center;
-        &--share {
-            width: 130px;
-            padding: $space_s;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            border-radius: 5px;
-            background-color: $blue;
-            text-align: center;
-            margin-right: $space_l;
-            color: $white;
-        }
-    }
-    &__heart{
-        font-size: 20px;
-        margin-left: $space_l;
-        position: relative;
+    &__btn {
+        display: block;
+        background-color: $sub-color2;
         color: $white;
-        right: 7%;
-        
+        border: 2px solid $sub-color2;
+        padding: $space_s;
+        box-sizing: border-box;
+        font-size: $font-size_base;
+        border-radius: 30px;
+        margin-right: $space_xl;
+        &:hover {
+            background-color: $white;
+            color: $sub-color2;
+        }
+        @include mq("sm") {
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: $font-size_m;
+        }
+        @include mq("ss") {
+            width: 120px;
+            font-size: $font-size_s;
+        }
     }
-    &__btn{
-        width: 220px;
+    &__pagination {
         display: flex;
-        align-items: center;
         justify-content: center;
-        background-color: $font-color_default;
-        color: $white;  
+        margin-top: $space_xl;
     }
-    .likeheart{
-        font-size: 20px;
-        margin-left: $space_l;
-        color: $pink;
-    }
-    .likebtn{
-        width: 220px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $accent-color;
-        color: $sub-color2;
-    } 
 }
-

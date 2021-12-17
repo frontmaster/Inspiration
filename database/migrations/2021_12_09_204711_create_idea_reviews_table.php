@@ -22,7 +22,7 @@ class CreateIdeaReviewsTable extends Migration
             $table->text('comment');
             $table->timestamps();
 
-            $table->foreign('post_idea_id')->references('id')->on('postideas');
+            $table->foreign('post_idea_id')->references('id')->on('postideas')->onDelete('CASCADE');
             $table->foreign('post_user_id')->references('id')->on('users');
         });
     }

@@ -39,5 +39,7 @@ Route::post('/post_idea_edit/{id}', 'PostIdeasController@update')->name('post_id
 Route::delete('/post_idea_edit/{id}', 'PostIdeasController@delete')->name('idea_delete_post');
 Route::get('/idea_detail/{id}', 'PostIdeasController@detail')->name('idea_detail');
 Route::post('/idea/like/{id}', 'PostIdeasController@like')->name('idea_like');
+Route::get('/idea_list}', 'IdeaListsController@index')->name('idea_lists');
+Route::get('ajax/idea_list', 'Ajax\IdeaListsController@index');
 
 });

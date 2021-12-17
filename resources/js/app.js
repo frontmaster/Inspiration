@@ -19,9 +19,9 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('postidealist-component', require('./components/PostIdeaListComponent.vue').default);
-Vue.component('ideadetail-component', require('./components/IdeaDetailComponent.vue').default);
+Vue.component('ideadlist-component', require('./components/IdeaListComponent.vue').default);
 Vue.component('pagination-component', require('./components/PaginationComponent.vue').default);
 
 /**
@@ -30,12 +30,14 @@ Vue.component('pagination-component', require('./components/PaginationComponent.
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 import PostIdeaListComponent from "./components/PostIdeaListComponent.vue"
+import IdeaListComponent from "./components/IdeaListComponent.vue"
 import paginationComponent from "./components/PaginationComponent.vue"
 import Vue from "vue";
 const app = new Vue({
     el: '#app',
     components: {
         'postidealist-component': PostIdeaListComponent,
+        'idealist-component': IdeaListComponent,
         'pagination-component': paginationComponent,
     },
 });
@@ -83,17 +85,17 @@ $(function () {
         const likeWord = $('.js-like-word');
         const unlikeWord = $('.js-unlike-word');
         const heart = $('.js-like-heart');
-        
 
-                if (likeWord.text() === '気になる') {
-                    likeWord.text('気になるを解除する');
-                } else if(likeWord.text() === '気になるを解除する') {
-                    likeWord.text('気になる');
-                }else if(unlikeWord.text() === '気になる'){
-                    unlikeWord.text('気になるを解除する');
-                }else if(unlikeWord.text() === '気になるを解除する'){
-                    unlikeWord.text('気になる');
-                }
+
+        if (likeWord.text() === '気になる') {
+            likeWord.text('気になるを解除する');
+        } else if (likeWord.text() === '気になるを解除する') {
+            likeWord.text('気になる');
+        } else if (unlikeWord.text() === '気になる') {
+            unlikeWord.text('気になるを解除する');
+        } else if (unlikeWord.text() === '気になるを解除する') {
+            unlikeWord.text('気になる');
+        }
 
         $.ajax({
             headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
@@ -101,12 +103,22 @@ $(function () {
             type: 'POST',
             data: { 'ideaid': likeIdeaId },
         })
+            /*ajaxが成功した場合、クリックした要素に 'likebtn'、ハートアイコンに 'likeheart'のクラスがあるかどうかを判別し、
+              クラスの追加、削除をすることで色の変更を行う*/
             .done(function (data) {
-                heart.toggleClass('p-ideaDetail__heart--liked');
-                $this.toggleClass('p-ideaDetail__btn--liked');
+                if (like.hasClass('likebtn') && heart.hasClass('likeheart')) {
+                    like.removeClass('likebtn');
+                    heart.removeClass('likeheart');
+                } else {
+                    like.toggleClass('likebtn');
+                    heart.toggleClass('likeheart');
+                }
             })
     });
 });
+
+
+
 
 
 
