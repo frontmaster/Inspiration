@@ -10,7 +10,7 @@ class IdeaListsController extends Controller
 {
     public function index()
     {
-        $ideaLists = PostIdea::with('category')->paginate(1);
+        $ideaLists = PostIdea::with('category')->paginate(3);
 
         return $ideaLists;
     }
