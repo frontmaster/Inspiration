@@ -81,12 +81,6 @@
             width: 90%;
             align-items: center;
         }
-
-        &__pagination {
-            display: flex;
-            justify-content: center;
-            margin-bottom: $space_xl;
-        }
     }
     &__part {
         margin-top: $space_3l;
@@ -163,5 +157,10 @@
             width: 120px;
             font-size: $font-size_s;
         }
+    }
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: $space_xl;
     }
 }

@@ -60,16 +60,16 @@
                 </div>
             </div>
             <div class="p-ideaDetail__button">
-                <a href="https://twitter.com/intent/tweet?url=https://front-test.com/idea_detail/{{ $userIdea->id }}&text=簡単にアイディアを販売・購入できるアイディアマッチングサービス Inspiration" target="blank_" class="c-btn p-ideaDetail__button--share">
+                <a href="https://twitter.com/intent/tweet?url=https://front-test.com/idea_detail/{{ $idea_id }}&text=簡単にアイディアを販売・購入できるアイディアマッチングサービス Inspiration" target="blank_" class="c-btn p-ideaDetail__button--share">
                     <i class="fab fa-twitter"></i>
                     シェアする
                 </a>
 
                 @if(!$already_liked)
-                <p class="c-btn p-ideaDetail__btn js-like-word js-click-like" data-ideaid="{{ $userIdea->id }}">気になる</p>
+                <p class="c-btn p-ideaDetail__btn js-like-word js-click-like" data-ideaid="{{ $idea_id }}">気になる</p>
                 <i class="fas fa-heart p-ideaDetail__heart js-like-heart"></i>
                 @else
-                <p class="c-btn p-ideaDetail__btn likebtn js-unlike-word js-click-like" data-ideaid="{{ $userIdea->id }}">気になるを解除する</p>
+                <p class="c-btn p-ideaDetail__btn likebtn js-unlike-word js-click-like" data-ideaid="{{ $idea_id }}">気になるを解除する</p>
                 <i class="fas fa-heart p-ideaDetail__heart js-like-heart likeheart"></i>
                 @endif
             </div>

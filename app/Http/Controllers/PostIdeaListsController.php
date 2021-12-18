@@ -18,10 +18,8 @@ class PostIdeaListsController extends Controller
         
         $postIdeaLists = Auth::user()->PostIdeas()->get();
         
-
         $postideas = Auth::user()->PostIdeas()->first();
         
-
         return view('post_idea_list', compact('postIdeaLists', 'postideas'));
     }
 

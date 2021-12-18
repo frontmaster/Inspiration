@@ -22,7 +22,7 @@ class PostIdea extends Model
 
     public function likes()
     {
-        return $this->hasMany('App\Like', 'idea_id');
+        return $this->hasMany('App\Like', 'id');
     }
 
 

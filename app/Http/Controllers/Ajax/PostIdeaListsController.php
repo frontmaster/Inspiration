@@ -11,9 +11,7 @@ class PostIdeaListsController extends Controller
 {
     public function index()
     {
-        $postIdeaLists = Auth::user()->PostIdeas()->with('category', 'user')->get();
-
-        //$postIdeaLists = PostIdea::all();
+        $postIdeaLists = Auth::user()->PostIdeas()->with('category', 'user')->paginate(1);
         
         return $postIdeaLists;
     }

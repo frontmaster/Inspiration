@@ -104,19 +104,6 @@ export default {
         this.$emit("move-page", page);
       }
     },
-
-    isCurrentPage(page) {
-      return this.data.current_page == page;
-    },
-    getPageClass(page) {
-      let classes = ["page-item"];
-
-      if (this.isCurrentPage(page)) {
-        classes.push("active");
-      }
-
-      return classes;
-    },
     getItems() {
       const url = "/ajax/idea_list?page=" + this.page;
       axios.get(url).then((response) => {
@@ -153,20 +140,6 @@ export default {
         }
       }
       return ideas;
-    },
-    hasPrev() {
-      return this.data.prev_page_url != null;
-    },
-    hasNext() {
-      return this.data.next_page_url != null;
-    },
-    pages() {
-      let pages = [];
-
-      for (let i = 1; i <= this.data.last_page; i++) {
-        pages.push(i);
-      }
-      return pages;
     },
   },
 };

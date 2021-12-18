@@ -86,7 +86,7 @@ class PostIdeasController extends Controller
     }
 
 
-    //アイディア削除実行
+    //アイディア削除
     public function delete($id)
     {
         if (!ctype_digit($id)) {
@@ -108,12 +108,11 @@ class PostIdeasController extends Controller
         $ideaDetail = PostIdea::find($id);
         $postIdeaUser = $ideaDetail->user()->first();
         $category = $ideaDetail->category()->first();
-        $userIdea = Auth::user()->PostIdeas($id)->first();
         $user_id = Auth::user()->id;
-        $idea_id = $userIdea->id;
+        $idea_id = $ideaDetail->id;
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
 
-        return view('idea_detail', compact('ideaDetail', 'already_liked', 'userIdea', 'postIdeaUser', 'category'));
+        return view('idea_detail', compact('ideaDetail', 'idea_id', 'already_liked', 'postIdeaUser', 'category'));
     }
 
     //「気になる」を追加
@@ -122,9 +121,8 @@ class PostIdeasController extends Controller
         $ideaDetail = PostIdea::find($id);
         $postIdeaUser = $ideaDetail->user()->first();
         $category = $ideaDetail->category()->first();
-        $userIdea = Auth::user()->PostIdeas($id)->first();
         $user_id = Auth::user()->id;
-        $idea_id = $userIdea->id;
+        $idea_id = $ideaDetail->id;
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
         
 
@@ -136,7 +134,7 @@ class PostIdeasController extends Controller
         }else{
             Like::where('idea_id', $idea_id)->where('user_id', $user_id)->delete();
         }
-        return view('idea_detail', compact('ideaDetail', 'already_liked' , 'userIdea', 'postIdeaUser', 'category'));
+        return view('idea_detail', compact('ideaDetail', 'idea_id', 'already_liked' , 'postIdeaUser', 'category'));
 
     }
 }

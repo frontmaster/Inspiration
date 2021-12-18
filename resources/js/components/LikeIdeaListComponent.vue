@@ -1,28 +1,27 @@
 <template>
   <div class="p-postIdeaList__Container">
     <div class="p-postIdeaList__partContainer">
-      <div class="p-postIdeaList__part" v-for="idea in postIdeas" :key="idea.id">
+      <div class="p-postIdeaList__part" v-for="like in filteredLikes" :key="like.id">
         <div class="p-postIdeaList__item">
           <label for="idea" class="p-postIdeaList__label">アイディア名</label>
-          <p class="p-postIdeaList__item--part">{{ idea.idea_name }}</p>
+          <p class="p-postIdeaList__item--part">{{ like.idea.idea_name }}</p>
         </div>
 
         <div class="p-postIdeaList__item">
           <label for="idea" class="p-postIdeaList__label">価格</label>
           <p class="p-postIdeaList__item--part">
-            ¥{{ idea.price | localeNum }}
+            ¥{{ like.idea.price | localeNum }}
           </p>
         </div>
 
         <div class="p-postIdeaList__item--link">
-          <a :href="'/idea_detail/' + idea.id" class="c-btn p-postIdeaList__btn">詳細</a>
-          <a :href="'/post_idea_edit/' + idea.id" class="c-btn p-postIdeaList__btn">編集</a>
+          <a :href="'/idea_detail/' + like.idea.id" class="c-btn p-postIdeaList__btn">詳細</a>
         </div>
       </div>
     </div>
     <div class="p-postIdeaList__pagination">
         <pagination-component
-          :data="ideas"
+          :data="likes"
           @move-page="movePage($event)"
         ></pagination-component>
       </div>
@@ -38,7 +37,7 @@ export default {
 
   data: function () {
     return {
-      ideas: {},
+      likes: {},
     };
   },
   filters: {
@@ -53,9 +52,9 @@ export default {
       }
     },
     getItems() {
-      const url = "/ajax/post_idea_list/" + this.post_user_id + "?page=" + this.page;
+      const url = "/ajax/like_idea_list/" + this.user_id + "?page=" + this.page;
       axios.get(url).then((response) => {
-        this.ideas = response.data;
+        this.likes = response.data;
       });
     },
 
@@ -64,23 +63,23 @@ export default {
       this.getItems();
     },
   },
+
   mounted() {
     var self = this;
-    var url = "/ajax/post_idea_list/" + this.post_user_id;
+    var url = "/ajax/like_idea_list/" + this.user_id;
     axios.get(url).then(function (response) {
-      self.ideas = response.data;
+      self.likes = response.data;
     });
   },
   computed: {
-    postIdeas: function () {
-      var ideas = [];
+    filteredLikes: function () {
+      var likes = [];
 
-      for (var i in this.ideas.data) {
-        var idea = this.ideas.data[i];
-
-        ideas.push(idea);
+      for (var i in this.likes.data) {
+        var like = this.likes.data[i];
+        likes.push(like);
       }
-      return ideas;
+      return likes;
     },
   },
 };

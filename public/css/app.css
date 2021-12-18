@@ -1941,12 +1941,6 @@ img {
   }
 }
 
-.p-postIdeaList__content__pagination {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
 .p-postIdeaList__part {
   margin-top: 40px;
   width: 300px;
@@ -2052,6 +2046,12 @@ img {
     width: 120px;
     font-size: 12px;
   }
+}
+
+.p-postIdeaList__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .p-mypage__btn {

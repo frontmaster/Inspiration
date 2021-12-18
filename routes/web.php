@@ -41,5 +41,7 @@ Route::get('/idea_detail/{id}', 'PostIdeasController@detail')->name('idea_detail
 Route::post('/idea/like/{id}', 'PostIdeasController@like')->name('idea_like');
 Route::get('/idea_list}', 'IdeaListsController@index')->name('idea_lists');
 Route::get('ajax/idea_list', 'Ajax\IdeaListsController@index');
+Route::get('ajax/like_idea_list/{id}', 'Ajax\LikeIdeasController@index');
+Route::get('/like_idea_list/{id}', 'LikeIdeasController@index')->name('like_idea_lists');
 
 });

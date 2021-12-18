@@ -53,6 +53,11 @@ class User extends Authenticatable
         return $this->hasMany('App\PostIdea', 'post_user_id');   
     }
 
+    public function Likes()
+    {
+        return $this->hasMany('App\Like', 'user_id');
+    }
+
     public static function boot()
     {
         parent::boot();

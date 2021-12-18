@@ -9,7 +9,7 @@
                 <a href="" class="c-sidebar__menu--link">レビュー一覧から探す</a>
             </li>
             <li class="c-sidebar__menu">
-                <a href="" class="c-sidebar__menu--link">気になる一覧から探す</a>
+                <a href="{{ route('like_idea_lists', auth()->user()->id)}}" class="c-sidebar__menu--link">気になる一覧から探す</a>
             </li>
         </div>
 

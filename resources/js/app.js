@@ -22,6 +22,7 @@ window.Vue = require('vue');
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('postidealist-component', require('./components/PostIdeaListComponent.vue').default);
 Vue.component('ideadlist-component', require('./components/IdeaListComponent.vue').default);
+Vue.component('likeidealist-component', require('./components/LikeIdeaListComponent.vue').default);
 Vue.component('pagination-component', require('./components/PaginationComponent.vue').default);
 
 /**
@@ -31,6 +32,7 @@ Vue.component('pagination-component', require('./components/PaginationComponent.
  */
 import PostIdeaListComponent from "./components/PostIdeaListComponent.vue"
 import IdeaListComponent from "./components/IdeaListComponent.vue"
+import LikeIdeaListComponent from "./components/LikeIdeaListComponent.vue"
 import paginationComponent from "./components/PaginationComponent.vue"
 import Vue from "vue";
 const app = new Vue({
@@ -38,6 +40,7 @@ const app = new Vue({
     components: {
         'postidealist-component': PostIdeaListComponent,
         'idealist-component': IdeaListComponent,
+        'likeidealist-component': LikeIdeaListComponent,
         'pagination-component': paginationComponent,
     },
 });

@@ -32,9 +32,7 @@
 <script>
 export default {
   props: {
-    data: {
-      ideas: {},
-    },
+    data: {},
   },
   methods: {
     move(page) {
