@@ -22,7 +22,6 @@
     @endif
     @if(app('env') == 'production')
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
-    <script src="{{ secure_asset('https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')}}"></script>
     @endif
 </body>
 
