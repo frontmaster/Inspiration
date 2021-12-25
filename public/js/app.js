@@ -2467,7 +2467,7 @@ __webpack_require__.r(__webpack_exports__);
     getItems: function getItems() {
       var _this = this;
 
-      var url = "/ajax/post_idea_list/" + this.post_user_id + "?page=" + this.page;
+      var url = "https://front-test.com/ajax/post_idea_list/" + this.post_user_id + "?page=" + this.page;
       axios.get(url).then(function (response) {
         _this.ideas = response.data;
       });
