@@ -53,7 +53,7 @@ export default {
       }
     },
     getItems() {
-      const url = "https://front-test.com/ajax/post_idea_list/" + this.post_user_id + "?page=" + this.page;
+      const url = "/ajax/post_idea_list/" + this.post_user_id + "?page=" + this.page;
       axios.get(url).then((response) => {
         this.ideas = response.data;
       });
