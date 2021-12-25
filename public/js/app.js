@@ -1899,6 +1899,150 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BoughtIdeaListComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BoughtIdeaListComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PaginationComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PaginationComponent.vue */ "./resources/js/components/PaginationComponent.vue");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    PaginationComponent: _PaginationComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      ideas: {} //keyword: "",
+
+    };
+  },
+  filters: {
+    localeNum: function localeNum(val) {
+      return val.toLocaleString();
+    },
+    moment: function moment(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("YYYY/MM/DD");
+    }
+  },
+  methods: {
+    move: function move(page) {
+      if (!this.isCurrentPage(page)) {
+        this.$emit("move-page", page);
+      }
+    },
+    getItems: function getItems() {
+      var _this = this;
+
+      var url = "/ajax/bought_idea_list/" + this.buy_user_id + "?page=" + this.page;
+      axios.get(url).then(function (response) {
+        _this.ideas = response.data;
+      });
+    },
+    movePage: function movePage(page) {
+      this.page = page;
+      this.getItems();
+    }
+  },
+  mounted: function mounted() {
+    var self = this;
+    var url = "/ajax/bought_idea_list/" + this.buy_user_id;
+    axios.get(url).then(function (response) {
+      self.ideas = response.data;
+    });
+  },
+  computed: {
+    boughtIdeas: function boughtIdeas() {
+      var ideas = [];
+
+      for (var i in this.ideas.data) {
+        var idea = this.ideas.data[i];
+        ideas.push(idea);
+      }
+
+      return ideas;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IdeaListComponent.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/IdeaListComponent.vue?vue&type=script&lang=js& ***!
@@ -2064,6 +2208,25 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PaginationComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PaginationComponent.vue */ "./resources/js/components/PaginationComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -59479,6 +59642,165 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BoughtIdeaListComponent.vue?vue&type=template&id=0aeb30fc&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BoughtIdeaListComponent.vue?vue&type=template&id=0aeb30fc& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "p-ideaList__Container" }, [
+    _c(
+      "div",
+      { staticClass: "p-ideaList__partContainer" },
+      _vm._l(_vm.boughtIdeas, function (idea) {
+        return _c("div", { key: idea.id, staticClass: "p-ideaList__part" }, [
+          _c("div", { staticClass: "p-ideaList__itemContainer" }, [
+            _c("div", { staticClass: "p-ideaList__item" }, [
+              _c(
+                "label",
+                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+                [_vm._v("アイディア名")]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "p-ideaList__item--part" }, [
+                _vm._v(_vm._s(idea.idea_name)),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-ideaList__item" }, [
+              _c(
+                "label",
+                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+                [_vm._v("カテゴリ")]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "p-ideaList__item--part" }, [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(idea.category.category_name) +
+                    "\n          "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-ideaList__item" }, [
+              _c(
+                "label",
+                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+                [_vm._v("価格")]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "p-ideaList__item--part" }, [
+                _vm._v("¥" + _vm._s(_vm._f("localeNum")(idea.price))),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-ideaList__item" }, [
+              _c(
+                "label",
+                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+                [_vm._v("投稿日")]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "p-ideaList__item--part" }, [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm._f("moment")(idea.created_at)) +
+                    "\n          "
+                ),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "p-ideaList__item" }, [
+            _c(
+              "label",
+              { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+              [_vm._v("概要")]
+            ),
+            _vm._v(" "),
+            _c("p", { staticClass: "p-ideaList__item--part" }, [
+              _vm._v("\n          " + _vm._s(idea.summary) + "\n        "),
+            ]),
+          ]),
+          _vm._v(" "),
+          _vm._m(0, true),
+          _vm._v(" "),
+          _c("div", { staticClass: "p-ideaList__item--link" }, [
+            _c(
+              "a",
+              {
+                staticClass: "c-btn p-ideaList__btn",
+                attrs: { href: "/idea_detail/" + idea.idea_id },
+              },
+              [_vm._v("詳細")]
+            ),
+          ]),
+        ])
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "p-ideaList__pagination" },
+      [
+        _c("pagination-component", {
+          attrs: { data: _vm.ideas },
+          on: {
+            "move-page": function ($event) {
+              return _vm.movePage($event)
+            },
+          },
+        }),
+      ],
+      1
+    ),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "p-ideaList__itemContainer--review" }, [
+      _c("div", { staticClass: "p-ideaList__item" }, [
+        _c(
+          "label",
+          { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+          [_vm._v("口コミ数")]
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-ideaList__item--part" }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-ideaList__item" }, [
+        _c(
+          "label",
+          { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+          [_vm._v("平均評価点数")]
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-ideaList__item--part" }),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IdeaListComponent.vue?vue&type=template&id=28bffd26&":
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/IdeaListComponent.vue?vue&type=template&id=28bffd26& ***!
@@ -59737,8 +60059,23 @@ var render = function () {
                   staticClass: "c-btn p-postIdeaList__btn",
                   attrs: { href: "/idea_detail/" + like.idea.id },
                 },
-                [_vm._v("詳細")]
+                [_vm._v("詳細を見る")]
               ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "c-btn p-ideaDetail__btn likebtn js-unlike-word js-click-likelist",
+                  attrs: { "data-likeid": like.idea.id },
+                },
+                [_vm._v("\n          気になるを解除する\n        ")]
+              ),
+              _vm._v(" "),
+              _c("i", {
+                staticClass:
+                  "fas fa-heart p-ideaDetail__heart js-like-heart likeheart",
+              }),
             ]),
           ]
         )
@@ -72185,9 +72522,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PostIdeaListComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/PostIdeaListComponent.vue */ "./resources/js/components/PostIdeaListComponent.vue");
 /* harmony import */ var _components_IdeaListComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/IdeaListComponent.vue */ "./resources/js/components/IdeaListComponent.vue");
 /* harmony import */ var _components_LikeIdeaListComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/LikeIdeaListComponent.vue */ "./resources/js/components/LikeIdeaListComponent.vue");
-/* harmony import */ var _components_PaginationComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/PaginationComponent.vue */ "./resources/js/components/PaginationComponent.vue");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_BoughtIdeaListComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/BoughtIdeaListComponent.vue */ "./resources/js/components/BoughtIdeaListComponent.vue");
+/* harmony import */ var _components_PaginationComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/PaginationComponent.vue */ "./resources/js/components/PaginationComponent.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_5__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -72206,10 +72544,11 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-vue__WEBPACK_IMPORTED_MODULE_4___default.a.component('postidealist-component', __webpack_require__(/*! ./components/PostIdeaListComponent.vue */ "./resources/js/components/PostIdeaListComponent.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_4___default.a.component('ideadlist-component', __webpack_require__(/*! ./components/IdeaListComponent.vue */ "./resources/js/components/IdeaListComponent.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_4___default.a.component('likeidealist-component', __webpack_require__(/*! ./components/LikeIdeaListComponent.vue */ "./resources/js/components/LikeIdeaListComponent.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_4___default.a.component('pagination-component', __webpack_require__(/*! ./components/PaginationComponent.vue */ "./resources/js/components/PaginationComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('postidealist-component', __webpack_require__(/*! ./components/PostIdeaListComponent.vue */ "./resources/js/components/PostIdeaListComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('ideadlist-component', __webpack_require__(/*! ./components/IdeaListComponent.vue */ "./resources/js/components/IdeaListComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('likeidealist-component', __webpack_require__(/*! ./components/LikeIdeaListComponent.vue */ "./resources/js/components/LikeIdeaListComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('boughtidealist-component', __webpack_require__(/*! ./components/BoughtIdeaListComponent.vue */ "./resources/js/components/BoughtIdeaListComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_5___default.a.component('pagination-component', __webpack_require__(/*! ./components/PaginationComponent.vue */ "./resources/js/components/PaginationComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -72221,13 +72560,15 @@ vue__WEBPACK_IMPORTED_MODULE_4___default.a.component('pagination-component', __w
 
 
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_4___default.a({
+
+var app = new vue__WEBPACK_IMPORTED_MODULE_5___default.a({
   el: '#app',
   components: {
     'postidealist-component': _components_PostIdeaListComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     'idealist-component': _components_IdeaListComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     'likeidealist-component': _components_LikeIdeaListComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    'pagination-component': _components_PaginationComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    'boughtidealist-component': _components_BoughtIdeaListComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    'pagination-component': _components_PaginationComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 }); //フラッシュメッセージ
 
@@ -72254,7 +72595,7 @@ $(function () {
     $('.js-show-modal-target').hide();
     $('.js-show-modal-cover').hide();
   });
-}); //「気になる」を追加・削除機能
+}); //アイディア詳細画面から「気になる」を追加・解除する
 
 $(function () {
   var like = $('.js-click-like');
@@ -72402,6 +72743,75 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/BoughtIdeaListComponent.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/BoughtIdeaListComponent.vue ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _BoughtIdeaListComponent_vue_vue_type_template_id_0aeb30fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BoughtIdeaListComponent.vue?vue&type=template&id=0aeb30fc& */ "./resources/js/components/BoughtIdeaListComponent.vue?vue&type=template&id=0aeb30fc&");
+/* harmony import */ var _BoughtIdeaListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BoughtIdeaListComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/BoughtIdeaListComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _BoughtIdeaListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BoughtIdeaListComponent_vue_vue_type_template_id_0aeb30fc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _BoughtIdeaListComponent_vue_vue_type_template_id_0aeb30fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/BoughtIdeaListComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/BoughtIdeaListComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/BoughtIdeaListComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BoughtIdeaListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./BoughtIdeaListComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BoughtIdeaListComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BoughtIdeaListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/BoughtIdeaListComponent.vue?vue&type=template&id=0aeb30fc&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/BoughtIdeaListComponent.vue?vue&type=template&id=0aeb30fc& ***!
+  \********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BoughtIdeaListComponent_vue_vue_type_template_id_0aeb30fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./BoughtIdeaListComponent.vue?vue&type=template&id=0aeb30fc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BoughtIdeaListComponent.vue?vue&type=template&id=0aeb30fc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BoughtIdeaListComponent_vue_vue_type_template_id_0aeb30fc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BoughtIdeaListComponent_vue_vue_type_template_id_0aeb30fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

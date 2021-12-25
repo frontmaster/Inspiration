@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Ajax;
 
+use App\BoughtIdea;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class LikeIdeasController extends Controller
+class BoughtIdeasController extends Controller
 {
     public function index()
     {
-        $likeIdeas = Auth::user()->Likes()->with('idea')->paginate(2);
+        $boughtIdeaLists = Auth::user()->BoughtIdeas()->with('category')->paginate(1);
 
-        return $likeIdeas;
+        return $boughtIdeaLists;
     }
 }

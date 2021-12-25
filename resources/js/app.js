@@ -22,6 +22,7 @@ window.Vue = require('vue');
 Vue.component('postidealist-component', require('./components/PostIdeaListComponent.vue').default);
 Vue.component('ideadlist-component', require('./components/IdeaListComponent.vue').default);
 Vue.component('likeidealist-component', require('./components/LikeIdeaListComponent.vue').default);
+Vue.component('boughtidealist-component', require('./components/BoughtIdeaListComponent.vue').default);
 Vue.component('pagination-component', require('./components/PaginationComponent.vue').default);
 
 /**
@@ -32,6 +33,7 @@ Vue.component('pagination-component', require('./components/PaginationComponent.
 import PostIdeaListComponent from "./components/PostIdeaListComponent.vue"
 import IdeaListComponent from "./components/IdeaListComponent.vue"
 import LikeIdeaListComponent from "./components/LikeIdeaListComponent.vue"
+import BoughtIdeaListComponent from "./components/BoughtIdeaListComponent.vue"
 import paginationComponent from "./components/PaginationComponent.vue"
 import Vue from "vue";
 const app = new Vue({
@@ -40,6 +42,7 @@ const app = new Vue({
         'postidealist-component': PostIdeaListComponent,
         'idealist-component': IdeaListComponent,
         'likeidealist-component': LikeIdeaListComponent,
+        'boughtidealist-component': BoughtIdeaListComponent,
         'pagination-component': paginationComponent,
     },
 });
@@ -76,10 +79,9 @@ $(function () {
     });
 });
 
-//「気になる」を追加・削除機能
+//アイディア詳細画面から「気になる」を追加・解除する
 $(function () {
     const like = $('.js-click-like');
-
 
     like.on('click', function () {
         const $this = $(this);
@@ -118,6 +120,8 @@ $(function () {
             })
     });
 });
+
+
 
 
 

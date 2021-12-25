@@ -1,7 +1,11 @@
 <template>
   <div class="p-postIdeaList__Container">
     <div class="p-postIdeaList__partContainer">
-      <div class="p-postIdeaList__part" v-for="like in filteredLikes" :key="like.id">
+      <div
+        class="p-postIdeaList__part"
+        v-for="like in filteredLikes"
+        :key="like.id"
+      >
         <div class="p-postIdeaList__item">
           <label for="idea" class="p-postIdeaList__label">アイディア名</label>
           <p class="p-postIdeaList__item--part">{{ like.idea.idea_name }}</p>
@@ -14,17 +18,32 @@
           </p>
         </div>
 
+        
+
         <div class="p-postIdeaList__item--link">
-          <a :href="'/idea_detail/' + like.idea.id" class="c-btn p-postIdeaList__btn">詳細</a>
+          <a
+            :href="'/idea_detail/' + like.idea.id"
+            class="c-btn p-postIdeaList__btn"
+            >詳細を見る</a
+          >
+          <p
+            class="c-btn p-ideaDetail__btn likebtn js-unlike-word js-click-likelist"
+            :data-likeid="like.idea.id"
+          >
+            気になるを解除する
+          </p>
+          <i
+            class="fas fa-heart p-ideaDetail__heart js-like-heart likeheart"
+          ></i>
         </div>
       </div>
     </div>
     <div class="p-postIdeaList__pagination">
-        <pagination-component
-          :data="likes"
-          @move-page="movePage($event)"
-        ></pagination-component>
-      </div>
+      <pagination-component
+        :data="likes"
+        @move-page="movePage($event)"
+      ></pagination-component>
+    </div>
   </div>
 </template>
 

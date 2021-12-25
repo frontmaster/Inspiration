@@ -58,6 +58,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Like', 'user_id');
     }
 
+    public function BoughtIdeas()
+    {
+        return $this->hasMany('App\BoughtIdea', 'buy_user_id');
+    }
+
     public static function boot()
     {
         parent::boot();

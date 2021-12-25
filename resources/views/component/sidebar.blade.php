@@ -9,7 +9,7 @@
                 <a href="" class="c-sidebar__menu--link">レビュー一覧から探す</a>
             </li>
             <li class="c-sidebar__menu">
-                <a href="{{ route('like_idea_lists', auth()->user()->id)}}" class="c-sidebar__menu--link">気になる一覧から探す</a>
+                <a href="{{ route('like_idea_lists', auth()->user()->id)}}" class="c-sidebar__menu--link">気になるリスト一覧から探す</a>
             </li>
         </div>
 
@@ -26,7 +26,7 @@
                 <a href="{{ route('post_idea_list_show', auth()->user()->id) }}" class="c-sidebar__menu--link">投稿したアイディア一覧</a>
             </li>
             <li class="c-sidebar__menu--mid">
-                <a href="" class="c-sidebar__menu--link">購入したアイディア一覧</a>
+                <a href="{{ route('bought_idea_lists', auth()->user()->id) }}" class="c-sidebar__menu--link">購入したアイディア一覧</a>
             </li>
         </div>
     </ul>

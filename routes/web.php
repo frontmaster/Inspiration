@@ -38,10 +38,14 @@ Route::get('/post_idea_edit/{id}', 'PostIdeasController@edit')->name('post_idea_
 Route::post('/post_idea_edit/{id}', 'PostIdeasController@update')->name('post_idea_update');
 Route::delete('/post_idea_edit/{id}', 'PostIdeasController@delete')->name('idea_delete_post');
 Route::get('/idea_detail/{id}', 'PostIdeasController@detail')->name('idea_detail');
+Route::post('/idea_detail/{id}', 'PostIdeasController@buy')->name('idea_buy');
+Route::put('/idea_detail/{id}', 'ReviewsController@review')->name('idea_review');
 Route::post('/idea/like/{id}', 'PostIdeasController@like')->name('idea_like');
-Route::get('/idea_list}', 'IdeaListsController@index')->name('idea_lists');
+Route::get('/idea_list', 'IdeaListsController@index')->name('idea_lists');
 Route::get('ajax/idea_list', 'Ajax\IdeaListsController@index');
 Route::get('ajax/like_idea_list/{id}', 'Ajax\LikeIdeasController@index');
 Route::get('/like_idea_list/{id}', 'LikeIdeasController@index')->name('like_idea_lists');
-
+Route::post('/like_idea_list/{id}', 'LikeIdeasController@delete')->name('like_idea_delete');
+Route::get('/bought_idea_list/{id}', 'BoughtIdeasController@index')->name('bought_idea_lists');
+Route::get('ajax/bought_idea_list/{id}', 'Ajax\BoughtIdeasController@index');
 });

@@ -22,6 +22,10 @@
     }
     &__Container {
         width: 100%;
+        background-color: $white;
+        padding: $space_xxl;
+        box-sizing: border-box;
+        border-radius: 10px;
         @include mq("ss") {
             width: 130%;
         }
@@ -51,10 +55,7 @@
         width: 700px;
         display: flex;
         flex-direction: column;
-        background-color: $white;
         border-radius: 10px;
-        padding: $space_xxl;
-        box-sizing: border-box;
         margin-top: $space_xl;
         @include mq("xl") {
             width: 97%;
@@ -162,34 +163,87 @@
             color: $white;
         }
     }
-    &__heart{
+    &__heart {
         font-size: 20px;
         margin-left: $space_l;
         position: relative;
         color: $white;
         right: 7%;
-        
     }
-    &__btn{
+    &__btn {
         width: 220px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: $font-color_default;
-        color: $white;  
+        background-color: $sub-color2;
+        border: 2px solid $sub-color2;
+        padding: $space_s;
+        box-sizing: border-box;
+        border-radius: 30px;
+        color: $white;
+        &--like {
+            width: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $gray-sub;
+            padding: $space_s;
+            box-sizing: border-box;
+            color: $white;
+        }
+        &--unlike {
+            width: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $accent-color;
+            padding: $space_s;
+            box-sizing: border-box;
+            color: $white;
+        }
+        &--disabled {
+            width: 400px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $shadow;
+            padding: $space_s;
+            box-sizing: border-box;
+            border-radius: 30px;
+            color: $black;
+            font-weight: bold;
+            font-size: $font-size_l;
+            pointer-events: none;
+        }
+        &:hover {
+            background-color: $white;
+            color: $sub-color2;
+        }
     }
-    .likeheart{
+    .likeheart {
         font-size: 20px;
         margin-left: $space_l;
         color: $pink;
     }
-    .likebtn{
+    .likebtn {
         width: 220px;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: $accent-color;
         color: $sub-color2;
-    } 
+    }
+    &__formContainer {
+        margin-top: $space_xxl;
+        display: flex;
+        justify-content: center;
+        background-color: $white;
+        padding: $space_xxl;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    &__form {
+        justify-content: center;
+    }
 }
-

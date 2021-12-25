@@ -2704,6 +2704,10 @@ img {
 
 .p-ideaDetail__Container {
   width: 100%;
+  background-color: #fff;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 280px) {
@@ -2748,10 +2752,7 @@ img {
   width: 700px;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
   border-radius: 10px;
-  padding: 30px;
-  box-sizing: border-box;
   margin-top: 20px;
 }
 
@@ -2911,8 +2912,55 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #444;
+  background-color: #51318F;
+  border: 2px solid #51318F;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 30px;
   color: #fff;
+}
+
+.p-ideaDetail__btn--like {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #767676;
+  padding: 5px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.p-ideaDetail__btn--unlike {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #BBBCDE;
+  padding: 5px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.p-ideaDetail__btn--disabled {
+  width: 400px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b8b8b8;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  color: #2F2725;
+  font-weight: bold;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.p-ideaDetail__btn:hover {
+  background-color: #fff;
+  color: #51318F;
 }
 
 .p-ideaDetail .likeheart {
@@ -2928,6 +2976,20 @@ img {
   justify-content: center;
   background-color: #BBBCDE;
   color: #51318F;
+}
+
+.p-ideaDetail__formContainer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.p-ideaDetail__form {
+  justify-content: center;
 }
 
 .p-ideaList {
