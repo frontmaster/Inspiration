@@ -72665,7 +72665,7 @@ window.ShowLength = function ShowLength(str, field) {
 
   var longString = document.getElementById("js-count-long");
   var longCount = document.querySelector(".js-show-count-long");
-  longCount.innerHTML = longString.value.length; //２０文字以上で文字カウント表示の色変更
+  longCount.innerHTML = longString.value.length; //２0文字以上で文字カウント表示の色変更
 
   if (shortString.value.length > 20) {
     var element = document.querySelector('.c-countarea--short');
@@ -72674,7 +72674,7 @@ window.ShowLength = function ShowLength(str, field) {
     var _element = document.querySelector('.c-countarea--short');
 
     _element.classList.remove("c-countarea--changecolor");
-  } //10０文字以上で文字カウント表示の色変更
+  } //100文字以上で文字カウント表示の色変更
 
 
   if (midString.value.length > 100) {

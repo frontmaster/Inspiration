@@ -242,8 +242,47 @@
         padding: $space_xxl;
         box-sizing: border-box;
         border-radius: 10px;
+        &--review {
+            margin-top: $space_xxl;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: $white;
+            padding: $space_xxl;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
     }
     &__form {
         justify-content: center;
+        &--review{
+            display: flex;
+            flex-direction: column;
+            margin-top: $space_xxl;
+        }
+    }
+    &__starContainer{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $space_xl;
+        &--title{
+            color: $sub-color2;
+            font-weight: bold;
+            font-size: $font-size_l;
+            margin-bottom: $space_m;
+        }
+        &--part{
+            display: flex;
+            margin-bottom: $space_m;
+        }
+    }
+    &__star{
+        color: $yellow;
+        margin-left: $space_s;
+        font-size: $font-size_l;
+    }
+    &__countarea{
+        text-align: right;
+        margin-top: $space_m;
     }
 }

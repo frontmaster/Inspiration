@@ -15,7 +15,7 @@
 
         <div class="p-ideaDetail__content">
             <div class="p-ideaDetail__Container">
-            <h1 class="p-ideaDetail__title">アイディア詳細</h1>
+                <h1 class="p-ideaDetail__title">アイディア詳細</h1>
                 <div class="p-ideaDetail__partContainer">
                     <div class="p-ideaDetail__part">
                         <div class="p-ideaDetail__postUser">
@@ -99,16 +99,49 @@
                 </form>
             </div>
 
-            <div class="p-ideaDetail__formContainer">
-                <form class="p-ideaDetail__form" action="{{ route('idea_review', $postidea->id) }}" method="POST">
+            <div class="p-ideaDetail__formContainer--review">
+                <h1 class="p-ideaDetail__title">アイディアをレビュー</h1>
+                <form class="p-ideaDetail__form--review" action="{{ route('idea_review', $postidea->id) }}" method="POST">
                     @csrf
                     @method('put')
-                    <input type="radio" value="1" name="stars">
-                    <i class="far fa-star"></i>
-                    <input type="radio" value="2" name="stars">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <textarea name="comment" id="" cols="30" rows="10"></textarea>
+                    <div class="p-ideaDetail__starContainer">
+                        <h2 class="p-ideaDetail__starContainer--title">評価</h2>
+                        <div class="p-ideaDetail__starContainer--part">
+                            <input type="radio" value="1" name="stars">
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                        </div>
+                        <div class="p-ideaDetail__starContainer--part">
+                            <input type="radio" value="2" name="stars">
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                        </div>
+                        <div class="p-ideaDetail__starContainer--part">
+                            <input type="radio" value="3" name="stars">
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                        </div>
+                        <div class="p-ideaDetail__starContainer--part">
+                            <input type="radio" value="4" name="stars">
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                        </div>
+                        <div class="p-ideaDetail__starContainer--part">
+                            <input type="radio" value="5" name="stars">
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                        </div>
+                    </div>
+                    <h2 class="p-ideaDetail__starContainer--title">レビュー</h2>
+                    <textarea id="js-count-long" name="comment" class="p-ideaDetail__textarea" placeholder="10000文字以内で入力してください"></textarea>
+                    <div class="p-ideaDetail__countarea">
+                        <span id="count-l" class="c-countarea--long js-show-count-long">0</span>/10000
+                    </div>
                     <button type="submit">投稿する</button>
                 </form>
             </div>

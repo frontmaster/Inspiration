@@ -79,6 +79,8 @@ $(function () {
     });
 });
 
+
+
 //アイディア詳細画面から「気になる」を追加・解除する
 $(function () {
     const like = $('.js-click-like');
@@ -121,14 +123,6 @@ $(function () {
     });
 });
 
-
-
-
-
-
-
-
-
 //文字数表示(ニックネーム・アイディア名)
 const shortString = document.getElementById("js-count-short");
 const shortCount = document.querySelector('.js-show-count-short');
@@ -166,7 +160,7 @@ window.ShowLength = function ShowLength(str, field) {
     const longCount = document.querySelector(".js-show-count-long");
     longCount.innerHTML = longString.value.length;
 
-    //２０文字以上で文字カウント表示の色変更
+    //２0文字以上で文字カウント表示の色変更
     if (shortString.value.length > 20) {
         const element = document.querySelector('.c-countarea--short');
         element.classList.add("c-countarea--changecolor");
@@ -175,7 +169,7 @@ window.ShowLength = function ShowLength(str, field) {
         element.classList.remove("c-countarea--changecolor");
     }
 
-    //10０文字以上で文字カウント表示の色変更
+    //100文字以上で文字カウント表示の色変更
     if (midString.value.length > 100) {
         const element = document.querySelector('.c-countarea--mid');
         element.classList.add("c-countarea--changecolor");
@@ -193,6 +187,7 @@ window.ShowLength = function ShowLength(str, field) {
         element.classList.remove("c-countarea--changecolor");
     }
 }
+
 
 
 

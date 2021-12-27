@@ -2988,8 +2988,54 @@ img {
   border-radius: 10px;
 }
 
+.p-ideaDetail__formContainer--review {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
 .p-ideaDetail__form {
   justify-content: center;
+}
+
+.p-ideaDetail__form--review {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.p-ideaDetail__starContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.p-ideaDetail__starContainer--title {
+  color: #51318F;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.p-ideaDetail__starContainer--part {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.p-ideaDetail__star {
+  color: #FABF13;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.p-ideaDetail__countarea {
+  text-align: right;
+  margin-top: 10px;
 }
 
 .p-ideaList {
