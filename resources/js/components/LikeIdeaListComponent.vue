@@ -82,7 +82,7 @@ export default {
       }
     },
     getItems() {
-      const url = "/ajax/like_idea_list/" + this.user_id + "?page=" + this.page;
+      const url = "https://ajax/like_idea_list/" + this.user_id + "?page=" + this.page;
       axios.get(url).then((response) => {
         this.likes = response.data;
       });

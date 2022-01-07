@@ -2292,7 +2292,7 @@ __webpack_require__.r(__webpack_exports__);
     getItems: function getItems() {
       var _this = this;
 
-      var url = "/ajax/like_idea_list/" + this.user_id + "?page=" + this.page;
+      var url = "https://ajax/like_idea_list/" + this.user_id + "?page=" + this.page;
       axios.get(url).then(function (response) {
         _this.likes = response.data;
       });
