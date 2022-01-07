@@ -3319,7 +3319,7 @@ img {
 .p-ideaDetail__heart {
   font-size: 20px;
   position: relative;
-  right: 10%;
+  right: 13%;
   margin-top: 3px;
   color: #fff;
 }
@@ -3431,7 +3431,7 @@ img {
 .p-ideaDetail .likeheart {
   font-size: 20px;
   position: relative;
-  right: 5%;
+  right: 13%;
   color: #F29C9F;
 }
 
@@ -3919,7 +3919,6 @@ img {
 .p-likeIdeaList__partContainer {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #BBBCDE;
 }
 
 @media screen and (max-width: 599px) {
@@ -3959,23 +3958,24 @@ img {
 
 .p-likeIdeaList__part {
   color: #2F2725;
+  border-top: 1px solid #BBBCDE;
 }
 
 @media screen and (max-width: 599px) {
   .p-likeIdeaList__part {
-    width: 95%;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 320px) {
   .p-likeIdeaList__part {
-    width: 90%;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 280px) {
   .p-likeIdeaList__part {
-    width: 95%;
+    width: 100%;
   }
 }
 
@@ -4015,11 +4015,11 @@ img {
 .p-likeIdeaList__item--link {
   display: flex;
   padding: 15px;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 599px) {
   .p-likeIdeaList__item--link {
-    padding: 0;
     display: flex;
     flex-direction: column;
   }
@@ -4109,7 +4109,6 @@ img {
 .p-likeIdeaList__pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
   border-top: 1px solid #BBBCDE;
   padding: 20px;
 }
