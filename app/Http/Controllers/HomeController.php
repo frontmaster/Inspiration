@@ -25,13 +25,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    public function show($id)
-    {
-        if (!ctype_digit($id)) {
-            return redirect('welcome');
-        }
-
-        return view('mypage');
-    }
 }

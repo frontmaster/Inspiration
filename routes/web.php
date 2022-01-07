@@ -13,9 +13,7 @@
 
 use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TopPageController@index');
 
 Auth::routes();
 
@@ -23,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/mypage/{id}', 'HomeController@show')->name('mypage');
+Route::get('/mypage/{id}', 'MypagesController@index')->name('mypage');
 Route::post('users_delete/{id}', 'UsersController@delete')->name('deleteUsers');
 Route::get('users_delete_confirm/{id}', 'UsersController@delete_confirm')->name('users.delete_confirm');
 Route::get('/profile/{id}', 'ProfilesController@edit')->name('profile');
@@ -48,4 +46,6 @@ Route::get('/like_idea_list/{id}', 'LikeIdeasController@index')->name('like_idea
 Route::post('/like_idea_list/{id}', 'LikeIdeasController@delete')->name('like_idea_delete');
 Route::get('/bought_idea_list/{id}', 'BoughtIdeasController@index')->name('bought_idea_lists');
 Route::get('ajax/bought_idea_list/{id}', 'Ajax\BoughtIdeasController@index');
+Route::get('ajax/review_list', 'Ajax\ReviewsController@index');
+Route::get('/review_list/{id}', 'ReviewsController@index')->name('review_lists');
 });

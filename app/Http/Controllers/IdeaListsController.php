@@ -15,6 +15,9 @@ class IdeaListsController extends Controller
         
         $ideaLists = PostIdea::all();
 
+        
+        //dd($stars);
+
         return view('idea_list', compact('ideaLists'));
     }
 

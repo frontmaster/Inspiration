@@ -145,7 +145,8 @@ return [
 
     'attributes' => ['email' => 'メールアドレス', 'password' => 'パスワード', 'title' => 'タイトル', 'body' => 'メッセージ', 
     'name' => 'ニックネーム', 'comment' => '自己紹介', 'new_password' => '新しいパスワード', 'idea_name' => 'アイディア名',
-     'content' => '内容', 'summary' => '概要', 'price' => '価格', 'user_img' => 'プロフィール画像', 'category_id' => 'カテゴリ'],
+     'content' => '内容', 'summary' => '概要', 'price' => '価格', 'user_img' => 'プロフィール画像', 'category_id' => 'カテゴリ',
+    'review' => 'レビュー', 'stars' => '評価'],
 
 
 ];

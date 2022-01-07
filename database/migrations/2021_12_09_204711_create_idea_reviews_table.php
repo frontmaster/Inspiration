@@ -17,12 +17,15 @@ class CreateIdeaReviewsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('post_idea_id');
             $table->unsignedBigInteger('post_user_id');
+            $table->unsignedBigInteger('to_user_id');
             $table->integer('stars')->default(0);
             $table->text('comment');
             $table->timestamps();
 
             $table->foreign('post_idea_id')->references('id')->on('postideas')->onDelete('CASCADE');
             $table->foreign('post_user_id')->references('id')->on('users');
+            $table->foreign('to_user_id')->references('id')->on('users');
+            
         });
     }
 
@@ -38,6 +41,8 @@ class CreateIdeaReviewsTable extends Migration
             $table->dropColumn('post_idea_id');
             $table->dropForeign('idea_reviews_post_user_id_foreign');
             $table->dropColumn('post_user_id');
+            $table->dropForeign('idea_reviews_to_user_id_foreign');
+            $table->dropColumn('to_user_id');
         });
         Schema::dropIfExists('idea_reviews');
     }

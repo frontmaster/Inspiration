@@ -30,4 +30,5 @@ class PostIdea extends Model
     {
         return $this->hasMany('App\IdeaReview', 'post_idea_id');
     }
+
 }

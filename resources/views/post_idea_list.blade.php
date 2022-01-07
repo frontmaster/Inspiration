@@ -15,7 +15,7 @@
 
         <div class="p-postIdeaList__content">
             <h1 class="p-postIdeaList__title">投稿したアイディア一覧</h1>
-        @if($postideas == null)
+        @if($postIdeaLists->isEmpty())
             <p class="p-postIdeaList__sentence">投稿したアイディアはありません</p>
         @else
             <postidealist-component></postidealist-component>

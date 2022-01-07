@@ -1,4 +1,4 @@
-.p-postIdeaList {
+.p-reviewList {
     width: 100%;
     height: 100%;
     display: flex;
@@ -22,7 +22,21 @@
     }
     &__Container {
         width: 100%;
-        
+    }
+    &__searchBox {
+        display: flex;
+        align-items: center;
+        margin-top: $space_xl;
+    }
+    &__search {
+        width: 230px;
+        height: 30px;
+        border: 2px solid $sub-color2;
+        border-radius: 5px;
+    }
+    &__searchIcon {
+        position: relative;
+        right: 5%;
     }
     &__title {
         text-align: center;
@@ -45,12 +59,10 @@
     &__sentence {
         border-top: 1px solid $accent-color;
         padding: $space_l;
-        
     }
     &__partContainer {
         display: flex;
         flex-direction: column;
-        //border-top: 1px solid $accent-color;
         @include mq() {
             flex-direction: column;
             align-items: center;
@@ -62,8 +74,8 @@
         flex-direction: column;
         background-color: $white;
         border-radius: 10px;
-        
-        
+        //padding: $space_xxl;
+        //box-sizing: border-box;
         margin-top: $space_xl;
         @include mq("xl") {
             width: 97%;
@@ -77,8 +89,10 @@
         }
     }
     &__part {
-        color: $black;
         border-top: 1px solid $accent-color;
+        color: $black;
+        padding: $space_l;
+        box-sizing: border-box;
         @include mq() {
             width: 100%;
         }
@@ -89,11 +103,19 @@
             width: 100%;
         }
     }
+    &__itemContainer {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        &--review {
+            display: flex;
+        }
+    }
     &__item {
         display: flex;
+        margin-bottom: $space_s;
+        flex-direction: column;
         align-items: flex-start;
-        padding: $space_s;
-        box-sizing: border-box;
         @include mq("xl") {
             flex-direction: column;
             align-items: flex-start;
@@ -112,7 +134,10 @@
         }
         &--link {
             display: flex;
-            padding: $space_l;
+        }
+        &--user {
+            display: flex;
+            margin-bottom: $space_s;
         }
     }
     &__label {
@@ -124,14 +149,13 @@
     }
     &__btn {
         display: block;
-        width: 100px;
         background-color: $sub-color2;
         color: $white;
         border: 2px solid $sub-color2;
         padding: $space_s;
         box-sizing: border-box;
         font-size: $font-size_base;
-        
+
         margin-right: $space_xl;
         &:hover {
             background-color: $white;
@@ -153,8 +177,14 @@
         display: flex;
         justify-content: center;
         margin-top: $space_xl;
-        //margin-bottom: $space_xl;
-        border-top: 1px solid $accent-color;
-        padding: $space_xl;
+    }
+    &__img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+    }
+    &__star {
+        color: $yellow;
+        font-size: $font-size_l;
     }
 }

@@ -67,6 +67,15 @@
             font-size: $font-size_s;
         }
     }
+    &__form{
+        margin-top: $space_l;
+    }
+    &__input{
+        height: 30px;
+        width: 100%;
+        margin-top: $space_m;
+        padding: 0;
+    }
     &__button {
         text-align: right;
     }
@@ -80,6 +89,14 @@
         }
         &:hover {
             opacity: 0.8;
+        }
+    }
+    &__returnMsg{
+        &:hover{
+            text-decoration: underline;
+        }
+        @include mq("ss"){
+            margin-top: $space_l;
         }
     }
 }

@@ -63,6 +63,11 @@ class User extends Authenticatable
         return $this->hasMany('App\BoughtIdea', 'buy_user_id');
     }
 
+    public function reviews()
+    {
+        return $this->hasMany('App\IdeaReview', 'to_user_id');
+    }
+
     public static function boot()
     {
         parent::boot();

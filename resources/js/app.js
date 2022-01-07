@@ -23,6 +23,7 @@ Vue.component('postidealist-component', require('./components/PostIdeaListCompon
 Vue.component('ideadlist-component', require('./components/IdeaListComponent.vue').default);
 Vue.component('likeidealist-component', require('./components/LikeIdeaListComponent.vue').default);
 Vue.component('boughtidealist-component', require('./components/BoughtIdeaListComponent.vue').default);
+Vue.component('reviewlist-component', require('./components/ReviewListComponent.vue').default);
 Vue.component('pagination-component', require('./components/PaginationComponent.vue').default);
 
 /**
@@ -34,6 +35,7 @@ import PostIdeaListComponent from "./components/PostIdeaListComponent.vue"
 import IdeaListComponent from "./components/IdeaListComponent.vue"
 import LikeIdeaListComponent from "./components/LikeIdeaListComponent.vue"
 import BoughtIdeaListComponent from "./components/BoughtIdeaListComponent.vue"
+import ReviewListComponent from "./components/ReviewListComponent.vue"
 import paginationComponent from "./components/PaginationComponent.vue"
 import Vue from "vue";
 const app = new Vue({
@@ -43,6 +45,7 @@ const app = new Vue({
         'idealist-component': IdeaListComponent,
         'likeidealist-component': LikeIdeaListComponent,
         'boughtidealist-component': BoughtIdeaListComponent,
+        'reviewlist-component': ReviewListComponent,
         'pagination-component': paginationComponent,
     },
 });
@@ -123,70 +126,201 @@ $(function () {
     });
 });
 
-//文字数表示(ニックネーム・アイディア名)
-const shortString = document.getElementById("js-count-short");
-const shortCount = document.querySelector('.js-show-count-short');
-shortCount.innerHTML = shortString.value.length;
 
-//文字数表示(概要)
-const midString = document.getElementById("js-count-mid");
-const midCount = document.querySelector('.js-show-count-mid');
-midCount.innerHTML = midString.value.length;
+//文字カウント(プロフィール編集画面)
+window.addEventListener('DOMContentLoaded',
+    function () {
 
-//文字数表示(自己紹介)
-const longString = document.getElementById("js-count-long");
-const longCount = document.querySelector(".js-show-count-long");
-longCount.innerHTML = longString.value.length;
+        //文字数表示(ニックネーム)
+        const name = document.getElementById('js-count-name');
+
+        const countName = name.value.length;
+
+        const showCountName = document.querySelector('.js-show-count-name');
+
+        showCountName.innerHTML = countName;
+
+        //文字数表示(自己紹介)
+        const text = document.getElementById('js-count-text');
+
+        const countText = text.value.length;
+
+        const showCountText = document.querySelector('.js-show-count-text');
+
+        showCountText.innerHTML = countText;
 
 
 
+        //文字カウント(ニックネーム)
+        name.addEventListener('keyup', function () {
+            const name = document.getElementById('js-count-name');
 
-//文字カウント
-window.ShowLength = function ShowLength(str, field) {
-    document.getElementById(field).innerHTML = str.length;
+            const countName = name.value.length;
 
-    //文字数表示(ニックネーム・アイディア名)
-    const shortString = document.getElementById("js-count-short");
-    const shortCount = document.querySelector('.js-show-count-short');
-    shortCount.innerHTML = shortString.value.length;
+            const showCountName = document.querySelector('.js-show-count-name');
 
-    //文字数表示(概要)
-    const midString = document.getElementById("js-count-mid");
-    const midCount = document.querySelector('.js-show-count-mid');
-    midCount.innerHTML = midString.value.length;
+            showCountName.innerHTML = countName;
 
-    //文字数表示(自己紹介)
-    const longString = document.getElementById("js-count-long");
-    const longCount = document.querySelector(".js-show-count-long");
-    longCount.innerHTML = longString.value.length;
+            //20文字以上入力で文字の色を変化させる
+            if (name.value.length > 20) {
+                const element = document.querySelector('.c-countarea--short');
+                element.classList.add("c-countarea--changecolor");
+            } else if (name.value.length <= 20) {
+                const element = document.querySelector('.c-countarea--short');
+                element.classList.remove("c-countarea--changecolor");
+            }
+        });
 
-    //２0文字以上で文字カウント表示の色変更
-    if (shortString.value.length > 20) {
-        const element = document.querySelector('.c-countarea--short');
-        element.classList.add("c-countarea--changecolor");
-    } else if (shortString.value.length <= 20) {
-        const element = document.querySelector('.c-countarea--short');
-        element.classList.remove("c-countarea--changecolor");
-    }
+        //文字カウント(自己紹介)
+        text.addEventListener('keyup', function () {
+            const text = document.getElementById('js-count-text');
 
-    //100文字以上で文字カウント表示の色変更
-    if (midString.value.length > 100) {
-        const element = document.querySelector('.c-countarea--mid');
-        element.classList.add("c-countarea--changecolor");
-    } else if (midString.value.length <= 100) {
-        const element = document.querySelector('.c-countarea--mid');
-        element.classList.remove("c-countarea--changecolor");
-    }
+            const countText = text.value.length;
 
-    //10000文字以上で文字カウント表示の色変更
-    if (longString.value.length > 10000) {
-        const element = document.querySelector('.c-countarea--long');
-        element.classList.add("c-countarea--changecolor");
-    } else if (longString.value.length <= 10000) {
-        const element = document.querySelector('.c-countarea--long');
-        element.classList.remove("c-countarea--changecolor");
-    }
-}
+            const showCountText = document.querySelector('.js-show-count-text');
+
+            showCountText.innerHTML = countText;
+
+            //10000文字以上入力で文字の色を変化させる
+            if (text.value.length > 10000) {
+                const element = document.querySelector('.c-countarea--long');
+                element.classList.add("c-countarea--changecolor");
+            } else if (text.value.length <= 10000) {
+                const element = document.querySelector('.c-countarea--long');
+                element.classList.remove("c-countarea--changecolor");
+            }
+        });
+    });
+
+//文字カウント(アイディア投稿画面)
+window.addEventListener('DOMContentLoaded',
+    function () {
+
+        const idea = document.getElementById('js-count-idea');
+        const summary = document.getElementById('js-count-summary');
+        const content = document.getElementById('js-count-content');
+
+        //文字カウント(アイディア名)
+        idea.addEventListener('keyup', function () {
+
+            const countIdea = idea.value.length;
+
+            const showCountIdea = document.querySelector('.js-show-count-idea');
+
+            showCountIdea.innerHTML = countIdea;
+
+            //20文字以上入力で文字の色を変化させる
+            if (idea.value.length > 20) {
+                const element = document.querySelector('.c-countarea--short');
+                element.classList.add("c-countarea--changecolor");
+            } else if (idea.value.length <= 20) {
+                const element = document.querySelector('.c-countarea--short');
+                element.classList.remove("c-countarea--changecolor");
+            }
+
+        });
+
+        //文字カウント(概要)
+        summary.addEventListener('keyup', function () {
+
+            const countSummary = summary.value.length;
+
+            const showCountSummary = document.querySelector('.js-show-count-summary');
+
+            showCountSummary.innerHTML = countSummary;
+
+            //100文字以上入力で文字の色を変化させる
+            if (summary.value.length > 100) {
+                const element = document.querySelector('.c-countarea--mid');
+                element.classList.add("c-countarea--changecolor");
+            } else if (summary.value.length <= 100) {
+                const element = document.querySelector('.c-countarea--mid');
+                element.classList.remove("c-countarea--changecolor");
+            }
+
+        });
+
+        //文字カウント(内容)
+        content.addEventListener('keyup', function () {
+
+            const countContent = content.value.length;
+
+            const showCountContent = document.querySelector('.js-show-count-content');
+
+            showCountContent.innerHTML = countContent;
+
+            //100文字以上入力で文字の色を変化させる
+            if (content.value.length > 10000) {
+                const element = document.querySelector('.c-countarea--long');
+                element.classList.add("c-countarea--changecolor");
+            } else if (content.value.length <= 10000) {
+                const element = document.querySelector('.c-countarea--long');
+                element.classList.remove("c-countarea--changecolor");
+            }
+        });
+    });
+
+//文字カウント(アイディア編集画面)
+window.addEventListener('DOMContentLoaded',
+    function () {
+
+        //文字数表示(アイディア名)
+        const idea = document.getElementById('js-count-idea');
+
+        const countIdea = idea.value.length;
+
+        const showCountIdea = document.querySelector('.js-show-count-idea');
+
+        showCountIdea.innerHTML = countIdea;
+
+        //文字数表示(概要)
+        const summary = document.getElementById('js-count-summary');
+
+        const countSummary = summary.value.length;
+
+        const showCountSummary = document.querySelector('.js-show-count-summary');
+
+        showCountSummary.innerHTML = countSummary;
+
+        //文字数表示(内容)
+        const content = document.getElementById('js-count-content');
+
+        const countContent = content.value.length;
+
+        const showCountContent = document.querySelector('.js-show-count-content');
+
+        showCountContent.innerHTML = countContent;
+    });
+
+    //アイディア詳細画面のレビュー文字カウント
+    window.addEventListener('DOMContentLoaded', 
+    function(){
+
+        const review = document.getElementById('js-count-review');
+
+        review.addEventListener('keyup', function(){
+
+            const countReview = review.value.length;
+
+            const showCountReview = document.querySelector('.js-show-count-review');
+
+            showCountReview.innerHTML = countReview;
+
+            //10000文字以上入力で文字の色を変化させる
+            if (review.value.length > 10000) {
+                const element = document.querySelector('.c-countarea--long');
+                element.classList.add("c-countarea--changecolor");
+            } else if (review.value.length <= 10000) {
+                const element = document.querySelector('.c-countarea--long');
+                element.classList.remove("c-countarea--changecolor");
+            }
+
+        });
+
+    });
+
+
+
 
 
 

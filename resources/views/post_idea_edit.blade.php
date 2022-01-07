@@ -70,9 +70,9 @@
                     <label for="idea" class="p-postIdeaEdit__label">アイディア名
                         <span class="p-postIdeaEdit__require">必須</span>
                     </label>
-                    <input type="text" id="js-count-short" class="p-postIdeaEdit__input @error('idea_name') is-error @enderror" name="idea_name" value="{{ old('idea_name', $postidea->idea_name) }}" placeholder="20文字以内で入力してください" onkeyup="ShowLength(value, 'count-short');">
+                    <input type="text" id="js-count-idea" class="p-postIdeaEdit__input @error('idea_name') is-error @enderror" name="idea_name" value="{{ old('idea_name', $postidea->idea_name) }}" placeholder="20文字以内で入力してください">
                     <div class="p-postIdeaEdit__countarea">
-                        <span id="count-short" class="c-countarea--short js-show-count-short">0</span>/20
+                        <span id="count-short" class="c-countarea--short js-show-count-idea">0</span>/20
                     </div>
                 </div>
 
@@ -85,9 +85,9 @@
                     <label for="summary" class="p-postIdeaEdit__label">概要
                         <span class="p-postIdeaEdit__require">必須</span>
                     </label>
-                    <textarea name="summary" id="js-count-mid" class="p-postIdeaEdit__textarea" placeholder="100文字以内で入力してください" onkeyup="ShowLength(value, 'count-mid');">{{ old('summary', $postidea->summary) }}</textarea>
+                    <textarea name="summary" id="js-count-summary" class="p-postIdeaEdit__textarea" placeholder="100文字以内で入力してください">{{ old('summary', $postidea->summary) }}</textarea>
                     <div class="p-postIdeaEdit__countarea--comment">
-                        <span id="count-mid" class="c-countarea--mid js-show-count-mid">0</span>/100
+                        <span id="count-mid" class="c-countarea--mid js-show-count-summary">0</span>/100
                     </div>
                 </div>
 
@@ -100,9 +100,9 @@
                     <label for="content" class="p-postIdea__label">内容
                         <span class="p-postIdeaEdit__require">必須</span>
                     </label>
-                    <textarea id="js-count-long" name="content" class="p-postIdeaEdit__textarea" placeholder="10000文字以内で入力してください" onkeyup="ShowLength(value, 'count-long');">{{ old('content', $postidea->content) }}</textarea>
+                    <textarea id="js-count-content" name="content" class="p-postIdeaEdit__textarea" placeholder="10000文字以内で入力してください">{{ old('content', $postidea->content) }}</textarea>
                     <div class="p-postIdeaEdit__countarea--content">
-                        <span id="count-long" class="c-countarea--long js-show-count-long">0</span>/10000
+                        <span id="count-long" class="c-countarea--long js-show-count-content">0</span>/10000
                     </div>
                 </div>
 

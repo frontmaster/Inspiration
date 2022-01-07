@@ -17,10 +17,12 @@ class CreateLikesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('idea_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
 
             $table->foreign('idea_id')->references('id')->on('postideas')->onDelete('CASCADE');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -36,6 +38,8 @@ class CreateLikesTable extends Migration
             $table->dropColumn('idea_id');
             $table->dropForeign('likes_user_id_foreign');
             $table->dropColumn('user_id');
+            $table->dropForeign('likes_category_id_foreign');
+            $table->dropColumn('category_id');
         });
         Schema::dropIfExists('likes');
     }

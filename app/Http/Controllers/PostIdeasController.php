@@ -6,6 +6,10 @@ use App\Like;
 use App\Category;
 use App\PostIdea;
 use App\BoughtIdea;
+use App\IdeaReview;
+use App\Mail\ToBoughtIdeaUserNotice;
+use App\Mail\ToPostIdeaUserNotice;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -114,8 +118,10 @@ class PostIdeasController extends Controller
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
         $bought_idea = BoughtIdea::where('buy_user_id', $user_id)->where('idea_id', $id)->first();
         $buy_user_id = optional($bought_idea)->buy_user_id;
-
-        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id'));
+        $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
+        $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
+        //dd($ideaReview);
+        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id', 'review', 'ideaReview', 'bought_idea'));
     }
 
     //「気になる」を追加・削除
@@ -124,22 +130,26 @@ class PostIdeasController extends Controller
         $postidea = PostIdea::find($id);
         $postIdeaUser = $postidea->user()->first();
         $category = $postidea->category()->first();
+        $category_id = $category->id;
         $user_id = Auth::user()->id;
         $idea_id = $postidea->id;
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
         $bought_idea = BoughtIdea::where('buy_user_id', $user_id)->where('idea_id', $id)->first();
         $buy_user_id = optional($bought_idea)->buy_user_id;
+        $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
+        $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
         
 
         if(!$already_liked){
             $like = new Like;
             $like->idea_id = $idea_id;
             $like->user_id = $user_id;
+            $like->category_id = $category_id;
             $like->save();
         }else{
             Like::where('idea_id', $idea_id)->where('user_id', $user_id)->delete();
         }
-        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked' , 'postIdeaUser', 'category', 'buy_user_id'));
+        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked' , 'postIdeaUser', 'category', 'buy_user_id', 'review', 'bought_idea', 'ideaReview', 'category_id'));
 
     }
 
@@ -164,7 +174,12 @@ class PostIdeasController extends Controller
         $boughtidea->idea_id = $postIdea->id;
         $boughtidea->save();
 
-        return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディアを購入しました');
+        $sale_user = $postIdea->user()->first();
+        $buy_user = auth()->user();
+        Mail::to($sale_user->email)->send(new ToPostIdeaUserNotice($buy_user));
+        Mail::to($buy_user->email)->send(new ToBoughtIdeaUserNotice($sale_user));
+
+        return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディアを購入しました。');
   
     }
 }

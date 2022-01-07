@@ -51,18 +51,18 @@
         <div class="p-ideaList__itemContainer--review">
           <div class="p-ideaList__item">
             <label for="idea" class="p-ideaList__label">口コミ数</label>
-            <p class="p-ideaList__item--part"></p>
+            <p class="p-ideaList__item--part">{{ idea.reviews.length }}件</p>
           </div>
 
           <div class="p-ideaList__item">
             <label for="idea" class="p-ideaList__label">平均評価点数</label>
-            <p class="p-ideaList__item--part"></p>
+            <p class="p-ideaList__item--part">{{ idea.stars }}点</p>
           </div>
         </div>
 
         <div class="p-ideaList__item--link">
           <a :href="'/idea_detail/' + idea.id" class="c-btn p-ideaList__btn"
-            >詳細</a
+            >詳細を見る</a
           >
         </div>
       </div>

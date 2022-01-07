@@ -2,11 +2,7 @@
 
 @section('title', 'パスワード再発行通知')
 
-@section('header')
-<header class="l-header">
-        <div class="l-header__logo">Inspiration</div>
-    </header>
-@endsection
+@include('layouts.head')
 
 @section('content')
 <main class="l-main">
@@ -22,6 +18,3 @@
 </main>
 @endsection
 
-@section('footer')
-@parent
-@endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BoughtIdea;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BoughtIdeasController extends Controller
 {
@@ -13,7 +14,9 @@ class BoughtIdeasController extends Controller
         if (!ctype_digit($id)) {
             return redirect('mypage/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
-        $boughtIdeaLists = BoughtIdea::all();
+        $user = Auth::user();
+        $boughtIdeaLists = $user->BoughtIdeas()->first();
+        
 
         return view('bought_idea_list', compact('boughtIdeaLists'));
     }

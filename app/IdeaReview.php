@@ -12,4 +12,10 @@ class IdeaReview extends Model
     {
         return $this->belongsTo('App\User', 'post_user_id');
     }
+
+    public function idea()
+    {
+        return $this->belongsTo('App\PostIdea', 'post_idea_id');
+    }
+
 }

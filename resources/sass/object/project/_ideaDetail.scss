@@ -27,7 +27,10 @@
         box-sizing: border-box;
         border-radius: 10px;
         @include mq("ss") {
-            width: 130%;
+            width: 100%;
+        }
+        @include mq() {
+            padding: 0;
         }
     }
     &__title {
@@ -37,6 +40,7 @@
         margin-bottom: $space_m;
         @include mq() {
             font-size: $font-size_xl;
+            margin-top: $space_xl;
         }
         @include mq("sm") {
             font-size: $font-size_l;
@@ -44,6 +48,20 @@
         @include mq("ss") {
             width: 200px;
         }
+        &--review {
+            font-size: $font-size_xxl;
+            color: $black;
+            margin-bottom: $space_m;
+            text-align: center;
+            padding: $space_xl;
+            @include mq() {
+                font-size: $font-size_xl;
+            }
+        }
+    }
+    &__sentence {
+        border-top: 1px solid $accent-color;
+        padding: $space_l;
     }
     &__partContainer {
         @include mq() {
@@ -123,32 +141,36 @@
         box-sizing: border-box;
         display: flex;
     }
-    &__postUser {
-        border: 2px solid $sub-color2;
-        border-radius: 10px;
-        width: 100%;
-        padding: $space_m;
-        box-sizing: border-box;
-        margin-bottom: $space_l;
-        display: flex;
-        flex-direction: column;
-    }
     &__postUserInfo {
         display: flex;
         align-items: center;
+        padding: $space_s;
         &--name {
             font-size: $font-size_l;
         }
+        &--review {
+            display: flex;
+            align-items: center;
+            padding: $space_s;
+            margin-bottom: $space_l;
+        }
     }
     &__img {
-        height: 80px;
-        width: 80px;
+        height: 50px;
+        width: 50px;
         border-radius: 50%;
         margin-right: $space_xl;
     }
     &__button {
         display: flex;
         align-items: center;
+        @include mq() {
+            margin-left: $space_m;
+            margin-bottom: $space_xl;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
         &--share {
             width: 130px;
             padding: $space_s;
@@ -161,14 +183,37 @@
             text-align: center;
             margin-right: $space_l;
             color: $white;
+            opacity: 0.9;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &--review {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: $space_xl;
+        }
+        &--disabled {
+            display: flex;
+            justify-content: center;
         }
     }
     &__heart {
         font-size: 20px;
-        margin-left: $space_l;
         position: relative;
+        right: 10%;
+        margin-top: 3px;
         color: $white;
-        right: 7%;
+        @include mq(){
+            right: 15%;
+        }
+    }
+    &__likeContainer {
+        display: flex;
+        align-items: center;
+        @include mq(){
+            margin-top: $space_l;
+        }
     }
     &__btn {
         width: 220px;
@@ -181,6 +226,7 @@
         box-sizing: border-box;
         border-radius: 30px;
         color: $white;
+
         &--like {
             width: 220px;
             display: flex;
@@ -190,13 +236,16 @@
             padding: $space_s;
             box-sizing: border-box;
             color: $white;
+            @include mq() {
+                margin-top: $space_m;
+            }
         }
         &--unlike {
             width: 220px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: $accent-color;
+            background-color: $gray-sub;
             padding: $space_s;
             box-sizing: border-box;
             color: $white;
@@ -215,6 +264,21 @@
             font-weight: bold;
             font-size: $font-size_l;
             pointer-events: none;
+            @include mq() {
+                width: 300px;
+                font-size: $font-size_m;
+            }
+            @include mq("sm") {
+                width: 270px;
+            }
+            @include mq("ss") {
+                width: 250px;
+            }
+        }
+        &--review {
+            background-color: $sub-color2;
+            color: $white;
+            float: right;
         }
         &:hover {
             background-color: $white;
@@ -223,8 +287,13 @@
     }
     .likeheart {
         font-size: 20px;
-        margin-left: $space_l;
+        position: relative;
+        right: 5%;
         color: $pink;
+        @include mq(){
+            right: 10%;
+            margin-top: 11px;
+        }
     }
     .likebtn {
         width: 220px;
@@ -233,6 +302,9 @@
         justify-content: center;
         background-color: $accent-color;
         color: $sub-color2;
+        @include mq() {
+            margin-top: $space_m;
+        }
     }
     &__formContainer {
         margin-top: $space_xxl;
@@ -242,6 +314,9 @@
         padding: $space_xxl;
         box-sizing: border-box;
         border-radius: 10px;
+        @include mq() {
+            width: 100%;
+        }
         &--review {
             margin-top: $space_xxl;
             display: flex;
@@ -255,34 +330,69 @@
     }
     &__form {
         justify-content: center;
-        &--review{
+        &--review {
             display: flex;
             flex-direction: column;
             margin-top: $space_xxl;
         }
     }
-    &__starContainer{
+    &__starContainer {
         display: flex;
         flex-direction: column;
-        margin-bottom: $space_xl;
-        &--title{
+        &--title {
             color: $sub-color2;
             font-weight: bold;
             font-size: $font-size_l;
             margin-bottom: $space_m;
         }
-        &--part{
+        &--part {
             display: flex;
             margin-bottom: $space_m;
         }
     }
-    &__star{
+    &__star {
         color: $yellow;
         margin-left: $space_s;
         font-size: $font-size_l;
     }
-    &__countarea{
+    &__countarea {
         text-align: right;
         margin-top: $space_m;
+    }
+    &__textarea {
+        height: 200px;
+    }
+    &__review {
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        border-radius: 10px;
+        margin-top: $space_xxl;
+        @include mq() {
+            width: 100%;
+        }
+    }
+    &__reviewContainer {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: $space_l;
+        box-sizing: border-box;
+        border-top: 1px solid $accent-color;
+        &--user {
+            display: flex;
+            margin-bottom: $space_s;
+            align-items: center;
+        }
+        &--part {
+            padding: $space_s;
+            margin-left: 0;
+        }
+        &--comment {
+            display: flex;
+            margin-bottom: $space_s;
+            align-items: center;
+        }
     }
 }

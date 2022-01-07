@@ -1,44 +1,55 @@
 <template>
-  <div class="p-postIdeaList__Container">
-    <div class="p-postIdeaList__partContainer">
+  <div class="p-likeIdeaList__Container">
+    <div class="p-likeIdeaList__partContainer">
       <div
-        class="p-postIdeaList__part"
+        class="p-likeIdeaList__part"
         v-for="like in filteredLikes"
         :key="like.id"
       >
-        <div class="p-postIdeaList__item">
-          <label for="idea" class="p-postIdeaList__label">アイディア名</label>
-          <p class="p-postIdeaList__item--part">{{ like.idea.idea_name }}</p>
+        <div class="p-likeIdeaList__item">
+          <div class="p-likeIdeaList__item--part">
+            <label for="idea" class="p-likeIdeaList__label">アイディア名</label>
+            <p class="p-likeIdeaList__item--part">{{ like.idea.idea_name }}</p>
+          </div>
+          <div class="p-likeIdeaList__item--part">
+            <label for="category" class="p-likeIdeaList__label">カテゴリ</label>
+            <p class="p-likeIdeaList__item--part">
+              {{ like.category.category_name }}
+            </p>
+          </div>
+          <div class="p-likeIdeaList__item--part">
+            <label for="category" class="p-likeIdeaList__label">価格</label>
+            <p class="p-likeIdeaList__item--part">
+              ¥{{ like.idea.price | localeNum }}
+            </p>
+          </div>
         </div>
 
-        <div class="p-postIdeaList__item">
-          <label for="idea" class="p-postIdeaList__label">価格</label>
-          <p class="p-postIdeaList__item--part">
-            ¥{{ like.idea.price | localeNum }}
-          </p>
-        </div>
-
-        
-
-        <div class="p-postIdeaList__item--link">
+        <div class="p-likeIdeaList__item--link">
           <a
             :href="'/idea_detail/' + like.idea.id"
-            class="c-btn p-postIdeaList__btn"
+            class="c-btn p-likeIdeaList__btn"
             >詳細を見る</a
           >
           <p
-            class="c-btn p-ideaDetail__btn likebtn js-unlike-word js-click-likelist"
+            class="
+              c-btn
+              p-likeIdeaList__btn--like
+              likebtn
+              js-unlike-word js-click-likelist
+            "
             :data-likeid="like.idea.id"
           >
             気になるを解除する
-          </p>
+          
           <i
-            class="fas fa-heart p-ideaDetail__heart js-like-heart likeheart"
+            class="fas fa-heart p-likeIdeaList__heart js-like-heart likeheart"
           ></i>
+          </p>
         </div>
       </div>
     </div>
-    <div class="p-postIdeaList__pagination">
+    <div class="p-likeIdeaList__pagination">
       <pagination-component
         :data="likes"
         @move-page="movePage($event)"

@@ -10,7 +10,7 @@ class LikeIdeasController extends Controller
 {
     public function index()
     {
-        $likeIdeas = Auth::user()->Likes()->with('idea')->paginate(2);
+        $likeIdeas = Auth::user()->Likes()->with('idea', 'category')->paginate(2);
 
         return $likeIdeas;
     }

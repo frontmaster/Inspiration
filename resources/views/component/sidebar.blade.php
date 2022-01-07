@@ -6,7 +6,7 @@
                 <a href="{{ route('idea_lists') }}" class="c-sidebar__menu--link">アイディア一覧から探す</a>
             </li>
             <li class="c-sidebar__menu">
-                <a href="" class="c-sidebar__menu--link">レビュー一覧から探す</a>
+                <a href="{{ route('review_lists', auth()->user()->id) }}" class="c-sidebar__menu--link">レビュー一覧から探す</a>
             </li>
             <li class="c-sidebar__menu">
                 <a href="{{ route('like_idea_lists', auth()->user()->id)}}" class="c-sidebar__menu--link">気になるリスト一覧から探す</a>

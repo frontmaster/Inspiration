@@ -18,7 +18,7 @@
                 <h1 class="p-ideaDetail__title">アイディア詳細</h1>
                 <div class="p-ideaDetail__partContainer">
                     <div class="p-ideaDetail__part">
-                        <div class="p-ideaDetail__postUser">
+                        <div class="p-ideaDetail__item">
                             <label for="postUser" class="p-ideaDetail__label">アイディア投稿者</label>
                             <div class="p-ideaDetail__postUserInfo">
                                 @if($postIdeaUser->user_img == null)
@@ -72,9 +72,12 @@
                     @if(!$already_liked)
                     <p class="c-btn p-ideaDetail__btn--like js-like-word js-click-like" data-ideaid="{{ $idea_id }}">気になる</p>
                     <i class="fas fa-heart p-ideaDetail__heart js-like-heart"></i>
+
                     @else
-                    <p class="c-btn p-ideaDetail__btn--unlike likebtn js-unlike-word js-click-like" data-ideaid="{{ $idea_id }}">気になるを解除する</p>
-                    <i class="fas fa-heart p-ideaDetail__heart js-like-heart likeheart"></i>
+                    <div class="p-ideaDetail__likeContainer">
+                        <p class="c-btn p-ideaDetail__btn--unlike likebtn js-unlike-word js-click-like" data-ideaid="{{ $idea_id }}">気になるを解除する</p>
+                        <i class="fas fa-heart p-ideaDetail__heart js-like-heart likeheart"></i>
+                    </div>
                     @endif
                 </div>
             </div>
@@ -99,6 +102,7 @@
                 </form>
             </div>
 
+            @if($postIdeaUser != auth()->user() and $bought_idea != null)
             <div class="p-ideaDetail__formContainer--review">
                 <h1 class="p-ideaDetail__title">アイディアをレビュー</h1>
                 <form class="p-ideaDetail__form--review" action="{{ route('idea_review', $postidea->id) }}" method="POST">
@@ -106,6 +110,11 @@
                     @method('put')
                     <div class="p-ideaDetail__starContainer">
                         <h2 class="p-ideaDetail__starContainer--title">評価</h2>
+                        @error('stars')
+                        <span class="c-errMsg p-postIdea__errMsg">
+                            <p>{{ $message }}</p>
+                        </span>
+                        @enderror
                         <div class="p-ideaDetail__starContainer--part">
                             <input type="radio" value="1" name="stars">
                             <i class="p-ideaDetail__star fas fa-star"></i>
@@ -138,12 +147,88 @@
                         </div>
                     </div>
                     <h2 class="p-ideaDetail__starContainer--title">レビュー</h2>
-                    <textarea id="js-count-long" name="comment" class="p-ideaDetail__textarea" placeholder="10000文字以内で入力してください"></textarea>
+                    @error('review')
+                    <span class="c-errMsg p-postIdea__errMsg">
+                        <p>{{ $message }}</p>
+                    </span>
+                    @enderror
+                    <textarea id="js-count-review" name="review" class="p-ideaDetail__textarea" placeholder="10000文字以内で入力してください"></textarea>
                     <div class="p-ideaDetail__countarea">
-                        <span id="count-l" class="c-countarea--long js-show-count-long">0</span>/10000
+                        <span id="count-l" class="c-countarea--long js-show-count-review">0</span>/10000
                     </div>
-                    <button type="submit">投稿する</button>
+                    @if($review)
+                    <div class="p-ideaDetail__button--disabled">
+                        <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>投稿済みです</button>
+                    </div>
+                    @else
+                    <div class="p-ideaDetail__button--review">
+                        <button type="submit" class="c-btn p-ideaDetail__btn--review">投稿する</button>
+                    </div>
+                    @endif
                 </form>
+            </div>
+            @endif
+
+
+            <div class="p-ideaDetail__review">
+
+                <h1 class="p-ideaDetail__title--review">レビュー一覧</h1>
+                @if($ideaReview->isEmpty())
+                <p class="p-ideaDetail__sentence">まだレビューはありません</p>
+                @else
+                @foreach($ideaReview as $review)
+                <div class="p-ideaDetail__reviewContainer">
+
+                    <div class="p-ideaDetail__postUserInfo--review">
+                        @if($review->user->user_img == null)
+                        <img src="/img/person.jpg" alt="" class="c-img p-ideaDetail__img" />
+                        <p class="p-reviewList__reviewContainer--part">{{ $review->user->name }}</p>
+                        @else
+                        <img src="{{ '/' . $review->user->user_img }}" alt="" class="c-img p-ideaDetail__img" />
+                        <p class="p-ideaDetail__postUserInfo--name">{{ $review->user->name }}</p>
+                        @endif
+                    </div>
+
+                    <div class="p-ideaDetail__starContainer">
+                        @if($review->stars == 1)
+                        <p class="p-ideaDetail__starContainer--part">
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                        </p>
+                        @elseif($review->stars == 2)
+                        <p class="p-ideaDetail__starContainer--part">
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                        </p>
+                        @elseif($review->stars == 3)
+                        <p class="p-ideaDetail__starContainer--part">
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                        </p>
+                        @elseif($review->stars == 4)
+                        <p class="p-ideaDetail__starContainer--part">
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                        </p>
+                        @else
+                        <p class="p-ideaDetail__starContainer--part">
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__star fas fa-star"></i>
+                        </p>
+                        @endif
+                    </div>
+
+                    <div class="p-ideaDetail__item">
+                        <p class="p-ideaDetail__item--part">{{ $review->comment }}</p>
+                    </div>
+                </div>
+                @endforeach
+                @endif
             </div>
         </div>
     </div>

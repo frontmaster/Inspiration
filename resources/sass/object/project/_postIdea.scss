@@ -153,8 +153,9 @@
     &__btn {
         background-color: $main-color;
         color: $white;
+        opacity: 0.9;
     }
     &__btn:hover {
-        opacity: 0.9;
+        opacity: 1;
     }
 }
