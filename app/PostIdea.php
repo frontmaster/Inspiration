@@ -32,10 +32,4 @@ class PostIdea extends Model
         
     }
 
-    
-
-    
-
-    
-
 }

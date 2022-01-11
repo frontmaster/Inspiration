@@ -17,7 +17,6 @@ class BoughtIdeasController extends Controller
         $user = Auth::user();
         $boughtIdeaLists = $user->BoughtIdeas()->first();
         
-
         return view('bought_idea_list', compact('boughtIdeaLists'));
     }
 }

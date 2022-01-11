@@ -11,7 +11,7 @@ class BoughtIdeasController extends Controller
 {
     public function index()
     {
-        $boughtIdeaLists = Auth::user()->BoughtIdeas()->with('category')->paginate(1);
+        $boughtIdeaLists = Auth::user()->BoughtIdeas()->with('category')->paginate(5);
 
         return $boughtIdeaLists;
     }

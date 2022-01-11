@@ -31,9 +31,7 @@ class ReviewsController extends Controller
         $review->comment = $request->review;
         $review->save();
 
-
         Mail::to($sale_user->email)->send(new ToPostIdeaUserReview($buy_user));
-
 
         return redirect('idea_detail' . '/' . $id)->with('flash_message', 'アイディアの評価、口コミを投稿しました');
     }

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class MypagesController extends Controller
 {
+    //マイページ表示
     public function index($id)
     {
         if (!ctype_digit($id)) {
@@ -22,10 +23,6 @@ class MypagesController extends Controller
         $postIdeaLists = $user->PostIdeas()->orderBy('created_at', 'DESC')->take(5)->get();
 
         $reviewLists = $user->reviews()->orderBy('created_at', 'DESC')->take(5)->get();
-
-
-
-
 
         return view('mypage', compact('boughtIdeaLists', 'likeIdeaLists', 'postIdeaLists', 'reviewLists'));
     }

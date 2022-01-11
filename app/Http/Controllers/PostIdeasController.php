@@ -60,8 +60,6 @@ class PostIdeasController extends Controller
         $postidea = PostIdea::find($id);
         $categories = Category::get();
         $boughtidea = BoughtIdea::where('idea_id', $id)->first();
-        
-        
 
         return view('post_idea_edit', compact('postidea', 'categories', 'boughtidea'));
     }
@@ -124,8 +122,8 @@ class PostIdeasController extends Controller
         $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
         $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
         $scores = IdeaReview::where('post_idea_id', $id)->selectRaw('AVG(stars) as star')
-        ->groupBy('post_idea_id')->first();
-        
+            ->groupBy('post_idea_id')->first();
+
         return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id', 'review', 'ideaReview', 'bought_idea', 'scores'));
     }
 
@@ -144,20 +142,19 @@ class PostIdeasController extends Controller
         $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
         $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
         $scores = IdeaReview::where('post_idea_id', $id)->selectRaw('AVG(stars) as star')
-        ->groupBy('post_idea_id')->first();
-        
+            ->groupBy('post_idea_id')->first();
 
-        if(!$already_liked){
+
+        if (!$already_liked) {
             $like = new Like;
             $like->idea_id = $idea_id;
             $like->user_id = $user_id;
             $like->category_id = $category_id;
             $like->save();
-        }else{
+        } else {
             Like::where('idea_id', $idea_id)->where('user_id', $user_id)->delete();
         }
-        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked' , 'postIdeaUser', 'category', 'buy_user_id', 'review', 'bought_idea', 'ideaReview', 'category_id', 'scores'));
-
+        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id', 'review', 'bought_idea', 'ideaReview', 'category_id', 'scores'));
     }
 
     //アイディアを購入
@@ -187,6 +184,5 @@ class PostIdeasController extends Controller
         Mail::to($buy_user->email)->send(new ToBoughtIdeaUserNotice($sale_user));
 
         return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディアを購入しました。');
-  
     }
 }

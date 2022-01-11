@@ -18,4 +18,10 @@ class BoughtIdea extends Model
         return $this->belongsTo('App\User', 'buy_user_id');
     }
 
+    public function reviews()
+    {
+        return $this->hasMany('App\IdeaReview', 'idea_id', 'post_idea_id');
+        
+    }
+
 }

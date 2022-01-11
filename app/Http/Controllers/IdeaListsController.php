@@ -19,11 +19,7 @@ class IdeaListsController extends Controller
 
         $reviews = IdeaReview::with('idea')->get();
 
-        $scores = IdeaReview::select('post_idea_id')->selectRaw('AVG(stars) as star')
-        ->groupBy('post_idea_id')->get();
-        //dd($scores);
-
-        return view('idea_list', compact('ideaLists', 'scores'));
+        return view('idea_list', compact('ideaLists'));
     }
 
 }

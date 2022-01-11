@@ -15,7 +15,6 @@
         v-for="idea in filteredIdeas"
         :key="idea.id"
       >
-      
         <div class="p-ideaList__itemContainer">
           <div class="p-ideaList__item">
             <label for="idea" class="p-ideaList__label">アイディア名</label>
@@ -49,19 +48,9 @@
           </p>
         </div>
 
-        <div class="p-ideaList__itemContainer--review">
-          <div class="p-ideaList__item">
-            <label for="idea" class="p-ideaList__label">口コミ数</label>
-            <p class="p-ideaList__item--part">{{ idea.reviews.length }}件</p>
-          </div>
-
-          
-            <div class="p-ideaList__item">
-              <label for="idea" class="p-ideaList__label">平均評価点数</label>
-              <p class="p-ideaList__item--part" v-for="idea in idea.reviews" :key="idea.id">
-                {{ idea.stars | decimalFormat }}点
-              </p>
-          </div>
+        <div class="p-ideaList__item">
+          <label for="idea" class="p-ideaList__label">口コミ数</label>
+          <p class="p-ideaList__item--part">{{ idea.reviews.length }}件</p>
         </div>
 
         <div class="p-ideaList__item--link">
@@ -69,7 +58,6 @@
             >詳細を見る</a
           >
         </div>
-      
       </div>
     </div>
     <div class="p-ideaList__pagination">
@@ -88,8 +76,6 @@ export default {
   components: {
     PaginationComponent,
   },
-  props: ["scores"],
-
   data: function () {
     return {
       ideas: {},
@@ -131,8 +117,6 @@ export default {
     var url = "/ajax/idea_list";
     axios.get(url).then(function (response) {
       self.ideas = response.data;
-
-      
     });
   },
   computed: {
@@ -150,7 +134,7 @@ export default {
           ideas.push(idea);
         }
       }
-      
+
       return ideas;
     },
   },

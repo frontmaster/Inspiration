@@ -61,7 +61,6 @@
 
 <script>
 import PaginationComponent from "./PaginationComponent.vue";
-
 export default {
   components: {
     PaginationComponent,

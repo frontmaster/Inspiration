@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfilesController extends Controller
 {
+    //プロフィール編集画面表示
     public function edit($id)
     {
         if (!ctype_digit($id)) {
@@ -17,6 +18,7 @@ class ProfilesController extends Controller
         return view('profile', compact('users'));
     }
 
+    //プロフィール更新
     public function update(Request $request, $id)
     {
         if (!ctype_digit($id)) {

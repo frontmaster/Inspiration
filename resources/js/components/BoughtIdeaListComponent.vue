@@ -40,17 +40,8 @@
           </p>
         </div>
 
-        <div class="p-ideaList__itemContainer--review">
-          <div class="p-ideaList__item">
-            <label for="idea" class="p-ideaList__label">口コミ数</label>
-            <p class="p-ideaList__item--part"></p>
-          </div>
-
-          <div class="p-ideaList__item">
-            <label for="idea" class="p-ideaList__label">平均評価点数</label>
-            <p class="p-ideaList__item--part"></p>
-          </div>
-        </div>
+        
+          
 
         <div class="p-ideaList__item--link">
           <a :href="'/idea_detail/' + idea.idea_id" class="c-btn p-ideaList__btn"
@@ -79,7 +70,6 @@ export default {
   data: function () {
     return {
       ideas: {},
-      //keyword: "",
     };
   },
   filters: {
