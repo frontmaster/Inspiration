@@ -28,6 +28,9 @@
 
         <div class="p-postIdeaEdit__content">
             <h1 class="p-postIdeaEdit__title">アイディア編集</h1>
+            @if($boughtidea)
+            <p class="p-postIdeaEdit__sentenct">アイディアが購入されているため、編集・削除はできません</p>
+            @else
             <form method="POST" action="{{ route('post_idea_update', $postidea->id) }}" class="p-postIdeaEdit__form">
                 @csrf
                 @error('category_id')
@@ -128,6 +131,7 @@
                     <button type="button" class="c-btn p-postIdeaEdit__btn--delete js-show-modal">削除</button>
                 </div>
             </form>
+            @endif
         </div>
     </div>
 </main>

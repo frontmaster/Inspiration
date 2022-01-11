@@ -18,7 +18,7 @@
         @if($ideaLists->isEmpty())
             <p class="p-ideaList__sentence">まだアイディアはありません</p>
         @else
-            <idealist-component></idealist-component>
+            <idealist-component :scores='{{ $scores }}'></idealist-component>
         @endif
 
         </div>

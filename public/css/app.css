@@ -1903,20 +1903,22 @@ img {
   color: #fff;
   margin-right: 15px;
   width: 80px;
+  opacity: 0.9;
 }
 
 .p-postIdeaEdit__btn--delete {
   background-color: #d7003a;
   color: #fff;
   width: 80px;
+  opacity: 0.9;
 }
 
 .p-postIdeaEdit__btn--delete:hover {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .p-postIdeaEdit__btn:hover {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .p-postIdeaEdit__link {
@@ -3318,8 +3320,8 @@ img {
 
 .p-ideaDetail__heart {
   font-size: 20px;
-  position: relative;
-  right: 13%;
+  position: absolute;
+  right: 10%;
   margin-top: 3px;
   color: #fff;
 }
@@ -3333,6 +3335,7 @@ img {
 .p-ideaDetail__likeContainer {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 @media screen and (max-width: 599px) {
@@ -3431,7 +3434,7 @@ img {
 .p-ideaDetail .likeheart {
   font-size: 20px;
   position: relative;
-  right: 13%;
+  right: 10%;
   color: #F29C9F;
 }
 
@@ -4103,6 +4106,35 @@ img {
 @media screen and (max-width: 599px) {
   .p-likeIdeaList__heart {
     margin-left: 20px;
+  }
+}
+
+.p-likeIdeaList .likeheart {
+  font-size: 20px;
+  position: relative;
+  right: 3%;
+  color: #F29C9F;
+}
+
+@media screen and (max-width: 599px) {
+  .p-likeIdeaList .likeheart {
+    right: 10%;
+    margin-top: 11px;
+  }
+}
+
+.p-likeIdeaList .likebtn {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #BBBCDE;
+  color: #51318F;
+}
+
+@media screen and (max-width: 599px) {
+  .p-likeIdeaList .likebtn {
+    margin-top: 10px;
   }
 }
 

@@ -47,7 +47,7 @@ class PostIdeasController extends Controller
         $postidea->category_id = $request->category_id;
         $postidea->save();
 
-        return redirect('/post_idea' . '/' . auth()->user()->id)->with('flash_message', 'アイディアを投稿しました');
+        return redirect('post_idea/' . auth()->user()->id)->with('flash_message', 'アイディアを投稿しました');
     }
 
     //投稿したアイディア編集画面表示
@@ -59,8 +59,11 @@ class PostIdeasController extends Controller
 
         $postidea = PostIdea::find($id);
         $categories = Category::get();
+        $boughtidea = BoughtIdea::where('idea_id', $id)->first();
+        
+        
 
-        return view('post_idea_edit', compact('postidea', 'categories'));
+        return view('post_idea_edit', compact('postidea', 'categories', 'boughtidea'));
     }
 
     //編集したアイディアの更新
@@ -120,8 +123,10 @@ class PostIdeasController extends Controller
         $buy_user_id = optional($bought_idea)->buy_user_id;
         $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
         $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
-        //dd($ideaReview);
-        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id', 'review', 'ideaReview', 'bought_idea'));
+        $scores = IdeaReview::where('post_idea_id', $id)->selectRaw('AVG(stars) as star')
+        ->groupBy('post_idea_id')->first();
+        
+        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id', 'review', 'ideaReview', 'bought_idea', 'scores'));
     }
 
     //「気になる」を追加・削除
@@ -138,6 +143,8 @@ class PostIdeasController extends Controller
         $buy_user_id = optional($bought_idea)->buy_user_id;
         $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
         $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
+        $scores = IdeaReview::where('post_idea_id', $id)->selectRaw('AVG(stars) as star')
+        ->groupBy('post_idea_id')->first();
         
 
         if(!$already_liked){
@@ -149,7 +156,7 @@ class PostIdeasController extends Controller
         }else{
             Like::where('idea_id', $idea_id)->where('user_id', $user_id)->delete();
         }
-        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked' , 'postIdeaUser', 'category', 'buy_user_id', 'review', 'bought_idea', 'ideaReview', 'category_id'));
+        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked' , 'postIdeaUser', 'category', 'buy_user_id', 'review', 'bought_idea', 'ideaReview', 'category_id', 'scores'));
 
     }
 

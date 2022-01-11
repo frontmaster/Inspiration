@@ -17,4 +17,5 @@ class BoughtIdea extends Model
     {
         return $this->belongsTo('App\User', 'buy_user_id');
     }
+
 }

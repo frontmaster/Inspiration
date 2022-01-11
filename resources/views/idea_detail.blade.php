@@ -57,8 +57,17 @@
                         </div>
 
                         <div class="p-ideaDetail__item">
-                            <label for="idea" class="p-ideaDetail__label">価格</label>
+                            <label for="price" class="p-ideaDetail__label">価格</label>
                             <p class="p-ideaDetail__item--part">¥{{ number_format($postidea->price) }}</p>
+                        </div>
+
+                        <div class="p-ideaDetail__item">
+                            <label for="score" class="p-ideaDetail__label">平均評価点数</label>
+                            @if(isset($scores))
+                            <p class="p-ideaDetail__item--part">{{ number_format($scores->star, 1) }}点</p>
+                            @else
+                            <p class="p-ideaDetail__item--part">まだレビューされていません</p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -70,8 +79,10 @@
                     </a>
 
                     @if(!$already_liked)
-                    <p class="c-btn p-ideaDetail__btn--like js-like-word js-click-like" data-ideaid="{{ $idea_id }}">気になる</p>
-                    <i class="fas fa-heart p-ideaDetail__heart js-like-heart"></i>
+                    <div class="p-ideaDetail__likeContainer">
+                        <p class="c-btn p-ideaDetail__btn--like js-like-word js-click-like" data-ideaid="{{ $idea_id }}">気になる</p>
+                        <i class="fas fa-heart p-ideaDetail__heart js-like-heart"></i>
+                    </div>
 
                     @else
                     <div class="p-ideaDetail__likeContainer">

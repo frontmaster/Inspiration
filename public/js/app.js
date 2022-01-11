@@ -2133,12 +2133,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     PaginationComponent: _PaginationComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  props: ["scores"],
   data: function data() {
     return {
       ideas: {},
@@ -2148,6 +2154,9 @@ __webpack_require__.r(__webpack_exports__);
   filters: {
     localeNum: function localeNum(val) {
       return val.toLocaleString();
+    },
+    decimalFormat: function decimalFormat(val) {
+      return parseFloat(val).toFixed(1);
     },
     moment: function moment(date) {
       return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("YYYY/MM/DD");
@@ -2268,6 +2277,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2281,25 +2291,6 @@ __webpack_require__.r(__webpack_exports__);
   filters: {
     localeNum: function localeNum(val) {
       return val.toLocaleString();
-    }
-  },
-  methods: {
-    move: function move(page) {
-      if (!this.isCurrentPage(page)) {
-        this.$emit("move-page", page);
-      }
-    },
-    getItems: function getItems() {
-      var _this = this;
-
-      var url = "/ajax/like_idea_list/" + this.user_id + "?page=" + this.page;
-      axios.get(url).then(function (response) {
-        _this.likes = response.data;
-      });
-    },
-    movePage: function movePage(page) {
-      this.page = page;
-      this.getItems();
     }
   },
   mounted: function mounted() {
@@ -2319,6 +2310,37 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return likes;
+    }
+  },
+  methods: {
+    move: function move(page) {
+      if (!this.isCurrentPage(page)) {
+        this.$emit("move-page", page);
+      }
+    },
+    getItems: function getItems() {
+      var _this = this;
+
+      var url = "/ajax/like_idea_list/" + this.user_id + "?page=" + this.page;
+      axios.get(url).then(function (response) {
+        _this.likes = response.data;
+      });
+    },
+    movePage: function movePage(page) {
+      this.page = page;
+      this.getItems();
+    },
+    likeDelete: function likeDelete(e) {
+      var _this2 = this;
+
+      var id = e.currentTarget.getAttribute("data-like-id");
+      axios.post("/idea/like/" + id).then(function (response) {
+        _this2.data = response.data;
+
+        for (var i in _this2.likes.data) {
+          _this2.likes.data.splice(i, 1);
+        }
+      });
     }
   }
 });
@@ -60065,17 +60087,32 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "p-ideaList__item" }, [
-              _c(
-                "label",
-                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
-                [_vm._v("平均評価点数")]
-              ),
-              _vm._v(" "),
-              _c("p", { staticClass: "p-ideaList__item--part" }, [
-                _vm._v(_vm._s(idea.stars) + "点"),
-              ]),
-            ]),
+            _c(
+              "div",
+              { staticClass: "p-ideaList__item" },
+              [
+                _c(
+                  "label",
+                  { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+                  [_vm._v("平均評価点数")]
+                ),
+                _vm._v(" "),
+                _vm._l(idea.reviews, function (idea) {
+                  return _c(
+                    "p",
+                    { key: idea.id, staticClass: "p-ideaList__item--part" },
+                    [
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(_vm._f("decimalFormat")(idea.stars)) +
+                          "点\n            "
+                      ),
+                    ]
+                  )
+                }),
+              ],
+              2
+            ),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "p-ideaList__item--link" }, [
@@ -60219,11 +60256,12 @@ var render = function () {
                 "p",
                 {
                   staticClass:
-                    "\n            c-btn\n            p-likeIdeaList__btn--like\n            likebtn\n            js-unlike-word js-click-likelist\n          ",
-                  attrs: { "data-likeid": like.idea.id },
+                    "\n            c-btn\n            p-likeIdeaList__btn--like\n            likebtn\n            js-unlike-word js-click-like\n          ",
+                  attrs: { "data-like-id": like.idea.id },
+                  on: { click: _vm.likeDelete },
                 },
                 [
-                  _vm._v("\n          気になるを解除する\n        \n        "),
+                  _vm._v("\n          気になるを解除する\n\n          "),
                   _c("i", {
                     staticClass:
                       "fas fa-heart p-likeIdeaList__heart js-like-heart likeheart",

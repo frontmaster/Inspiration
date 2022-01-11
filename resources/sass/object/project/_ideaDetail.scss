@@ -200,8 +200,8 @@
     }
     &__heart {
         font-size: 20px;
-        position: relative;
-        right: 13%;
+        position: absolute;
+        right: 10%;
         margin-top: 3px;
         color: $white;
         @include mq(){
@@ -211,6 +211,7 @@
     &__likeContainer {
         display: flex;
         align-items: center;
+        position: relative;
         @include mq(){
             margin-top: $space_l;
         }
@@ -288,7 +289,7 @@
     .likeheart {
         font-size: 20px;
         position: relative;
-        right: 13%;
+        right: 10%;
         color: $pink;
         @include mq(){
             right: 10%;

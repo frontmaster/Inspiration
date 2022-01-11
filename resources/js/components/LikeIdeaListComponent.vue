@@ -32,19 +32,20 @@
             >詳細を見る</a
           >
           <p
+            @click="likeDelete"
             class="
               c-btn
               p-likeIdeaList__btn--like
               likebtn
-              js-unlike-word js-click-likelist
+              js-unlike-word js-click-like
             "
-            :data-likeid="like.idea.id"
+            :data-like-id="like.idea.id"
           >
             気になるを解除する
-          
-          <i
-            class="fas fa-heart p-likeIdeaList__heart js-like-heart likeheart"
-          ></i>
+
+            <i
+              class="fas fa-heart p-likeIdeaList__heart js-like-heart likeheart"
+            ></i>
           </p>
         </div>
       </div>
@@ -60,6 +61,7 @@
 
 <script>
 import PaginationComponent from "./PaginationComponent.vue";
+
 export default {
   components: {
     PaginationComponent,
@@ -73,6 +75,24 @@ export default {
   filters: {
     localeNum: function (val) {
       return val.toLocaleString();
+    },
+  },
+  mounted() {
+    var self = this;
+    var url = "/ajax/like_idea_list/" + this.user_id;
+    axios.get(url).then(function (response) {
+      self.likes = response.data;
+    });
+  },
+  computed: {
+    filteredLikes: function () {
+      var likes = [];
+
+      for (var i in this.likes.data) {
+        var like = this.likes.data[i];
+        likes.push(like);
+      }
+      return likes;
     },
   },
   methods: {
@@ -92,24 +112,18 @@ export default {
       this.page = page;
       this.getItems();
     },
-  },
 
-  mounted() {
-    var self = this;
-    var url = "/ajax/like_idea_list/" + this.user_id;
-    axios.get(url).then(function (response) {
-      self.likes = response.data;
-    });
-  },
-  computed: {
-    filteredLikes: function () {
-      var likes = [];
-
-      for (var i in this.likes.data) {
-        var like = this.likes.data[i];
-        likes.push(like);
+    likeDelete: function (e) {
+      var id = e.currentTarget.getAttribute("data-like-id");
+      axios.post("/idea/like/" + id).then((response) => {
+        this.data = response.data;
+        
+        for (var i in this.likes.data) {
+       
+        this.likes.data.splice(i, 1);
       }
-      return likes;
+      
+      });
     },
   },
 };

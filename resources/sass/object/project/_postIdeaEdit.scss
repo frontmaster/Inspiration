@@ -200,17 +200,19 @@
         color: $white;
         margin-right: $space_l;
         width: 80px;
+        opacity: 0.9;
         &--delete {
             background-color: $alart-color;
             color: $white;
             width: 80px;
-            &:hover {
-                opacity: 0.9;
+            opacity: 0.9;
+            &:hover{
+                opacity: 1;
             }
         }
-    }
-    &__btn:hover {
-        opacity: 0.9;
+        &:hover{
+            opacity: 1;
+        }
     }
     &__link {
         color: $white;

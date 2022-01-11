@@ -183,6 +183,27 @@
             margin-left: $space_xl;
         }
     }
+    .likeheart {
+        font-size: 20px;
+        position: relative;
+        right: 3%;
+        color: $pink;
+        @include mq(){
+            right: 10%;
+            margin-top: 11px;
+        }
+    }
+    .likebtn {
+        width: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $accent-color;
+        color: $sub-color2;
+        @include mq() {
+            margin-top: $space_m;
+        }
+    }
     &__pagination {
         display: flex;
         justify-content: center;
