@@ -19,9 +19,11 @@
             <p class="p-ideaList__sentence">まだアイディアはありません</p>
         @else
             <idealist-component></idealist-component>
+            
         @endif
 
         </div>
+        
     </div>
 </main>
 @endsection

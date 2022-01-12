@@ -60,6 +60,7 @@
         </div>
       </div>
     </div>
+    
     <div class="p-ideaList__pagination">
       <pagination-component
         :data="ideas"
