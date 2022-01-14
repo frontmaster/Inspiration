@@ -21,7 +21,7 @@
     <script src="{{ asset('/js/app.js') }}" defer></script>
     @endif
     @if(app('env') == 'production')
-    <script src="{{ mix('/js/app.js') }}" defer></script>
+    <script src="{{ secure_asset('/js/app.js') }}" defer></script>
     @endif
 </body>
 
