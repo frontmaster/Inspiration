@@ -15,6 +15,7 @@
 
         <div class="p-ideaList__content">
             <h1 class="p-ideaList__title">アイディア一覧</h1>
+            
         @if($ideaLists->isEmpty())
             <p class="p-ideaList__sentence">まだアイディアはありません</p>
         @else

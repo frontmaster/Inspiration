@@ -259,6 +259,7 @@
             justify-content: center;
             background-color: $shadow;
             padding: $space_s;
+            margin-top: $space_m;
             box-sizing: border-box;
             border-radius: 30px;
             color: $black;
@@ -273,7 +274,7 @@
                 width: 270px;
             }
             @include mq("ss") {
-                width: 250px;
+                width: 230px;
             }
         }
         &--review {
@@ -327,6 +328,9 @@
             padding: $space_xxl;
             box-sizing: border-box;
             border-radius: 10px;
+            @include mq(){
+                width: 100%;
+            }
         }
     }
     &__form {
@@ -370,6 +374,9 @@
         background-color: $white;
         border-radius: 10px;
         margin-top: $space_xxl;
+        @include mq("xl"){
+            width: 100%;
+        }
         @include mq() {
             width: 100%;
         }
