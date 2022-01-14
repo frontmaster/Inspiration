@@ -198,7 +198,7 @@
             padding: $space_s;
             box-sizing: border-box;
             font-size: $font-size_base;
-            line-height: 30px;
+            
             @include mq("sm"){
                 height: 40px;
             }
