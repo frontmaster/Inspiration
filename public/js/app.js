@@ -2155,7 +2155,7 @@ __webpack_require__.r(__webpack_exports__);
     getItems: function getItems() {
       var _this = this;
 
-      var url = "/ajax/idea_list?page=" + this.page;
+      var url = "https:/ajax/idea_list?page=" + this.page;
       axios.get(url).then(function (response) {
         _this.ideas = response.data;
       });

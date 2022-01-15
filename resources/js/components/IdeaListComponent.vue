@@ -108,7 +108,7 @@ export default {
       }
     },
     getItems() {
-      const url = "/ajax/idea_list?page=" + this.page;
+      const url = "https:/ajax/idea_list?page=" + this.page;
       axios.get(url).then((response) => {
         this.ideas = response.data;
       });
