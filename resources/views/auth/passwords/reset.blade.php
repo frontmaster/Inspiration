@@ -26,23 +26,23 @@
                 </div>
 
                 <div class="p-passReset__part">
-                    <label for="email" class="p-passReset__label">新しいパスワード</label>
+                    <label for="password" class="p-passReset__label">新しいパスワード</label>
                     @error('password')
                     <span class="c-errMsg p-passReset__errMsg">
                         <p>{{ $message }}</p>
                     </span>
                     @enderror
-                    <input type="password" class="p-passReset__input @error('passwrod') is-error @enderror" name="password" value="{{ old('password') }}" placeholder="半角英数">
+                    <input type="password" class="p-passReset__input @error('password') is-error @enderror" name="password" value="{{ old('password') }}" placeholder="半角英数">
                 </div>
 
                 <div class="p-passReset__part">
-                    <label for="email" class="p-passReset__label">新しいパスワード(確認)</label>
+                    <label for="password" class="p-passReset__label">新しいパスワード(確認)</label>
                     @error('new_password')
                     <span class="c-errMsg p-passReset__errMsg">
                         <p>{{ $message }}</p>
                     </span>
                     @enderror
-                    <input type="password" class="p-passReset__input @error('new_passwrod') is-error @enderror" name="new_password" value="{{ old('new_password') }}" placeholder="半角英数">
+                    <input type="password" class="p-passReset__input @error('new_password') is-error @enderror" name="new_password" value="{{ old('new_password') }}" placeholder="半角英数">
                 </div>
 
                 <div class="p-passReset__button">
