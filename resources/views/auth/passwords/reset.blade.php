@@ -15,6 +15,7 @@
             </p>
             <form method="POST" action="{{ route('password.update') }}" class="p-passReset__form">
                 @csrf
+                <input type="hidden" name="token" value="{{ $token }}">
                 <div class="p-passReset__part">
                     <label for="email" class="p-passReset__label">メールアドレス</label>
                     @error('email')
@@ -26,23 +27,23 @@
                 </div>
 
                 <div class="p-passReset__part">
-                    <label for="password" class="p-passReset__label">新しいパスワード</label>
-                    @error('password')
-                    <span class="c-errMsg p-passReset__errMsg">
-                        <p>{{ $message }}</p>
-                    </span>
-                    @enderror
-                    <input type="password" class="p-passReset__input @error('password') is-error @enderror" name="password" value="{{ old('password') }}" placeholder="半角英数">
-                </div>
-
-                <div class="p-passReset__part">
-                    <label for="password" class="p-passReset__label">新しいパスワード(確認)</label>
+                    <label for="new_password" class="p-passReset__label">新しいパスワード</label>
                     @error('new_password')
                     <span class="c-errMsg p-passReset__errMsg">
                         <p>{{ $message }}</p>
                     </span>
                     @enderror
                     <input type="password" class="p-passReset__input @error('new_password') is-error @enderror" name="new_password" value="{{ old('new_password') }}" placeholder="半角英数">
+                </div>
+
+                <div class="p-passReset__part">
+                    <label for="confirm_password" class="p-passReset__label">新しいパスワード(確認)</label>
+                    @error('confirm_password')
+                    <span class="c-errMsg p-passReset__errMsg">
+                        <p>{{ $message }}</p>
+                    </span>
+                    @enderror
+                    <input type="password" class="p-passReset__input @error('confirm_password') is-error @enderror" name="confirm_password" value="{{ old('confirm_password') }}" placeholder="半角英数">
                 </div>
 
                 <div class="p-passReset__button">
