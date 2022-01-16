@@ -75,7 +75,7 @@
             @include mq() {
                 color: $white;
                 font-size: $font-size_xl;
-                margin-top: 30px;
+                margin-top: $space_xxl;
             }
         }
     }

@@ -1,41 +1,41 @@
 <template>
-  <div class="p-ideaList__Container">
+  <div class="p-boughtIdeaList__Container">
     
-    <div class="p-ideaList__partContainer">
+    <div class="p-boughtIdeaList__partContainer">
       <div
-        class="p-ideaList__part"
+        class="p-boughtIdeaList__part"
         v-for="idea in boughtIdeas"
         :key="idea.id"
       >
-        <div class="p-ideaList__itemContainer">
-          <div class="p-ideaList__item">
-            <label for="idea" class="p-ideaList__label">アイディア名</label>
-            <p class="p-ideaList__item--part">{{ idea.idea_name }}</p>
+        <div class="p-boughtIdeaList__itemContainer">
+          <div class="p-boughtIdeaList__item">
+            <label for="idea" class="p-boughtIdeaList__label">アイディア名</label>
+            <p class="p-boughtIdeaList__item--part">{{ idea.idea_name }}</p>
           </div>
 
-          <div class="p-ideaList__item">
-            <label for="idea" class="p-ideaList__label">カテゴリ</label>
-            <p class="p-ideaList__item--part">
+          <div class="p-boughtIdeaList__item">
+            <label for="idea" class="p-boughtIdeaList__label">カテゴリ</label>
+            <p class="p-boughtIdeaList__item--part">
               {{ idea.category.category_name }}
             </p>
           </div>
 
-          <div class="p-ideaList__item">
-            <label for="idea" class="p-ideaList__label">価格</label>
-            <p class="p-ideaList__item--part">¥{{ idea.price | localeNum }}</p>
+          <div class="p-boughtIdeaList__item">
+            <label for="idea" class="p-boughtIdeaList__label">価格</label>
+            <p class="p-boughtIdeaList__item--part">¥{{ idea.price | localeNum }}</p>
           </div>
 
-          <div class="p-ideaList__item">
-            <label for="idea" class="p-ideaList__label">投稿日</label>
-            <p class="p-ideaList__item--part">
+          <div class="p-boughtIdeaList__item">
+            <label for="idea" class="p-boughtIdeaList__label">投稿日</label>
+            <p class="p-boughtIdeaList__item--part">
               {{ idea.created_at | moment }}
             </p>
           </div>
         </div>
 
-        <div class="p-ideaList__item">
-          <label for="idea" class="p-ideaList__label">概要</label>
-          <p class="p-ideaList__item--part">
+        <div class="p-boughtIdeaList__item">
+          <label for="idea" class="p-boughtIdeaList__label">概要</label>
+          <p class="p-boughtIdeaList__item--part">
             {{ idea.summary }}
           </p>
         </div>
@@ -43,14 +43,14 @@
         
           
 
-        <div class="p-ideaList__item--link">
-          <a :href="'/idea_detail/' + idea.idea_id" class="c-btn p-ideaList__btn"
+        <div class="p-boughtIdeaList__item--link">
+          <a :href="'/idea_detail/' + idea.idea_id" class="c-btn p-boughtIdeaList__btn"
             >詳細</a
           >
         </div>
       </div>
     </div>
-    <div class="p-ideaList__pagination">
+    <div class="p-boughtIdeaList__pagination">
       <pagination-component
         :data="ideas"
         @move-page="movePage($event)"

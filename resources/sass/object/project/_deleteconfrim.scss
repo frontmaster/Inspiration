@@ -8,7 +8,7 @@
     flex-direction: column;
     background-color: $white;
     margin: 0 auto;
-    @include mq(){
+    @include mq() {
         width: 90%;
     }
     &__modal {
@@ -36,7 +36,7 @@
             display: none;
         }
     }
-    &__sentence{
+    &__sentence {
         margin-top: $space_xl;
     }
     &__content {
@@ -45,11 +45,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
+
         &--sentence {
             font-size: $font-size_l;
             text-align: center;
-            @include mq(){
+            @include mq() {
                 text-align: left;
             }
         }
@@ -66,12 +66,15 @@
         color: $font-color_title;
         margin-bottom: $space_3l;
         color: $black;
+        @include mq("ss") {
+            margin-bottom: $space_xl;
+        }
     }
     &__button {
         display: flex;
         justify-content: center;
         margin-top: $space_3l;
-        &--modal{
+        &--modal {
             width: 100%;
             display: flex;
             justify-content: space-around;
@@ -90,30 +93,39 @@
             border: 2px solid $alart-color;
         }
     }
-    &__modalBtn{
+    &__modalBtn {
         background-color: $main-color;
         color: $white;
-        &:hover{
+        &:hover {
             opacity: 0.9;
         }
-        @include mq("sm"){
+        @include mq("sm") {
             width: 80px;
         }
-        @include mq("ss"){
+        @include mq("ss") {
             width: 80px;
         }
-        &--delete{
+        &--delete {
             background-color: $alart-color;
             color: $white;
-            &:hover{
+            &:hover {
                 opacity: 0.9;
             }
-            @include mq("sm"){
+            @include mq("sm") {
                 width: 80px;
             }
-            @include mq("ss"){
+            @include mq("ss") {
                 width: 80px;
             }
+        }
+    }
+    &__link {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: $space_xxl;
+        color: $main-color;
+        &:hover {
+            text-decoration: underline;
         }
     }
 }

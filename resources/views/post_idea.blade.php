@@ -16,7 +16,6 @@
             <h1 class="p-postIdea__title">アイディア投稿</h1>
             <form method="POST" action="{{ route('post_idea_create', auth()->user()->id) }}" class="p-postIdea__form">
                 @csrf
-
                 @error('category_id')
                 <span class="c-errMsg p-postIdea__errMsg">
                    <p>{{ $message }}</p>
@@ -24,10 +23,10 @@
                 @enderror
 
                 <div class="p-postIdea__part">
-                    <label for="category_id" class="p-postIdea__label">カテゴリ
+                    <label for="category" class="p-postIdea__label">カテゴリ
                         <span class="p-postIdea__require">必須</span>
                     </label>
-                    <select required name="category_id" id="selectBox" class="p-postIdea__select @error('category') is-error @enderror">
+                    <select required name="category" id="selectBox" class="p-postIdea__select @error('category') is-error @enderror">
                         <option value="0" hidden selected disabled>選択してください</option>
                         @foreach ($categories as $category)
                             @if($category->id == old('category_id'))
@@ -51,7 +50,7 @@
                     </label>
                     <input type="text" id="js-count-idea" class="p-postIdea__input @error('idea_name') is-error @enderror" name="idea_name" value="{{ old('idea_name') }}" 
                     placeholder="20文字以内で入力してください">
-                    <div class="p-profile__countarea">
+                    <div class="p-postIdea__countarea">
                         <span id="count-short" class="c-countarea--short js-show-count-idea">0</span>/20
                     </div>
                 </div>

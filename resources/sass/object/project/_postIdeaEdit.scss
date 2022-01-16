@@ -96,7 +96,7 @@
         flex-direction: column;
         margin-bottom: $space_3l;
         @include mq() {
-            font-size: 12px;
+            font-size: $font-size_s;
         }
     }
     &__label {
@@ -206,15 +206,12 @@
             color: $white;
             width: 80px;
             opacity: 0.9;
-            &:hover{
+            &:hover {
                 opacity: 1;
             }
         }
-        &:hover{
+        &:hover {
             opacity: 1;
         }
-    }
-    &__link {
-        color: $white;
     }
 }

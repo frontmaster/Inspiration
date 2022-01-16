@@ -6,7 +6,7 @@
         margin-top: $space_m;
     }
     &__item.active{
-        padding: 5px;
+        padding: $space_s;
         box-sizing: border-box;
         width: 40px;
         height: 40px;
@@ -14,8 +14,8 @@
         align-items: center;
         justify-content: center;
         background-color: $sub-color1;
-        margin: 5px;
-        font-size: 14px;
+        margin: $space_s;
+        font-size: $font-size_m;
     }
     &__item.active &__item--link {  
         color: $white;
@@ -24,7 +24,7 @@
         color: $gray;
     }
     &__item {
-        padding: 5px;
+        padding: $space_s;
         box-sizing: border-box;
         width: 40px;
         height: 40px;
@@ -33,8 +33,8 @@
         justify-content: center;
         background-color: $silver;
         color: $font-color_default;
-        margin: 5px;
-        font-size: 14px;
+        margin: $space_s;
+        font-size: $font-size_m;
     }
 }
 

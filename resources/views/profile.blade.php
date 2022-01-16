@@ -22,8 +22,8 @@
                     <p>{{ $message }}</p>
                 </span>
                 @enderror
-                <div class="p-profile__part">
-                    <label for="img" class="p-profile__label">プロフィール画像</label>
+                <div class="p-profile__part--img">
+                    <label for="img" class="p-profile__label--img">プロフィール画像</label>
                     <div class="p-profile__imgContainer">
                         @if($users->user_img === null)
                         <img src="{{ asset('img/person.jpg') }}" alt="" class="c-img p-profile__img">

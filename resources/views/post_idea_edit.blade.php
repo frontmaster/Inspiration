@@ -29,7 +29,7 @@
         <div class="p-postIdeaEdit__content">
             <h1 class="p-postIdeaEdit__title">アイディア編集</h1>
             @if($boughtidea)
-            <p class="p-postIdeaEdit__sentenct">アイディアが購入されているため、編集・削除はできません</p>
+            <p class="p-postIdeaEdit__sentence">アイディアが購入されているため、編集・削除はできません</p>
             @else
             <form method="POST" action="{{ route('post_idea_update', $postidea->id) }}" class="p-postIdeaEdit__form">
                 @csrf
@@ -70,7 +70,7 @@
                 </span>
                 @enderror
                 <div class="p-postIdeaEdit__part">
-                    <label for="idea" class="p-postIdeaEdit__label">アイディア名
+                    <label for="idea_name" class="p-postIdeaEdit__label">アイディア名
                         <span class="p-postIdeaEdit__require">必須</span>
                     </label>
                     <input type="text" id="js-count-idea" class="p-postIdeaEdit__input @error('idea_name') is-error @enderror" name="idea_name" value="{{ old('idea_name', $postidea->idea_name) }}" placeholder="20文字以内で入力してください">
@@ -100,7 +100,7 @@
                 </span>
                 @enderror
                 <div class="p-postIdeaEdit__part">
-                    <label for="content" class="p-postIdea__label">内容
+                    <label for="content" class="p-postIdeaEdit__label">内容
                         <span class="p-postIdeaEdit__require">必須</span>
                     </label>
                     <textarea id="js-count-content" name="content" class="p-postIdeaEdit__textarea" placeholder="10000文字以内で入力してください">{{ old('content', $postidea->content) }}</textarea>
@@ -115,7 +115,7 @@
                 </span>
                 @enderror
                 <div class="p-postIdeaEdit__part">
-                    <label for="price" class="p-postIdea__label">価格
+                    <label for="price" class="p-postIdeaEdit__label">価格
                         <span class="p-postIdeaEdit__require">必須</span>
                     </label>
                     <div class="p-postIdeaEdit__pricecontainer">

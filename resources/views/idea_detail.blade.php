@@ -122,7 +122,7 @@
                     <div class="p-ideaDetail__starContainer">
                         <h2 class="p-ideaDetail__starContainer--title">評価</h2>
                         @error('stars')
-                        <span class="c-errMsg p-postIdea__errMsg">
+                        <span class="c-errMsg p-ideaDetail__errMsg">
                             <p>{{ $message }}</p>
                         </span>
                         @enderror
@@ -159,7 +159,7 @@
                     </div>
                     <h2 class="p-ideaDetail__starContainer--title">レビュー</h2>
                     @error('review')
-                    <span class="c-errMsg p-postIdea__errMsg">
+                    <span class="c-errMsg p-ideaDetail__errMsg">
                         <p>{{ $message }}</p>
                     </span>
                     @enderror
@@ -182,18 +182,16 @@
 
 
             <div class="p-ideaDetail__review">
-
                 <h1 class="p-ideaDetail__title--review">レビュー一覧</h1>
                 @if($ideaReview->isEmpty())
                 <p class="p-ideaDetail__sentence">まだレビューはありません</p>
                 @else
                 @foreach($ideaReview as $review)
                 <div class="p-ideaDetail__reviewContainer">
-
                     <div class="p-ideaDetail__postUserInfo--review">
                         @if($review->user->user_img == null)
                         <img src="/img/person.jpg" alt="" class="c-img p-ideaDetail__img" />
-                        <p class="p-reviewList__reviewContainer--part">{{ $review->user->name }}</p>
+                        <p class="p-ideaDetail__reviewContainer--part">{{ $review->user->name }}</p>
                         @else
                         <img src="{{ '/' . $review->user->user_img }}" alt="" class="c-img p-ideaDetail__img" />
                         <p class="p-ideaDetail__postUserInfo--name">{{ $review->user->name }}</p>

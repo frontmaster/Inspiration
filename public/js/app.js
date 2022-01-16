@@ -59797,100 +59797,119 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "p-ideaList__Container" }, [
+  return _c("div", { staticClass: "p-boughtIdeaList__Container" }, [
     _c(
       "div",
-      { staticClass: "p-ideaList__partContainer" },
+      { staticClass: "p-boughtIdeaList__partContainer" },
       _vm._l(_vm.boughtIdeas, function (idea) {
-        return _c("div", { key: idea.id, staticClass: "p-ideaList__part" }, [
-          _c("div", { staticClass: "p-ideaList__itemContainer" }, [
-            _c("div", { staticClass: "p-ideaList__item" }, [
-              _c(
-                "label",
-                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
-                [_vm._v("アイディア名")]
-              ),
-              _vm._v(" "),
-              _c("p", { staticClass: "p-ideaList__item--part" }, [
-                _vm._v(_vm._s(idea.idea_name)),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "p-ideaList__item" }, [
-              _c(
-                "label",
-                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
-                [_vm._v("カテゴリ")]
-              ),
-              _vm._v(" "),
-              _c("p", { staticClass: "p-ideaList__item--part" }, [
-                _vm._v(
-                  "\n            " +
-                    _vm._s(idea.category.category_name) +
-                    "\n          "
+        return _c(
+          "div",
+          { key: idea.id, staticClass: "p-boughtIdeaList__part" },
+          [
+            _c("div", { staticClass: "p-boughtIdeaList__itemContainer" }, [
+              _c("div", { staticClass: "p-boughtIdeaList__item" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "p-boughtIdeaList__label",
+                    attrs: { for: "idea" },
+                  },
+                  [_vm._v("アイディア名")]
                 ),
+                _vm._v(" "),
+                _c("p", { staticClass: "p-boughtIdeaList__item--part" }, [
+                  _vm._v(_vm._s(idea.idea_name)),
+                ]),
               ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "p-ideaList__item" }, [
-              _c(
-                "label",
-                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
-                [_vm._v("価格")]
-              ),
               _vm._v(" "),
-              _c("p", { staticClass: "p-ideaList__item--part" }, [
-                _vm._v("¥" + _vm._s(_vm._f("localeNum")(idea.price))),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "p-ideaList__item" }, [
-              _c(
-                "label",
-                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
-                [_vm._v("投稿日")]
-              ),
-              _vm._v(" "),
-              _c("p", { staticClass: "p-ideaList__item--part" }, [
-                _vm._v(
-                  "\n            " +
-                    _vm._s(_vm._f("moment")(idea.created_at)) +
-                    "\n          "
+              _c("div", { staticClass: "p-boughtIdeaList__item" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "p-boughtIdeaList__label",
+                    attrs: { for: "idea" },
+                  },
+                  [_vm._v("カテゴリ")]
                 ),
+                _vm._v(" "),
+                _c("p", { staticClass: "p-boughtIdeaList__item--part" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(idea.category.category_name) +
+                      "\n          "
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "p-boughtIdeaList__item" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "p-boughtIdeaList__label",
+                    attrs: { for: "idea" },
+                  },
+                  [_vm._v("価格")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "p-boughtIdeaList__item--part" }, [
+                  _vm._v("¥" + _vm._s(_vm._f("localeNum")(idea.price))),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "p-boughtIdeaList__item" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "p-boughtIdeaList__label",
+                    attrs: { for: "idea" },
+                  },
+                  [_vm._v("投稿日")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "p-boughtIdeaList__item--part" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm._f("moment")(idea.created_at)) +
+                      "\n          "
+                  ),
+                ]),
               ]),
             ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "p-ideaList__item" }, [
-            _c(
-              "label",
-              { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
-              [_vm._v("概要")]
-            ),
             _vm._v(" "),
-            _c("p", { staticClass: "p-ideaList__item--part" }, [
-              _vm._v("\n          " + _vm._s(idea.summary) + "\n        "),
+            _c("div", { staticClass: "p-boughtIdeaList__item" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "p-boughtIdeaList__label",
+                  attrs: { for: "idea" },
+                },
+                [_vm._v("概要")]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "p-boughtIdeaList__item--part" }, [
+                _vm._v("\n          " + _vm._s(idea.summary) + "\n        "),
+              ]),
             ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "p-ideaList__item--link" }, [
-            _c(
-              "a",
-              {
-                staticClass: "c-btn p-ideaList__btn",
-                attrs: { href: "/idea_detail/" + idea.idea_id },
-              },
-              [_vm._v("詳細")]
-            ),
-          ]),
-        ])
+            _vm._v(" "),
+            _c("div", { staticClass: "p-boughtIdeaList__item--link" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "c-btn p-boughtIdeaList__btn",
+                  attrs: { href: "/idea_detail/" + idea.idea_id },
+                },
+                [_vm._v("詳細")]
+              ),
+            ]),
+          ]
+        )
       }),
       0
     ),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "p-ideaList__pagination" },
+      { staticClass: "p-boughtIdeaList__pagination" },
       [
         _c("pagination-component", {
           attrs: { data: _vm.ideas },
@@ -59975,7 +59994,10 @@ var render = function () {
             _c("div", { staticClass: "p-ideaList__item" }, [
               _c(
                 "label",
-                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+                {
+                  staticClass: "p-ideaList__label",
+                  attrs: { for: "category" },
+                },
                 [_vm._v("カテゴリ")]
               ),
               _vm._v(" "),
@@ -59991,7 +60013,7 @@ var render = function () {
             _c("div", { staticClass: "p-ideaList__item" }, [
               _c(
                 "label",
-                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+                { staticClass: "p-ideaList__label", attrs: { for: "price" } },
                 [_vm._v("価格")]
               ),
               _vm._v(" "),
@@ -60003,7 +60025,10 @@ var render = function () {
             _c("div", { staticClass: "p-ideaList__item" }, [
               _c(
                 "label",
-                { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+                {
+                  staticClass: "p-ideaList__label",
+                  attrs: { for: "created_at" },
+                },
                 [_vm._v("投稿日")]
               ),
               _vm._v(" "),
@@ -60020,7 +60045,7 @@ var render = function () {
           _c("div", { staticClass: "p-ideaList__item" }, [
             _c(
               "label",
-              { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+              { staticClass: "p-ideaList__label", attrs: { for: "summary" } },
               [_vm._v("概要")]
             ),
             _vm._v(" "),
@@ -60032,7 +60057,7 @@ var render = function () {
           _c("div", { staticClass: "p-ideaList__item" }, [
             _c(
               "label",
-              { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+              { staticClass: "p-ideaList__label", attrs: { for: "reviews" } },
               [_vm._v("口コミ数")]
             ),
             _vm._v(" "),
@@ -60044,7 +60069,7 @@ var render = function () {
           _c("div", { staticClass: "p-ideaList__item" }, [
             _c(
               "label",
-              { staticClass: "p-ideaList__label", attrs: { for: "idea" } },
+              { staticClass: "p-ideaList__label", attrs: { for: "star" } },
               [_vm._v("平均評価点数")]
             ),
             _vm._v(" "),
@@ -60165,7 +60190,7 @@ var render = function () {
                   "label",
                   {
                     staticClass: "p-likeIdeaList__label",
-                    attrs: { for: "category" },
+                    attrs: { for: "price" },
                   },
                   [_vm._v("価格")]
                 ),
@@ -60386,7 +60411,7 @@ var render = function () {
                   "label",
                   {
                     staticClass: "p-postIdeaList__label",
-                    attrs: { for: "idea" },
+                    attrs: { for: "price" },
                   },
                   [_vm._v("価格")]
                 ),

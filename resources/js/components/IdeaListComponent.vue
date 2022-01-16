@@ -22,19 +22,19 @@
           </div>
 
           <div class="p-ideaList__item">
-            <label for="idea" class="p-ideaList__label">カテゴリ</label>
+            <label for="category" class="p-ideaList__label">カテゴリ</label>
             <p class="p-ideaList__item--part">
               {{ idea.category.category_name }}
             </p>
           </div>
 
           <div class="p-ideaList__item">
-            <label for="idea" class="p-ideaList__label">価格</label>
+            <label for="price" class="p-ideaList__label">価格</label>
             <p class="p-ideaList__item--part">¥{{ idea.price | localeNum }}</p>
           </div>
 
           <div class="p-ideaList__item">
-            <label for="idea" class="p-ideaList__label">投稿日</label>
+            <label for="created_at" class="p-ideaList__label">投稿日</label>
             <p class="p-ideaList__item--part">
               {{ idea.created_at | moment }}
             </p>
@@ -42,19 +42,19 @@
         </div>
 
         <div class="p-ideaList__item">
-          <label for="idea" class="p-ideaList__label">概要</label>
+          <label for="summary" class="p-ideaList__label">概要</label>
           <p class="p-ideaList__item--part">
             {{ idea.summary }}
           </p>
         </div>
 
         <div class="p-ideaList__item">
-          <label for="idea" class="p-ideaList__label">口コミ数</label>
+          <label for="reviews" class="p-ideaList__label">口コミ数</label>
           <p class="p-ideaList__item--part">{{ idea.reviews.length }}件</p>
         </div>
 
         <div class="p-ideaList__item">
-          <label for="idea" class="p-ideaList__label">平均評価点数</label>
+          <label for="star" class="p-ideaList__label">平均評価点数</label>
           <p class="p-ideaList__item--part">
             {{ idea.star }}点</p>
         </div>

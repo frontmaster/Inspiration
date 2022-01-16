@@ -23,21 +23,6 @@
     &__Container {
         width: 100%;
     }
-    &__searchBox {
-        display: flex;
-        align-items: center;
-        margin-top: $space_xl;
-    }
-    &__search {
-        width: 230px;
-        height: 30px;
-        border: 2px solid $sub-color2;
-        border-radius: 5px;
-    }
-    &__searchIcon {
-        position: relative;
-        right: 5%;
-    }
     &__title {
         text-align: center;
         font-size: $font-size_xl;
@@ -74,8 +59,6 @@
         flex-direction: column;
         background-color: $white;
         border-radius: 10px;
-        //padding: $space_xxl;
-        //box-sizing: border-box;
         margin-top: $space_xl;
         @include mq("xl") {
             width: 97%;
@@ -107,9 +90,6 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        &--review {
-            display: flex;
-        }
     }
     &__item {
         display: flex;
@@ -155,7 +135,6 @@
         padding: $space_s;
         box-sizing: border-box;
         font-size: $font-size_base;
-
         margin-right: $space_xl;
         &:hover {
             background-color: $white;
@@ -172,11 +151,6 @@
             width: 120px;
             font-size: $font-size_s;
         }
-    }
-    &__pagination {
-        display: flex;
-        justify-content: center;
-        margin-top: $space_xl;
     }
     &__img {
         height: 40px;

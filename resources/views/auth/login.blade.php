@@ -19,11 +19,8 @@
                         <span class="c-errMsg p-login__errMsg">
                             <p>{{ $message }}</p>
                         </span>
-                        
                         @enderror
-                    
                     <input type="email" class="p-login__input @error('email') is-error @enderror" name="email" value="{{ old('email') }}">
-
                 </div>
 
 

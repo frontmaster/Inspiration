@@ -91,7 +91,11 @@
             opacity: 0.8;
         }
     }
-    &__returnMsg{
+    &__link{
+        display: flex;
+        justify-content: flex-end;
+        color: $main-color;
+        margin-top: $space_xl;
         &:hover{
             text-decoration: underline;
         }

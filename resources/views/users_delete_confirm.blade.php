@@ -30,6 +30,7 @@
                     退会
                 </button>
             </div>
+            <a href="{{ route('mypage', auth()->user()->id) }}" class="p-deleteconfirm__link">マイページへ戻る</a>
         </div>
     </div>
 </main>

@@ -19,7 +19,7 @@
             font-size: $font-size_xl;
         }
         @include mq() {
-            width: 105%;
+            width: 100%;
             font-size: $font-size_l;
         }
         @include mq("ss") {
@@ -72,9 +72,12 @@
         flex-direction: column;
         padding: 60px;
         box-sizing: border-box;
+        @include mq("xl"){
+            padding: $space_xxl;
+        }
         @include mq() {
             height: 40%;
-            padding: 30px;
+            padding: $space_xxl;
         }
     }
     &__title {
@@ -87,14 +90,15 @@
         @include mq() {
             font-size: $font-size_xl;
         }
+        @include mq("ss"){
+            font-size: $font-size_l;
+        }
     }
     &__panelContent {
         display: flex;
         justify-content: space-between;
         margin-top: $space_3l;
-        @include mq("lg") {
-            flex-direction: column;
-        }
+
         @include mq() {
             flex-direction: column;
         }
@@ -111,24 +115,24 @@
         box-sizing: border-box;
         @include mq("xl") {
             width: 32%;
-            height: 410px;
+            height: 480px;
         }
         @include mq("lg") {
-            width: 100%;
-            height: 100%;
-            margin-bottom: $space_xxl;
+            width: 32%;
+            height: 520px;
         }
         @include mq() {
             width: 100%;
             height: 100%;
             margin-bottom: $space_xl;
         }
+        
         &--title {
             text-align: center;
             font-size: $font-size_xl;
             color: $black;
             @include mq("xl") {
-                font-size: $font-size_l;
+                font-size: $font-size_m;
                 font-weight: bold;
             }
             @include mq("ss") {
@@ -142,7 +146,7 @@
             margin-top: $space_xl;
             margin-bottom: $space_xl;
             @include mq("xl") {
-                width: 85%;
+                width: 85%;   
             }
         }
         &--sentence {
@@ -160,7 +164,6 @@
     &__itemContainer {
         display: flex;
         flex-wrap: wrap;
-        //width: 85%;
         justify-content: space-between;
         padding: $space_xxl;
         box-sizing: border-box;
@@ -169,13 +172,16 @@
             content: "";
             width: 360px;
         }
-        @include mq("xl"){
+        @include mq("xl") {
             justify-content: space-around;
         }
-        @include mq("lg"){
+        @include mq("lg") {
+            &::after {
+                width: 320px;
+            }
+        }
+        @include mq("ss"){
             width: 100%;
-            display: flex;
-            justify-content: center;
         }
     }
     &__item {
@@ -190,13 +196,12 @@
             align-items: flex-end;
             justify-content: space-between;
         }
-        @include mq("lg"){
+        @include mq("lg") {
+            width: 320px;
+        }
+        @include mq("ss") {
             width: 100%;
         }
-        @include mq("ss"){
-            width: 100%;
-        }
-        
     }
     &__label {
         color: $sub-color2;

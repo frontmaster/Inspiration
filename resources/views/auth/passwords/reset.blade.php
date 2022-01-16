@@ -1,4 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
+@section('title', 'パスワードリセット画面')
+
+@include('layouts.head')
+
+@include('layouts.header')
 
 @section('content')
 <div class="container">

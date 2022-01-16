@@ -20,7 +20,7 @@
           </div>
 
           <div class="p-postIdeaList__item--part">
-            <label for="idea" class="p-postIdeaList__label">価格</label>
+            <label for="price" class="p-postIdeaList__label">価格</label>
             <p class="p-postIdeaList__item--part">
               ¥{{ idea.price | localeNum }}
             </p>

@@ -40,7 +40,7 @@
                                 <p class="p-mypage__item--part">{{ $boughtIdeaList->category->category_name }}</p>
                             </div>
                             <div class="p-mypage__item--part">
-                                <label for="category" class="p-mypage__label">価格</label>
+                                <label for="price" class="p-mypage__label">価格</label>
                                 <p class="p-mypage__item--part">¥{{ number_format($boughtIdeaList->price) }}</p>
                             </div>
                             <div class="p-mypage__item--part">
@@ -62,15 +62,15 @@
                         @foreach($likeIdeaLists as $likeIdeaList)
                         <div class="p-mypage__item">
                             <div class="p-mypage__item--part">
-                                <label for="" class="p-mypage__label">アイディア名</label>
+                                <label for="idea" class="p-mypage__label">アイディア名</label>
                                 <p class="p-mypage__item--part">{{ $likeIdeaList->idea->idea_name}}</p>
                             </div>
                             <div class="p-mypage__item--part">
-                                <label for="" class="p-mypage__label">カテゴリ</label>
+                                <label for="category" class="p-mypage__label">カテゴリ</label>
                                 <p class="p-mypage__item--part">{{ optional($likeIdeaList->idea->category)->category_name }}</p>
                             </div>
                             <div class="p-mypage__item--part">
-                                <label for="" class="p-mypage__label">価格</label>
+                                <label for="price" class="p-mypage__label">価格</label>
                                 <p class="p-mypage__item--part">¥{{ number_format($likeIdeaList->idea->price) }}</p>
                             </div>
                             <div class="p-mypage__item--part">
@@ -92,15 +92,15 @@
                         @foreach($postIdeaLists as $postIdeaList)
                         <div class="p-mypage__item">
                             <div class="p-mypage__item--part">
-                                <label for="" class="p-mypage__label">アイディア名</label>
+                                <label for="idea" class="p-mypage__label">アイディア名</label>
                                 <p class="p-mypage__item--part">{{ $postIdeaList->idea_name}}</p>
                             </div>
                             <div class="p-mypage__item--part">
-                                <label for="" class="p-mypage__label">カテゴリ</label>
+                                <label for="category" class="p-mypage__label">カテゴリ</label>
                                 <p class="p-mypage__item--part">{{ $postIdeaList->category->category_name }}</p>
                             </div>
                             <div class="p-mypage__item--part">
-                                <label for="" class="p-mypage__label">価格</label>
+                                <label for="price" class="p-mypage__label">価格</label>
                                 <p class="p-mypage__item--part">¥{{ number_format($postIdeaList->price) }}</p>
                             </div>
                             <div class="p-mypage__item--part">
@@ -121,45 +121,45 @@
                         @else
                         @foreach($reviewLists as $reviewList)
                         <div class="p-mypage__item--review">
-                            <label for="" class="p-mypage__label">アイディア名</label>
+                            <label for="idea" class="p-mypage__label">アイディア名</label>
                             <p class="p-mypage__item--part">{{ $reviewList->idea->idea_name}}</p>
                             <div class="p-mypage__postUserInfo">
                                 @if($reviewList->user->user_img == null)
-                                <img src="/img/person.jpg" alt="" class="c-img p-ideaDetail__img" />
+                                <img src="/img/person.jpg" alt="" class="c-img p-mypage__img" />
                                 @else
-                                <img src="{{'/' . $reviewList->user->user_img}}" alt="" class="c-img p-ideaDetail__img" />
+                                <img src="{{'/' . $reviewList->user->user_img}}" alt="" class="c-img p-mypage__img" />
                                 @endif
                                 <p class="p-mypage__item--part">{{ $reviewList->user->name }}</p>
                             </div>
                             @if($reviewList->stars == 1)
                             <p class="p-mypage__item--part">
-                                <i class="p-reviewList__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
                             </p>
                             @elseif($reviewList->stars == 2)
                             <p class="p-mypage__item--part">
-                                <i class="p-reviewList__star fas fa-star"></i>
-                                <i class="p-reviewList__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
                             </p>
                             @elseif($reviewList->stars == 3)
                             <p class="p-mypage__item--part">
-                                <i class="p-reviewList__star fas fa-star"></i>
-                                <i class="p-reviewList__star fas fa-star"></i>
-                                <i class="p-reviewList__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
                             </p>
                             @elseif($reviewList->stars == 4)
                             <p class="p-mypage__item--part">
-                                <i class="p-reviewList__star fas fa-star"></i>
-                                <i class="p-reviewList__star fas fa-star"></i>
-                                <i class="p-reviewList__star fas fa-star"></i>
-                                <i class="p-reviewList__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
                             </p>
                             @elseif($reviewList->stars == 5)
                             <p class="p-mypage__item--part">
-                                <i class="p-reviewList__star fas fa-star"></i>
-                                <i class="p-reviewList__star fas fa-star"></i>
-                                <i class="p-reviewList__star fas fa-star"></i>
-                                <i class="p-reviewList__star fas fa-star"></i>
-                                <i class="p-reviewList__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
+                                <i class="p-mypage__star fas fa-star"></i>
                             </p>
                             @endif
                             <p class="p-mypage__item--part">{{ $reviewList->comment }}</p>

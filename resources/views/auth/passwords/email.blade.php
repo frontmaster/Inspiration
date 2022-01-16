@@ -33,7 +33,7 @@
                     </button>
                 </div>
             </form>
-            <a href="{{ route('login')}}" class="p-passReset__returnMsg">ログイン画面へ戻る</a>
+            <a href="{{ route('login')}}" class="p-passReset__link">ログイン画面へ戻る</a>
         </div>
     </div>
     </div>

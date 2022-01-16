@@ -85,12 +85,6 @@
             width: 90%;
             align-items: center;
         }
-
-        &__pagination {
-            display: flex;
-            justify-content: center;
-            margin-bottom: $space_xl;
-        }
     }
     &__part {
         margin-top: $space_xxl;
@@ -128,9 +122,6 @@
         &--part {
             padding: $space_s;
             margin-left: 0;
-        }
-        &--link {
-            display: flex;
         }
     }
     &__label {
@@ -204,15 +195,16 @@
         right: 10%;
         margin-top: 3px;
         color: $white;
-        @include mq(){
+        @include mq() {
             right: 15%;
+            margin-top: 12px;
         }
     }
     &__likeContainer {
         display: flex;
         align-items: center;
         position: relative;
-        @include mq(){
+        @include mq() {
             margin-top: $space_l;
         }
     }
@@ -227,7 +219,6 @@
         box-sizing: border-box;
         border-radius: 30px;
         color: $white;
-
         &--like {
             width: 220px;
             display: flex;
@@ -292,7 +283,7 @@
         position: relative;
         right: 10%;
         color: $pink;
-        @include mq(){
+        @include mq() {
             right: 10%;
             margin-top: 11px;
         }
@@ -328,7 +319,7 @@
             padding: $space_xxl;
             box-sizing: border-box;
             border-radius: 10px;
-            @include mq(){
+            @include mq() {
                 width: 100%;
             }
         }
@@ -374,7 +365,7 @@
         background-color: $white;
         border-radius: 10px;
         margin-top: $space_xxl;
-        @include mq("xl"){
+        @include mq("xl") {
             width: 100%;
         }
         @include mq() {

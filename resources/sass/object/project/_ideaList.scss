@@ -22,12 +22,10 @@
     }
     &__Container {
         width: 100%;
-        
     }
     &__searchBox {
         display: flex;
         align-items: center;
-
         padding: $space_m;
     }
     &__search {
@@ -35,20 +33,20 @@
         height: 30px;
         border: 2px solid $sub-color2;
         border-radius: 5px;
-        @include mq("ss"){
+        @include mq("ss") {
             font-size: $font-size_s;
         }
     }
     &__searchIcon {
         position: relative;
         right: 5%;
-        @include mq("xl"){
+        @include mq("xl") {
             right: 3%;
         }
-        @include mq(){
+        @include mq() {
             right: 7%;
         }
-        @include mq("ss"){
+        @include mq("ss") {
             right: 10%;
         }
     }
@@ -66,9 +64,6 @@
         @include mq("sm") {
             font-size: $font-size_l;
         }
-        @include mq("ss") {
-            width: 200px;
-        }
     }
     &__sentence {
         border-top: 1px solid $accent-color;
@@ -78,10 +73,8 @@
         display: flex;
         flex-direction: column;
         @include mq() {
-            //flex-direction: column;
-            align-items: center;  
+            align-items: center;
         }
-        
     }
     &__content {
         width: 700px;
@@ -100,10 +93,8 @@
             width: 90%;
             align-items: center;
         }
-        @include mq("ss"){
+        @include mq("ss") {
             width: 90%;
-            
-        
         }
     }
     &__part {
@@ -126,9 +117,6 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        &--review {
-            display: flex;
-        }
     }
     &__item {
         display: flex;
@@ -170,7 +158,6 @@
         padding: $space_s;
         box-sizing: border-box;
         font-size: $font-size_base;
-
         margin-right: $space_xl;
         &:hover {
             background-color: $white;
@@ -192,7 +179,6 @@
         display: flex;
         justify-content: center;
         margin-top: $space_xl;
-        //margin-bottom: $space_xl;
         padding: $space_xl;
         border-top: 1px solid $accent-color;
     }

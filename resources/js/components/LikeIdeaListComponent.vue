@@ -18,7 +18,7 @@
             </p>
           </div>
           <div class="p-likeIdeaList__item--part">
-            <label for="category" class="p-likeIdeaList__label">価格</label>
+            <label for="price" class="p-likeIdeaList__label">価格</label>
             <p class="p-likeIdeaList__item--part">
               ¥{{ like.idea.price | localeNum }}
             </p>
