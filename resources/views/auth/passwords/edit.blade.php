@@ -44,12 +44,11 @@
                 </span>
                 @enderror
                 <div class="p-passEdit__part">
-                    <label for="password" class="p-passEdit__label">パスワード(再入力)</label>
+                    <label for="password" class="p-passEdit__label">新しいパスワード(再入力)</label>
                     <input type="password" class="p-passEdit__input @error('new_password_confirmation') is-error @enderror" name="new_password_confirmation">
                 </div>
 
                 
-
                 <div class="p-passEdit__button">
                     <button type="submit" class="c-btn p-passEdit__btn">
                         変更する

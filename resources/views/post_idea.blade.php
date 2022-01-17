@@ -26,7 +26,7 @@
                     <label for="category" class="p-postIdea__label">カテゴリ
                         <span class="p-postIdea__require">必須</span>
                     </label>
-                    <select required name="category" id="selectBox" class="p-postIdea__select @error('category') is-error @enderror">
+                    <select required name="category_id" id="selectBox" class="p-postIdea__select @error('category') is-error @enderror">
                         <option value="0" hidden selected disabled>選択してください</option>
                         @foreach ($categories as $category)
                             @if($category->id == old('category_id'))

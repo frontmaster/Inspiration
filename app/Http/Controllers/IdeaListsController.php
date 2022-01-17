@@ -20,7 +20,6 @@ class IdeaListsController extends Controller
         $reviews = IdeaReview::with('idea')->get();
 
         
-
         return view('idea_list', compact('ideaLists'));
     }
 

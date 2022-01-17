@@ -8,10 +8,10 @@
 
 @section('content')
 <main class="l-main">
-    <div class="p-passReset">
-        <div class="p-passReset__content">
-            <h1 class="p-passReset__title">パスワードリセット</h1>
-            <p class="p-passReset__sentence">下記の入力欄にメールアドレス、新しいパスワードを入力してください
+    <div class="p-passEdit">
+        <div class="p-passEdit__content">
+            <h1 class="p-passEdit__title">パスワードリセット</h1>
+            <p class="p-passEdit__sentence">下記の入力欄にメールアドレス、新しいパスワードを入力してください
             </p>
             <form method="POST" action="{{ route('password.update') }}">
                 @csrf
