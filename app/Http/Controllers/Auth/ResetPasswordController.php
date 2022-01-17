@@ -26,12 +26,8 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-     protected function redirectTo()
-     {
-        return redirect('/')->with('flash_message', '新しいパスワードに変更しました');
-     }
 
-    //protected $redirectTo = '/';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
