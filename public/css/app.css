@@ -3123,7 +3123,6 @@ img {
   .p-passChange {
     flex-direction: column-reverse;
     align-items: center;
-    margin-bottom: 0;
   }
 }
 
@@ -3132,8 +3131,6 @@ img {
     flex-direction: column-reverse;
     padding: 20px;
     box-sizing: border-box;
-    margin-top: 100px;
-    margin-bottom: 0;
   }
 }
 
@@ -3156,7 +3153,7 @@ img {
 
 @media screen and (max-width: 1024px) {
   .p-passChange__content {
-    width: 95%;
+    width: 65%;
     padding: 30px;
   }
 }
@@ -3190,7 +3187,7 @@ img {
 }
 
 .p-passChange__title {
-  font-size: 30px;
+  font-size: 18px;
   text-align: center;
   color: #2F2725;
   margin-bottom: 40px;

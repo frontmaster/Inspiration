@@ -9,14 +9,13 @@
     @include mq("xl") {
         flex-direction: column-reverse;
         align-items: center;
-        margin-bottom: 0;
     }
     @include mq() {
         flex-direction: column-reverse;
         padding: $space_xl;
         box-sizing: border-box;
-        margin-top: 100px;
-        margin-bottom: 0;
+        
+        
     }
     &__content {
         width: 550px;
@@ -31,7 +30,7 @@
             padding: $space_xxl;
         }
         @include mq("xl") { 
-            width: 95%;
+            width: 65%;
             padding: $space_xxl;
         }
         @include mq("lg") {
@@ -52,7 +51,7 @@
         }
     }
     &__title {
-        font-size: $font-size_xxl;
+        font-size: $font-size_l;
         text-align: center;
         color: $black;
         margin-bottom: $space_3l;
