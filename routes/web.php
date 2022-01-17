@@ -47,5 +47,4 @@ Route::get('/bought_idea_list/{id}', 'BoughtIdeasController@index')->name('bough
 Route::get('ajax/bought_idea_list/{id}', 'Ajax\BoughtIdeasController@index');
 Route::get('ajax/review_list', 'Ajax\ReviewsController@index');
 Route::get('/review_list/{id}', 'ReviewsController@index')->name('review_lists');
-Route::get('/pass_change_complete/{id}', 'PassChangeCompleteController@index')->name('PassChangeComplete');
 });
