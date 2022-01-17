@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller
@@ -25,7 +26,12 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'PassChangeComplete';
+     protected function redirectTo()
+     {
+         return '/pass_change_complete' . '/' . Auth::user()->id;
+     }
+
+    //protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -35,5 +41,7 @@ class ResetPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+
     }
+
 }
