@@ -3109,6 +3109,205 @@ img {
   text-decoration: underline;
 }
 
+.p-passChange {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-passChange {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .p-passChange {
+    flex-direction: column-reverse;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+}
+
+.p-passChange__content {
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+  .p-passChange__content {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .p-passChange__content {
+    width: 95%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-passChange__content {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .p-passChange__content {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-passChange__content {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-passChange__content {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+.p-passChange__title {
+  font-size: 30px;
+  text-align: center;
+  color: #2F2725;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-passChange__title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-passChange__title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-passChange__title {
+    font-size: 24px;
+  }
+}
+
+.p-passChange__form {
+  margin-top: 20px;
+}
+
+.p-passChange__part {
+  margin-bottom: 40px;
+}
+
+.p-passChange__label {
+  font-size: 18px;
+  color: #2F2725;
+}
+
+@media screen and (max-width: 599px) {
+  .p-passChange__label {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-passChange__label {
+    font-size: 14px;
+  }
+}
+
+.p-passChange__errMsg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-passChange__errMsg {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .p-passChange__errMsg {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .p-passChange__errMsg {
+    font-size: 10px;
+  }
+}
+
+.p-passChange__input {
+  width: 100%;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.p-passChange__button {
+  text-align: right;
+}
+
+.p-passChange__btn {
+  margin-top: 10px;
+  color: #fff;
+  background-color: #5654a2;
+}
+
+@media screen and (max-width: 599px) {
+  .p-passChange__btn {
+    width: 80px;
+    height: 30px;
+  }
+}
+
+.p-passChange__btn:hover {
+  opacity: 0.9;
+}
+
+.p-passChange__returnMsg {
+  display: block;
+  margin-top: 20px;
+  text-align: right;
+  color: #4052A2;
+}
+
+@media screen and (max-width: 280px) {
+  .p-passChange__returnMsg {
+    font-size: 12px;
+  }
+}
+
+.p-passChange__returnMsg:hover {
+  text-decoration: underline;
+}
+
 .p-ideaDetail {
   width: 100%;
   height: 100%;
