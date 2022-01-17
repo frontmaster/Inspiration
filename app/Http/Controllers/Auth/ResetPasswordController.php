@@ -28,7 +28,7 @@ class ResetPasswordController extends Controller
      */
      protected function redirectTo()
      {
-         return '/pass_change_complete' . '/' . Auth::user()->id;
+         return redirect('/')->with('flash_message', '新しいパスワードに変更しました');
      }
 
     //protected $redirectTo = '/';
