@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class IdeaReview extends Model
 {
-    protected $fillable = ['stars', 'comment']; 
+    protected $fillable = ['stars', 'comment'];
 
     public function user()
     {
@@ -17,5 +17,4 @@ class IdeaReview extends Model
     {
         return $this->belongsTo('App\PostIdea', 'post_idea_id');
     }
-
 }

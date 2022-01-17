@@ -21,7 +21,5 @@ class BoughtIdea extends Model
     public function reviews()
     {
         return $this->hasMany('App\IdeaReview', 'idea_id', 'post_idea_id');
-        
     }
-
 }

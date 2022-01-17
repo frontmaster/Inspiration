@@ -15,7 +15,7 @@ class MypagesController extends Controller
         }
 
         $user = Auth::user();
-        
+
         $boughtIdeaLists = $user->BoughtIdeas()->orderBy('created_at', 'DESC')->take(5)->get();
 
         $likeIdeaLists = $user->Likes()->orderBy('created_at', 'DESC')->take(5)->get();

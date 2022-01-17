@@ -8,7 +8,7 @@ class PostIdea extends Model
 {
     protected $table =  'postideas';
 
-    
+
 
     protected $fillable = ['category', 'idea_name', 'summary', 'content', 'price'];
 
@@ -31,7 +31,5 @@ class PostIdea extends Model
     public function reviews()
     {
         return $this->hasMany('App\IdeaReview', 'post_idea_id');
-        
     }
-
 }

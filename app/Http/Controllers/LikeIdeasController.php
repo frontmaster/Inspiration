@@ -20,5 +20,4 @@ class LikeIdeasController extends Controller
 
         return view('like_idea_list', compact('likeIdeas'));
     }
-
 }

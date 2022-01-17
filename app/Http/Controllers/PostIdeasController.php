@@ -38,7 +38,6 @@ class PostIdeasController extends Controller
         ]);
 
         $postidea = new PostIdea;
-
         $postidea->idea_name = $request->idea_name;
         $postidea->summary = $request->summary;
         $postidea->content = $request->content;
@@ -80,7 +79,6 @@ class PostIdeasController extends Controller
         ]);
 
         $postidea = PostIdea::find($id);
-
         $postidea->idea_name = $request->idea_name;
         $postidea->summary = $request->summary;
         $postidea->content = $request->content;
@@ -167,7 +165,6 @@ class PostIdeasController extends Controller
         $postIdea = PostIdea::find($id);
 
         $boughtidea = new BoughtIdea;
-
         $boughtidea->idea_name = $postIdea->idea_name;
         $boughtidea->summary = $postIdea->summary;
         $boughtidea->content = $postIdea->content;

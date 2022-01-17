@@ -15,13 +15,11 @@ class PostIdeaListsController extends Controller
         if (!ctype_digit($id)) {
             return redirect('mypage/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
-        
+
         $postIdeaLists = Auth::user()->PostIdeas()->get();
-        
+
         $postideas = Auth::user()->PostIdeas()->first();
 
-        
         return view('post_idea_list', compact('postIdeaLists', 'postideas'));
     }
-
 }

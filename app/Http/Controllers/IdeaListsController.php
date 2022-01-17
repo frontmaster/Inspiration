@@ -14,13 +14,10 @@ class IdeaListsController extends Controller
     //アイディア一覧表示
     public function index()
     {
-        
         $ideaLists = PostIdea::with('reviews')->get();
 
         $reviews = IdeaReview::with('idea')->get();
 
-        
         return view('idea_list', compact('ideaLists'));
     }
-
 }

@@ -43,11 +43,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new PasswordResetNotification($token));
-    }
-
     public function PostIdeas()
     {
         return $this->hasMany('App\PostIdea', 'post_user_id');   
