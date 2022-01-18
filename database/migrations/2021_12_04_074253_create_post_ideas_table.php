@@ -24,7 +24,7 @@ class CreatePostIdeasTable extends Migration
             $table->timestamps();
 
             $table->foreign(('category_id'))->references('id')->on('categories');
-            $table->foreign('post_user_id')->references('id')->on('users');
+            $table->foreign('post_user_id')->references('id')->on('users')->onDelete('CASCADE');
         });
     }
 
