@@ -109,7 +109,10 @@
         display: flex;
         justify-content: space-between;
         margin-top: $space_3l;
-
+        @include mq("xl"){
+            flex-direction: column;
+            align-items: center;
+        }
         @include mq() {
             flex-direction: column;
         }
@@ -125,12 +128,13 @@
         border-radius: 5px;
         box-sizing: border-box;
         @include mq("xl") {
-            width: 32%;
-            height: 480px;
+            width: 80%;
+            height: 80%;
+            margin-bottom: $space_xl;
         }
         @include mq("lg") {
-            width: 32%;
-            height: 520px;
+            width: 80%;
+            height: 80%;
         }
         @include mq() {
             width: 100%;
@@ -156,9 +160,7 @@
             height: 35%;
             margin-top: $space_xl;
             margin-bottom: $space_xl;
-            @include mq("xl") {
-                width: 85%;
-            }
+            
         }
         &--sentence {
             @include mq("ss") {
