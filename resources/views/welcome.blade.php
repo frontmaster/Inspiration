@@ -50,7 +50,11 @@
             </div>
         </div>
         <div class="p-top__itemContent">
+            @if(isset($postIdeaLists[0]))
             <h1 class="p-top__title">新着のアイディア</h1>
+            @else
+            <h1 class="p-top__title">まだ新着のアイディアはありません</h1>
+            @endif
             <div class="p-top__itemContainer">
                 @foreach($postIdeaLists as $postIdeaList)
                 <div class="p-top__item">

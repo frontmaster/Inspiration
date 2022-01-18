@@ -834,6 +834,7 @@ img {
   justify-content: space-between;
   padding: 30px;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .p-top__itemContainer::after {
