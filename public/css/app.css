@@ -724,15 +724,30 @@ img {
   margin-top: 20px;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 280px) {
   .p-top__title {
-    font-size: 24px;
+    font-size: 18px;
+  }
+}
+
+.p-top__title--notpost {
+  font-size: 24px;
+  color: #51318F;
+  padding: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 599px) {
+  .p-top__title--notpost {
+    font-size: 18px;
   }
 }
 
 @media screen and (max-width: 280px) {
-  .p-top__title {
-    font-size: 18px;
+  .p-top__title--notpost {
+    font-size: 14px;
   }
 }
 

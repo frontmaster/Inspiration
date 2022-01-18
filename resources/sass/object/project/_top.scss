@@ -72,7 +72,7 @@
         flex-direction: column;
         padding: 60px;
         box-sizing: border-box;
-        @include mq("xl"){
+        @include mq("xl") {
             padding: $space_xxl;
         }
         @include mq() {
@@ -87,11 +87,22 @@
         font-weight: bold;
         text-align: center;
         margin-top: $space_xl;
-        @include mq() {
-            font-size: $font-size_xl;
-        }
-        @include mq("ss"){
+        @include mq("ss") {
             font-size: $font-size_l;
+        }
+        &--notpost {
+            font-size: $font-size_xl;
+            color: $sub-color2;
+            padding: $space_xl;
+            font-weight: bold;
+            text-align: center;
+            margin-top: $space_xl;
+            @include mq(){
+                font-size:$font-size_l;
+            }
+            @include mq("ss"){
+                font-size: $font-size_m;
+            }
         }
     }
     &__panelContent {
@@ -126,7 +137,7 @@
             height: 100%;
             margin-bottom: $space_xl;
         }
-        
+
         &--title {
             text-align: center;
             font-size: $font-size_xl;
@@ -146,7 +157,7 @@
             margin-top: $space_xl;
             margin-bottom: $space_xl;
             @include mq("xl") {
-                width: 85%;   
+                width: 85%;
             }
         }
         &--sentence {
@@ -181,7 +192,7 @@
                 width: 320px;
             }
         }
-        @include mq("ss"){
+        @include mq("ss") {
             width: 100%;
         }
     }
