@@ -2118,11 +2118,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -60063,18 +60058,6 @@ var render = function () {
             _vm._v(" "),
             _c("p", { staticClass: "p-ideaList__item--part" }, [
               _vm._v(_vm._s(idea.reviews.length) + "件"),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "p-ideaList__item" }, [
-            _c(
-              "label",
-              { staticClass: "p-ideaList__label", attrs: { for: "star" } },
-              [_vm._v("平均評価点数")]
-            ),
-            _vm._v(" "),
-            _c("p", { staticClass: "p-ideaList__item--part" }, [
-              _vm._v("\n          " + _vm._s(idea.star) + "点"),
             ]),
           ]),
           _vm._v(" "),
