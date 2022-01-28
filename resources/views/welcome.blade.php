@@ -8,6 +8,11 @@
 
 @section('content')
 <main class="l-main" id="app">
+@if(session('flash_message'))
+    <div class="c-flashMsgContainer js-flashMsg">
+        {{ session('flash_message') }}
+    </div>
+    @endif
     <div class="p-top">
         <div class="p-top__imgContainer">
             <p class="p-top__sentence">簡単にアイディアを販売・購入できる</br>

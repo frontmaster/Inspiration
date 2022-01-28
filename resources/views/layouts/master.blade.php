@@ -12,6 +12,7 @@
         {{ session('flash_message') }}
     </div>
     @endif
+    
 
     @yield('content')
     

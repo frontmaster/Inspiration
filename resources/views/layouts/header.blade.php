@@ -17,7 +17,7 @@
 </header>
 @else
 <header class="l-header">
-    <div class="l-header__logo"><a href="{{ url('/') }}" class="l-header__logo--link">Inspiration</a></div>
+    <div class="l-header__logo"><a href="{{ route('mypage', auth()->user()->id) }}" class="l-header__logo--link">Inspiration</a></div>
 
     <div class="l-header__menuTrigger js-toggle-sp-menu">
         <span></span>
@@ -26,7 +26,6 @@
     </div>
     <nav class="l-header__nav js-toggle-sp-menu-target">
         <ul>
-            <li class="l-header__menu"><a href="{{ url('/') }}" class="l-header__menu--link">TOP</a></li>
             <li class="l-header__menu"><a href="{{ route('mypage', auth()->user()->id) }}" class="l-header__menu--link">マイページ</a></li>
             <li class="l-header__menu"><a href="{{ route('logout') }}" class="l-header__menu--link" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">ログアウト</a></li>
