@@ -28,7 +28,7 @@
                         @if($users->user_img === null)
                         <img src="{{ asset('img/person.jpg') }}" alt="" class="c-img p-profile__img">
                         @else
-                        <img src="{{ '/'. $users->user_img }}" class="c-img p-profile__img" alt="">
+                        <img src="{{ '/'.  $users->user_img }}" class="c-img p-profile__img" alt="">
                         @endif
                         <label class="p-profile__inputarea">
                             <input type="file" class="p-profile__input--img @error('img') is-error @enderror" name="user_img">

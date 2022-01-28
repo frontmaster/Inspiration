@@ -34,9 +34,10 @@ class ProfilesController extends Controller
 
         $users = User::find($id);
 
-        $img_url = $request->user_img->store('public/image');
+        
 
         if ($request and $request->user_img != null) {
+            $img_url = $request->user_img->store('public/image');
             $users->name = $request->name;
             $users->email = $request->email;
             $users->user_img = str_replace('public/', 'storage/', $img_url);
