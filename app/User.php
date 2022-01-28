@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Notifications\PasswordResetNotification;
+use App\Notifications\PasswordReset;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -45,7 +45,7 @@ class User extends Authenticatable
 
     public function PostIdeas()
     {
-        return $this->hasMany('App\PostIdea', 'post_user_id');   
+        return $this->hasMany('App\PostIdea', 'post_user_id');
     }
 
     public function Likes()
@@ -67,11 +67,16 @@ class User extends Authenticatable
     {
         parent::boot();
 
-        static::deleted(function ($user){
+        static::deleted(function ($user) {
 
             $user->PostIdeas()->delete();
         });
     }
 
-    
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PasswordReset($token));
+
+        return redirect('/')->with('flash_message', 'パスワード再発行メールを送信しました');
+    }
 }
