@@ -65,7 +65,7 @@ class PostIdeasController extends Controller
 
             return view('post_idea_edit', compact('postidea', 'categories', 'boughtidea'));
         } else {
-            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'このIDのアイディアは存在しないか他のユーザーが投稿したアイディアのため、表示できません');
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
     }
 

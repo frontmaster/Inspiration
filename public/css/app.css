@@ -523,7 +523,7 @@ img {
   align-items: center;
   opacity: 0.8;
   position: fixed;
-  top: 15%;
+  top: 9%;
   z-index: 3;
 }
 
@@ -3370,7 +3370,20 @@ img {
   border-radius: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  .p-ideaDetail__modal {
+    left: 0%;
+  }
+}
+
 @media screen and (max-width: 599px) {
+  .p-ideaDetail__modal {
+    width: 90%;
+    left: 0%;
+  }
+}
+
+@media screen and (max-width: 280px) {
   .p-ideaDetail__modal {
     width: 90%;
   }

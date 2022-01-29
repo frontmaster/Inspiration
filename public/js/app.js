@@ -2130,17 +2130,6 @@ __webpack_require__.r(__webpack_exports__);
       keyword: ""
     };
   },
-  filters: {
-    localeNum: function localeNum(val) {
-      return val.toLocaleString();
-    },
-    decimalFormat: function decimalFormat(val) {
-      return parseFloat(val).toFixed(1);
-    },
-    moment: function moment(date) {
-      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("YYYY/MM/DD");
-    }
-  },
   methods: {
     move: function move(page) {
       if (!this.isCurrentPage(page)) {
@@ -2158,6 +2147,15 @@ __webpack_require__.r(__webpack_exports__);
     movePage: function movePage(page) {
       this.page = page;
       this.getItems();
+    },
+    localeNum: function localeNum(val) {
+      return val.toLocaleString();
+    },
+    decimalFormat: function decimalFormat(val) {
+      return parseFloat(val).toFixed(1);
+    },
+    moment: function moment(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("YYYY/MM/DD");
     }
   },
   mounted: function mounted() {
@@ -60013,7 +60011,7 @@ var render = function () {
               ),
               _vm._v(" "),
               _c("p", { staticClass: "p-ideaList__item--part" }, [
-                _vm._v("¥" + _vm._s(_vm._f("localeNum")(idea.price))),
+                _vm._v("¥" + _vm._s(_vm.localeNum(idea.price))),
               ]),
             ]),
             _vm._v(" "),
@@ -60030,7 +60028,7 @@ var render = function () {
               _c("p", { staticClass: "p-ideaList__item--part" }, [
                 _vm._v(
                   "\n            " +
-                    _vm._s(_vm._f("moment")(idea.created_at)) +
+                    _vm._s(_vm.moment(idea.created_at)) +
                     "\n          "
                 ),
               ]),

@@ -30,13 +30,13 @@
 
           <div class="p-ideaList__item">
             <label for="price" class="p-ideaList__label">価格</label>
-            <p class="p-ideaList__item--part">¥{{ idea.price | localeNum }}</p>
+            <p class="p-ideaList__item--part">¥{{ localeNum(idea.price) }}</p>
           </div>
 
           <div class="p-ideaList__item">
             <label for="created_at" class="p-ideaList__label">投稿日</label>
             <p class="p-ideaList__item--part">
-              {{ idea.created_at | moment }}
+              {{ moment(idea.created_at) }}
             </p>
           </div>
         </div>
@@ -85,17 +85,6 @@ export default {
       keyword: "",
     };
   },
-  filters: {
-    localeNum: function (val) {
-      return val.toLocaleString();
-    },
-    decimalFormat: function (val) {
-      return parseFloat(val).toFixed(1);
-    },
-    moment(date) {
-      return moment(date).format("YYYY/MM/DD");
-    },
-  },
   methods: {
     move(page) {
       if (!this.isCurrentPage(page)) {
@@ -112,6 +101,15 @@ export default {
     movePage(page) {
       this.page = page;
       this.getItems();
+    },
+    localeNum: function (val) {
+      return val.toLocaleString();
+    },
+    decimalFormat: function (val) {
+      return parseFloat(val).toFixed(1);
+    },
+    moment(date) {
+      return moment(date).format("YYYY/MM/DD");
     },
   },
 

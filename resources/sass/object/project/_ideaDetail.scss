@@ -32,7 +32,14 @@
         left: 5%;
         z-index: 1;
         border-radius: 10px;
+        @include mq("lg"){
+            left:0%;
+        }
         @include mq() {
+            width: 90%;
+            left: 0%;
+        }
+        @include mq("ss"){
             width: 90%;
         }
         &--cover {

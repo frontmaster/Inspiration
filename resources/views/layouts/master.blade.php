@@ -5,14 +5,15 @@
 
 <body>
     @yield('header')
-    
-    @yield('content')
+
     <!-- フラッシュメッセージ -->
     @if(session('flash_message'))
     <div class="c-flashMsgContainer js-flashMsg">
         {{ session('flash_message') }}
     </div>
     @endif
+
+    @yield('content')
 
     @yield('footer')
 
