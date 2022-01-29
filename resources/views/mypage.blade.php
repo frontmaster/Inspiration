@@ -17,10 +17,10 @@
             </div>
 
             <div class="p-mypage__content">
-
+                
 
                 <div class="p-mypage__Container">
-
+                
                     <div class="p-mypage__itemContainer">
                         <div class="p-mypage__itemContainer--head">
                             <h1 class="p-mypage__title">購入したアイディア一覧</h1>
