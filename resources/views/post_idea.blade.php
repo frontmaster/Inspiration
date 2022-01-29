@@ -97,7 +97,7 @@
                         <span class="p-postIdea__require">必須</span>
                     </label>
                     <div class="p-postIdea__pricecontainer">
-                        <input type="number" class="p-postIdea__input @error('price') is-error @enderror" name="price" value="{{ old('price') }}" placeholder="半角数字">
+                        <input type="number" class="p-postIdea__input @error('price') is-error @enderror" name="price" min="1" value="{{ old('price') }}" placeholder="半角数字">
                         <span class="p-postIdea__pricetag">円</span>
                     </div>
                 </div>
