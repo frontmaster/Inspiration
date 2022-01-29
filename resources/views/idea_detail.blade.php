@@ -10,6 +10,18 @@
 
 <main class="l-main" id="app">
     <div class="p-ideaDetail">
+    <div class="p-ideaDetail__modal js-show-modal-target">
+        <p class="p-ideaDetail__sentence--modal">アイディアを購入しますか？</p>
+        <form method="POST" action="{{ route('idea_buy', $postidea->id) }}" class="p-ideaDetail__form--modal">
+            @csrf
+            <div class="p-ideaDetail__button--modal">
+                <button type="button" class="c-btn p-ideaDetail__btn--cancel js-hide-modal">キャンセル</button>
+                <button type="submit" class="c-btn p-ideaDetail__btn--buy">購入</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="p-postIdeaEdit__modal--cover js-show-modal-cover"></div>
         @component('component.sidebar')
         @endcomponent
 
@@ -95,7 +107,7 @@
 
 
             <div class="p-ideaDetail__formContainer">
-                <form class="p-ideaDetail__form" action="{{ route('idea_buy', $postidea->id) }}" method="POST">
+                
                     @csrf
                     @if(auth()->user() == $postIdeaUser)
                     <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>
@@ -106,11 +118,11 @@
                         購入済みです
                     </button>
                     @else
-                    <button type="submit" class="c-btn p-ideaDetail__btn">
+                    <button type="button" class="c-btn p-ideaDetail__btn js-show-modal">
                         購入する
                     </button>
                     @endif
-                </form>
+                
             </div>
 
             @if($postIdeaUser != auth()->user() and $bought_idea != null)

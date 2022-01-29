@@ -9,7 +9,7 @@
 @section('content')
 
 <main class="l-main" id="app">
-<div class="p-postIdeaEdit__modal js-show-modal-target">
+    <div class="p-postIdeaEdit__modal js-show-modal-target">
         <p class="p-postIdeaEdit__sentence">アイディアを削除しますか？</p>
         <form method="POST" action="{{ route('idea_delete_post', $postidea->id) }}" class="p-postIdeaEdit__form--modal">
             @method('DELETE')
@@ -28,7 +28,7 @@
 
         <div class="p-postIdeaEdit__content">
             <h1 class="p-postIdeaEdit__title">アイディア編集</h1>
-            
+
             <form method="POST" action="{{ route('post_idea_update', $postidea->id) }}" class="p-postIdeaEdit__form">
                 @csrf
                 @error('category_id')
@@ -131,7 +131,7 @@
                     @endif
                 </div>
             </form>
-        
+
         </div>
     </div>
 </main>
