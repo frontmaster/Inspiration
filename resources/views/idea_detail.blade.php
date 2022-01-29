@@ -98,7 +98,7 @@
                 <form class="p-ideaDetail__form" action="{{ route('idea_buy', $postidea->id) }}" method="POST">
                     @csrf
                     @if(auth()->user() == $postIdeaUser)
-                    <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>
+                    <button type="submit" class="c-btn p-ideaDetail__btn--disabled">
                         アイディア投稿者は購入できません
                     </button>
                     @elseif(auth()->user()->id == $buy_user_id)

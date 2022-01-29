@@ -64,8 +64,8 @@ class PostIdeasController extends Controller
             $boughtidea = BoughtIdea::where('idea_id', $id)->first();
 
             return view('post_idea_edit', compact('postidea', 'categories', 'boughtidea'));
-        }else{
-            return view('post_idea_edit_error');
+        } else {
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'このIDのアイディアは存在しないか他のユーザーが投稿したアイディアのため、表示できません');
         }
     }
 
@@ -131,8 +131,8 @@ class PostIdeasController extends Controller
                 ->groupBy('post_idea_id')->first();
 
             return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id', 'review', 'ideaReview', 'bought_idea', 'scores'));
-        }else{
-            return view('idea_detail_error');
+        } else {
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'このIDのアイディアは存在しません');
         }
     }
 
@@ -175,22 +175,26 @@ class PostIdeasController extends Controller
 
         $postIdea = PostIdea::find($id);
 
-        $boughtidea = new BoughtIdea;
-        $boughtidea->idea_name = $postIdea->idea_name;
-        $boughtidea->summary = $postIdea->summary;
-        $boughtidea->content = $postIdea->content;
-        $boughtidea->price = $postIdea->price;
-        $boughtidea->post_user_id = $postIdea->post_user_id;
-        $boughtidea->buy_user_id = auth()->id();
-        $boughtidea->category_id = $postIdea->category_id;
-        $boughtidea->idea_id = $postIdea->id;
-        $boughtidea->save();
+        if (auth()->user()->id != $postIdea->post_user_id) {
+            $boughtidea = new BoughtIdea;
+            $boughtidea->idea_name = $postIdea->idea_name;
+            $boughtidea->summary = $postIdea->summary;
+            $boughtidea->content = $postIdea->content;
+            $boughtidea->price = $postIdea->price;
+            $boughtidea->post_user_id = $postIdea->post_user_id;
+            $boughtidea->buy_user_id = auth()->id();
+            $boughtidea->category_id = $postIdea->category_id;
+            $boughtidea->idea_id = $postIdea->id;
+            $boughtidea->save();
 
-        $sale_user = $postIdea->user()->first();
-        $buy_user = auth()->user();
-        Mail::to($sale_user->email)->send(new ToPostIdeaUserNotice($buy_user));
-        Mail::to($buy_user->email)->send(new ToBoughtIdeaUserNotice($sale_user));
+            $sale_user = $postIdea->user()->first();
+            $buy_user = auth()->user();
+            Mail::to($sale_user->email)->send(new ToPostIdeaUserNotice($buy_user));
+            Mail::to($buy_user->email)->send(new ToBoughtIdeaUserNotice($sale_user));
 
-        return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディアを購入しました。');
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディアを購入しました。');
+        }else{
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディア投稿者は購入できません');
+        }
     }
 }
