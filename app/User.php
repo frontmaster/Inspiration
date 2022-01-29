@@ -8,17 +8,21 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Notifications\PasswordReset;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
 
     use SoftDeletes;
-
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+
+    
+
     protected $fillable = [
         'name', 'email', 'password', 'user_img', 'comment'
     ];
@@ -79,4 +83,5 @@ class User extends Authenticatable
 
         return redirect('/')->with('flash_message', 'パスワード再発行メールを送信しました');
     }
+
 }

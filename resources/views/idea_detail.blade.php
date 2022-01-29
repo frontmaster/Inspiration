@@ -33,12 +33,12 @@
                         <div class="p-ideaDetail__item">
                             <label for="postUser" class="p-ideaDetail__label">アイディア投稿者</label>
                             <div class="p-ideaDetail__postUserInfo">
-                                @if($postIdeaUser->user_img == null)
+                                @if(optional($postIdeaUser)->user_img == null)
                                 <img src="/img/person.jpg" alt="" class="c-img p-ideaDetail__img" />
                                 @else
                                 <img src="{{'/' . $postIdeaUser->user_img}}" alt="" class="c-img p-ideaDetail__img" />
                                 @endif
-                                <p class="p-ideaDetail__postUserInfo--name">{{ $postIdeaUser->name }}</p>
+                                <p class="p-ideaDetail__postUserInfo--name">{{ optional($postIdeaUser)->name }}</p>
                             </div>
                         </div>
 

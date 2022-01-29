@@ -115,7 +115,7 @@ class PostIdeasController extends Controller
             return redirect('post_idea_edit/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
 
-        //DBにアイディアのIDが存在する場合、アイディア詳細画面を表示。存在しないIDであればエラー画面表示
+        //DBにアイディアのIDが存在する場合、アイディア詳細画面を表示。存在しないIDであればマイページへ遷移
         if (DB::table('postideas')->where('id', $id)->exists()) {
             $postidea = PostIdea::find($id);
             $postIdeaUser = $postidea->user()->first();
@@ -194,7 +194,7 @@ class PostIdeasController extends Controller
 
             return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディアを購入しました。');
         } else {
-            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'このアイディアはすでに削除されています');
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'このアイディアはすでに購入できません');
         }
     }
 }
