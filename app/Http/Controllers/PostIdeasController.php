@@ -7,11 +7,12 @@ use App\Category;
 use App\PostIdea;
 use App\BoughtIdea;
 use App\IdeaReview;
-use App\Mail\ToBoughtIdeaUserNotice;
-use App\Mail\ToPostIdeaUserNotice;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use App\Mail\ToPostIdeaUserNotice;
+use Illuminate\Support\Facades\DB;
+use App\Mail\ToBoughtIdeaUserNotice;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PostIdeasController extends Controller
 {
@@ -57,10 +58,15 @@ class PostIdeasController extends Controller
         }
 
         $postidea = PostIdea::find($id);
-        $categories = Category::get();
-        $boughtidea = BoughtIdea::where('idea_id', $id)->first();
+        //DBにアイディアのIDが存在するかどうか且つログインユーザーIDとアイディア投稿者IDが一致した場合のみ編集画面を表示する
+        if (DB::table('postideas')->where('id', $id)->exists() && auth()->user()->id == $postidea->post_user_id) {
+            $categories = Category::get();
+            $boughtidea = BoughtIdea::where('idea_id', $id)->first();
 
-        return view('post_idea_edit', compact('postidea', 'categories', 'boughtidea'));
+            return view('post_idea_edit', compact('postidea', 'categories', 'boughtidea'));
+        }else{
+            return view('post_idea_edit_error');
+        }
     }
 
     //編集したアイディアの更新
@@ -109,20 +115,25 @@ class PostIdeasController extends Controller
             return redirect('post_idea_edit/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
 
-        $postidea = PostIdea::find($id);
-        $postIdeaUser = $postidea->user()->first();
-        $category = $postidea->category()->first();
-        $user_id = Auth::user()->id;
-        $idea_id = $postidea->id;
-        $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
-        $bought_idea = BoughtIdea::where('buy_user_id', $user_id)->where('idea_id', $id)->first();
-        $buy_user_id = optional($bought_idea)->buy_user_id;
-        $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
-        $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
-        $scores = IdeaReview::where('post_idea_id', $id)->selectRaw('AVG(stars) as star')
-            ->groupBy('post_idea_id')->first();
+        //DBにアイディアのIDが存在する場合、アイディア詳細画面を表示。存在しないIDであればエラー画面表示
+        if (DB::table('postideas')->where('id', $id)->exists()) {
+            $postidea = PostIdea::find($id);
+            $postIdeaUser = $postidea->user()->first();
+            $category = $postidea->category()->first();
+            $user_id = Auth::user()->id;
+            $idea_id = $postidea->id;
+            $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
+            $bought_idea = BoughtIdea::where('buy_user_id', $user_id)->where('idea_id', $id)->first();
+            $buy_user_id = optional($bought_idea)->buy_user_id;
+            $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
+            $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
+            $scores = IdeaReview::where('post_idea_id', $id)->selectRaw('AVG(stars) as star')
+                ->groupBy('post_idea_id')->first();
 
-        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id', 'review', 'ideaReview', 'bought_idea', 'scores'));
+            return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id', 'review', 'ideaReview', 'bought_idea', 'scores'));
+        }else{
+            return view('idea_detail_error');
+        }
     }
 
     //「気になる」を追加・削除

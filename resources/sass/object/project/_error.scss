@@ -1,0 +1,42 @@
+.p-error {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__content {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        @include mq("xxl") {
+            width: 60%;
+            padding: $space_xxl;
+        }
+        @include mq("xl") {
+            width: 90%;
+            padding: $space_xxl;
+        }
+        @include mq("lg") {
+            width: 90%;
+            padding: $space_xxl;
+        }
+        @include mq() {
+            width: 90%;
+            height: 70%;
+            padding: $space_xxl;
+        }
+        @include mq("sm") {
+            width: 90%;
+            padding: $space_xxl;
+        }
+        @include mq("ss") {
+            width: 90%;
+            padding: $space_xxl;
+        }
+    }
+    &__sentence{
+        text-align: center;
+        font-size: $font-size_xl;
+    }
+    
+}
