@@ -22,23 +22,20 @@
           <div class="p-postIdeaList__item--part">
             <label for="price" class="p-postIdeaList__label">価格</label>
             <p class="p-postIdeaList__item--part">
-              ¥{{ idea.price | localeNum }}
+              ¥{{ localeNum(idea.price) }}
             </p>
           </div>
-</div>
-          <div class="p-postIdeaList__item--link">
-            <a
-              :href="'/idea_detail/' + idea.id"
-              class="c-btn p-postIdeaList__btn"
-              >詳細を見る</a
-            >
-            <a
-              :href="'/post_idea_edit/' + idea.id"
-              class="c-btn p-postIdeaList__btn"
-              >編集</a
-            >
-          </div>
-        
+        </div>
+        <div class="p-postIdeaList__item--link">
+          <a :href="'/idea_detail/' + idea.id" class="c-btn p-postIdeaList__btn"
+            >詳細を見る</a
+          >
+          <a
+            :href="'/post_idea_edit/' + idea.id"
+            class="c-btn p-postIdeaList__btn"
+            >編集</a
+          >
+        </div>
       </div>
     </div>
     <div class="p-postIdeaList__pagination">
@@ -56,16 +53,10 @@ export default {
   components: {
     PaginationComponent,
   },
-
   data: function () {
     return {
       ideas: {},
     };
-  },
-  filters: {
-    localeNum: function (val) {
-      return val.toLocaleString();
-    },
   },
   methods: {
     move(page) {
@@ -80,25 +71,27 @@ export default {
         this.ideas = response.data;
       });
     },
-
     movePage(page) {
       this.page = page;
       this.getItems();
     },
+    localeNum: function (val) {
+      return val.toLocaleString();
+    },
   },
   mounted() {
-    var self = this;
-    var url = "/ajax/post_idea_list/" + this.post_user_id;
+    const self = this;
+    const url = "/ajax/post_idea_list/" + this.post_user_id;
     axios.get(url).then(function (response) {
       self.ideas = response.data;
     });
   },
   computed: {
     postIdeas: function () {
-      var ideas = [];
+      const ideas = [];
 
-      for (var i in this.ideas.data) {
-        var idea = this.ideas.data[i];
+      for (let i in this.ideas.data) {
+        const idea = this.ideas.data[i];
 
         ideas.push(idea);
       }

@@ -22,13 +22,13 @@
 
           <div class="p-boughtIdeaList__item">
             <label for="idea" class="p-boughtIdeaList__label">価格</label>
-            <p class="p-boughtIdeaList__item--part">¥{{ idea.price | localeNum }}</p>
+            <p class="p-boughtIdeaList__item--part">¥{{ localeNum(idea.price) }}</p>
           </div>
 
           <div class="p-boughtIdeaList__item">
             <label for="idea" class="p-boughtIdeaList__label">投稿日</label>
             <p class="p-boughtIdeaList__item--part">
-              {{ idea.created_at | moment }}
+              {{ moment(idea.created_at) }}
             </p>
           </div>
         </div>
@@ -72,14 +72,6 @@ export default {
       ideas: {},
     };
   },
-  filters: {
-    localeNum: function (val) {
-      return val.toLocaleString();
-    },
-    moment(date) {
-      return moment(date).format("YYYY/MM/DD");
-    },
-  },
   methods: {
     move(page) {
       if (!this.isCurrentPage(page)) {
@@ -97,21 +89,27 @@ export default {
       this.page = page;
       this.getItems();
     },
+    localeNum: function (val) {
+      return val.toLocaleString();
+    },
+    moment(date) {
+      return moment(date).format("YYYY/MM/DD");
+    },
   },
 
   mounted() {
-    var self = this;
-    var url = "/ajax/bought_idea_list/" + this.buy_user_id;
+    const self = this;
+    const url = "/ajax/bought_idea_list/" + this.buy_user_id;
     axios.get(url).then(function (response) {
       self.ideas = response.data;
     });
   },
   computed: {
     boughtIdeas: function () {
-      var ideas = [];
+      const ideas = [];
 
-      for (var i in this.ideas.data) {
-        var idea = this.ideas.data[i];
+      for (let i in this.ideas.data) {
+        const idea = this.ideas.data[i];
 
           ideas.push(idea);
         }

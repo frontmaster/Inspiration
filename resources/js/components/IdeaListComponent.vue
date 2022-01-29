@@ -114,18 +114,18 @@ export default {
   },
 
   mounted() {
-    var self = this;
-    var url = "/ajax/idea_list";
+    const self = this;
+    const url = "/ajax/idea_list";
     axios.get(url).then(function (response) {
       self.ideas = response.data;
     });
   },
   computed: {
     filteredIdeas: function () {
-      var ideas = [];
+      const ideas = [];
 
-      for (var i in this.ideas.data) {
-        var idea = this.ideas.data[i];
+      for (let i in this.ideas.data) {
+        const idea = this.ideas.data[i];
 
         if (
           idea.category.category_name.indexOf(this.keyword) !== -1 ||

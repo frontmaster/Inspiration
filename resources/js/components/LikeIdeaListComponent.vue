@@ -20,7 +20,7 @@
           <div class="p-likeIdeaList__item--part">
             <label for="price" class="p-likeIdeaList__label">価格</label>
             <p class="p-likeIdeaList__item--part">
-              ¥{{ like.idea.price | localeNum }}
+              ¥{{ localeNum(like.idea.price) }}
             </p>
           </div>
         </div>
@@ -71,24 +71,19 @@ export default {
       likes: {},
     };
   },
-  filters: {
-    localeNum: function (val) {
-      return val.toLocaleString();
-    },
-  },
   mounted() {
-    var self = this;
-    var url = "/ajax/like_idea_list/" + this.user_id;
+    const self = this;
+    const url = "/ajax/like_idea_list/" + this.user_id;
     axios.get(url).then(function (response) {
       self.likes = response.data;
     });
   },
   computed: {
     filteredLikes: function () {
-      var likes = [];
+      const likes = [];
 
-      for (var i in this.likes.data) {
-        var like = this.likes.data[i];
+      for (let i in this.likes.data) {
+        const like = this.likes.data[i];
         likes.push(like);
       }
       return likes;
@@ -106,23 +101,22 @@ export default {
         this.likes = response.data;
       });
     },
-
     movePage(page) {
       this.page = page;
       this.getItems();
     },
-
     likeDelete: function (e) {
-      var id = e.currentTarget.getAttribute("data-like-id");
+      const id = e.currentTarget.getAttribute("data-like-id");
       axios.post("/idea/like/" + id).then((response) => {
         this.data = response.data;
-        
-        for (var i in this.likes.data) {
-       
-        this.likes.data.splice(i, 1);
-      }
-      
+
+        for (let i in this.likes.data) {
+          this.likes.data.splice(i, 1);
+        }
       });
+    },
+    localeNum: function (val) {
+      return val.toLocaleString();
     },
   },
 };

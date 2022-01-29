@@ -1983,14 +1983,6 @@ __webpack_require__.r(__webpack_exports__);
       ideas: {}
     };
   },
-  filters: {
-    localeNum: function localeNum(val) {
-      return val.toLocaleString();
-    },
-    moment: function moment(date) {
-      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("YYYY/MM/DD");
-    }
-  },
   methods: {
     move: function move(page) {
       if (!this.isCurrentPage(page)) {
@@ -2008,6 +2000,12 @@ __webpack_require__.r(__webpack_exports__);
     movePage: function movePage(page) {
       this.page = page;
       this.getItems();
+    },
+    localeNum: function localeNum(val) {
+      return val.toLocaleString();
+    },
+    moment: function moment(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("YYYY/MM/DD");
     }
   },
   mounted: function mounted() {
@@ -2265,11 +2263,6 @@ __webpack_require__.r(__webpack_exports__);
       likes: {}
     };
   },
-  filters: {
-    localeNum: function localeNum(val) {
-      return val.toLocaleString();
-    }
-  },
   mounted: function mounted() {
     var self = this;
     var url = "/ajax/like_idea_list/" + this.user_id;
@@ -2318,6 +2311,9 @@ __webpack_require__.r(__webpack_exports__);
           _this2.likes.data.splice(i, 1);
         }
       });
+    },
+    localeNum: function localeNum(val) {
+      return val.toLocaleString();
     }
   }
 });
@@ -2471,9 +2467,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2483,11 +2476,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       ideas: {}
     };
-  },
-  filters: {
-    localeNum: function localeNum(val) {
-      return val.toLocaleString();
-    }
   },
   methods: {
     move: function move(page) {
@@ -2506,6 +2494,9 @@ __webpack_require__.r(__webpack_exports__);
     movePage: function movePage(page) {
       this.page = page;
       this.getItems();
+    },
+    localeNum: function localeNum(val) {
+      return val.toLocaleString();
     }
   },
   mounted: function mounted() {
@@ -59845,7 +59836,7 @@ var render = function () {
                 ),
                 _vm._v(" "),
                 _c("p", { staticClass: "p-boughtIdeaList__item--part" }, [
-                  _vm._v("¥" + _vm._s(_vm._f("localeNum")(idea.price))),
+                  _vm._v("¥" + _vm._s(_vm.localeNum(idea.price))),
                 ]),
               ]),
               _vm._v(" "),
@@ -59862,7 +59853,7 @@ var render = function () {
                 _c("p", { staticClass: "p-boughtIdeaList__item--part" }, [
                   _vm._v(
                     "\n            " +
-                      _vm._s(_vm._f("moment")(idea.created_at)) +
+                      _vm._s(_vm.moment(idea.created_at)) +
                       "\n          "
                   ),
                 ]),
@@ -60179,7 +60170,7 @@ var render = function () {
                 _c("p", { staticClass: "p-likeIdeaList__item--part" }, [
                   _vm._v(
                     "\n            ¥" +
-                      _vm._s(_vm._f("localeNum")(like.idea.price)) +
+                      _vm._s(_vm.localeNum(like.idea.price)) +
                       "\n          "
                   ),
                 ]),
@@ -60380,9 +60371,9 @@ var render = function () {
                 _vm._v(" "),
                 _c("p", { staticClass: "p-postIdeaList__item--part" }, [
                   _vm._v(
-                    "\n              " +
+                    "\n            " +
                       _vm._s(idea.category.category_name) +
-                      "\n            "
+                      "\n          "
                   ),
                 ]),
               ]),
@@ -60399,9 +60390,9 @@ var render = function () {
                 _vm._v(" "),
                 _c("p", { staticClass: "p-postIdeaList__item--part" }, [
                   _vm._v(
-                    "\n              ¥" +
-                      _vm._s(_vm._f("localeNum")(idea.price)) +
-                      "\n            "
+                    "\n            ¥" +
+                      _vm._s(_vm.localeNum(idea.price)) +
+                      "\n          "
                   ),
                 ]),
               ]),

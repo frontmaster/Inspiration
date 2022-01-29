@@ -116,8 +116,8 @@ class PostIdeasController extends Controller
         }
 
         //DBにアイディアのIDが存在する場合、アイディア詳細画面を表示。存在しないIDであればマイページへ遷移
+        $postidea = PostIdea::find($id);
         if (DB::table('postideas')->where('id', $id)->exists()) {
-            $postidea = PostIdea::find($id);
             $postIdeaUser = $postidea->user()->first();
             $category = $postidea->category()->first();
             $user_id = Auth::user()->id;

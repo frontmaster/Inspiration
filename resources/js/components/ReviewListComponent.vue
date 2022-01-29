@@ -82,8 +82,8 @@ export default {
     };
   },
   mounted() {
-    var self = this;
-    var url = "/ajax/review_list/";
+    const self = this;
+    const url = "/ajax/review_list/";
     axios.get(url).then(function (response) {
       self.reviews = response.data;
     });
