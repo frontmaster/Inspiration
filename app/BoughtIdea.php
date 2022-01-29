@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BoughtIdea extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ['idea_name', 'summary', 'content', 'price'];
 
     public function category()

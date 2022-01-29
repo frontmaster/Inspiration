@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PostIdea extends Model
 {
+    use SoftDeletes;
+
     protected $table =  'postideas';
-
-
 
     protected $fillable = ['category', 'idea_name', 'summary', 'content', 'price'];
 

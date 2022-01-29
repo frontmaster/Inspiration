@@ -25,10 +25,11 @@ class CreateBoughtIdeasTable extends Migration
             $table->unsignedBigInteger('idea_id');
             $table->timestamps();
 
-            $table->foreign(('post_user_id'))->references('post_user_id')->on('postideas')->onDelete('CASCADE');
+            $table->foreign(('post_user_id'))->references('id')->on('users')->onDelete('CASCADE');
             $table->foreign(('category_id'))->references('id')->on('categories');
             $table->foreign('buy_user_id')->references('id')->on('users');
             $table->foreign('idea_id')->references('id')->on('postideas');
+            $table->softDeletes();
         });
     }
 
