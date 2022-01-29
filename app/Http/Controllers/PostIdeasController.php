@@ -193,6 +193,8 @@ class PostIdeasController extends Controller
             Mail::to($buy_user->email)->send(new ToBoughtIdeaUserNotice($sale_user));
 
             return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディアを購入しました。');
+        }elseif($postIdea == null){
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'このアイディアはすでに削除されています');
         }else{
             return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディア投稿者は購入できません');
         }

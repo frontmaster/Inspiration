@@ -108,7 +108,7 @@
 
             <div class="p-ideaDetail__formContainer">
                 
-                    @csrf
+                    
                     @if(auth()->user() == $postIdeaUser)
                     <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>
                         アイディア投稿者は購入できません
