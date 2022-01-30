@@ -143,6 +143,8 @@
         margin-bottom: $space_l;
         flex-direction: column;
         align-items: flex-start;
+        padding: $space_s;
+        box-sizing: border-box;
         @include mq("xl") {
             flex-direction: column;
             align-items: flex-start;
@@ -434,6 +436,9 @@
     &__starContainer {
         display: flex;
         flex-direction: column;
+        padding: $space_s;
+        box-sizing: border-box;
+        font-size: $font-size_xl;
         &--title {
             color: $sub-color2;
             font-weight: bold;
