@@ -45,6 +45,7 @@ Route::get('ajax/like_idea_list/{id}', 'Ajax\LikeIdeasController@index');
 Route::get('/like_idea_list/{id}', 'LikeIdeasController@index')->name('like_idea_lists');
 Route::get('/bought_idea_list/{id}', 'BoughtIdeasController@index')->name('bought_idea_lists');
 Route::get('ajax/bought_idea_list/{id}', 'Ajax\BoughtIdeasController@index');
+Route::get('/bought_idea_detail/{id}', 'BoughtIdeasController@detail')->name('bought_idea_detail');
 Route::get('ajax/review_list', 'Ajax\ReviewsController@index');
 Route::get('/review_list/{id}', 'ReviewsController@index')->name('review_lists');
 Route::get('/review_edit/{id}', 'ReviewsController@edit')->name('review_edit');

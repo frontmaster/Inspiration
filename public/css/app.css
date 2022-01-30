@@ -2431,7 +2431,9 @@ img {
 
 .p-mypage__star {
   color: #FABF13;
-  font-size: 18px;
+  font-size: 24px;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 .p-mypage__btn {
@@ -3953,13 +3955,15 @@ img {
   opacity: 0;
   z-index: 1;
   position: relative;
-  right: 20px;
+  right: 30px;
   cursor: pointer;
+  width: 25px;
+  height: 25px;
 }
 
 .p-ideaDetail__reviewStar {
   color: #FABF13;
-  padding: 5px;
+  font-size: 24px;
 }
 
 .p-ideaDetail__countarea {
@@ -4016,6 +4020,10 @@ img {
   display: flex;
   margin-bottom: 5px;
   align-items: center;
+}
+
+.p-ideaDetail__star {
+  font-size: 24px;
 }
 
 .p-ideaList {

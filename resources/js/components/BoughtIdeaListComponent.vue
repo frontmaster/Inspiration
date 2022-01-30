@@ -44,7 +44,7 @@
           
 
         <div class="p-boughtIdeaList__item--link">
-          <a :href="'/idea_detail/' + idea.idea_id" class="c-btn p-boughtIdeaList__btn"
+          <a :href="'/bought_idea_detail/' + idea.id" class="c-btn p-boughtIdeaList__btn"
             >詳細</a
           >
         </div>

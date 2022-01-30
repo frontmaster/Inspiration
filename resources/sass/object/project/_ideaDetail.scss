@@ -474,12 +474,14 @@
         opacity: 0;
         z-index: 1;
         position: relative;
-        right: 20px;
+        right: 30px;
         cursor: pointer;
+        width: 25px;
+        height: 25px;
     }
     &__reviewStar {
         color: $yellow;
-        padding: $space_s;
+        font-size: $font-size_xl;
     }
 
     &__countarea {
@@ -524,5 +526,8 @@
             margin-bottom: $space_s;
             align-items: center;
         }
+    }
+    &__star {
+        font-size: $font-size_xl;
     }
 }

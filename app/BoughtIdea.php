@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BoughtIdea extends Model
 {
-    use SoftDeletes;
+    //use SoftDeletes;
 
     protected $fillable = ['idea_name', 'summary', 'content', 'price'];
 
@@ -24,5 +24,10 @@ class BoughtIdea extends Model
     public function reviews()
     {
         return $this->hasMany('App\IdeaReview', 'idea_id', 'post_idea_id');
+    }
+    
+    public function postIdea()
+    {
+        return $this->belongsTo('App\PostIdea', 'idea_id');
     }
 }

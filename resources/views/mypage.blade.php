@@ -44,7 +44,7 @@
                                 <p class="p-mypage__item--part">¥{{ number_format($boughtIdeaList->price) }}</p>
                             </div>
                             <div class="p-mypage__item--part">
-                                <a href="{{ route('idea_detail', $boughtIdeaList->idea_id) }}" class="p-mypage__item--link c-btn">詳細を見る</a>
+                                <a href="{{ route('bought_idea_detail', $boughtIdeaList->idea_id) }}" class="p-mypage__item--link c-btn">詳細を見る</a>
                             </div>
                         </div>
                         @endforeach

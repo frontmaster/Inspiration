@@ -59880,7 +59880,7 @@ var render = function () {
                 "a",
                 {
                   staticClass: "c-btn p-boughtIdeaList__btn",
-                  attrs: { href: "/idea_detail/" + idea.idea_id },
+                  attrs: { href: "/bought_idea_detail/" + idea.id },
                 },
                 [_vm._v("詳細")]
               ),

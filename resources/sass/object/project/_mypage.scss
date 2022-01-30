@@ -178,7 +178,9 @@
     }
     &__star {
         color: $yellow;
-        font-size: $font-size_l;
+        font-size: $font-size_xl;
+        padding: $space_s;
+        box-sizing: border-box;
     }
     &__btn {
         background-color: $sub-color2;
