@@ -6,6 +6,7 @@ use App\PostIdea;
 use App\IdeaReview;
 use Illuminate\Http\Request;
 use App\Mail\ToPostIdeaUserReview;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -24,16 +25,20 @@ class ReviewsController extends Controller
         $buy_user = auth()->user();
 
         $review = new IdeaReview;
-        $review->post_idea_id = $id;
-        $review->post_user_id = Auth::user()->id;
-        $review->to_user_id = $postIdea->user->id;
-        $review->stars = $request->stars;
-        $review->comment = $request->review;
-        $review->save();
+        if (DB::table('idea_reviews')->where('post_idea_id', $id)->where('post_user_id', auth()->user()->id)->doesntExist()) {
+            $review->post_idea_id = $id;
+            $review->post_user_id = Auth::user()->id;
+            $review->to_user_id = $postIdea->user->id;
+            $review->stars = $request->stars;
+            $review->comment = $request->review;
+            $review->save();
 
-        Mail::to($sale_user->email)->send(new ToPostIdeaUserReview($buy_user));
+            Mail::to($sale_user->email)->send(new ToPostIdeaUserReview($buy_user));
 
-        return redirect('idea_detail' . '/' . $id)->with('flash_message', 'アイディアの評価、口コミを投稿しました');
+            return redirect('idea_detail' . '/' . $id)->with('flash_message', 'アイディアの評価、口コミを投稿しました');
+        } else {
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディアの評価、口コミの投稿は1回までしかできません');
+        }
     }
 
     //レビュー一覧画面表示
@@ -45,5 +50,37 @@ class ReviewsController extends Controller
         $reviews = Auth::user()->reviews()->get();
 
         return view('review_list', compact('reviews'));
+    }
+
+    //レビュー編集画面表示
+    public function edit($id)
+    {
+        if (!ctype_digit($id)) {
+            return redirect('/');
+        }
+        $reviews = IdeaReview::find($id);
+
+        return view('post_review_edit', compact('reviews'));
+    }
+
+    //編集したレビューの更新
+    public function update(Request $request, $id)
+    {
+        if (!ctype_digit($id)) {
+            return redirect('post_review_edit/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
+        }
+        $request->validate([
+            'stars' => 'required|integer|min:1|max:5',
+            'review' => 'required|max:10000'
+        ]);
+
+        $reviews = IdeaReview::find($id);
+        $reviews->stars = $request->stars;
+        $reviews->comment = $request->review;
+        $reviews->save();
+
+        return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'レビューを編集しました');
+
+
     }
 }

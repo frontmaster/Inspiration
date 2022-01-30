@@ -73077,10 +73077,14 @@ window.addEventListener('DOMContentLoaded', function () {
   var countContent = content.value.length;
   var showCountContent = document.querySelector('.js-show-count-content');
   showCountContent.innerHTML = countContent;
-}); //アイディア詳細画面のレビュー文字カウント
+}); //アイディア詳細画面、編集画面のレビュー文字カウント
 
 window.addEventListener('DOMContentLoaded', function () {
+  //文字数表示
   var review = document.getElementById('js-count-review');
+  var countReview = review.value.length;
+  var showCountReview = document.querySelector('.js-show-count-review');
+  showCountReview.innerHTML = countReview;
   review.addEventListener('keyup', function () {
     var countReview = review.value.length;
     var showCountReview = document.querySelector('.js-show-count-review');

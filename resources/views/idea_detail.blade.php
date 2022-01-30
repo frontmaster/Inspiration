@@ -10,18 +10,18 @@
 
 <main class="l-main" id="app">
     <div class="p-ideaDetail">
-    <div class="p-ideaDetail__modal js-show-modal-target">
-        <p class="p-ideaDetail__sentence--modal">アイディアを購入しますか？</p>
-        <form method="POST" action="{{ route('idea_buy', $postidea->id) }}" class="p-ideaDetail__form--modal">
-            @csrf
-            <div class="p-ideaDetail__button--modal">
-                <button type="button" class="c-btn p-ideaDetail__btn--cancel js-hide-modal">キャンセル</button>
-                <button type="submit" class="c-btn p-ideaDetail__btn--buy">購入</button>
-            </div>
-        </form>
-    </div>
+        <div class="p-ideaDetail__modal js-show-modal-target">
+            <p class="p-ideaDetail__sentence--modal">アイディアを購入しますか？</p>
+            <form method="POST" action="{{ route('idea_buy', $postidea->id) }}" class="p-ideaDetail__form--modal">
+                @csrf
+                <div class="p-ideaDetail__button--modal">
+                    <button type="button" class="c-btn p-ideaDetail__btn--cancel js-hide-modal">キャンセル</button>
+                    <button type="submit" class="c-btn p-ideaDetail__btn--buy">購入</button>
+                </div>
+            </form>
+        </div>
 
-    <div class="p-postIdeaEdit__modal--cover js-show-modal-cover"></div>
+        <div class="p-postIdeaEdit__modal--cover js-show-modal-cover"></div>
         @component('component.sidebar')
         @endcomponent
 
@@ -111,22 +111,22 @@
 
 
             <div class="p-ideaDetail__formContainer">
-                
-                    
-                    @if(auth()->user() == $postIdeaUser)
-                    <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>
-                        アイディア投稿者は購入できません
-                    </button>
-                    @elseif(auth()->user()->id == $buy_user_id)
-                    <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>
-                        購入済みです
-                    </button>
-                    @else
-                    <button type="button" class="c-btn p-ideaDetail__btn js-show-modal">
-                        購入する
-                    </button>
-                    @endif
-                
+
+
+                @if(auth()->user() == $postIdeaUser)
+                <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>
+                    アイディア投稿者は購入できません
+                </button>
+                @elseif(auth()->user()->id == $buy_user_id)
+                <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>
+                    購入済みです
+                </button>
+                @else
+                <button type="button" class="c-btn p-ideaDetail__btn js-show-modal">
+                    購入する
+                </button>
+                @endif
+
             </div>
 
             @if($postIdeaUser != auth()->user() and $bought_idea != null)
@@ -143,34 +143,16 @@
                         </span>
                         @enderror
                         <div class="p-ideaDetail__starContainer--part">
-                            <input type="radio" value="1" name="stars">
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                        </div>
-                        <div class="p-ideaDetail__starContainer--part">
-                            <input type="radio" value="2" name="stars">
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                        </div>
-                        <div class="p-ideaDetail__starContainer--part">
-                            <input type="radio" value="3" name="stars">
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                        </div>
-                        <div class="p-ideaDetail__starContainer--part">
-                            <input type="radio" value="4" name="stars">
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                        </div>
-                        <div class="p-ideaDetail__starContainer--part">
-                            <input type="radio" value="5" name="stars">
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <input type="radio" value="5" name="stars" class="p-ideaDetail__radio">
+                            <label for=""><i class="p-ideaDetail__star fas fa-star"></i></label>
+                            <input type="radio" value="4" name="stars" class="p-ideaDetail__radio">
+                            <label for=""><i class="p-ideaDetail__star fas fa-star"></i></label>
+                            <input type="radio" value="3" name="stars" class="p-ideaDetail__radio">
+                            <label for=""><i class="p-ideaDetail__star fas fa-star"></i></label>
+                            <input type="radio" value="2" name="stars" class="p-ideaDetail__radio">
+                            <label for=""><i class="p-ideaDetail__star fas fa-star"></i></label>
+                            <input type="radio" value="1" name="stars" class="p-ideaDetail__radio">
+                            <label for=""><i class="p-ideaDetail__star fas fa-star"></i></label>
                         </div>
                     </div>
                     <h2 class="p-ideaDetail__starContainer--title">レビュー</h2>
@@ -217,39 +199,43 @@
                     <div class="p-ideaDetail__starContainer">
                         @if($review->stars == 1)
                         <p class="p-ideaDetail__starContainer--part">
-                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
                         </p>
                         @elseif($review->stars == 2)
                         <p class="p-ideaDetail__starContainer--part">
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
                         </p>
                         @elseif($review->stars == 3)
                         <p class="p-ideaDetail__starContainer--part">
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
                         </p>
                         @elseif($review->stars == 4)
                         <p class="p-ideaDetail__starContainer--part">
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
                         </p>
                         @else
                         <p class="p-ideaDetail__starContainer--part">
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
-                            <i class="p-ideaDetail__star fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
+                            <i class="p-ideaDetail__reviewStar fas fa-star"></i>
                         </p>
                         @endif
                     </div>
 
                     <div class="p-ideaDetail__item">
                         <p class="p-ideaDetail__item--part">{{ $review->comment }}</p>
+                    </div>
+
+                    <div class="p-ideaDetail__item--link">
+                        <a href="{{ route('review_edit', $review->id) }}" class="c-btn p-ideaDetail__btn--link">編集</a>
                     </div>
                 </div>
                 @endforeach

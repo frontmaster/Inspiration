@@ -292,13 +292,20 @@ window.addEventListener('DOMContentLoaded',
         showCountContent.innerHTML = countContent;
     });
 
-    //アイディア詳細画面のレビュー文字カウント
-    window.addEventListener('DOMContentLoaded', 
-    function(){
+//アイディア詳細画面、編集画面のレビュー文字カウント
+window.addEventListener('DOMContentLoaded',
+    function () {
 
+        //文字数表示
         const review = document.getElementById('js-count-review');
 
-        review.addEventListener('keyup', function(){
+        const countReview = review.value.length;
+
+        const showCountReview = document.querySelector('.js-show-count-review');
+
+        showCountReview.innerHTML = countReview;
+
+        review.addEventListener('keyup', function () {
 
             const countReview = review.value.length;
 
