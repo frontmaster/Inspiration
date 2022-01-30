@@ -59,8 +59,11 @@ class ReviewsController extends Controller
             return redirect('/');
         }
         $reviews = IdeaReview::find($id);
-
-        return view('post_review_edit', compact('reviews'));
+        if (auth()->user()->id != $reviews->to_user_id) {
+            return view('post_review_edit', compact('reviews'));
+        }else{
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
+        }
     }
 
     //編集したレビューの更新
@@ -80,7 +83,5 @@ class ReviewsController extends Controller
         $reviews->save();
 
         return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'レビューを編集しました');
-
-
     }
 }
