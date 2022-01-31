@@ -139,7 +139,7 @@ class PostIdeasController extends Controller
     //「気になる」を追加・削除
     public function like(Request $request, $id)
     {
-        $postidea = PostIdea::find($id);
+        $postidea = PostIdea::withTrashed()->find($id);
         $postIdeaUser = $postidea->user()->first();
         $category = $postidea->category()->first();
         $category_id = $category->id;

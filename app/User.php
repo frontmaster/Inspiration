@@ -15,6 +15,8 @@ class User extends Authenticatable
 
     use SoftDeletes;
     
+
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -74,6 +76,8 @@ class User extends Authenticatable
         static::deleted(function ($user) {
 
             $user->PostIdeas()->delete();
+            
+
         });
     }
 

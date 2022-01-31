@@ -21,8 +21,9 @@ class CreateLikesTable extends Migration
             $table->timestamps();
 
             $table->foreign('idea_id')->references('id')->on('postideas')->onDelete('CASCADE');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->softDeletes();
         });
     }
 
