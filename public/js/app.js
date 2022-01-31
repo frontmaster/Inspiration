@@ -1972,6 +1972,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -59836,7 +59839,11 @@ var render = function () {
                 ),
                 _vm._v(" "),
                 _c("p", { staticClass: "p-boughtIdeaList__item--part" }, [
-                  _vm._v("¥" + _vm._s(_vm.localeNum(idea.price))),
+                  _vm._v(
+                    "\n            ¥" +
+                      _vm._s(_vm.localeNum(idea.price)) +
+                      "\n          "
+                  ),
                 ]),
               ]),
               _vm._v(" "),
@@ -59880,7 +59887,7 @@ var render = function () {
                 "a",
                 {
                   staticClass: "c-btn p-boughtIdeaList__btn",
-                  attrs: { href: "/bought_idea_detail/" + idea.id },
+                  attrs: { href: "/idea_detail/" + idea.idea_id },
                 },
                 [_vm._v("詳細")]
               ),

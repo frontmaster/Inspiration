@@ -13,7 +13,6 @@ class TopPageController extends Controller
         
         $postIdeaLists = PostIdea::orderBy('created_at', 'DESC')->take(12)->get();
 
-        //dd($postIdeaLists);
         return view('welcome', compact('postIdeaLists'));
     }
 }

@@ -28,8 +28,8 @@ class CreateBoughtIdeasTable extends Migration
             $table->foreign(('post_user_id'))->references('id')->on('users')->onDelete('CASCADE');
             $table->foreign(('category_id'))->references('id')->on('categories');
             $table->foreign('buy_user_id')->references('id')->on('users');
-            $table->foreign('idea_id')->references('id')->on('postideas');
-            //$table->softDeletes();
+            $table->foreign('idea_id')->references('id')->on('postideas')->onDelete('CASCADE');
+            $table->softDeletes();
         });
     }
 

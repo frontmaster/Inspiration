@@ -43,8 +43,8 @@
                                 <label for="price" class="p-mypage__label">価格</label>
                                 <p class="p-mypage__item--part">¥{{ number_format($boughtIdeaList->price) }}</p>
                             </div>
-                            <div class="p-mypage__item--part">
-                                <a href="{{ route('bought_idea_detail', $boughtIdeaList->idea_id) }}" class="p-mypage__item--link c-btn">詳細を見る</a>
+                            <div class="p-mypage__item--part">   
+                                <a href="{{ route('idea_detail', $boughtIdeaList->idea_id) }}" class="p-mypage__item--link c-btn">詳細を見る</a>  
                             </div>
                         </div>
                         @endforeach
@@ -63,11 +63,11 @@
                         <div class="p-mypage__item">
                             <div class="p-mypage__item--part">
                                 <label for="idea" class="p-mypage__label">アイディア名</label>
-                                <p class="p-mypage__item--part">{{ $likeIdeaList->idea->idea_name}}</p>
+                                <p class="p-mypage__item--part">{{ $likeIdeaList->idea->idea_name }}</p>
                             </div>
                             <div class="p-mypage__item--part">
                                 <label for="category" class="p-mypage__label">カテゴリ</label>
-                                <p class="p-mypage__item--part">{{ optional($likeIdeaList->idea->category)->category_name }}</p>
+                                <p class="p-mypage__item--part">{{ $likeIdeaList->idea->category->category_name }}</p>
                             </div>
                             <div class="p-mypage__item--part">
                                 <label for="price" class="p-mypage__label">価格</label>

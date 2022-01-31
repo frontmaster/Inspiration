@@ -38,10 +38,10 @@
                                 @else
                                 <img src="{{'/' . $postIdeaUser->user_img}}" alt="" class="c-img p-ideaDetail__img" />
                                 @endif
-                                @if($postIdeaUser->deleted_at != null)
+                                @if($postIdeaUser == null)
                                 <p class="p-ideaDetail__postUserInfo--name">退会したユーザー</p>
                                 @else
-                                <p class="p-ideaDetail__postUserInfo--name">{{ optional($postIdeaUser)->name }}</p>
+                                <p class="p-ideaDetail__postUserInfo--name">{{ $postIdeaUser->name }}</p>
                                 @endif
                             </div>
                         </div>

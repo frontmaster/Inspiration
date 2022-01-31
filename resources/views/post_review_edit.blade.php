@@ -19,7 +19,7 @@
                 <form class="p-reviewEdit__form--review" action="{{ route('review_update', $reviews->id) }}" method="POST">
                     @csrf
                     <h2 class="p-reviewEdit__item">アイディア名</h2>
-                    <p class="p-reviewEdit__item--part">{{ $reviews->idea->idea_name }}</p>
+                    <p class="p-reviewEdit__item--part">{{ optional($reviews->idea)->idea_name }}</p>
                     <div class="p-reviewEdit__starContainer">
                         <h2 class="p-reviewEdit__starContainer--title">現在の評価</h2>
                         <div class="p-reviewEdit__starContainer--part">

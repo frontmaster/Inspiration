@@ -58,7 +58,9 @@ class ReviewsController extends Controller
         if (!ctype_digit($id)) {
             return redirect('/');
         }
+        
         $reviews = IdeaReview::find($id);
+        
         if (DB::table('idea_reviews')->where('id', $id)->exists() && auth()->user()->id != $reviews->to_user_id) {
             return view('post_review_edit', compact('reviews'));
         }else{

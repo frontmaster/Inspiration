@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BoughtIdea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,6 +17,8 @@ class MypagesController extends Controller
 
         $user = Auth::user();
 
+        
+
         $boughtIdeaLists = $user->BoughtIdeas()->orderBy('created_at', 'DESC')->take(5)->get();
 
         $likeIdeaLists = $user->Likes()->orderBy('created_at', 'DESC')->take(5)->get();
@@ -23,6 +26,10 @@ class MypagesController extends Controller
         $postIdeaLists = $user->PostIdeas()->orderBy('created_at', 'DESC')->take(5)->get();
 
         $reviewLists = $user->reviews()->orderBy('created_at', 'DESC')->take(5)->get();
+
+        
+
+        
 
         return view('mypage', compact('boughtIdeaLists', 'likeIdeaLists', 'postIdeaLists', 'reviewLists'));
     }

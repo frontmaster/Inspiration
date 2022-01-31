@@ -1,6 +1,5 @@
 <template>
   <div class="p-boughtIdeaList__Container">
-    
     <div class="p-boughtIdeaList__partContainer">
       <div
         class="p-boughtIdeaList__part"
@@ -9,7 +8,9 @@
       >
         <div class="p-boughtIdeaList__itemContainer">
           <div class="p-boughtIdeaList__item">
-            <label for="idea" class="p-boughtIdeaList__label">アイディア名</label>
+            <label for="idea" class="p-boughtIdeaList__label"
+              >アイディア名</label
+            >
             <p class="p-boughtIdeaList__item--part">{{ idea.idea_name }}</p>
           </div>
 
@@ -22,7 +23,9 @@
 
           <div class="p-boughtIdeaList__item">
             <label for="idea" class="p-boughtIdeaList__label">価格</label>
-            <p class="p-boughtIdeaList__item--part">¥{{ localeNum(idea.price) }}</p>
+            <p class="p-boughtIdeaList__item--part">
+              ¥{{ localeNum(idea.price) }}
+            </p>
           </div>
 
           <div class="p-boughtIdeaList__item">
@@ -40,13 +43,13 @@
           </p>
         </div>
 
-        
-          
-
         <div class="p-boughtIdeaList__item--link">
-          <a :href="'/bought_idea_detail/' + idea.id" class="c-btn p-boughtIdeaList__btn"
+          <a
+            :href="'/idea_detail/' + idea.idea_id"
+            class="c-btn p-boughtIdeaList__btn"
             >詳細</a
           >
+         
         </div>
       </div>
     </div>
@@ -79,7 +82,8 @@ export default {
       }
     },
     getItems() {
-      const url = "/ajax/bought_idea_list/" + this.buy_user_id + "?page=" + this.page;
+      const url =
+        "/ajax/bought_idea_list/" + this.buy_user_id + "?page=" + this.page;
       axios.get(url).then((response) => {
         this.ideas = response.data;
       });
@@ -111,8 +115,8 @@ export default {
       for (let i in this.ideas.data) {
         const idea = this.ideas.data[i];
 
-          ideas.push(idea);
-        }
+        ideas.push(idea);
+      }
       return ideas;
     },
   },
