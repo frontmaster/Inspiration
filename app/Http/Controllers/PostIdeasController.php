@@ -117,14 +117,16 @@ class PostIdeasController extends Controller
 
         //DBにアイディアのIDが存在する場合、アイディア詳細画面を表示。存在しないIDであればマイページへ遷移
         $postidea = PostIdea::withTrashed()->find($id);
-        if (DB::table('postideas')->where('id', $id)->exists()) {
+        $user_id = Auth::user()->id;
+        $bought_idea = BoughtIdea::where('buy_user_id', $user_id)->where('idea_id', $id)->first();
+        $buy_user_id = optional($bought_idea)->buy_user_id;
+        if (DB::table('postideas')->where('id', $id)->exists() && $postidea->deleted_at == null or $user_id == $buy_user_id) {
             $postIdeaUser = $postidea->user()->first();
             $category = $postidea->category()->first();
-            $user_id = Auth::user()->id;
+
             $idea_id = $postidea->id;
             $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
-            $bought_idea = BoughtIdea::where('buy_user_id', $user_id)->where('idea_id', $id)->first();
-            $buy_user_id = optional($bought_idea)->buy_user_id;
+
             $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
             $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
             $scores = IdeaReview::where('post_idea_id', $id)->selectRaw('AVG(stars) as star')

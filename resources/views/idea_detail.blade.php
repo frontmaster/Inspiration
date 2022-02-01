@@ -65,7 +65,7 @@
 
                         <div class="p-ideaDetail__item">
                             <label for="content" class="p-ideaDetail__label">内容</label>
-                            @if($buy_user_id != auth()->user()->id && $postIdeaUser->id != auth()->user()->id)
+                            @if($buy_user_id != auth()->user()->id && optional($postIdeaUser)->id != auth()->user()->id)
                             <p class="p-ideaDetail__item--part">購入後に表示されます</p>
                             @else
                             <p class="p-ideaDetail__item--part">{{ $postidea->content }}</p>
