@@ -122,11 +122,12 @@ class PostIdeasController extends Controller
         $buy_user_id = optional($bought_idea)->buy_user_id;
         $idea_id = optional($postidea)->id;
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
-        if (DB::table('postideas')->where('id', $id)->exists() && $postidea->deleted_at == null or $user_id == $buy_user_id or $already_liked != null) {
+        $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
+        if (DB::table('postideas')->where('id', $id)->exists() && $postidea->deleted_at == null or $user_id == $buy_user_id or $already_liked != null or $review == null) {
             $postIdeaUser = $postidea->user()->first();
             $category = $postidea->category()->first();
 
-            $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
+            
             $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
             $scores = IdeaReview::where('post_idea_id', $id)->selectRaw('AVG(stars) as star')
                 ->groupBy('post_idea_id')->first();
