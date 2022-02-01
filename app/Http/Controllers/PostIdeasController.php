@@ -177,7 +177,7 @@ class PostIdeasController extends Controller
             return redirect('mypage/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
 
-        $postIdea = PostIdea::withTrashed()->find($id);
+        $postIdea = PostIdea::find($id);
 
         if ($postIdea && auth()->user()->id != $postIdea->post_user_id && $postIdea->post_user_id != null) {
             $boughtidea = new BoughtIdea;
