@@ -187,12 +187,12 @@
                 @foreach($ideaReview as $review)
                 <div class="p-ideaDetail__reviewContainer">
                     <div class="p-ideaDetail__postUserInfo--review">
-                        @if($review->user->user_img == null)
+                        @if($review->user_img == null)
                         <img src="/img/person.jpg" alt="" class="c-img p-ideaDetail__img" />
-                        <p class="p-ideaDetail__reviewContainer--part">{{ $review->user->name }}</p>
+                        <p class="p-ideaDetail__reviewContainer--part">{{ $review->user_name }}</p>
                         @else
                         <img src="{{ '/' . $review->user->user_img }}" alt="" class="c-img p-ideaDetail__img" />
-                        <p class="p-ideaDetail__postUserInfo--name">{{ $review->user->name }}</p>
+                        <p class="p-ideaDetail__postUserInfo--name">{{ $review->user_name }}</p>
                         @endif
                     </div>
 

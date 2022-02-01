@@ -18,6 +18,9 @@ class CreateIdeaReviewsTable extends Migration
             $table->unsignedBigInteger('post_idea_id');
             $table->unsignedBigInteger('post_user_id');
             $table->unsignedBigInteger('to_user_id');
+            $table->string('idea_name');
+            $table->string('user_img')->nullable();
+            $table->string('user_name');
             $table->integer('stars')->default(0);
             $table->text('comment');
             $table->timestamps();

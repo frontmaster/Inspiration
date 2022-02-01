@@ -29,6 +29,9 @@ class ReviewsController extends Controller
             $review->post_idea_id = $id;
             $review->post_user_id = Auth::user()->id;
             $review->to_user_id = $postIdea->user->id;
+            $review->idea_name = $postIdea->idea_name;
+            $review->user_img = $buy_user->user_img;
+            $review->user_name = $buy_user->name;
             $review->stars = $request->stars;
             $review->comment = $request->review;
             $review->save();
@@ -47,6 +50,7 @@ class ReviewsController extends Controller
         if (!ctype_digit($id)) {
             return redirect('/');
         }
+        
         $reviews = Auth::user()->reviews()->get();
 
         return view('review_list', compact('reviews'));

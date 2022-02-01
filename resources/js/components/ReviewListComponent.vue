@@ -9,23 +9,23 @@
         <div class="p-reviewList__itemContainer">
           <div class="p-reviewList__item">
             <label for="idea" class="p-reviewList__label">アイディア名</label>
-            <p class="p-reviewList__item--part">{{ review.idea.idea_name }}</p>
+            <p class="p-reviewList__item--part">{{ review.idea_name }}</p>
           </div>
           <div class="p-reviewList__item--user">
             <img
-              v-if="review.user.user_img == null"
+              v-if="review.user_img == null"
               :src="'/img/person.jpg'"
               alt=""
               class="c-img p-reviewList__img"
             />
 
             <img
-              v-if="review.user.user_img != null"
-              :src="'/' + review.user.user_img"
+              v-if="review.user_img != null"
+              :src="'/' + review.user_img"
               alt=""
               class="c-img p-reviewList__img"
             />
-            <p class="p-reviewList__item--part">{{ review.user.name }}</p>
+            <p class="p-reviewList__item--part">{{ review.user_name }}</p>
           </div>
 
           <div class="p-reviewList__item">

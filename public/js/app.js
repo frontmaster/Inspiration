@@ -60490,27 +60490,27 @@ var render = function () {
                 ),
                 _vm._v(" "),
                 _c("p", { staticClass: "p-reviewList__item--part" }, [
-                  _vm._v(_vm._s(review.idea.idea_name)),
+                  _vm._v(_vm._s(review.idea_name)),
                 ]),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "p-reviewList__item--user" }, [
-                review.user.user_img == null
+                review.user_img == null
                   ? _c("img", {
                       staticClass: "c-img p-reviewList__img",
                       attrs: { src: "/img/person.jpg", alt: "" },
                     })
                   : _vm._e(),
                 _vm._v(" "),
-                review.user.user_img != null
+                review.user_img != null
                   ? _c("img", {
                       staticClass: "c-img p-reviewList__img",
-                      attrs: { src: "/" + review.user.user_img, alt: "" },
+                      attrs: { src: "/" + review.user_img, alt: "" },
                     })
                   : _vm._e(),
                 _vm._v(" "),
                 _c("p", { staticClass: "p-reviewList__item--part" }, [
-                  _vm._v(_vm._s(review.user.name)),
+                  _vm._v(_vm._s(review.user_name)),
                 ]),
               ]),
               _vm._v(" "),
