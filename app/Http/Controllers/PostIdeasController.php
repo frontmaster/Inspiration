@@ -123,11 +123,9 @@ class PostIdeasController extends Controller
         $idea_id = optional($postidea)->id;
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
         $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
-        if (DB::table('postideas')->where('id', $id)->exists() && $postidea->deleted_at == null or $user_id == $buy_user_id or $already_liked != null or $review == null) {
+        if (DB::table('postideas')->where('id', $id)->exists()) {
             $postIdeaUser = $postidea->user()->first();
             $category = $postidea->category()->first();
-
-            
             $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
             $scores = IdeaReview::where('post_idea_id', $id)->selectRaw('AVG(stars) as star')
                 ->groupBy('post_idea_id')->first();
@@ -179,9 +177,9 @@ class PostIdeasController extends Controller
             return redirect('mypage/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
 
-        $postIdea = PostIdea::find($id);
+        $postIdea = PostIdea::withTrashed()->find($id);
 
-        if ($postIdea && auth()->user()->id != $postIdea->post_user_id) {
+        if ($postIdea && auth()->user()->id != $postIdea->post_user_id && $postIdea->post_user_id == null) {
             $boughtidea = new BoughtIdea;
             $boughtidea->idea_name = $postIdea->idea_name;
             $boughtidea->summary = $postIdea->summary;

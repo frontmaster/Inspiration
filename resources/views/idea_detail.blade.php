@@ -121,6 +121,10 @@
                 <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>
                     購入済みです
                 </button>
+                @elseif($postidea->user == null)
+                <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>
+                    投稿者が退会しているため購入できません
+                </button>
                 @else
                 <button type="button" class="c-btn p-ideaDetail__btn js-show-modal">
                     購入する
