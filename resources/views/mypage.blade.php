@@ -40,7 +40,7 @@
                                 <p class="p-mypage__item--part">{{ $boughtIdeaList->category->category_name }}</p>
                             </div>
                             <div class="p-mypage__item--part">
-                                <label for="price" class="p-mypage__label">価格</label>
+                                <label for="price" class="p-mypage__label">購入価格</label>
                                 <p class="p-mypage__item--part">¥{{ number_format($boughtIdeaList->price) }}</p>
                             </div>
                             <div class="p-mypage__item--part">   
