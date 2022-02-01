@@ -63,15 +63,15 @@
                         <div class="p-mypage__item">
                             <div class="p-mypage__item--part">
                                 <label for="idea" class="p-mypage__label">アイディア名</label>
-                                <p class="p-mypage__item--part">{{ $likeIdeaList->idea->idea_name }}</p>
+                                <p class="p-mypage__item--part">{{ $likeIdeaList->idea_name }}</p>
                             </div>
                             <div class="p-mypage__item--part">
                                 <label for="category" class="p-mypage__label">カテゴリ</label>
-                                <p class="p-mypage__item--part">{{ $likeIdeaList->idea->category->category_name }}</p>
+                                <p class="p-mypage__item--part">{{ $likeIdeaList->category->category_name }}</p>
                             </div>
                             <div class="p-mypage__item--part">
                                 <label for="price" class="p-mypage__label">価格</label>
-                                <p class="p-mypage__item--part">¥{{ number_format($likeIdeaList->idea->price) }}</p>
+                                <p class="p-mypage__item--part">¥{{ number_format($likeIdeaList->price) }}</p>
                             </div>
                             <div class="p-mypage__item--part">
                                 <a href="{{ route('idea_detail', $likeIdeaList->idea_id) }}" class="p-mypage__item--link c-btn">詳細を見る</a>

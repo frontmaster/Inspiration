@@ -9,7 +9,7 @@
         <div class="p-likeIdeaList__item">
           <div class="p-likeIdeaList__item--part">
             <label for="idea" class="p-likeIdeaList__label">アイディア名</label>
-            <p class="p-likeIdeaList__item--part">{{ like.idea.idea_name }}</p>
+            <p class="p-likeIdeaList__item--part">{{ like.idea_name }}</p>
           </div>
           <div class="p-likeIdeaList__item--part">
             <label for="category" class="p-likeIdeaList__label">カテゴリ</label>
@@ -20,14 +20,14 @@
           <div class="p-likeIdeaList__item--part">
             <label for="price" class="p-likeIdeaList__label">価格</label>
             <p class="p-likeIdeaList__item--part">
-              ¥{{ localeNum(like.idea.price) }}
+              ¥{{ localeNum(like.price) }}
             </p>
           </div>
         </div>
 
         <div class="p-likeIdeaList__item--link">
           <a
-            :href="'/idea_detail/' + like.idea.id"
+            :href="'/idea_detail/' + like.idea_id"
             class="c-btn p-likeIdeaList__btn"
             >詳細を見る</a
           >
@@ -39,7 +39,7 @@
               likebtn
               js-unlike-word js-click-like
             "
-            :data-like-id="like.idea.id"
+            :data-like-id="like.idea_id"
           >
             気になるを解除する
 

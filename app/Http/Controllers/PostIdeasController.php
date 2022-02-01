@@ -158,6 +158,10 @@ class PostIdeasController extends Controller
 
         if (!$already_liked) {
             $like = new Like;
+            $like->idea_name = $postidea->idea_name;
+            $like->summary = $postidea->summary;
+            $like->content = $postidea->content;
+            $like->price = $postidea->price;
             $like->idea_id = $idea_id;
             $like->user_id = $user_id;
             $like->category_id = $category_id;

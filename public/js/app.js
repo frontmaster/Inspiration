@@ -60141,7 +60141,7 @@ var render = function () {
                 ),
                 _vm._v(" "),
                 _c("p", { staticClass: "p-likeIdeaList__item--part" }, [
-                  _vm._v(_vm._s(like.idea.idea_name)),
+                  _vm._v(_vm._s(like.idea_name)),
                 ]),
               ]),
               _vm._v(" "),
@@ -60177,7 +60177,7 @@ var render = function () {
                 _c("p", { staticClass: "p-likeIdeaList__item--part" }, [
                   _vm._v(
                     "\n            ¥" +
-                      _vm._s(_vm.localeNum(like.idea.price)) +
+                      _vm._s(_vm.localeNum(like.price)) +
                       "\n          "
                   ),
                 ]),
@@ -60189,7 +60189,7 @@ var render = function () {
                 "a",
                 {
                   staticClass: "c-btn p-likeIdeaList__btn",
-                  attrs: { href: "/idea_detail/" + like.idea.id },
+                  attrs: { href: "/idea_detail/" + like.idea_id },
                 },
                 [_vm._v("詳細を見る")]
               ),
@@ -60199,7 +60199,7 @@ var render = function () {
                 {
                   staticClass:
                     "\n            c-btn\n            p-likeIdeaList__btn--like\n            likebtn\n            js-unlike-word js-click-like\n          ",
-                  attrs: { "data-like-id": like.idea.id },
+                  attrs: { "data-like-id": like.idea_id },
                   on: { click: _vm.likeDelete },
                 },
                 [

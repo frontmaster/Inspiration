@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PostIdea;
 use App\BoughtIdea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,7 @@ class MypagesController extends Controller
 
         $user = Auth::user();
 
-        
+        $postidea = PostIdea::withTrashed()->get();
 
         $boughtIdeaLists = $user->BoughtIdeas()->orderBy('created_at', 'DESC')->take(5)->get();
 
