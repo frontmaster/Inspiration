@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Like extends Model
 {
-    use SoftDeletes;
+    
     
     public function idea()
     {
