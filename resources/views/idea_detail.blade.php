@@ -233,7 +233,7 @@
                     <div class="p-ideaDetail__item">
                         <p class="p-ideaDetail__item--part">{{ $review->comment }}</p>
                     </div>
-                    @if(auth()->user()->id != $review->to_user_id)
+                    @if(auth()->user()->id == $review->post_user_id)
                     <div class="p-ideaDetail__item--link">
                         <a href="{{ route('review_edit', $review->id) }}" class="c-btn p-ideaDetail__btn--link">編集</a>
                     </div>
