@@ -59,7 +59,7 @@ class PostIdeasController extends Controller
 
         $postidea = PostIdea::find($id);
         //DBにアイディアのIDが存在するかどうか且つログインユーザーIDとアイディア投稿者IDが一致した場合のみ編集画面を表示する
-        if (DB::table('postideas')->where('id', $id)->exists() && auth()->user()->id == $postidea->post_user_id) {
+        if (DB::table('postideas')->where('id', $id)->exists() && auth()->user()->id == optional($postidea)->post_user_id) {
             $categories = Category::get();
             $boughtidea = BoughtIdea::where('idea_id', $id)->first();
 
