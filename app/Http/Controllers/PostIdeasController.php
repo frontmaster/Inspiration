@@ -34,7 +34,7 @@ class PostIdeasController extends Controller
             'idea_name' => 'required|string|max:20',
             'summary' => 'required|string|max:100',
             'content' => 'required|string|max:10000',
-            'price' => 'required|integer|min:1|digits_between:1,7',
+            'price' => 'required|numeric|min:1|digits_between:1,7',
             'category_id' => 'required'
         ]);
 
@@ -80,7 +80,7 @@ class PostIdeasController extends Controller
             'idea_name' => 'required|string|max:20',
             'summary' => 'required|string|max:100',
             'content' => 'required|string|max:10000',
-            'price' => 'required|integer|min:1|digits_between:1,7',
+            'price' => 'required|numeric|min:1|digits_between:1,7',
             'category_id' => 'required'
         ]);
 
