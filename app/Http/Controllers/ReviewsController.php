@@ -20,12 +20,12 @@ class ReviewsController extends Controller
             'review' => 'required|max:10000'
         ]);
 
-        $postIdea = PostIdea::find($id);
+        $postIdea = PostIdea::withTrashed()->find($id);
         $sale_user = $postIdea->user()->first();
         $buy_user = auth()->user();
 
         $review = new IdeaReview;
-        if (DB::table('idea_reviews')->where('post_idea_id', $id)->where('post_user_id', auth()->user()->id)->doesntExist()) {
+        if (DB::table('idea_reviews')->where('post_idea_id', $id)->where('post_user_id', auth()->user()->id)->doesntExist() && $postIdea->deleted_at == null) {
             $review->post_idea_id = $id;
             $review->post_user_id = Auth::user()->id;
             $review->to_user_id = $postIdea->user->id;
@@ -37,7 +37,7 @@ class ReviewsController extends Controller
 
             return redirect('idea_detail' . '/' . $id)->with('flash_message', 'アイディアの評価、口コミを投稿しました');
         } else {
-            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディアの評価、口コミの投稿は1回までしかできません');
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'アイディアの評価、口コミの投稿は1回までしかできません。また、退会したユーザには投稿できません');
         }
     }
 
