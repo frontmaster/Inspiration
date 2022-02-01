@@ -191,7 +191,7 @@
                         <img src="/img/person.jpg" alt="" class="c-img p-ideaDetail__img" />
                         <p class="p-ideaDetail__reviewContainer--part">{{ $review->user_name }}</p>
                         @else
-                        <img src="{{ '/' . $review->user->user_img }}" alt="" class="c-img p-ideaDetail__img" />
+                        <img src="{{ '/' . $review->user_img }}" alt="" class="c-img p-ideaDetail__img" />
                         <p class="p-ideaDetail__postUserInfo--name">{{ $review->user_name }}</p>
                         @endif
                     </div>

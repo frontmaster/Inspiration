@@ -124,14 +124,7 @@
                             <label for="idea" class="p-mypage__label">アイディア名</label>
                             <p class="p-mypage__item--part">{{ $reviewList->idea->idea_name}}</p>
                             <div class="p-mypage__postUserInfo">
-                                @if(optional($reviewList->user)->user_img == null)
-                                <img src="/img/person.jpg" alt="" class="c-img p-mypage__img" />
-                                @else
-                                <img src="{{'/' . $reviewList->user->user_img}}" alt="" class="c-img p-mypage__img" />
-                                @endif
-                                
-                                
-                                
+                                <img src="{{'/' . $reviewList->user_img}}" alt="" class="c-img p-mypage__img" />
                                 <p class="p-mypage__item--part">{{ optional($reviewList)->user_name }}</p>
                                 
                             </div>
