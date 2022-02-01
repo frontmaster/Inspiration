@@ -179,7 +179,7 @@ class PostIdeasController extends Controller
 
         $postIdea = PostIdea::withTrashed()->find($id);
 
-        if ($postIdea && auth()->user()->id != $postIdea->post_user_id && $postIdea->post_user_id == null) {
+        if ($postIdea && auth()->user()->id != $postIdea->post_user_id && $postIdea->post_user_id != null) {
             $boughtidea = new BoughtIdea;
             $boughtidea->idea_name = $postIdea->idea_name;
             $boughtidea->summary = $postIdea->summary;
