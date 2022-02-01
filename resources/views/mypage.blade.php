@@ -127,7 +127,7 @@
                                 @if($reviewList->user_img == null)
                                 <img src="/img/person.jpg" alt="" class="c-img p-ideaDetail__img" />
                                 @else
-                                <img src="{{'/' . $reviewList->user_img}}" alt="" class="c-img p-mypage__img" />
+                                <img src="{{'/' . $reviewList->user->user_img}}" alt="" class="c-img p-mypage__img" />
                                 @endif
                                 <p class="p-mypage__item--part">{{ optional($reviewList)->user_name }}</p>
                                 
