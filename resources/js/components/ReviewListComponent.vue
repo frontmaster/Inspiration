@@ -63,7 +63,7 @@
 
           <div class="p-reviewList__item--link">
             <a
-              :href="'/idea_detail/' + review.idea.id"
+              :href="'/idea_detail/' + review.post_idea_id"
               class="c-btn p-reviewList__btn"
               >詳細を見る</a
             >

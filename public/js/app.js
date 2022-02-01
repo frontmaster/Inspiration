@@ -60607,7 +60607,7 @@ var render = function () {
                   "a",
                   {
                     staticClass: "c-btn p-reviewList__btn",
-                    attrs: { href: "/idea_detail/" + review.idea.id },
+                    attrs: { href: "/idea_detail/" + review.post_idea_id },
                   },
                   [_vm._v("詳細を見る")]
                 ),
