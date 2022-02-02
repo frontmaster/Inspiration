@@ -153,6 +153,7 @@ class PostIdeasController extends Controller
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
         $bought_idea = BoughtIdea::where('buy_user_id', $user_id)->where('idea_id', $id)->first();
         $buy_user_id = optional($bought_idea)->buy_user_id;
+        $sale_user = optional($bought_idea)->postUser;
         $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
         $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
         $scores = IdeaReview::where('post_idea_id', $id)->selectRaw('AVG(stars) as star')
@@ -172,7 +173,7 @@ class PostIdeasController extends Controller
         } else {
             Like::where('idea_id', $idea_id)->where('user_id', $user_id)->delete();
         }
-        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id', 'review', 'bought_idea', 'ideaReview', 'category_id', 'scores'));
+        return view('idea_detail', compact('postidea', 'idea_id', 'already_liked', 'postIdeaUser', 'category', 'buy_user_id', 'review', 'bought_idea', 'ideaReview', 'category_id', 'scores', 'sale_user'));
     }
 
     //アイディアを購入

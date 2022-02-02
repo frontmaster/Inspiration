@@ -28,7 +28,7 @@ class MypagesController extends Controller
 
         $postIdeaLists = $user->PostIdeas()->orderBy('created_at', 'DESC')->take(5)->get();
 
-        $reviewLists = IdeaReview::orderBy('created_at', 'DESC')->take(5)->get();
+        $reviewLists = $user->reviews()->orderBy('created_at', 'DESC')->take(5)->get();
 
         
 
