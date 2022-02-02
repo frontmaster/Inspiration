@@ -15,7 +15,7 @@
 
         <div class="p-reviewList__content">
             <h1 class="p-reviewList__title">レビュー一覧</h1>
-            @if($reviews->isEmpty())
+            @if($reviews = null)
             <p class="p-reviewList__sentence">レビューはありません</p>
             @else
             <reviewlist-component></reviewlist-component>

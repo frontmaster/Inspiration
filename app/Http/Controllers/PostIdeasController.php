@@ -85,14 +85,18 @@ class PostIdeasController extends Controller
         ]);
 
         $postidea = PostIdea::find($id);
-        $postidea->idea_name = $request->idea_name;
-        $postidea->summary = $request->summary;
-        $postidea->content = $request->content;
-        $postidea->price = $request->price;
-        $postidea->category_id = $request->category_id;
-        $postidea->save();
-
-        return redirect('post_idea_list/' . auth()->user()->id)->with('flash_message', 'アイディアを編集しました');
+        //アイディア投稿者以外は編集画面を見れないようにしているが、万が一の場合に備え、投稿者以外は更新できないようにする
+        if (auth()->user()->id == $postidea->post_user_id) {
+            $postidea->idea_name = $request->idea_name;
+            $postidea->summary = $request->summary;
+            $postidea->content = $request->content;
+            $postidea->price = $request->price;
+            $postidea->category_id = $request->category_id;
+            $postidea->save();
+            return redirect('post_idea_list/' . auth()->user()->id)->with('flash_message', 'アイディアを編集しました');
+        }else{
+            return redirect('post_idea_edit/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
+        }
     }
 
 
@@ -123,7 +127,7 @@ class PostIdeasController extends Controller
         $idea_id = optional($postidea)->id;
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
         $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
-        if (DB::table('postideas')->where('id', $id)->exists() && $bought_idea) {
+        if ($postidea) {
             $postIdeaUser = $postidea->user()->first();
             $category = $postidea->category()->first();
             $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();

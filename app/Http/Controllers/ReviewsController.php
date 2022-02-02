@@ -52,8 +52,13 @@ class ReviewsController extends Controller
         }
         
         $reviews = Auth::user()->reviews()->get();
+        
 
-        return view('review_list', compact('reviews'));
+            return view('review_list', compact('reviews'));
+       
+       
+
+        
     }
 
     //レビュー編集画面表示
