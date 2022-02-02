@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\PostIdea;
 use App\BoughtIdea;
+use App\IdeaReview;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,6 +18,7 @@ class MypagesController extends Controller
         }
 
         $user = Auth::user();
+        
 
         $postidea = PostIdea::withTrashed()->get();
 
@@ -26,7 +28,7 @@ class MypagesController extends Controller
 
         $postIdeaLists = $user->PostIdeas()->orderBy('created_at', 'DESC')->take(5)->get();
 
-        $reviewLists = $user->reviews()->orderBy('created_at', 'DESC')->take(5)->get();
+        $reviewLists = IdeaReview::orderBy('created_at', 'DESC')->take(5)->get();
 
         
 
