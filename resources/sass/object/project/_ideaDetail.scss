@@ -317,6 +317,10 @@
             background-color: $sub-color2;
             color: $white;
             float: right;
+            opacity: 0.9;
+            &:hover{
+                opacity: 1;
+            }
         }
         &:hover {
             background-color: $white;
@@ -438,7 +442,6 @@
         flex-direction: column;
         padding: $space_s;
         box-sizing: border-box;
-        //font-size: $font-size_xl;
         &--title {
             color: $sub-color2;
             font-weight: bold;
