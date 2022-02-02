@@ -173,6 +173,10 @@
                     <div class="p-ideaDetail__button--disabled">
                         <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>投稿済みです</button>
                     </div>
+                    @elseif($sale_user == null)
+                    <div class="p-ideaDetail__button--disabled">
+                        <button type="submit" class="c-btn p-ideaDetail__btn--disabled" disabled>退会したユーザーには投稿できません</button>
+                    </div>
                     @else
                     <div class="p-ideaDetail__button--review">
                         <button type="submit" class="c-btn p-ideaDetail__btn--review">投稿する</button>
