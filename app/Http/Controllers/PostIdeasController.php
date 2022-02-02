@@ -128,7 +128,7 @@ class PostIdeasController extends Controller
         $idea_id = optional($postidea)->id;
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
         $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
-        if ($postidea) {
+        if ($postidea && $postidea->user != null) {
             $postIdeaUser = $postidea->user()->first();
             $category = $postidea->category()->first();
             $ideaReview = IdeaReview::where('post_idea_id', $id)->with('user')->get();
