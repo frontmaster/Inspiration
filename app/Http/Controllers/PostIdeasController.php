@@ -124,7 +124,7 @@ class PostIdeasController extends Controller
         $user_id = Auth::user()->id;
         $bought_idea = BoughtIdea::where('buy_user_id', $user_id)->where('idea_id', $id)->first();
         $buy_user_id = optional($bought_idea)->buy_user_id;
-        $sale_user = $postidea->user()->first();
+        $sale_user = optional($bought_idea)->postUser;
         $idea_id = optional($postidea)->id;
         $already_liked = Like::where('user_id', $user_id)->where('idea_id', $idea_id)->first();
         $review = IdeaReview::where('post_idea_id', $id)->where('post_user_id', $user_id)->first();
