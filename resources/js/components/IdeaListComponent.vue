@@ -1,13 +1,49 @@
 <template>
   <div class="p-ideaList__Container">
     <div class="p-ideaList__searchBox">
-      <input
-        type="text"
-        class="p-ideaList__search"
-        v-model="keyword"
-        placeholder="カテゴリ・価格・投稿日で検索"
-      />
-      <span class="p-ideaList__searchIcon"><i class="fas fa-search"></i></span>
+      <div class="p-ideaList__searchContainer">
+        <select v-model="selectedCategory" class="p-ideaList__category">
+          <option value="">すべて</option>
+          <option
+            v-for="category in optionCategory"
+            v-bind:value="category.category_name"
+            v-bind:key="category.id"
+          >
+            {{ category.category_name }}
+          </option>
+        </select>
+        <input
+          type="text"
+          class="p-ideaList__search"
+          v-model="keyword"
+          placeholder="アイディア名・概要で検索"
+        />
+        <span class="p-ideaList__searchIcon"
+          ><i class="fas fa-search"></i
+        ></span>
+      </div>
+    </div>
+    <div class="p-ideaList__sortContainer">
+      <button class="p-ideaList__sort" @click="priceUp">
+        価格が高い順<i
+          class="fas fa-solid fa-chevron-up p-ideaList__sortIcon"
+        ></i>
+      </button>
+      <button class="p-ideaList__sort" @click="priceLow">
+        価格が安い順<i
+          class="fas fa-solid fa-chevron-down p-ideaList__sortIcon"
+        ></i>
+      </button>
+      <button class="p-ideaList__sort" @click="dateUp">
+        日付が古い順<i
+          class="fas fa-solid fa-chevron-up p-ideaList__sortIcon"
+        ></i>
+      </button>
+      <button class="p-ideaList__sort" @click="dateLow">
+        日付が新しい順<i
+          class="fas fa-solid fa-chevron-down p-ideaList__sortIcon"
+        ></i>
+      </button>
     </div>
     <div class="p-ideaList__partContainer">
       <div
@@ -53,7 +89,6 @@
           <p class="p-ideaList__item--part">{{ idea.reviews.length }}件</p>
         </div>
 
-  
         <div class="p-ideaList__item--link">
           <a :href="'/idea_detail/' + idea.id" class="c-btn p-ideaList__btn"
             >詳細を見る</a
@@ -61,7 +96,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="p-ideaList__pagination">
       <pagination-component
         :data="ideas"
@@ -75,7 +110,6 @@
 import PaginationComponent from "./PaginationComponent.vue";
 import moment from "moment";
 export default {
-  
   components: {
     PaginationComponent,
   },
@@ -83,6 +117,16 @@ export default {
     return {
       ideas: {},
       keyword: "",
+      selectedCategory: "",
+      optionCategory: [
+        { id: 1, category_name: "マッチング" },
+        { id: 5, category_name: "掲示板" },
+        { id: 7, category_name: "SNS" },
+        { id: 9, category_name: "シェアリング" },
+        { id: 11, category_name: "ECサイト" },
+        { id: 13, category_name: "情報配信" },
+        { id: 15, category_name: "その他" },
+      ],
     };
   },
   methods: {
@@ -111,6 +155,30 @@ export default {
     moment(date) {
       return moment(date).format("YYYY/MM/DD");
     },
+
+    priceUp() {
+      this.ideas.data.sort((a, b) => {
+        return b.price - a.price;
+      });
+    },
+
+    priceLow() {
+      this.ideas.data.sort((a, b) => {
+        return a.price - b.price;
+      });
+    },
+
+    dateUp() {
+      this.ideas.data.sort((a, b) => {
+        return new Date(a.created_at) - new Date(b.created_at);
+      });
+    },
+
+    dateLow() {
+      this.ideas.data.sort((a, b) => {
+        return new Date(b.created_at) - new Date(a.created_at);
+      });
+    },
   },
 
   mounted() {
@@ -128,9 +196,11 @@ export default {
         const idea = this.ideas.data[i];
 
         if (
-          idea.category.category_name.indexOf(this.keyword) !== -1 ||
-          String(idea.price).indexOf(this.keyword) !== -1 ||
-          idea.created_at.indexOf(this.keyword) !== -1
+          //String(idea.price).indexOf(this.keyword) !== -1 ||
+          //idea.created_at.indexOf(this.keyword) !== -1 ||
+          idea.idea_name.indexOf(this.keyword) !== -1 &&
+          idea.summary.indexOf(this.keyword) !== -1 &&
+          idea.category.category_name.indexOf(this.selectedCategory) !== -1
         ) {
           ideas.push(idea);
         }

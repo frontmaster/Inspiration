@@ -50,15 +50,11 @@ class ReviewsController extends Controller
         if (!ctype_digit($id)) {
             return redirect('/');
         }
-        
+
         $reviews = Auth::user()->reviews()->get();
-        
 
-            return view('review_list', compact('reviews'));
-       
-       
 
-        
+        return view('review_list', compact('reviews'));
     }
 
     //レビュー編集画面表示
@@ -67,12 +63,12 @@ class ReviewsController extends Controller
         if (!ctype_digit($id)) {
             return redirect('/');
         }
-        
+
         $reviews = IdeaReview::find($id);
-        
-        if (DB::table('idea_reviews')->where('id', $id)->exists() && auth()->user()->id != $reviews->to_user_id) {
+
+        if (DB::table('idea_reviews')->where('id', $id)->exists() && auth()->user()->id == $reviews->post_user_id) {
             return view('post_review_edit', compact('reviews'));
-        }else{
+        } else {
             return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
         }
     }
@@ -89,10 +85,13 @@ class ReviewsController extends Controller
         ]);
 
         $reviews = IdeaReview::find($id);
-        $reviews->stars = $request->stars;
-        $reviews->comment = $request->review;
-        $reviews->save();
-
-        return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'レビューを編集しました');
+        if (DB::table('idea_reviews')->where('id', $id)->exists() && auth()->user()->id == $reviews->post_user_id) {
+            $reviews->stars = $request->stars;
+            $reviews->comment = $request->review;
+            $reviews->save();
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', 'レビューを編集しました');
+        } else {
+            return redirect('mypage' . '/' . auth()->user()->id)->with('flash_message', '不正な操作が行われました');
+        }
     }
 }
