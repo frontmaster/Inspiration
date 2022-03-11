@@ -24,26 +24,30 @@
       </div>
     </div>
     <div class="p-ideaList__sortContainer">
-      <button class="p-ideaList__sort" @click="priceUp">
-        価格が高い順<i
-          class="fas fa-solid fa-chevron-up p-ideaList__sortIcon"
-        ></i>
-      </button>
-      <button class="p-ideaList__sort" @click="priceLow">
-        価格が安い順<i
-          class="fas fa-solid fa-chevron-down p-ideaList__sortIcon"
-        ></i>
-      </button>
-      <button class="p-ideaList__sort" @click="dateUp">
-        日付が古い順<i
-          class="fas fa-solid fa-chevron-up p-ideaList__sortIcon"
-        ></i>
-      </button>
-      <button class="p-ideaList__sort" @click="dateLow">
-        日付が新しい順<i
-          class="fas fa-solid fa-chevron-down p-ideaList__sortIcon"
-        ></i>
-      </button>
+      <div class="p-ideaList__sortContainer--part">
+        <button class="p-ideaList__sort" @click="priceUp">
+          価格が高い順<i
+            class="fas fa-solid fa-chevron-up p-ideaList__sortIcon"
+          ></i>
+        </button>
+        <button class="p-ideaList__sort" @click="priceLow">
+          価格が安い順<i
+            class="fas fa-solid fa-chevron-down p-ideaList__sortIcon"
+          ></i>
+        </button>
+      </div>
+      <div class="p-ideaList__sortContainer--part">
+        <button class="p-ideaList__sort" @click="dateUp">
+          日付が古い順<i
+            class="fas fa-solid fa-chevron-up p-ideaList__sortIcon"
+          ></i>
+        </button>
+        <button class="p-ideaList__sort" @click="dateLow">
+          日付が新しい順<i
+            class="fas fa-solid fa-chevron-down p-ideaList__sortIcon"
+          ></i>
+        </button>
+      </div>
     </div>
     <div class="p-ideaList__partContainer">
       <div

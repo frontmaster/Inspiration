@@ -30,12 +30,14 @@
         padding: $space_m;
     }
     &__searchContainer{
-        width: 400px;
+        width: 200px;
         //height: 30px;
         display: flex;
         position: relative;
         border-radius: 5px;
-        //border: 2px solid $sub-color2;
+        @include mq("ss") {
+            margin-bottom: $space_xxl;
+        }
     }
     &__category {
         height: 36px;
@@ -47,10 +49,12 @@
         border-bottom-left-radius: 5px;
         position: absolute;
         z-index: 1;
-        
+        @include mq("ss"){
+            width: 88px;
+        }
     }
     &__search {
-        width: 100%;
+        width: 250px;
         height: 30px;
         border: 2px solid $sub-color2;
         border-top-right-radius: 5px;
@@ -58,27 +62,34 @@
         position: relative;
         left: 107px;
         @include mq("ss") {
-            font-size: $font-size_s;
+            font-size: 10px;
+            width: 145px;
+            position: absolute;
+            left: 86px;
         }
     }
     &__searchIcon {
         position: absolute;
-        left: 480px;
+        left: 285px;
         top: 7px;
         @include mq("xl") {
             right: 3%;
         }
         @include mq() {
-            right: 7%;
+            left: 285px;
         }
         @include mq("ss") {
-            right: 10%;
+            left: 220px;
         }
     }
     &__sortContainer{
         display: flex;
+        flex-direction: column;
         padding: $space_m;
         box-sizing: border-box;
+        &--part{
+            margin-bottom: $space_m;
+        }
     }
     &__sort{
         background-color: $accent-color;
@@ -89,9 +100,11 @@
         border-radius: 5px;
         border: none;
         color: $sub-color1;
-        
         &:hover{
             cursor: pointer;
+        }
+        @include mq("ss") {
+            margin-bottom: $space_m;
         }
     }
     &__sortIcon{

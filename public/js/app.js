@@ -2154,6 +2154,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -60098,49 +60102,53 @@ var render = function () {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "p-ideaList__sortContainer" }, [
-      _c(
-        "button",
-        { staticClass: "p-ideaList__sort", on: { click: _vm.priceUp } },
-        [
-          _vm._v("\n      価格が高い順"),
-          _c("i", {
-            staticClass: "fas fa-solid fa-chevron-up p-ideaList__sortIcon",
-          }),
-        ]
-      ),
+      _c("div", { staticClass: "p-ideaList__sortContainer--part" }, [
+        _c(
+          "button",
+          { staticClass: "p-ideaList__sort", on: { click: _vm.priceUp } },
+          [
+            _vm._v("\n        価格が高い順"),
+            _c("i", {
+              staticClass: "fas fa-solid fa-chevron-up p-ideaList__sortIcon",
+            }),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "p-ideaList__sort", on: { click: _vm.priceLow } },
+          [
+            _vm._v("\n        価格が安い順"),
+            _c("i", {
+              staticClass: "fas fa-solid fa-chevron-down p-ideaList__sortIcon",
+            }),
+          ]
+        ),
+      ]),
       _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "p-ideaList__sort", on: { click: _vm.priceLow } },
-        [
-          _vm._v("\n      価格が安い順"),
-          _c("i", {
-            staticClass: "fas fa-solid fa-chevron-down p-ideaList__sortIcon",
-          }),
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "p-ideaList__sort", on: { click: _vm.dateUp } },
-        [
-          _vm._v("\n      日付が古い順"),
-          _c("i", {
-            staticClass: "fas fa-solid fa-chevron-up p-ideaList__sortIcon",
-          }),
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "p-ideaList__sort", on: { click: _vm.dateLow } },
-        [
-          _vm._v("\n      日付が新しい順"),
-          _c("i", {
-            staticClass: "fas fa-solid fa-chevron-down p-ideaList__sortIcon",
-          }),
-        ]
-      ),
+      _c("div", { staticClass: "p-ideaList__sortContainer--part" }, [
+        _c(
+          "button",
+          { staticClass: "p-ideaList__sort", on: { click: _vm.dateUp } },
+          [
+            _vm._v("\n        日付が古い順"),
+            _c("i", {
+              staticClass: "fas fa-solid fa-chevron-up p-ideaList__sortIcon",
+            }),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "p-ideaList__sort", on: { click: _vm.dateLow } },
+          [
+            _vm._v("\n        日付が新しい順"),
+            _c("i", {
+              staticClass: "fas fa-solid fa-chevron-down p-ideaList__sortIcon",
+            }),
+          ]
+        ),
+      ]),
     ]),
     _vm._v(" "),
     _c(
