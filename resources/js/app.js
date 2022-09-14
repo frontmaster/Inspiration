@@ -133,7 +133,7 @@ window.addEventListener('DOMContentLoaded',
 
         //文字数表示(ニックネーム)
         const name = document.getElementById('js-count-name');
-
+        if (!name) { return false; }
         const countName = name.value.length;
 
         const showCountName = document.querySelector('.js-show-count-name');
@@ -199,7 +199,7 @@ window.addEventListener('DOMContentLoaded',
         const idea = document.getElementById('js-count-idea');
         const summary = document.getElementById('js-count-summary');
         const content = document.getElementById('js-count-content');
-
+        if (!idea) { return false; }
         //文字カウント(アイディア名)
         idea.addEventListener('keyup', function () {
 
@@ -266,7 +266,7 @@ window.addEventListener('DOMContentLoaded',
 
         //文字数表示(アイディア名)
         const idea = document.getElementById('js-count-idea');
-
+        if (!idea) { return false; }
         const countIdea = idea.value.length;
 
         const showCountIdea = document.querySelector('.js-show-count-idea');
@@ -298,7 +298,7 @@ window.addEventListener('DOMContentLoaded',
 
         //文字数表示
         const review = document.getElementById('js-count-review');
-
+        if (!review) { return false; }
         const countReview = review.value.length;
 
         const showCountReview = document.querySelector('.js-show-count-review');

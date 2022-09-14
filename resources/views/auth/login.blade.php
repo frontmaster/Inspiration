@@ -7,7 +7,7 @@
 @include('layouts.header')
 
 @section('content')
-<main class="l-main">
+<main class="l-main" id="app">
     <div class="p-login">
         <div class="p-login__content">
             <h1 class="p-login__title">ログイン</h1>

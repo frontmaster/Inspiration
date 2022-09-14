@@ -2,9 +2,9 @@
 
 @section('title', 'パスワードリセット画面')
 
-@include('layouts.head')
+@include('read.head')
 
-@include('layouts.header')
+@include('read.header')
 
 @section('content')
 <main class="l-main">
@@ -26,7 +26,7 @@
                     <input id="email" type="email" class="p-passChange__input @error('email') is-error @enderror" name="email" value="{{ $email ?? old('email') }}">
                 </div>
 
-                @error('new_password')
+                @error('password')
                 <span class="c-errMsg p-passChange__errMsg">
                     <p>{{ $message }}</p>
                 </span>
@@ -55,4 +55,4 @@
     </div>
 </main>
 @endsection
-@include('layouts.footer')
+@include('read.footer')

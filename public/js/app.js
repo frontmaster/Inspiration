@@ -73162,6 +73162,11 @@ $(function () {
 window.addEventListener('DOMContentLoaded', function () {
   //文字数表示(ニックネーム)
   var name = document.getElementById('js-count-name');
+
+  if (!name) {
+    return false;
+  }
+
   var countName = name.value.length;
   var showCountName = document.querySelector('.js-show-count-name');
   showCountName.innerHTML = countName; //文字数表示(自己紹介)
@@ -73207,7 +73212,12 @@ window.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('DOMContentLoaded', function () {
   var idea = document.getElementById('js-count-idea');
   var summary = document.getElementById('js-count-summary');
-  var content = document.getElementById('js-count-content'); //文字カウント(アイディア名)
+  var content = document.getElementById('js-count-content');
+
+  if (!idea) {
+    return false;
+  } //文字カウント(アイディア名)
+
 
   idea.addEventListener('keyup', function () {
     var countIdea = idea.value.length;
@@ -73258,6 +73268,11 @@ window.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('DOMContentLoaded', function () {
   //文字数表示(アイディア名)
   var idea = document.getElementById('js-count-idea');
+
+  if (!idea) {
+    return false;
+  }
+
   var countIdea = idea.value.length;
   var showCountIdea = document.querySelector('.js-show-count-idea');
   showCountIdea.innerHTML = countIdea; //文字数表示(概要)
@@ -73276,6 +73291,11 @@ window.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('DOMContentLoaded', function () {
   //文字数表示
   var review = document.getElementById('js-count-review');
+
+  if (!review) {
+    return false;
+  }
+
   var countReview = review.value.length;
   var showCountReview = document.querySelector('.js-show-count-review');
   showCountReview.innerHTML = countReview;
