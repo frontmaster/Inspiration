@@ -1,72 +1,60 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# ポートフォリオ概要
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Inspiration(インスピレーション)は、アイディアはあるのに実装するスキルがない人が、実装するスキルがある人にアイディアを売ることができるサービス。</br>
+ユーザー登録することで、アイディアを売ることも買うこともできる。</br>
+また、アイディア購入者は、そのアイディアについて口コミや評価をつけられる。
 
-## About Laravel
+# 機能一覧
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- メールアドレス、パスワードでユーザー登録ができる。
+- ログイン
+- ログアウト
+- 退会機能
+- パスワードリマインダーにより、パスワード忘れの際に変更ができる。
+- パスワードリセット
+- ユーザーのプロフィール編集(メールアドレス、パスワード、自己紹介、アイコン画像の変更)
+- ユーザーはアイディアの投稿・購入ができる。
+<img width="1281" alt="スクリーンショット 2023-01-05 22 01 33" src="https://user-images.githubusercontent.com/82641385/210786201-896fbee7-f3e9-412a-b44d-21f673846638.png">
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- アイディアの編集・削除ができるが、すでに購入されたアイディアの編集・削除はできない。
+- アイディア一覧画面の表示(投稿されたアイディアの詳細ではなく、大まかな概要を表示)また、アイディアのタイトル、概要に書かれた内容で検索をかけることができ、投稿日の新しい順・古い順、価格の   安い順・高い順でソートをかけられる。
+<img width="1277" alt="スクリーンショット 2023-01-05 22 04 41" src="https://user-images.githubusercontent.com/82641385/210786883-12bff843-d83d-4071-97a1-e386ccafec0e.png">
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- アイディア詳細画面に「気になる」ボタンがあり、それをクリックすると「気になるリスト」に追加される。また、「気になる」ボタンはクリックすると「気になるを解除する」ボタンに表示が切り替わる。
+<img width="1275" alt="スクリーンショット 2023-01-05 22 10 33" src="https://user-images.githubusercontent.com/82641385/210787883-11cf94d9-6ad2-447d-9c8a-be16b8b7b8c6.png">
+<img width="1286" alt="スクリーンショット 2023-01-05 22 13 17" src="https://user-images.githubusercontent.com/82641385/210788274-d61d4f0d-5287-4b3f-a32e-4a98f699f70e.png">
 
-## Learning Laravel
+- アイディア詳細画面は購入していれば内容を表示。購入していなければ、口コミ・評価のみ表示される。
+- 「購入」ボタンを押すと、アイディアの売り手には自分のアイディアが購入された事、アイディアの買い手にはアイディアを購入したことを伝える内容のメールを送信。
+- アイディア購入者のみ口コミと５段階評価を投稿することができ、投稿後に編集もできる。
+<img width="1274" alt="スクリーンショット 2023-01-05 22 20 41" src="https://user-images.githubusercontent.com/82641385/210789656-b94de1bb-49a6-4e6a-8e3c-80f564688b3d.png">
+<img width="1286" alt="スクリーンショット 2023-01-05 22 23 32" src="https://user-images.githubusercontent.com/82641385/210790109-99a83a06-85f9-45f5-8dd6-3c7c191eca1f.png">
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 口コミ・５段階評価が投稿されると、アイディアの売り手にメールが送信される。
+- 各アイディアには５段階評価の平均点数を表示。
+- 自分のアイディアは購入不可。
+- Twitterでアイディアを不特定多数の人がシェアできる。
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# 画面
+- SCSSを使い、FLOCSS設計で記述。
+- レスポンシブデザイン・スマホ対応
+- アイディア一覧・購入したアイディア一覧・投稿したアイディア一覧・気になるリスト一覧・レビュー一覧はコンポーネントとして設計し、サーバー側からjson形式で受け取ったデータを元にフロント側で   画面表示。
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# 使用技術
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+## フロントエンド
 
-## Contributing
+- HTML
+- CSS(SCSS使用・FLOCSS設計)
+- JavaScript
+- jQuery
+- Vue.js
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## バックエンド
 
-## Security Vulnerabilities
+- PHP 7.4.12
+- Laravel 5.8.38
+- MySQL 8.0.23
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
