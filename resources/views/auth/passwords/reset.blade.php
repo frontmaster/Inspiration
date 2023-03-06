@@ -2,9 +2,9 @@
 
 @section('title', 'パスワードリセット画面')
 
-@include('read.head')
+@include('layouts.head')
 
-@include('read.header')
+@include('layouts.header')
 
 @section('content')
 <main class="l-main">
@@ -55,4 +55,4 @@
     </div>
 </main>
 @endsection
-@include('read.footer')
+@include('layouts.footer')
