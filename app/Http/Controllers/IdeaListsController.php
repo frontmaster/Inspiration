@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BoughtIdea;
 use App\Like;
 use App\PostIdea;
 use App\IdeaReview;
@@ -19,5 +20,6 @@ class IdeaListsController extends Controller
         $reviews = IdeaReview::with('idea')->get();
 
         return view('idea_list', compact('ideaLists'));
+
     }
 }
