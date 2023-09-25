@@ -73146,7 +73146,7 @@ $(function () {
       }
     })
     /*ajaxが成功した場合、クリックした要素に 'likebtn'、ハートアイコンに 'likeheart'のクラスがあるかどうかを判別し、
-      クラスの追加、削除をすることで色の変更を行う*/
+    クラスの追加、削除をすることで色の変更を行う*/
     .done(function (data) {
       if (like.hasClass('likebtn') && heart.hasClass('likeheart')) {
         like.removeClass('likebtn');

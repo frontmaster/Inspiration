@@ -1,7 +1,7 @@
 @section('header')
 @guest
 <header class="l-header">
-    <div class="l-header__logo"><a href="{{ url('/') }}" class="l-header__logo--link">Inspiration</a></div>
+    <div class="l-header__logo"><a href="{{ url('/') }}" class="l-header__logo--link">IdeaBridge</a></div>
     <div class="l-header__menuTrigger js-toggle-sp-menu">
         <span></span>
         <span></span>

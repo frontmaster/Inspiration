@@ -25,12 +25,13 @@
         "vue-template-compiler": "^2.6.14"
     },
     "dependencies": {
-        "moment": "^2.29.1"
+        "moment": "^2.29.1",
+        "webpack": "^4.47.0"
     },
     "engines": {
         "node": "16.x"
-      },
-      "require": {
+    },
+    "require": {
         "php": "^7.3|^8.0"
     }
 }

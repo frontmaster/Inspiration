@@ -79,6 +79,20 @@
             height: 40%;
             padding: $space_xxl;
         }
+        &--feature {
+            background-color: $white;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+            box-sizing: border-box;
+            @include mq("xl") {
+                padding: $space_xxl;
+            }
+            @include mq() {
+                height: 40%;
+                padding: $space_xxl;
+            }
+        }
     }
     &__title {
         font-size: $font-size_xl;
@@ -97,19 +111,28 @@
             font-weight: bold;
             text-align: center;
             margin-top: $space_xl;
-            @include mq(){
-                font-size:$font-size_l;
+            @include mq() {
+                font-size: $font-size_l;
             }
-            @include mq("ss"){
+            @include mq("ss") {
                 font-size: $font-size_m;
             }
         }
+    }
+    &__contentBody {
+        margin-top: $space_xxl;
+    }
+    &__contentSentence {
+        line-height: 300%;
+        font-size: $font-size_l;
+        text-align: justify;
+        letter-spacing: 0.05em;
     }
     &__panelContent {
         display: flex;
         justify-content: space-between;
         margin-top: $space_3l;
-        @include mq("xl"){
+        @include mq("xl") {
             flex-direction: column;
             align-items: center;
         }
@@ -121,7 +144,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: $white;
+        background-color: $accent-color;
         width: 370px;
         height: 350px;
         padding: $space_l;
@@ -160,7 +183,6 @@
             height: 35%;
             margin-top: $space_xl;
             margin-bottom: $space_xl;
-            
         }
         &--sentence {
             @include mq("ss") {
@@ -169,7 +191,7 @@
         }
     }
     &__itemContent {
-        background-color: $white;
+        background-color: $accent-color;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -184,7 +206,7 @@
         &::after {
             display: block;
             content: "";
-            width: 360px;
+            width: 26%;
         }
         @include mq("xl") {
             justify-content: space-around;
@@ -199,12 +221,13 @@
         }
     }
     &__item {
-        width: 360px;
+        width: 26%;
         border: 2px solid $sub-color2;
         border-radius: 5px;
         padding: $space_l;
         box-sizing: border-box;
         margin-bottom: 30px;
+        background-color: $white;
         &--footer {
             display: flex;
             align-items: flex-end;
