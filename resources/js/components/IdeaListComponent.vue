@@ -199,10 +199,11 @@ export default {
       for (let i in this.ideas.data) {
         const idea = this.ideas.data[i];
 
+        
         if (
           //String(idea.price).indexOf(this.keyword) !== -1 ||
           //idea.created_at.indexOf(this.keyword) !== -1 ||
-          idea.idea_name.indexOf(this.keyword) !== -1 &&
+          idea.idea_name.indexOf(this.keyword) !== -1 ||
           idea.summary.indexOf(this.keyword) !== -1 &&
           idea.category.category_name.indexOf(this.selectedCategory) !== -1
         ) {

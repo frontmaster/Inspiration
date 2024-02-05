@@ -24,19 +24,19 @@
         <div class="p-top__content">
             <h1 class="p-top__title">ABOUT</h1>
             <div class="p-top__contentBody">
-                <p class="p-top__contentSentence">IdeaBridgeは、優れたアイディアと円滑な開発とのギャップを埋めるサービスです。<br>
+                <p class="p-top__contentSentence">Inspirationは、優れたアイディアと円滑な開発とのギャップを埋めるサービスです。<br>
                     素晴らしいアイディアはあるけれども、それを具現化するのに苦労していませんか？あるいは、技術的な専門知識はあるけれども、
-                    魅力的なアイディアが無くてお困りではありませんか？IdeaBridgeでは、アイディア提供者と開発者をマッチングし、より良いサービスを生む
+                    魅力的なアイディアが無くてお困りではありませんか？Inspirationでは、アイディア提供者と開発者をマッチングし、より良いサービスを生む
                     ことを目的としています。<br>
-                    革新的なアイディアは世界を変える力を秘めています。しかし、アイディアが形になることができないのは非常にもったいないことです。IdeaBridgeは、
+                    革新的なアイディアは世界を変える力を秘めています。しかし、アイディアが形になることができないのは非常にもったいないことです。Inspirationは、
                     そんな優れたアイディアを持つ人々と、それを具現化するスキルと情熱を持つ人々を繋げ、新しい可能性を拓くことを使命としています。<br>
-                    IdeaBridgeでアイディアと実現の新しい旅に出発しましょう。未知の可能性を探究し、イノベーションの世界への扉を開きましょう。
+                    Inspirationでアイディアと実現の新しい旅に出発しましょう。未知の可能性を探究し、イノベーションの世界への扉を開きましょう。
                 </p>
             </div>
         </div>
 
         <div class="p-top__content--feature">
-            <h1 class="p-top__title">IdeaBridgeの特徴</h1>
+            <h1 class="p-top__title">Inspirationの特徴</h1>
             <div class="p-top__panelContent">
                 <section class="p-top__panel">
                     <h2 class="p-top__panel--title">簡単にユーザー登録ができる！</h2>
