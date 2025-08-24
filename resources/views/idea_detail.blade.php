@@ -90,7 +90,7 @@
 
                 <div class="p-ideaDetail__button">
                     <a href="https://twitter.com/intent/tweet?url=https://front-test.com/idea_detail/{{ $idea_id }}&text=簡単にアイディアを販売・購入できるアイディアマッチングサービス Inspiration" target="blank_" class="c-btn p-ideaDetail__button--share">
-                        <i class="fab fa-twitter"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
                         シェアする
                     </a>
 
