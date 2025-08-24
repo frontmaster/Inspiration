@@ -17,7 +17,7 @@ class CreatePostIdeasTable extends Migration
             $table->bigIncrements('id');
             $table->string('idea_name');
             $table->string('summary');
-            $table->string('content');
+            $table->text('content');
             $table->integer('price');
             $table->unsignedBigInteger('post_user_id');
             $table->unsignedBigInteger('category_id');
