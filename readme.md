@@ -28,7 +28,7 @@ Inspiration(インスピレーション)は、アイディアはあるのに実�
 - 「購入」ボタンを押すと、アイディアの売り手には自分のアイディアが購入された事、アイディアの買い手にはアイディアを購入したことを伝える内容のメールを送信。
 - アイディア購入者のみ口コミと５段階評価を投稿することができ、投稿後に編集もできる。
 <img width="1274" alt="スクリーンショット 2023-01-05 22 20 41" src="https://user-images.githubusercontent.com/82641385/210789656-b94de1bb-49a6-4e6a-8e3c-80f564688b3d.png">
-<img width="1286" alt="スクリーンショット 2023-01-05 22 23 32" src="https://user-images.githubusercontent.com/82641385/210790109-99a83a06-85f9-45f5-8dd6-3c7c191eca1f.png">
+<img width="1635" height="820" alt="Image" src="https://github.com/user-attachments/assets/ef03f99d-2435-4fa8-8332-e803567027d2" />
 
 - 口コミ・５段階評価が投稿されると、アイディアの売り手にメールが送信される。
 - 各アイディアには５段階評価の平均点数を表示。
