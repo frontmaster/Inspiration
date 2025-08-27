@@ -22,7 +22,7 @@ Inspiration(インスピレーション)は、アイディアはあるのに実�
 
 - アイディア詳細画面に「気になる」ボタンがあり、それをクリックすると「気になるリスト」に追加される。また、「気になる」ボタンはクリックすると「気になるを解除する」ボタンに表示が切り替わる。
 <img width="1660" height="838" alt="Image" src="https://github.com/user-attachments/assets/95701724-eb5f-4fdb-bebf-50d857e9e0b9" />
-<img width="1286" alt="スクリーンショット 2023-01-05 22 13 17" src="https://user-images.githubusercontent.com/82641385/210788274-d61d4f0d-5287-4b3f-a32e-4a98f699f70e.png">
+<img width="1666" height="841" alt="Image" src="https://github.com/user-attachments/assets/1674c7e6-3e3d-4f55-a0ea-3e264a8fbec0" />
 
 - アイディア詳細画面は購入していれば内容を表示。購入していなければ、口コミ・評価のみ表示される。
 - 「購入」ボタンを押すと、アイディアの売り手には自分のアイディアが購入された事、アイディアの買い手にはアイディアを購入したことを伝える内容のメールを送信。
