@@ -21,7 +21,7 @@ Inspiration(インスピレーション)は、アイディアはあるのに実�
 <img width="1653" height="832" alt="Image" src="https://github.com/user-attachments/assets/583d9b8b-e2d3-48f3-983c-88284419fb8a" />
 
 - アイディア詳細画面に「気になる」ボタンがあり、それをクリックすると「気になるリスト」に追加される。また、「気になる」ボタンはクリックすると「気になるを解除する」ボタンに表示が切り替わる。
-<img width="1275" alt="スクリーンショット 2023-01-05 22 10 33" src="https://user-images.githubusercontent.com/82641385/210787883-11cf94d9-6ad2-447d-9c8a-be16b8b7b8c6.png">
+<img width="1660" height="838" alt="Image" src="https://github.com/user-attachments/assets/95701724-eb5f-4fdb-bebf-50d857e9e0b9" />
 <img width="1286" alt="スクリーンショット 2023-01-05 22 13 17" src="https://user-images.githubusercontent.com/82641385/210788274-d61d4f0d-5287-4b3f-a32e-4a98f699f70e.png">
 
 - アイディア詳細画面は購入していれば内容を表示。購入していなければ、口コミ・評価のみ表示される。
